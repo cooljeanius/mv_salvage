@@ -1,0 +1,9 @@
+# Notice: Crawling Facebook is prohibited unless you have express written
+# permission. See: http://www.facebook.com/apps/site_scraping_tos_terms.php
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: *
+Disallow: /
+

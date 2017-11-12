@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /familylink-earlyaccess
+Disallow: /graduation
+Disallow: /join
+Disallow: /webcreation
+Allow: /

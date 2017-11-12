@@ -1,0 +1,5 @@
+# robots.txt for IMDb properties
+#
+#
+User-agent: *
+Disallow: /

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://dragonquest.nintendo.com/sitemap.xml

@@ -1,0 +1,118 @@
+Sitemap: https://venturebeat.com/news-sitemap.xml
+
+# This file was generated on Mon, 06 Nov 2017 18:21:51 +0000
+
+User-agent: *
+Disallow: /login
+Disallow: /logout
+Disallow: /sign-up
+Disallow: /account
+Disallow: /wp-admin
+Disallow: /wp-login.php
+Disallow: /activate
+Disallow: /search
+Disallow: /?s=*
+Disallow: /page/*/?s=*
+Disallow: /page/*/?s
+Disallow: /person
+Disallow: /company
+Disallow: /posts
+
+User-agent: Googlebot  
+Disallow: /login
+Disallow: /logout
+Disallow: /sign-up
+Disallow: /account
+Disallow: /wp-admin
+Disallow: /wp-login.php
+Disallow: /activate
+Disallow: /search
+Disallow: /?s=*
+Disallow: /page/*/?s=*
+Disallow: /page/*/?s
+Disallow: /person
+Disallow: /company
+Disallow: /posts
+
+User-agent: Bingbot
+Disallow: /login
+Disallow: /logout
+Disallow: /sign-up
+Disallow: /account
+Disallow: /wp-admin
+Disallow: /wp-login.php
+Disallow: /activate
+Disallow: /search
+Disallow: /?s=*
+Disallow: /page/*/?s=*
+Disallow: /page/*/?s
+Disallow: /person
+Disallow: /company
+Disallow: /posts
+
+User-agent: MSNBot
+Disallow: /login
+Disallow: /logout
+Disallow: /sign-up
+Disallow: /account
+Disallow: /wp-admin
+Disallow: /wp-login.php
+Disallow: /activate
+Disallow: /search
+Disallow: /?s=*
+Disallow: /page/*/?s=*
+Disallow: /page/*/?s
+Disallow: /person
+Disallow: /company
+Disallow: /posts
+
+User-agent: BingPreview
+Disallow: /login
+Disallow: /logout
+Disallow: /sign-up
+Disallow: /account
+Disallow: /wp-admin
+Disallow: /wp-login.php
+Disallow: /activate
+Disallow: /search
+Disallow: /?s=*
+Disallow: /page/*/?s=*
+Disallow: /page/*/?s
+Disallow: /person
+Disallow: /company
+Disallow: /posts
+
+User-agent: Slurp
+Disallow: /login
+Disallow: /logout
+Disallow: /sign-up
+Disallow: /account
+Disallow: /wp-admin
+Disallow: /wp-login.php
+Disallow: /activate
+Disallow: /search
+Disallow: /?s=*
+Disallow: /page/*/?s=*
+Disallow: /page/*/?s
+Disallow: /person
+Disallow: /company
+Disallow: /posts
+
+User-agent: IRLbot
+Disallow: /login
+Disallow: /logout
+Disallow: /sign-up
+Disallow: /account
+Disallow: /wp-admin
+Disallow: /wp-login.php
+Disallow: /activate
+Disallow: /search
+Disallow: /?s=*
+Disallow: /page/*/?s=*
+Disallow: /page/*/?s
+Disallow: /person
+Disallow: /company
+Disallow: /posts
+# Sitemap archive
+Sitemap: https://venturebeat.com/sitemap.xml
+

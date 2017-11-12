@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /$
+Allow: /.well-known/apple-app-site-association
+Allow: /.well-known/assetlinks.json
+Allow: /apple-app-site-association
+Allow: /welcome
+Disallow: /

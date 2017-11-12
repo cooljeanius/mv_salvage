@@ -1,0 +1,434 @@
+@charset "utf-8";
+
+/**
+ * Global navigation styles
+ */
+ 
+/**
+* Image replacement styles
+*/
+
+#primaryNav li.home a,
+#primaryNav li.major a {
+	overflow: hidden;
+	background-repeat: no-repeat;
+	/*height: 0px !important;*/
+}
+
+/**
+* Brand link styles
+*/
+
+#primaryNav h1 {
+ display: block;
+ z-index: 1;
+ width: 110px;
+ height: 26px;
+ float:left;
+ margin:10px 4px 0 0;
+}
+
+#primaryNav h1 a {
+	display: block;
+	background: url(/consumer/assets/images/home/nintendo_logo_topnav.png) no-repeat;
+	padding:28px 0 0 0;
+	margin-top: 0;
+	background-position: 0 0;
+	z-index:10000;
+	_background: url(/consumer/assets/images/home/nintendo_logo_topnav.jpg) no-repeat;
+}
+
+/**
+ * Global Navigation Container styles
+ */
+
+#body_home #globalNavigation {
+	smargin: 0 auto !important;
+}
+/**
+ * Link layout styles
+ */
+ 
+#primaryNav {
+	height:44px;
+	width:980px;
+	list-style: none;
+	margin:0 auto !important;
+	padding-top: 1px;
+}
+
+#primaryNav ul {
+float:left;	
+margin:0;
+padding:0;
+padding-left: 3%;
+}
+
+#primaryNav ul li a {
+  background:transparent url('/consumer/assets/images/home/topnav_states_float.png') no-repeat;
+  height:44px;
+  overflow:hidden;
+  outline:none;
+}
+
+
+#primaryNav li.major {
+ float: left;
+ margin: 0 5px;
+}
+
+#primaryNav li.major a {
+	display: block;
+	padding: 0;
+	font-family: 'Lato', sans-serif;
+	font-size: 13px;
+	color: #9E9E9E;
+	font-style: normal;
+	line-height: 48px;
+	font-weight: 500;
+	text-align:center;
+	height: 43px;
+}
+#primaryNav li.major a:hover {
+	text-decoration: none;
+}
+
+#primaryNav li.wiiu a {
+	width: 74px;
+}
+#primaryNav li.wiiu a:hover {
+	background-position: 0 -70px;
+}
+body.wii #primaryNav li.major.wiiu a {
+	background-position: 0 -136px;
+}
+
+#primaryNav li.wii a {
+	width: 74px;
+}
+#primaryNav li.wii a:hover {
+	background-position: 0 -70px;
+}
+
+body.wii #primaryNav li.major.wii a {
+	background-position: 0 -136px;
+}
+
+#primaryNav li.n3ds a {
+	width: 121px;
+}
+#primaryNav li.n3ds a:hover {
+	background-position: -74px -70px;
+}
+
+body.n3ds #primaryNav li.major.n3ds a {
+	background-position: -74px -136px;
+}
+
+#primaryNav li.ds a {
+	width: 131px;
+}
+#primaryNav li.ds a:hover {
+	background-position: -195px -70px;
+}
+body.ds #primaryNav li.major.ds a {
+	 background-position: -195px -136px;
+}
+
+#primaryNav li.games a {
+	width: 91px;
+}
+#primaryNav li.games a:hover, body#body_3ds_games.games #primaryNav li.major.games a:hover {
+	background-position: -326px -70px;
+}
+body.games #primaryNav li.major.games a {
+	background-position: -326px -136px;
+}
+body#body_3ds_games.games #primaryNav li.major.games a {
+	background-position: 0 0;
+	color:#9E9E9E;
+}
+body#body_3ds_es_games.games #primaryNav li.major.games a {
+	background-position: 0 0;
+	color:#9E9E9E;
+}
+body#body_3ds_fr_games.games #primaryNav li.major.games a {
+	background-position: 0 0;
+	color:#9E9E9E;
+}
+
+#primaryNav li.club a {
+	width: 128px;
+}
+#primaryNav li.club a:hover {
+	background-position: -417px -70px;
+}
+
+#primaryNav li.product_registration a {
+  width: 169px;
+}
+#primaryNav li.support a {
+	width: 99px;
+}
+#primaryNav li.support a:hover {
+	background-position: -545px -70px;
+}
+
+body.support #primaryNav li.major.support a {
+	background-position: -545px -136px;
+}
+
+
+
+body.wii #primaryNav li.major.wii a,
+body.ds #primaryNav li.major.ds a,
+body.games #primaryNav li.major.games a,
+body.product #primaryNav li.major.product a,
+body.support #primaryNav li.major.support a {
+ color:#fff;
+}
+
+/* TouchGen / Wifi body class includes ds/wii, this resets the glow to games */
+
+
+#body_games_touchgeneration_wii #primaryNav li.major.wii a,
+#body_games_wifi_wii #primaryNav li.major.wii a{
+	/*text-decoration:none;*/
+	color: #9E9E9E;
+	background-position: 0 0px;
+
+}
+
+#body_games_touchgeneration_wii #primaryNav li.major.wii a:hover,
+#body_games_wifi_wii #primaryNav li.major.wii a:hover {
+  	background-position: 0 -66px;
+}
+
+#body_games_touchgeneration_ds #primaryNav li.major.ds a,
+#body_games_wifi_ds #primaryNav li.major.ds a{
+	background-position: -81px 0px;
+	color: #9E9E9E;
+}
+#body_games_touchgeneration_ds #primaryNav li.major.ds a:hover,
+#body_games_wifi_ds #primaryNav li.major.ds a:hover{
+	background-position: -81px -66px;
+}
+#primaryNav .my_nintendo {
+top: 20px;
+font-size:1.0em; /* 10 points */
+right:32px;
+position: absolute;
+}
+#primaryNav .my_nintendo a {
+color:#0090C7;
+}
+#primaryNav .my_nintendo a:hover {
+color:#00587A;
+}
+
+
+/**
+ * Search box styles 
+ */
+ 
+#globalSearch {
+	background-color: #FFFFFF;
+	float: right;
+	margin-left: 0px;
+	padding: 0px;
+	position: relative;
+	top: 12px;
+	width: 140px;
+	height:21px;
+	*width:136px;
+}
+
+#globalSearchKeyword {
+	background: none repeat scroll 0 0 transparent;
+	border: 0 none;
+	color: #8C8C8C;
+	float: left;
+	font-family: Helvetica,sans-serif;
+	font-size: 12px;
+	height: 18px;
+	margin: 0px;
+	width: 107px;
+	*width:70px;
+	padding: 2px 0 0 4px;
+}
+#globalSearch input.submit{
+	float:left;
+	margin:0;
+	padding:0;
+	border:none;
+	width:29px;
+}
+
+*:first-child+html #globalSearch {
+	margin-left: 10px;
+}
+
+*:first-child+html #globalSearchKeyword {
+	padding-bottom:4px;
+	margin-top:2px;
+}
+
+*:first-child+html #globalSearch input.submit {
+	margin: 0px 0px 0px 20px;
+}
+
+#globalSearch label.overlabel {
+	bottom:6px;
+	color:#363636;
+	font-size:1.0em; /* 10 points */
+	left:11px;
+	top:6px;
+	position:absolute;
+	z-index:1;
+}
+html.dj_safari #globalSearchKeyword {
+  visibility: hidden;
+  position: relative;
+  top: -6px;
+}
+html.dj_safari #globalSearch label.overlabel {
+  bottom: 12px;
+  left: 16px;
+}
+ * Legal Links
+ * Those links at the bottom of the global navigation
+ */
+ 
+#legalLinks {
+bottom:0pt;
+height:40px;
+padding:0pt;
+position:absolute;
+right:8px;
+z-index:10;
+}
+#legalLinks li {
+float:right;
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+margin:12px 0pt 0pt 30px;
+}
+#legalLinks a {
+ font-size: 1.1em; /* 11 points */
+}
+#breadcrumb{
+	display:none;
+}
+/*.overlay{
+	background:transparent url(/consumer/images/main_banner.jpg) no-repeat scroll 0px -3px;
+	height:105px;
+}
+*/
+.overlayStretch{
+/*background:transparent url(/consumer/assets/images/home/banner.png) repeat-x 0 0;*/
+	background:transparent url(/consumer/assets/images/home/banner_gray.png) repeat-x 0 0;
+	height:44px;
+	width:100%;
+	/*padding-bottom:5px;*/
+	/*padding commented out to move content up*/
+
+
+}
+
+.overlayCenter {
+	width:980px;
+	margin:0 auto !important;
+
+}
+
+.overlayRegion {
+/*background:transparent url(/consumer/assets/images/home/language_arrow_white.png) no-repeat;
+background-position:190px; */
+	font-family: Helvetica,sans-serif;
+	float:right;
+	font-size:12px;
+	font-weight:normal;
+	/*margin-top:15px;*/
+	padding-top:2px;
+	padding-right:15px;
+	position:relative;
+
+}
+
+.overlayRegion a {
+	color:white;
+	font-weight:bold;
+	position:relative;
+	z-index: 2; 
+}
+
+.regionSpan {
+	background: transparent url(/consumer/assets/images/home/language_arrow_white.png) no-repeat;
+	background-position:right;
+	height:100%;
+	z-index: 1; 
+	padding:14px;
+	
+}
+
+.overlayNetwork {
+	font-family: Helvetica,sans-serif;
+	float:left;
+	font-size:12px;
+	font-weight:normal;
+	/*margin-top:15px;*/
+	padding-top:2px;
+	padding-left:5px;
+	position:relative;
+
+}
+
+.overlayNetwork a {
+	color:white;
+	font-weight:bold;
+	position:relative;
+	z-index: 2; 
+}
+
+.networkSpan {
+	background: transparent url(/consumer/assets/notification/status_icon_white.png) no-repeat;
+	background-position:left;
+	height:100%;
+	z-index: 1; 
+	padding:14px;
+	padding-left: 25px;
+	/* New for Holiday */
+	color:yellow;
+	
+}
+
+
+
+/*	-----------------------------------------------
+
+	Nintendo.com Pinned Global Navigation
+
+	----------------------------------------------- */
+
+
+div#alwaysNav {
+	background:transparent url('/consumer/assets/images/home/bg_nav.png') repeat-x 0 0;
+	display:none;
+	margin:0 auto;
+	height: 44px;
+	width:100%;
+	top:0px;
+	left:0px;
+	position:fixed;
+	z-index:9999999;
+	border-bottom: none;
+}
+@media only screen and (max-device-width: 480px) {
+    body { width: 107%; }
+	 /* iphone */
+}
+@media only screen and (device-width: 768px) {
+   body { width: 107%; }
+	/* 	 ipad */
+}

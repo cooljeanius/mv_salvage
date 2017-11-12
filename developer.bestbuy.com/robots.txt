@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /heartbeat
+Disallow: /js
+Disallow: /json
+Disallow: /templates

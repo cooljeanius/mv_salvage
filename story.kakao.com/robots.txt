@@ -1,0 +1,10 @@
+User-agent: DAUMOA
+Allow: /ch/*
+Disallow: /
+
+User-agent: Googlebot
+Allow: /ch/*
+Disallow: /
+
+User-agent: *
+Disallow: /

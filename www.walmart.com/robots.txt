@@ -1,0 +1,86 @@
+#Sitemaps-https
+Sitemap: https://www.walmart.com/sitemap_uncrawled_ip.xml
+Sitemap: https://www.walmart.com/sitemap_tp_1006.xml
+Sitemap: https://www.walmart.com/sitemap_tp_https.xml
+Sitemap: https://www.walmart.com/sitemap_bp_https.xml
+Sitemap: https://www.walmart.com/sitemap_cp_https.xml
+Sitemap: https://www.walmart.com/sitemap_store_main.xml
+
+
+#Disallow select URLs
+User-agent: *
+Disallow: /account/
+Disallow: /checkout/
+Disallow: /email_collect/
+Disallow: /reviews/seller/
+Disallow: /api/
+Disallow: /0/
+Disallow: api
+Disallow: /collection/api/logger
+Disallow: /popup_security.jsp
+Disallow: /electrode/api
+Disallow: /electrode/api/logger
+Disallow: /typeahead/
+Disallow: /storeLocator/ca_storefinder_results.do
+Disallow: /reviews/
+Allow: /reviews/product/
+Disallow: /giftregistry/
+Disallow: /storeLocator/
+Disallow: /cservice/ya_index.gsp
+Disallow: /cp/-201
+Disallow: /cp/-302
+Disallow: /cp/-306
+Disallow: /cp/-309
+Disallow: /cp/-506
+Disallow: /cp/-509
+Disallow: ?country=US
+Disallow: /solutions/
+Disallow: /cart2/
+Disallow: /cservice/
+Disallow: /catalog/
+Disallow: /category/
+Disallow: /wmflows/
+Disallow: /browse/invalid-category-id/
+Disallow: /reviews/seller/
+Disallow: /cdstore/
+Disallow: /55875582/walmart-us/catalog/
+Disallow: /store/category/
+Disallow: /store/popular_in_grade/
+Disallow: /store/ajax/visited-store
+Disallow: /cp/api/logger
+Disallow: /store/finder
+Disallow: /irs/metadata
+Disallow: /product/electrode/api/logger
+Disallow: /store/ajax/detail-navigation
+Disallow: /product/electrode/api/p13n
+Disallow: /cp/api/wpa
+Disallow: /product/grouping/api/
+Disallow: /msp
+Disallow: /irs
+Disallow: /product/api
+Disallow: /topic/electrode/api/wpa
+Disallow: /store/ajax/preferred
+Disallow: /store/ajax/search
+Disallow: /tealeaf
+Disallow: /store/ajax/local-store
+Disallow: /nonConfig/api/wpa
+Disallow: /search
+Disallow: /product/electrode/api/wpa
+Disallow: /search/api/wpa
+Disallow: /store/electrode/api/p13n
+Disallow: /store/electrode/api/logger
+Disallow: /store/electrode/api/stores
+Disallow: /store/electrode/api/search
+Disallow: /topic/electrode/api/logger
+Disallow: /search/search-ng.do
+Disallow: /product/electrode/api/p13n
+Disallow: /choice/api/p13n
+Disallow: /store/electrode/api/fetch-coupons
+
+
+
+#Crawler specific settings
+User-agent: Adsbot-Google
+
+
+User-agent: Mediapartners-Google

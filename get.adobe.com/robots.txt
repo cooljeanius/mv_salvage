@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /reader/download/
+Disallow: /*/reader/download/
+Disallow: /reader/completion/
+Disallow: /*/reader/completion/
+Disallow: /flashplayer/download/
+Disallow: /*/flashplayer/download/
+Disallow: /flashplayer/completion/
+Disallow: /*/flashplayer/completion/

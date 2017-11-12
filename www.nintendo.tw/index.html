@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>任天堂官方網站(台灣)</title>
+
+  <meta name="description" content="台灣任天堂網站">
+  <meta name="keywords" content="任天堂,Nintendo,Nintendo Switch,Switch,Wii,Nintendo DS,NDS,Nintendo DS Lite,NDSL,Nintendo 3DS,3DS,N3DS.Nintendo 3DS XL,3DSXL,N3DSXL,瑪利歐,瑪力歐,瑪莉歐,馬利歐,馬力歐,Mario">
+  <meta property="fb:admins" content="516231625126592">
+  <meta property="fb:admins" content="100003191043478">
+  <meta property="fb:app_id" content="139892146154023">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="verify-v1" content="1omtp9HnMWd+qgwKZoi2nKOT/BUkEbz6HqaHnenyZNQ=">
+
+  <link rel="short icon" href="top/img/favicon.ico">
+  <link rel="icon" href="top/img/favicon.ico" type="image/ico">
+
+  <link href="css/style_switch_2.css" rel="stylesheet" type="text/css" />
+  <link rel="short icon" href="img/nintendo.png" />
+  <link rel="icon" href="img/nintendo.png" type="image/ico" />
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.js"></script>
+  <script type="text/javascript" src="js/jquery.belatedPNG.js"></script>
+  <script type="text/javascript" src="js/jquery.backgroundPosition.js"></script>
+  <script type="text/javascript" src="js/n.js"></script>
+  <script>
+    var currentpage = 1;
+    var maxpage = 3;
+    var btn_prev_toggle = false;
+    var btn_next_toggle = true;
+    var pageInterval;
+
+    $(document).ready(function (e) {
+
+      init();
+      $(".page_nums:eq(0)").stop().animate({
+        'background-position': '0px 0px'
+      }, 500, "easeOutCubic");
+      init_nv_line();
+
+    });
+
+    function init() {
+      $(".btn_next").click(function (e) {
+
+        if ((currentpage != maxpage) && btn_next_toggle) {
+          btn_next_toggle = false;
+          btn_prev_toggle = false;
+
+          control_btn_next();
+
+          currentpage++;
+
+          $(".page_nums").animate({
+            'background-position': '0px -19px'
+          }, 500, "easeOutCubic");
+          $(".page_nums").removeClass("current_page_nums").eq(currentpage - 1).addClass("current_page_nums").stop().animate({
+            'background-position': '0px 0px'
+
+          }, 500, "easeOutCubic");
+          move_nv_line();
+          $("#all_panes").animate({
+            left: $("#all_panes").position().left - 1000
+
+          }, 1000, "easeOutCubic", function () {
+            btn_prev_toggle = true;
+            btn_next_toggle = true;
+          });
+        }
+      });
+
+      $(".btn_prev").click(function (e) {
+
+        if ($("#all_panes").position().left != 0 && btn_prev_toggle) {
+          btn_next_toggle = false;
+          btn_prev_toggle = false;
+
+          control_btn_prev();
+
+          currentpage--;
+          $(".page_nums").animate({
+            'background-position': '0px -19px'
+
+          }, 500, "easeOutCubic");
+          $(".page_nums").removeClass("current_page_nums").eq(currentpage - 1).addClass("current_page_nums").stop().animate({
+            'background-position': '0px 0px'
+
+          }, 500, "easeOutCubic");
+          move_nv_line();
+          $("#all_panes").animate({
+            left: $("#all_panes").position().left + 1000
+
+          }, 1000, "easeOutCubic", function () {
+            btn_prev_toggle = true;
+            btn_next_toggle = true;
+          });
+        }
+
+      });
+
+      $(".btn_next").bind("mouseenter", function () {
+        $(this).children('.bghover').stop().fadeIn("swing");
+        $(this).children('.arrow_next').stop().animate({ 'background-position': '0px 48px' }, "fast");
+      })
+        .bind("mouseleave", function () {
+          $(this).children('.bghover').fadeOut("fast");
+          $(this).children('.arrow_next').css('background-position', '-28px 48px');
+        });
+
+      $(".btn_prev").bind("mouseenter", function () {
+        $(this).children('.bghover').stop().fadeIn("swing");
+        $(this).children('.arrow_prev').stop().animate({ 'background-position': '-27px 48px' }, "fast");
+      })
+        .bind("mouseleave", function () {
+          $(this).children('.bghover').fadeOut("fast");
+          $(this).children('.arrow_prev').css('background-position', '0px 48px');
+        });
+    }
+
+    function goto_Page(page_num) {
+      var pane_position = 1000 - (page_num * 1000);
+
+      btn_next_toggle = false;
+      btn_prev_toggle = false;
+
+      if (page_num == 1) {
+        $(".bghover").hide();
+        $(".arrow_next_off").hide();
+        $(".btn_next").show();
+
+        $(".arrow_prev_off").show();
+        $(".btn_prev").hide();
+
+      }
+      else if (page_num == maxpage) {
+        $(".bghover").hide();
+        $(".arrow_prev_off").hide();
+        $(".btn_prev").show();
+
+        //if(currentpage==(maxpage-1))
+        //{
+        $(".arrow_next_off").show();
+        $(".btn_next").hide();
+        //}
+      }
+      else {
+        $(".arrow_prev_off").hide();
+        $(".btn_prev").show();
+        $(".arrow_next_off").hide();
+        $(".btn_next").show();
+      }
+
+      currentpage = page_num;
+
+      $(".page_nums").removeClass("current_page_nums").eq(page_num - 1).addClass("current_page_nums");
+      $(".page_nums").not(".current_page_nums").animate({
+        'background-position': '0px -19px'
+
+      }, 500, "easeOutCubic");
+
+      $("#all_panes").animate({
+        left: pane_position
+
+      }, 1000, "easeOutCubic", function () {
+        btn_prev_toggle = true;
+        btn_next_toggle = true;
+      });
+    }
+
+    function control_btn_next() {
+      $(".bghover").hide();
+      $(".arrow_prev_off").hide();
+      $(".btn_prev").show();
+
+      if (currentpage == (maxpage - 1)) {
+        $(".arrow_next_off").show();
+        $(".btn_next").hide();
+      }
+    }
+
+    function control_btn_prev() {
+      $(".bghover").hide();
+      $(".arrow_next_off").hide();
+      $(".btn_next").show();
+      if (currentpage == 2) {
+        $(".arrow_prev_off").show();
+        $(".btn_prev").hide();
+      }
+    }
+    function init_nv_line() {
+      $(".page_nums:not('current_page_num')").mouseenter(function () {
+        $("#nv_line").stop().animate({
+          left: $(this).position().left - 9
+
+        }, 1000, "easeOutCubic");
+
+        $(this).stop().animate({
+          'background-position': '0px 0px'
+
+        }, 500, "easeOutCubic");
+
+      })
+        .mouseout(function () {
+
+          $("#nv_line").stop().animate({
+            left: $("#page_num_" + currentpage).position().left - 9
+
+          }, 1000, "easeOutCubic");
+
+
+          if (!$(this).hasClass("current_page_nums")) {
+            $(this).stop().animate({
+              'background-position': '0px -19px'
+
+            }, 500, "easeOutCubic");
+          }
+
+        });
+    }
+
+    function move_nv_line() {
+      var nv_line_position = $("#page_num_" + currentpage).position().left - 9;
+
+      $("#nv_line").animate({
+        left: nv_line_position
+      }, 1000, "easeOutCubic");
+    }
+
+  </script>
+
+  <style>
+    #all_panes .panes {
+      float: left;
+    }
+
+    .bghover {
+      display: none;
+      position: absolute
+    }
+
+    .arrow_next {
+      width: 26px;
+      height: 112px;
+      position: absolute;
+      background: url(img/index/arrow_next.gif) -28px 48px no-repeat;
+    }
+
+    .arrow_prev {
+      width: 26px;
+      height: 112px;
+      position: absolute;
+      background: url(img/index/arrow_prev.gif) left 48px no-repeat;
+    }
+    /*#page_num_1{display:block; position:absolute; left:380px; top:3px; width:88px; height:19px;}
+#page_num_2{display:block; position:absolute; left:472px; top:3px; width:88px; height:19px;}
+#page_num_3{display:block; position:absolute; left:564px; top:3px; width:88px; height:19px;}*/
+
+    #page_num_1 {
+      display: block;
+      position: absolute;
+      left: 344px;
+      top: 3px;
+      width: 88px;
+      height: 19px;
+    }
+
+    #page_num_2 {
+      display: block;
+      position: absolute;
+      left: 436px;
+      top: 3px;
+      width: 88px;
+      height: 19px;
+    }
+
+    #page_num_3 {
+      display: block;
+      position: absolute;
+      left: 528px;
+      top: 3px;
+      width: 88px;
+      height: 19px;
+    }
+
+    .page_nums {
+      background: url(img/index/page_num_bg.png) left -19px no-repeat #464646;
+    }
+
+    .current_page_nums {
+      background: url(img/index/page_num_bg.png) left 0px no-repeat #464646;
+    }
+  </style>
+</head>
+
+<body id="index" _oncontextmenu="return false">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+    <tr>
+      <td>&nbsp;</td>
+      <td width="960">
+        <div id="mainArea">
+
+          <div id="mainNavi">
+            <img src="img/common/logoNintendo.png" width="134" height="34" border="0" alt="Nintendo" class="logo">
+
+            <div id="menuWrapper">
+              <a class="menuPointLevel_1" id="btnMain_9" href="switch/">
+                <div id="mainNaviBtn_9"></div>
+              </a>
+
+              <a class="menuPointLevel_1" id="btnMain_2" href="3ds/">
+                <div id="mainNaviBtn_2"></div>
+              </a>
+              <a class="menuPointLevel_1" id="btnMain_1" href="wii/wii_index.htm">
+                <div id="mainNaviBtn_1"></div>
+              </a>
+
+              <a class="menuPointLevel_1" id="btnMain_3" href="amiibo/index.htm">
+                <div id="mainNaviBtn_3"></div>
+              </a>
+
+              <a class="menuPointLevel_2" id="btnMain_4"
+                href="support/event.htm">
+                <div id="mainNaviBtn_4"></div>
+              </a>
+              <a class="menuPointLevel_2" id="btnMain_5" href="support/shoplist.html">
+                <div id="mainNaviBtn_5"></div>
+              </a>
+              <a class="menuPointLevel_2" id="btnMain_6" href="corporate.htm">
+                <div id="mainNaviBtn_6"></div>
+              </a>
+              <a class="menuPointLevel_2" id="btnMain_7" href="support/index.htm">
+                <div id="mainNaviBtn_7"></div>
+              </a>
+              <a class="menuPointLevel_2" id="btnMain_8" href="support/distributor.htm">
+                <div id="mainNaviBtn_8"></div>
+              </a>
+
+            </div>
+
+            <div class="fb">
+              <a href="https://www.facebook.com/Nintendo.taiwan"><img src="img/common/facebook_logo.png" width="40" height="40" border="0" alt="Facebook"></a>
+            </div>
+
+          </div>
+          
+         <div id="linkToLineup">
+       <iframe width="722" height="451" src="https://www.youtube.com/embed/G64Tk0xVbgs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+       </div>
+
+          <!--<a id="linkToLineup" href="./hardware/switch/"></a>-->
+
+        </div>
+
+        <div id="switch">
+    	<a href="./hardware/switch/"><img src="img/index/tw_switch_top_banner.png">
+        </a></div>
+        
+        <div id="topics">
+          <div style="margin-left:40px; margin-bottom:25px;"><img src="img/index/bg_TOPIC.jpg" width="700" height="37" /></div>
+
+          <div style="position:relative; width:960px; height:240px; overflow:hidden;">
+            <div id="all_panes" style="width:5000px; position:absolute;">
+
+              <div class="panes" style="width:970px; margin-right:30px;">  
+                       <a class="topicsPoint" href="./hardware/switch/store/"><img src="img/index/tw_switch_preorder.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div></a>
+                       
+                       <a class="topicsPoint" href="./switch/super_mario_odyssey/"><img src="img/index/super_mario_odyssey_console.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div></a>
+                       <a class="topicsPoint" href="./software/switch/"><img src="img/index/xenoblade2_preorder_tc.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div></a>
+                       
+                       <a class="topicsPoint" href="./pokemon_usum/store/"><img src="img/index/pokemon_usum_preorder.png" width="221" height="221" border="0" /><div class="ds3_mark"></div><div class="over_white topicsPointOver"></div></a>
+                </div>
+
+
+              <div class="panes" style="width:970px; margin-right:30px;">
+                <a class="topicsPoint" href="./event/pokemon_event_201709_silvally.htm"><img src="img/index/silvally.png" width="221" height="221" border="0" /><div class="ds3_mark"></div><div class="over_white topicsPointOver"></div></a>
+                
+                 <a class="topicsPoint" href="./3ds/jump.htm"><img src="img/index/eshop_pokemon_gold_silver.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                 
+                 <a class="topicsPoint" href="./3ds_j/"><img src="img/index/fire_emblem_echoes.png" width="221" height="221" border="0"><div class="over_white topicsPointOver" style="opacity: 1; display: none;"></div><div class="ds3_mark"></div></a>
+                
+                <a class="topicsPoint" href="http://www.nintendo.com.hk/3ds_t/about_prepaidcard.htm"><img src="top/img/topics_bnr/eshop_topics.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                
+              
+              
+              
+
+                
+                </div>
+             
+
+              <div class="panes" style="width:970px; margin-right:30px;">
+
+                <a class="topicsPoint" href="./3ds/jump.htm"><img src="img/index/eshop_metroid_sr_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                
+                <a class="topicsPoint" href="./3ds/jump.htm"><img src="img/index/eshop_kirby_blowout_blast.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                <a class="topicsPoint" href="http://www.pokemon-sunmoon-cn.com/tc/"><img src="img/index/pokemon_sun_moon_chinese_web.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                
+                <a class="topicsPoint" href="./pokemon_sun_moon/"><img src="img/index/pokemon_sun_moon_news_2.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>  
+                 
+                  
+              </div>
+
+              <!-- 
+              <a class="topicsPoint" href="./3ds/jump.htm"><img src="img/index/eshop_ever_oasis_trial_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                   
+                   <a class="topicsPoint" href="http://mariosportssuperstars.nintendo.com/"><img src="img/index/eshop_mario_sports_superstars_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                   
+                   <a class="topicsPoint" href="http://www.capcom.co.jp/monsterhunter/XX/"><img src="img/index/eshop_mhxx_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+              
+              <div class="panes" style="width:970px; margin-right:30px;">
+                  <a class="topicsPoint" href="https://kirby.nintendo.com/planet-robobot/"><img src="img/index/eshop_kirby_pr_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                  <a class="topicsPoint" href="http://cosen-net.com/mgh/"><img src="img/index/eshop_mh_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                  <a class="topicsPoint" href="http://cosen-net.com/fyp/"><img src="img/index/eshop_fp_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                  <a class="topicsPoint" href="http://cosen-net.com/drn/"><img src="img/index/eshop_rv7_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+              </div>
+
+              <div class="panes" style="width:970px; margin-right:30px;">
+                <a class="topicsPoint" href="http://cosen-net.com/tvm/"><img src="img/index/eshop_tvm_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                <a class="topicsPoint" href="http://www.nintendo.com.hk/3ds_t/VCAMAP/"><img src="img/index/eshop_vcamap_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>  
+              </div> -->
+              
+            </div>
+          </div>
+
+          <div style="position:absolute; left:-25px; top:62px;"><img src="img/index/blur_prev.png" width="36" height="221" /></div>
+
+          <div style="position:absolute; right:-25px; top:62px;"><img src="img/index/blur_next.png" width="36" height="221" /></div>
+
+          <a class="btn_prev" style="display: none; position: absolute; width: 26px; height: 112px; background: url(img/index/bgon.png) left top no-repeat; left: -30px; top: 122px;" href="javascript:void(0)">
+            <div class="bghover"><img src="img/index/bghover.png" width="26" height="112" /></div>
+            <div class="arrow_prev"></div>
+          </a>
+
+          <a class="btn_next" style="display: block; position: absolute; width: 26px; height: 112px; background: url(img/index/bgon.png) left top no-repeat; right: -35px; top: 122px;" href="javascript:void(0)">
+            <div class="bghover"><img src="img/index/bghover.png" width="26" height="112" /></div>
+            <div class="arrow_next"></div>
+          </a>
+
+          <div class="arrow_prev_off" style="display: block; position: absolute; width: 26px; height: 112px; background: url(img/index/arrow_prev_off.png) left top no-repeat; left: -30px; top: 122px;"></div>
+
+          <div class="arrow_next_off" style="display: none; position: absolute; width: 26px; height: 112px; background: url(img/index/arrow_next_off.png) left top no-repeat; right: -35px; top: 122px;"></div>
+
+          <div style="position:relative; width:940px; left:10px; border-bottom:1px solid #ccc; height:4px;">
+            <div id="nv_line" style="position:absolute; widows:86px; top:1px; left:335px;"><img src="img/index/nv_line.jpg" width="86" height="4" border="0" /></div>
+          </div>
+
+          <div style="position:relative">
+            <a id="page_num_1" class="page_nums current_page_nums" href="javascript:goto_Page('1')"><img src="img/index/navi_no1_slide.png" width="88" height="19" border="0" /></a>
+            <a id="page_num_2" class="page_nums" href="javascript:goto_Page('2')"><img src="img/index/navi_no2_slide.png" width="88" height="19" border="0" /></a>
+            <a id="page_num_3" class="page_nums" href="javascript:goto_Page('3')"><img src="img/index/navi_no3_slide.png" width="88" height="19" border="0" /></a>
+          </div>
+
+
+          </div>
+
+
+        <div id="newsBox">
+          <table width="960" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; background-color:#fff">
+            <tr>
+              <td colspan="2"><img src="img/common/infoBgTop.png" width="960" height="6" /></td>
+            </tr>
+            <tr>
+              <td colspan="2"><img src="img/common/spacer.gif" width="1" height="10" /></td>
+            </tr>
+            <tr>
+              <td width="186" style="border-right:1px solid #bebebe">
+                <div style="margin-left:30px; margin-top:10px;"><img src="img/index/title_news.png" width="100" height="23" /></div>
+              </td>
+              <td width="774">
+                <!--news start-->
+
+                <table>
+                    <tr class="newsPointWrapper">
+                    <td width="10"></td>
+                    <td height="25" width="40" class="newsDate3DS">11.02</td>
+                    <td height="25"><a href="./pressrelease/3ds_20171102_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊</a><img src="img/index/index_new_3DS.gif" width="29" height="11" />
+                    </td>
+                  </tr>
+                  
+                  <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.12</td>
+                    <td height="25"><a href="./pressrelease/3ds_20171012_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.07</td>
+                    <td height="25"><a href="./3ds/jump.htm">繁體中文版Nintendo 3DS專用下載軟體『Mario & Luigi: Superstar Saga + Bowser's Minions (英文版)』公開下載中！</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.06</td>
+                    <td height="25"><a href="./pressrelease/3ds_20171006_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.27</td>
+                    <td height="25"><a href="./pressrelease/switch_zelda_bow_20170927.html">『薩爾達傳說』系列最新資訊</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+
+                  
+                  <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.22</td>
+                    <td height="25"><a href="./pokemon_usum/store/">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』現正接受預訂</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.22</td>
+                    <td height="25"><a href="./event/pokemon_event_201709_silvally.htm">異色「散發光芒的銀伴戰獸」贈送活動</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.22</td>
+                    <td height="25"><a href="./3ds/jump.htm">繁體中文版Nintendo 3DS專用下載軟體『ポケットモンスター 金・銀 (日文版)』公開下載中！</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                    <td width="10"></td>
+                    <td height="25" width="40" class="newsDate3DS">09.20</td>
+                    <td height="25"><a href="./pressrelease/switch_20170920.html">Nintendo Switch台灣發售資訊 </a>
+                      <img src="img/index/index_new_3DS.gif" width="29" height="11" />
+                    </td>
+                  </tr>
+                  
+                  
+                  
+                  
+
+                  <!--old news
+                  
+                  <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.16</td>
+                    <td height="25"><a href="./3ds/jump.htm">繁體中文版Nintendo 3DS專用下載軟體『Metroid™: Samus Returns (英文版)』公開下載中！</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                    <td width="10"></td>
+                    <td height="25" width="40" class="newsDate3DS">09.14</td>
+                    <td height="25"><a href="./pressrelease/3ds_20170914_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊</a>
+                    </td>
+                  </tr>
+
+                 
+
+                  
+                   <tr class="newsPointWrapper">
+                    <td width="10"></td>
+                    <td height="25" width="40" class="newsDate3DS">08.21</td>
+                    <td height="25"><a href="./pressrelease/3ds_20170821_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊(二)</a>
+                    </td>
+                  </tr>
+
+                  <tr class="newsPointWrapper">
+                    <td width="10"></td>
+                    <td height="25" width="40" class="newsDate3DS">08.21</td>
+                    <td height="25"><a href="./pressrelease/3ds_20170821_1_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊(一)</a>
+                    </td>
+                  </tr>
+                  
+                  <tr class="newsPointWrapper">
+                    <td width="10"></td>
+                    <td height="25" width="40" class="newsDate3DS">07.13</td>
+                    <td height="25"><a href="./3ds/jump.htm">繁體中文版Nintendo 3DS專用下載軟體『Ever Oasis™ (英文版)』正式版及體驗版公開下載中！</a>
+                    </td>
+                  </tr>
+
+                  <tr class="newsPointWrapper">
+                    <td width="10"></td>
+                    <td height="25" width="40" class="newsDate3DS">07.07</td>
+                    <td height="25"><a href="./3ds/jump.htm">繁體中文版Nintendo 3DS專用下載軟體『Kirby's Blowout Blast™ (英文版)』現已公開下載中！</a>
+                    </td>
+                  </tr>
+
+                  <tr class="newsPointWrapper">
+                    <td width="10"></td>
+                    <td height="25" width="40" class="newsDate3DS">06.13</td>
+                    <td height="25"><a href="./pressrelease/3ds_vc_20170613_gold_silver_release.htm">『精靈寶可夢(Pokémon)』系列的第2部作品『ポケットモンスター 金・銀』最新資訊</a>
+                    </td>
+                  </tr>
+                  -->
+
+                  <!-- <tr class="newsPointWrapper">
+                    <td width="10"></td>
+                    <td height="25" width="40" class="newsDate3DS"></td>
+                    <td height="25"><a href=""></a></td>
+                  </tr> -->
+                </table>
+
+
+                <!--news end-->
+                </td>
+            </tr>
+            <tr>
+              <td colspan="2"><img src="img/common/spacer.gif" width="1" height="10" /></td>
+            </tr>
+            <tr>
+              <td colspan="2"><img src="img/common/infoBgBtm.png" width="960" height="6" /></td>
+            </tr>
+          </table>
+
+        </div>
+
+        <div id="footer_1_white">
+
+          <a class="footer_arrow_links footer_arrow_links_left" href="about_hp.htm">利用條款</a>
+
+          <a class="footer_arrow_links footer_arrow_links_right" href="http://www.nintendo.com/countryselector" target="_blank">Global</a>
+        </div>
+
+        <div id="footer_2">
+          <iframe src="copyright_index.htm" width="100%" height="30" frameborder="0" scrolling="no"></iframe>
+        </div>
+
+
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-5796867-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+
+</html>

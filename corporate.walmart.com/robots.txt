@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /cms-walmartcorp/
+Disallow: /password-reset.jsp
+Disallow: /cms-resources.jsp
+Disallow: /ajax
+
+# Sitemaps and Autodiscovers
+Sitemap: http://corporate.walmart.com/sitemap.xml

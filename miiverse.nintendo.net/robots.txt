@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /auth/
+Disallow: /users/*/check_can_post.json
+Disallow: /users/*/album
+Disallow: /guide/
+Disallow: /about/
+Disallow: /news/
+Disallow: /my/
+Disallow: /settings/
+Disallow: /activity
+Allow: /
+
+User-agent: Twitterbot
+Disallow:

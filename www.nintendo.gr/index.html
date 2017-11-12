@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href="https://www.cdmedia.gr">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CD Media - Αρχική</title>
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="CD Media (Societas Europaea) S.E. - Kifisias 32, 15125 Marousi, Athina, tel. +30 210 6854220, +30 210 2822580, fax. +30 2106854273, +30 2102820070, e-mail. info@cdmedia.gr" />
+<meta property="og:image" content="https://www.cdmedia.gr/assets/img/fb_image.jpg">
+<meta property="og:title" content="CD Media - Αρχική">
+<meta property="og:url" content="https://www.cdmedia.gr/">
+<meta property="og:site_name" content="CD Media">
+<meta property="og:type" content="website">
+<meta property="og:description" content="CD Media (Societas Europaea) S.E. - Kifisias 32, 15125 Marousi, Athina, tel. +30 210 6854220, +30 210 2822580, fax. +30 2106854273, +30 2102820070, e-mail. info@cdmedia.gr">
+<meta property="fb:app_id" content="312566099119932" />
+<link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans&subset=latin,greek,greek-ext,latin-ext' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Orbitron:400,500,700,900' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type='text/css' href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="assets/css/mobile-styles.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type='text/javascript' src='assets/js/jquery.mCustomScrollbar.concat.min.js'></script>
+<script type='text/javascript' src='assets/js/myscripts.js'></script>
+</head>
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '312566099119932',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div id="main">
+    <div id="social_links" style="position:absolute;top:10px;right:20px;color:#fff;z-index:9999;font-size:40px;">
+<a href="https://www.facebook.com/CDMediaGR" target="_blank" style="margin-right:10px;"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+<a href="https://www.youtube.com/channel/UCI0FiO7fpKnAslOCtTHP2lQ" target="_blank" style="margin-right:10px;"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/NintendoHellas" target="_blank" ><span style="font-size:16px;">Nintendo Hellas: </span><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+</div>
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+var videos = "BH_dnABrhZM,BH_dnABrhZM,";
+var video_arr=videos.split(",");
+video_arr.splice(-1,1);
+var clear_video_1 = video_arr[0];
+video_arr.splice(0,1);
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: $("#player").height()*1,
+          width: $("#player").width()*1,
+          videoId: clear_video_1,
+          playerVars:{rel: 0,loop:1,controls:0,showinfo:0,modestbranding:1,playlist:video_arr.join(","),origin:"cdmedia.gr",enablejsapi:1},
+          events: {
+            'onReady': onPlayerReady
+           // 'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+          //event.target.setPlaybackQuality("highres");
+          event.target.mute();
+        event.target.playVideo();
+
+  // intv = setInterval(updatePlayerInfo, 250);
+
+
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+          event.target.setPlaybackQuality("highres");
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+        //  setTimeout(stopVideo, 6000);
+        
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+      
+   function updatePlayerInfo() {
+    duration = player.getDuration();
+    current = player.getCurrentTime();
+
+    if (duration > 0 && (duration - 0.250) <= current && current <= (duration + 0.250)) {
+        player.pauseVideo();
+        clearInterval(intv);
+    }
+
+}
+    
+</script>
+
+<div id="menu_but" style="z-index:5000;">  <i class="fa fa-bars" aria-hidden="true" style="display:inline-block;z-index:20;"></i><!--<div  id="lang" style="color:#fff;font-size:16px;"><a href="http://www.cdmedia.gr/?ln=en">EN</a> | <a href="http://www.cdmedia.gr/?ln=gr">GR</a></div>--></div>
+
+ <img style="display:none;" src="assets/img/images/playroom.jpg" />
+ <img class="home_back" src="assets/img/images/back-map.jpg" alt=""/>
+ <div id="player" style="width:110%;height:110%;display:inline-block;position:absolute;left:-5%;top:-5%;"></div>
+ <div id="company_logo"><a href=""> <img src="assets/img/images/logo.png" /></a></div>
+ <a href="https://www.cdmedia.gr/games/2017/10-2017/assassins-creed-origins-standard-edition.html" target="_self" style="width:100%;height:100%;display:inline-block;position:absolute;left:0;top:0;"></a>
+ <!--<i id="sound_ctrl" class="fa fa-volume-off" aria-hidden="true" style="position:absolute; top:2%;left:97%;cursor:pointer;color:#fff; font-size:40px;"></i>-->
+
+<!--<img class="game_back" src="assets/front-slides/sun_moon_back.jpg" />-->
+<div class="scene">
+  <div class="wrap">
+      <div class="wall wall-right"></div>
+      <div class="wall wall-left"></div>   
+      <div class="wall wall-top"></div>
+      <div class="wall wall-bottom"></div> 
+      <div class="wall wall-back"></div>    
+  </div>
+  <div class="wrap">
+      <div class="wall wall-right"></div>
+      <div class="wall wall-left"></div>   
+      <div class="wall wall-top"></div>
+      <div class="wall wall-bottom"></div>   
+      <div class="wall wall-back"></div>    
+  </div>
+</div>
+ <div id="target">
+     <div id="t_hor"></div>
+     <div id="t_ver"></div>
+ <div id="out_sq">  
+     <div id="t_sq"></div>
+     
+     <div id="t_c1" class="t_c"></div>
+     <div id="t_c2" class="t_c"></div>
+     <div id="t_c3" class="t_c"></div>
+     <div id="t_c4" class="t_c"></div>
+ </div>    
+ </div>
+ <!--<div id="fake_line"></div>-->
+ <div id="promo_link"  style="display:none;color:#fff;padding:20px;box-sizing:border-box;width:200px;height:200px;position:absolute;right:0;top:50%;border-top:1px solid #fff;border-left:1px solid #fff; border-bottom:1px solid #fff;  border-radius:5px 0 0 5px;background:rgba(0,0,0,0.6);transform:translate(0,-50%);-webkit-transform:translate(0,-50%);">
+    <a href="pc-digital-download.html"><strong style="font-size:25px;">Μάθε για τα</strong><br/>
+     <img src="assets/img/pcdd.png" style="vertical-align: middle;    margin: 5px 0;" /><br/>
+     <strong>ΑΠΟΚΤΗΣΕ ΤΑ ΤΩΡΑ!</strong></a>
+ </div>
+
+               <div id="side_menu">
+
+<div class="side_menu_item">
+<!--<div class="menu_num">01</div>-->
+<div class="menu_cont">
+    <div class="menu_arrow"><img src="assets/img/images/arrow_right.png" /></div>
+<div class="menu_img" ><img class="menu_imgimg" style="height:100%;" src="assets/img/images/game1.jpg"/><a href="playroom.html" class="menu_cta"><img src="assets/img/images/checkallgames_gr.png" /></a><div class="sponsored" style="display:none;"><div class="sp_game"><img class="sp_img" src="assets/img/images/games/FC5/FC5_400x225_DLX.jpg" /><a href="games/2017/11/far-cry-5-deluxe-edition.html" class="sp_overlay"><div class="sp_see_more"><i style="font-size:3vw;display:inline-block;" class="fa fa-info-circle" aria-hidden="true"></i><div style="width:100%;height:1px;"></div><span style="font-size:0.8vw;font-weight:600;">ΠΕΡΙΣΣΟΤΕΡΑ</span></div></a></div>
+<div class="sp_game"><img class="sp_img" src="assets/img/images/games/FC5/FC5_400x225.jpg" /><a href="games/2017/11/far-cry-5.html" class="sp_overlay"><div class="sp_see_more"><i style="font-size:3vw;display:inline-block;" class="fa fa-info-circle" aria-hidden="true"></i><div style="width:100%;height:1px;"></div><span style="font-size:0.8vw;font-weight:600;">ΠΕΡΙΣΣΟΤΕΡΑ</span></div></a></div>
+<div class="sp_game"><img class="sp_img" src="assets/img/images/games/ACOrigins/ACO_400x225.jpg" /><a href="games/2017/10-2017/assassins-creed-origins-standard-edition.html" class="sp_overlay"><div class="sp_see_more"><i style="font-size:3vw;display:inline-block;" class="fa fa-info-circle" aria-hidden="true"></i><div style="width:100%;height:1px;"></div><span style="font-size:0.8vw;font-weight:600;">ΠΕΡΙΣΣΟΤΕΡΑ</span></div></a></div>
+<div class="sp_game"><img class="sp_img" src="assets/img/images/games/SMOdyssey/SMO_400x225.jpg" /><a href="games/2017/10-2017/super-mario-odyssey.html" class="sp_overlay"><div class="sp_see_more"><i style="font-size:3vw;display:inline-block;" class="fa fa-info-circle" aria-hidden="true"></i><div style="width:100%;height:1px;"></div><span style="font-size:0.8vw;font-weight:600;">ΠΕΡΙΣΣΟΤΕΡΑ</span></div></a></div></div></div>
+
+<div class="menu_title">ΠΑΙΧΝΙΔΙΑ</div>
+
+</div>
+
+</div>
+
+<div class="side_menu_item">
+<!--<div class="menu_num">02</div>-->
+<div class="menu_cont">
+    <div class="menu_arrow"><img src="assets/img/images/arrow_right.png" /></div>
+<div class="menu_img" ><img class="menu_imgimg" style="height:100%;" src="assets/img/images/nintendo1.jpg" />
+
+
+
+
+</div>
+
+<div class="menu_title">NINTENDO ΕΛΛΑΣ</div>
+</div>
+</div>
+
+<div class="side_menu_item">
+<!--<div class="menu_num">03</div>-->
+<div class="menu_cont">
+    <div class="menu_arrow"><img src="assets/img/images/arrow_right.png" /></div>
+<div class="menu_img" ><img class="menu_imgimg" style="height:100%;" src="assets/img/PCCD_cat_photo/PCDD_400x225.jpg" /></div>
+
+<div class="menu_title">DIGITAL DOWNLOAD</div>
+</div>
+</div>
+
+<div class="side_menu_item">
+<!--<div class="menu_num">04</div>-->
+<div class="menu_cont">
+    <div class="menu_arrow">        <img src="assets/img/images/arrow_right.png" /></div>
+<div class="menu_img" >
+    <img class="menu_imgimg" style="height:100%;"  src="assets/img/images/corporate1.jpg" />
+    
+<a href="company.html" class="uc" style="color:#000;font-size:2vw;position:absolute;top:2%;left:1%;font-weight:normal;display:none;width:98%;height:96%;overflow:hidden;"><img src="assets/img/company_hover.jpg" style="width:100%;position:absolute;top:0;left:0;"/>
+<div style="position:absolute;top:0;height:100%;left:0;width:33.3%;background:rgba(0,94,154,0.68);">
+    <span style="color:#fff;position:absolute;width:100%;position:absolute; top:20%;font-size:1.8vw;left:0;">Οικονομικά Στοιχεία</span>
+</div>
+<div style="position:absolute;top:0;height:100%;left:33.3%;width:33.3%;background:rgba(8,187,63,0.68);">
+<span style="color:#fff;position:absolute;width:100%;position:absolute; top:70%;font-size:1.8vw;left:0;">Ποιοι είμαστε</span>
+</div>
+<div style="position:absolute;top:0;height:100%;left:66.6%;width:33.4%;background:rgba(249,146,0,0.68);">
+    <span style="color:#fff;position:absolute;width:100%;position:absolute; top:40%;font-size:1.8vw;left:0;">Στοιχεία Επικοινωνίας</span>
+</div>
+</a>
+
+
+</div>
+
+<div class="menu_title">Η ΕΤΑΙΡΙΑ</div>
+</div>
+</div>           
+                
+                </div>
+<div id="top_menu">
+    <div id="top_menu_wrap">
+<!--<div class="top_menu_cont" id="lang" style="position:absolute;top:10px;right:10px;display:inline-block;z-index:5000;"><a href="https://www.cdmedia.gr/?ln=en">EN</a> | <a href="https://www.cdmedia.gr/?ln=gr">GR</a></div>-->
+<!--<a href="" class="top_menu_cont">
+SOUND
+</a>
+<a href="" class="top_menu_cont">
+GET SOCIAL
+</a>-->
+
+</div>
+
+</div>
+
+<div id="bottom_menu">
+    
+    <div id="bottom_menu_wrap"><div id="bot_l"><a href="https://www.cdmedia.gr/nintendo-support/">ΥΠΟΣΤΗΡΙΞΗ</a></div><div id="bot_c"></div><div id="bot_r"><a href="contact.html">ΕΠΙΚΟΙΝΩΝΙΑ</a></div></div>
+    
+    <div id="bottom_menu_top">
+    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+    
+    <div id="bottom_menu_button">
+        <img id="logo" src="assets/img/images/logo.png" />
+        <div id="bottom_menu_title">ΜΕΝΟΥ</div>
+    </div>
+    </div>
+    
+</div>
+
+<div id="copyright">Designed &amp; Developed by <a href="https://geesmo.gr" target="_blank">GeeSmo - Internet Transformation</a></div>
+<div id="side_menu_bar">
+                 <i id="side_menu_bar_close" class="fa fa-times" aria-hidden="true"></i>
+
+                 <div id="side_menu_bar_wrap" style="height:85%;">
+                    <a class="side_menu_bar_item" href="">ΑΡΧΙΚΗ</a>
+                    <a class="side_menu_bar_item" href="playroom.html">ΠΑΙΧΝΙΔΙΑ</a>
+                    <a class="side_menu_bar_item" href="consoles-accessories/">ΚΟΝΣΟΛΕΣ - ΑΞΕΣΟΥΑΡ</a>
+                    <a class="side_menu_bar_item" href="https://www.cdmedia.gr/nintendo-support/">NINTENDO ΕΛΛΑΣ</a>
+                    
+                    <a class="side_menu_bar_item" href="pc-digital-download.html">DIGITAL DOWNLOADS</a>
+                     <a class="side_menu_bar_item" href="company.html">Η ΕΤΑΙΡΙΑ</a>
+                     
+                     <div style="position:relative;width:100%;height:20px;float:left;border-top:8px solid #fff;border-bottom:2px solid #fff;margin-bottom:5%;"></div>
+                     
+                     <a class="side_menu_bar_item" href="https://www.cdmedia.gr/nintendo-support/" style="font-size:20px;">ΥΠΟΣΤΗΡΙΞΗ</a>
+                     <a class="side_menu_bar_item" href="" style="font-size:20px;">ΕΠΙΚΟΙΝΩΝΙΑ</a>
+                 </div>
+                 
+             </div>
+
+<script>
+$(function(){
+$("#side_menu_bar_wrap").mCustomScrollbar({//Custom ScrollBar
+scrollButtons:{enable:true},
+autoHideScrollbar:false,
+alwaysShowScrollbar: 0,
+theme:"light",
+advanced:{updateOnContentResize:true,updateOnSelectorChange: true}
+});
+$("#side_menu_bar").css("height", $(window).height());
+});
+
+$(window).resize(function(){
+$("#side_menu_bar").css("height", $(window).height());
+});
+</script>
+<script>
+var ww,wh;
+ var bth;
+ 
+ var waitForFinalEvent = (function () {
+  var timers = {};
+  return function (callback, ms, uniqueId) {
+    if (!uniqueId) {
+      uniqueId = "Don't call this twice without a uniqueId";
+    }
+    if (timers[uniqueId]) {
+      clearTimeout (timers[uniqueId]);
+    }
+    timers[uniqueId] = setTimeout(callback, ms);
+  };
+})();
+ 
+ 
+    function ResizePanels(){
+       
+        ww=$(window).width();
+        wh=$(window).height();
+        
+        $("body").css("height",$(window).height());
+       $("#side_menu_bar").css("width",$(window).width());
+$("#side_menu_bar").css("left",-$("#side_menu_bar").width());
+        var ratio=$("#main").width()/$("#main").height();
+      
+        
+          if($(".home_back").width()>=ratio*$(".home_back").height()){
+              $(".home_back").css("width","auto");
+              $(".home_back").css("height","100%");
+          }
+          else{
+             $(".home_back").css("width","100%");
+              $(".home_back").css("height","auto");  
+          }
+            $(".home_back").css("top",$("#main").height()/2-$(".home_back").height()/2);
+            $(".home_back").css("left",$("#main").width()/2-$(".home_back").width()/2);
+            
+            if($(".game_back").width()>=ratio*$(".game_back").height()){
+              $(".game_back").css("width","auto");
+              $(".game_back").css("height","100%");
+          }
+          else{
+             $(".game_back").css("width","100%");
+              $(".game_back").css("height","auto");  
+          }
+            $(".game_back").css("top",$("#main").height()/2-$(".game_back").height()/2);
+             $(".game_back").css("left",$("#main").width()/2-$(".game_back").width()/2);
+           
+  $(".menu_img").css("width",$("#side_menu").height()*0.2*1.75*0.9); 
+    $(".menu_arrow").css("width",$("#main").width()*0.05);
+$(".menu_arrow").css("left",$("#side_menu").height()*0.2*1.75*0.9);
+$(".menu_title").css("width",$("#side_menu").height()*0.2*1.75*0.9*0.94);
+
+  $("#fake_line").css("height",$(".side_menu_item").length*$(".side_menu_item:first").height()); 
+   $("#fake_line").css("top",$("#side_menu").height()/2-($(".side_menu_item").length*$(".side_menu_item:first").height())/2 );
+   
+
+   
+   
+   
+ $("#bottom_menu").css("left",$(window).width()/2-$("#bottom_menu").width()/2);
+ }
+    var moto_fly;
+    var lights;
+    $(document).ready(function(){
+        ResizePanels();
+
+ $(".side_menu_item:first").css("top",$("#main").height()/2-($(".side_menu_item").length*$("#main").height()*0.2)/2 );
+ 
+  var i=1;
+      $(".side_menu_item").each(function(){
+          if(i>1){
+             $(this).css("top",$(".side_menu_item:first").offset().top+(i-1)*$(window).height()*0.2); 
+          }
+          i++;
+          
+      });
+
+
+
+        var moto = ["Gaming everywhere","Always On-line","Latest news"];
+        var c=Math.floor(Math.random()*200);
+         
+       /*  for(j=1;j<=c;j++){
+             $("#side_menu").before('<div class="dot"></div>');
+             $(".dot:last").css("top",Math.random()*100+"%");
+             $(".dot:last").css("left",Math.random()*100+"%");
+             $(".dot:last").delay( Math.random()*3000 ).fadeIn();
+         }
+     lights = setInterval(function(){
+         
+         
+         $(".dot").each(function(){
+             $(this).delay( Math.random()*3000 ).fadeOut(function() { $(this).remove(); });
+             
+         });
+       
+         
+         var c=Math.floor(Math.random()*200);
+         
+         for(j=1;j<=c;j++){
+             $("#side_menu").before('<div class="dot"></div>');
+             $(".dot:last").css("top",Math.random()*100+"%");
+             $(".dot:last").css("left",Math.random()*100+"%");
+             $(".dot:last").delay( Math.random()*3000 ).fadeIn();
+         }
+         
+         
+        // alert(c);
+     },5000);*/
+      /*   moto_fly = setInterval(function(){
+             $(".moto").remove();
+              $("#side_menu").before('<div class="moto">'+moto[Math.floor(Math.random()*moto.length)]+'</div>');
+             $(".moto:last").css("top",((Math.random()*50)+25)+"%");
+             $(".moto:last").css("left",((Math.random()*50)+25)+"%");
+             
+             
+             
+             
+             
+         },8000);*/
+    });
+    
+     $("#logo").on("load", function(){
+          $("#bottom_menu_button").css("height",$("#logo").height()*1.2+$("#bottom_menu_title").height()+10);
+         bth=$("#bottom_menu_button").height();
+          $("#bottom_menu_wrap").css("height",bth*0.43);
+          $("#bot_c,#bot_l,#bot_r").css("line-height",bth*0.43+"px");
+          $("#bottom_menu_wrap").css("bottom",-(bth*0.43)); 
+         
+     });
+    
+     $(window).on("resize",function(){
+       
+         $("#bottom_menu_button").css("height",$("#logo").height()*1.2+$("#bottom_menu_title").height()+10);
+$(".side_menu_item:first").css("top",$("#main").height()/2-($(".side_menu_item").length*$("#main").height()*0.2)/2 );
+  
+        waitForFinalEvent(function(){
+ 
+ bth=$("#bottom_menu_button").height();
+
+ $("#bottom_menu_wrap").css("height",bth*0.43);
+ $("#bottom_menu_wrap").css("bottom",-(bth*0.43));
+  $("#bot_c,#bot_l,#bot_r").css("line-height",bth*0.43+"px");
+ var i=1;
+      $(".side_menu_item").each(function(){
+          if(i>1){
+             $(this).css("top",$(".side_menu_item:first").offset().top+(i-1)*$(window).height()*0.2); 
+          }
+          i++;
+          
+      });
+
+
+
+ }, 500, "final resize");
+  ResizePanels();
+    });
+    
+    $(".home_back,.game_back").on("load",function(){
+         ResizePanels();
+        
+    });
+    
+    $(window).on("load", function(){
+       $(".menu_img").css("width",$("#side_menu").height()*0.2*1.75*0.9); 
+    $(".menu_arrow").css("width",$("#main").width()*0.05);
+$(".menu_arrow").css("left",$("#side_menu").height()*0.2*1.75*0.9);
+$(".menu_title").css("width",$("#side_menu").height()*0.2*1.75*0.9*0.94);
+        $("#bottom_menu_button").css("height",$("#logo").height()*1.2+$("#bottom_menu_title").height()+10);
+         bth=$("#bottom_menu_button").height();
+          $("#bottom_menu_wrap").css("height",bth*0.43);
+          $("#bot_c,#bot_l,#bot_r").css("line-height",bth*0.43+"px");
+          $("#bottom_menu_wrap").css("bottom",-(bth*0.43));
+         
+    });
+    
+    $("#bottom_menu_wrap").hover(function(){
+        
+        $("#bottom_menu_top i").addClass("hover");
+        $("#bottom_menu_title").addClass("hover");
+        $("#bottom_menu_top").addClass("width_30");
+        $("#bottom_menu_button").css("height",bth*0.46);
+        $("#bottom_menu_top").css("bottom",-bth*0.24);
+         $("#bottom_menu_wrap").css("bottom",0);
+    },function(){
+        
+        $("#bottom_menu_top i").removeClass("hover");
+        $("#bottom_menu_title").removeClass("hover");
+        $("#bottom_menu_top").removeClass("width_30");
+         $("#bottom_menu_button").css("height",bth);
+         $("#bottom_menu_top").css("bottom",0);
+         $("#bottom_menu_wrap").css("bottom",-(bth*0.43));
+        
+    });
+   
+    $("#bottom_menu_top").hover(function(){
+       
+        $("#bottom_menu_button").css("height",bth*0.46);
+       
+        $("#bottom_menu_top").css("bottom",-bth*0.24);
+         $("#bottom_menu_wrap").css("bottom",0);
+    },function(){
+        
+        $("#bottom_menu_button").css("height",bth);
+        $("#bottom_menu_top").css("bottom",0);
+        $("#bottom_menu_wrap").css("bottom",-(bth*0.43));
+    });
+    
+      
+var hovered;      
+      
+        $(".side_menu_item").hover(function(){
+            $(this).addClass("expand");
+            $(".uc").hide();
+            $(this).find(".uc").show();
+         $(".side_menu_item").not(this).addClass("minimize");
+              $(this).find(".menu_img").css("width",$("#side_menu").height()*0.55*1.75*0.9); 
+          var i=1;
+          hovered=$('.side_menu_item').index($(this))+1;
+          for(i=2;i<=$(".side_menu_item").length;i++){ 
+              if(i==hovered+1 && hovered==1){
+                //  alert($(".side_menu_item:nth-of-type("+(i-1)+")").offset().top+$(".side_menu_item:nth-of-type("+(i-1)+")").height());
+             $(".side_menu_item:nth-of-type("+i+")").css("top",$(".side_menu_item:first").offset().top+$("#side_menu").height()*0.535+$("#side_menu").height()*0.13); 
+          
+              }
+              
+             else if(i==hovered+1 && hovered>1){
+                //  alert($(".side_menu_item:nth-of-type("+(i-1)+")").offset().top+$(".side_menu_item:nth-of-type("+(i-1)+")").height());
+             $(".side_menu_item:nth-of-type("+i+")").css("top",$(".side_menu_item:first").offset().top+$("#side_menu").height()*0.535 + 2*$("#side_menu").height()*0.08+(i-2)*$("#side_menu").height()*0.2*0.1); 
+          
+              }
+              
+             else if(i>hovered+1 && hovered==1){
+                //  alert($(".side_menu_item:nth-of-type("+(i-1)+")").offset().top+$(".side_menu_item:nth-of-type("+(i-1)+")").height());
+             $(".side_menu_item:nth-of-type("+i+")").css("top",$(".side_menu_item:first").offset().top+$("#side_menu").height()*0.535+$("#side_menu").height()*0.13+(i-2)*$("#side_menu").height()*0.2*0.1); 
+          
+              }
+              
+              else if(i>hovered+1 && hovered>1){
+                //  alert($(".side_menu_item:nth-of-type("+(i-1)+")").offset().top+$(".side_menu_item:nth-of-type("+(i-1)+")").height());
+             $(".side_menu_item:nth-of-type("+i+")").css("top",$(".side_menu_item:first").offset().top+$("#side_menu").height()*0.535+2*$("#side_menu").height()*0.08+(i-2)*$("#side_menu").height()*0.2*0.1); 
+          
+              }
+              
+              else if(i<hovered){
+                  
+                  $(".side_menu_item:nth-of-type("+i+")").css("top",$(".side_menu_item:first").offset().top+(i-1)*$("#side_menu").height()*0.2*0.1);  
+              }
+              
+              else if(i==hovered && hovered==$(".side_menu_item").length){
+                   $(".side_menu_item:nth-of-type("+i+")").css("top",$(".side_menu_item:first").offset().top+$("#side_menu").height()*0.13+(i-1)*$("#side_menu").height()*0.2*0.1);  
+              }
+              
+              else{
+                   $(".side_menu_item:nth-of-type("+i+")").css("top",$(".side_menu_item:first").offset().top+$("#side_menu").height()*0.08+(i-1)*$("#side_menu").height()*0.2*0.1);  
+              }
+            
+        }
+             
+           /* else if($('.side_menu_item').index($(this))==$('.side_menu_item').length-1){
+             
+           
+             }*/
+            if(hovered==1){
+                 
+              // $(this).find(".menu_img").append('');
+           $(this).find(".sponsored").show();
+                 
+                 $(this).find(".menu_cta").fadeIn();
+             }
+            
+             else if(hovered==2){
+                 
+               $(this).find(".menu_img").append('<div class="sponsored"></div>');
+                 $(this).find(".sponsored").load("https://www.cdmedia.gr/nintendo-tab.html");
+                 $(this).find(".menu_cta").fadeIn();
+             }
+             else if(hovered==3){
+                 
+               $(this).find(".menu_img").append('<div class="sponsored"></div>');
+                 $(this).find(".sponsored").load("pccd-tab/");
+                 $(this).find(".menu_cta").fadeIn();
+             }
+        
+       
+    },function(){
+        
+         if(hovered==1){
+                 
+              // $(this).find(".menu_img").append('');
+           $(this).find(".sponsored").hide();
+                 
+               
+             }
+             else{
+                 
+                $(this).find(".sponsored").remove();  
+             }
+    
+        $(this).removeClass("expand");
+       $(this).find(".uc").hide();
+       
+                 
+              
+             $(this).find(".menu_cta").fadeOut();
+       
+       $(".side_menu_item").not(this).removeClass("minimize");
+       $(this).find(".menu_img").css("width",$("#side_menu").height()*0.2*1.75*0.9); 
+       var i=1;
+      $(".side_menu_item").each(function(){
+          if(i>1){
+             $(this).css("top",$(".side_menu_item:first").offset().top+(i-1)*$("#side_menu").height()*0.2); 
+          }
+          i++;
+          
+      });
+      
+       
+    });
+    
+    
+     $(".side_menu_item").on("mouseenter", ".sp_game", function(){
+         $(this).children(".sp_overlay").fadeIn();
+         
+     });
+     
+      $(".side_menu_item").on("mouseleave", ".sp_game", function(){
+         $(this).children(".sp_overlay").fadeOut();
+         
+     });
+    
+    
+   /* $(".menu_cta").on("click",function(){
+        $(".scene").css("display","inline-block");
+        
+         $(".side_menu_item").removeClass("expand");
+       
+       
+                 
+               $(".side_menu_item").find(".sponsored").remove();
+             $(".side_menu_item").find(".menu_cta").fadeOut();
+       
+       $(".side_menu_item").not(this).removeClass("minimize");
+       $(".side_menu_item").find(".menu_img").css("width",$("#side_menu").height()*0.2*1.75*0.9); 
+       var i=1;
+      $(".side_menu_item").each(function(){
+          if(i>1){
+             $(this).css("top",$(".side_menu_item:first").offset().top+(i-1)*$("#side_menu").height()*0.2); 
+          }
+          i++;
+          
+      });
+        $("#side_menu").css("left","-60%");
+         $("#top_menu").css("top","-10%");
+         $("#bottom_menu").css("bottom","-20%");
+        $("#fake_line").css("display","none");
+        $("#target").addClass("t_start");
+        clearInterval(moto_fly);
+        clearInterval(lights);
+        $(".dot").fadeOut();
+      setTimeout(function(){
+      $(".wall").animate({opacity:0},1000);
+      }, 2000);
+         $(".home_back").addClass("zoomback");
+         setTimeout(function(){  //window.location.href="";
+         $(".home_back").attr("src","assets/img/images/playroom.jpg") ;
+        
+          $(".home_back").removeClass("zoomback");
+         $(".home_back").css("transform","scale(1)");
+         $(".home_back").css("filter"," blur(100px)");
+         $(".home_back").css("-webkit-filter"," blur(100px)");
+         $(".home_back").addClass("unblur");
+              $(".scene").fadeOut();
+              $("#target").removeClass("t_start");
+               $("#target").addClass("t_start_2");
+               setTimeout(function(){
+                  
+     $(".home_back").addClass("zoombuilding");
+     $(".zoombuilding").css("transform","scale(3)");
+      $(".home_back").css("filter"," blur(0)"); 
+      $(".home_back").css("-webkit-filter"," blur(0)"); 
+     setTimeout(function(){
+        
+          $(".home_back").removeClass("unblur");
+              $(".zoombuilding").css("transform","scale(50)");
+              $(".zoombuilding").css("-webkit-transform","scale(50)");
+              $("#target").removeClass("t_start_2");
+              $(".zoombuilding").css("filter"," blur(2px)"); 
+     $(".zoombuilding").css("-webkit-filter"," blur(2px)");
+               setTimeout(function(){
+               //   $(".home_back").css("filter"," blur(100px)"); 
+     // $(".home_back").css("-webkit-filter"," blur(100px)");  
+      window.location.href="";
+               }, 800);
+      }, 1200);
+      }, 3500);
+         }, 3000);
+        return false;
+    });*/
+    
+    
+</script>
+
+<script>
+    
+      
+      $("#sound_ctrl").on("click",function(){
+          
+            if(player.isMuted()){
+        player.unMute();
+        
+    }
+    else{
+        player.mute();
+        
+    }
+    
+    $("#sound_ctrl").toggleClass("fa-volume-off");
+      $("#sound_ctrl").toggleClass("fa-volume-up");    
+      });
+      
+ $("#menu_but_bar, .fa-bars").on("click",function(){
+          $("#side_menu_bar").css("left",0);
+          
+      });
+      
+      $("#side_menu_bar_close").on("click",function(){
+          $("#side_menu_bar").css("left",-$("#side_menu_bar").width());
+          
+      });
+
+
+    </script>
+
+<style>
+.wall{
+  background: url(assets/img/images/fall.jpg);
+  background-size: cover;
+  opacity:0.5;
+}
+
+
+
+body{
+  background: #000;
+  text-align: center;
+}
+body:before{
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.scene{
+  display: none;
+  vertical-align: middle;
+  perspective: 5px;
+  perspective-origin: 50% 50%;
+  opacity: 0;
+  animation: fadeIn 3s 1 linear;
+  animation-fill-mode: forwards;
+  -webkit-animation: fadeIn 3s 1 linear;
+  -webkit-animation-fill-mode: forwards;
+  position: absolute;
+  top:50%;
+}
+
+.wrap{
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  top: -500px;
+  opacity: 0;
+  transform-style: preserve-3d;
+  animation: move 8s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-transform-style: preserve-3d;
+  -webkit-animation: move 8s infinite linear;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.wrap:nth-child(2){
+  animation: move 8s infinite linear;
+  animation-delay: 6s;
+  -webkit-animation: move 8s infinite linear;
+  -webkit-animation-delay: 6s;
+}
+
+.wall {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.wall-right {
+  transform: rotateY(90deg) translateZ(500px);
+  -webkit-transform: rotateY(90deg) translateZ(500px);
+}
+
+.wall-left {
+  transform: rotateY(-90deg) translateZ(500px);
+  -webkit-transform: rotateY(-90deg) translateZ(500px);
+}
+
+.wall-top {
+  transform: rotateX(90deg) translateZ(500px);
+  -webkit-transform: rotateX(90deg) translateZ(500px);
+}
+
+.wall-bottom {
+  transform: rotateX(-90deg) translateZ(500px);
+  -webkit-transform: rotateX(-90deg) translateZ(500px);
+}
+
+.wall-back {
+  transform: rotateX(180deg) translateZ(500px);
+  -webkit-transform: rotateX(180deg) translateZ(500px);
+}
+
+@keyframes move {
+  0%{
+    transform: translateZ(-500px) rotate(0deg);
+    opacity: 0;
+  }
+  25%{
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateZ(500px) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes move {
+  0%{
+    -webkit-transform: translateZ(-500px) rotate(0deg);
+    opacity: 0;
+  }
+  25%{
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    -webkit-transform: translateZ(500px) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+#side_menu_bar{
+z-index:5001;
+display:none;
+text-align:left;
+}
+
+#menu_but{
+
+display:none;
+
+}
+
+#company_logo{
+display:none;
+
+
+}
+
+
+@media only screen and (max-width: 780px) {
+#side_menu_bar{
+display:block;
+}
+
+
+#menu_but{
+
+display:block;
+
+}
+
+#sound_ctrl{
+left: 90% !important;
+}
+
+.home_back{
+display:block !important;
+}
+
+#player{
+width: 100% !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translate(0,-50%);
+-webkit-transform: translate(0,-50%);
+height:50% !important;
+}
+
+#company_logo{
+display:block;
+right:auto;
+left:50%;
+    transform: translate(-50%,0);
+-webkit-transform: translate(-50%,0);
+width:100px;
+}
+
+
+}
+
+#promo_link{
+    
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+}
+</style>
+
+
+
+</div>
+    
+<script>    
+    
+</script>
+<!-- Google Code for Visit Campaign Conversion Page -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 976665464;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "0LuXCLHglm0Q-Pba0QM";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/976665464/?label=0LuXCLHglm0Q-Pba0QM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85278032-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+User-agent: *
+
+Allow: /
+Disallow: /Orders
+Disallow: /orders
+Disallow: /*?searchTerm
+Disallow: /*?SearchTerm
+Disallow: /*?Ntt=
+Disallow: /*?ntt=

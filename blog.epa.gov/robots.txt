@@ -1,0 +1,9 @@
+User-agent: *
+Crawl-delay: 10
+Disallow: /*?*
+Allow: / 
+# Directories
+#Disallow:/
+#User-agent: EPA-GSA
+#Allow: /
+#User-agent: EPA-Intranet-GSA

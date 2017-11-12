@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /bvs
+Disallow: /rev
+Disallow: /log
+Disallow: /logging
+Disallow: /logging?*
+User-agent: /kalooga
+Disallow: /

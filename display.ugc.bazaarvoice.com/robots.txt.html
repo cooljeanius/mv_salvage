@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title></title>
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <script>
+    if (window.location.href.indexOf('container.htm') < 0) {
+      var errorMessage = document.createElement('h1');
+      errorMessage.innerText = '404: Sorry, the requested file could not be found.'
+      document.getElementsByTagName('body')[0].appendChild(errorMessage);
+    }
+    else {
+      var script = document.createElement('script');
+      script.onload = function() {
+        $BV.container('global', { hosted: true });
+      };
+      script.src = 'bvapi.js';
+      document.getElementsByTagName('body')[0].appendChild(script);
+    }
+  </script>
+</body>
+</html>

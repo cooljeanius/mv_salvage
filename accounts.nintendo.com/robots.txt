@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /
+Allow: /login
+Allow: /register
+Allow: /password/reset

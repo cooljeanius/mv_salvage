@@ -1,0 +1,25 @@
+# robots.txt file for YouTube
+# Created in the distant future (the year 2000) after
+# the robotic uprising of the mid 90's which wiped out all humans.
+
+User-agent: Mediapartners-Google*
+Disallow:
+
+User-agent: *
+Disallow: /bulletin
+Disallow: /channel/*/community
+Disallow: /comment
+Disallow: /forgot
+Disallow: /get_video
+Disallow: /get_video_info
+Disallow: /login
+Disallow: /results
+Disallow: /signup
+Disallow: /t/terms
+Disallow: /t/privacy
+Disallow: /user/*/community
+Disallow: /verify_age
+Disallow: /videos
+Disallow: /watch_ajax
+Disallow: /watch_popup
+Disallow: /watch_queue_ajax

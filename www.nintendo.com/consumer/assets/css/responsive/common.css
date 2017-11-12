@@ -1,0 +1,473 @@
+
+/*	-----------------------------------
+	Resets
+	----------------------------------- */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+	width: 100%;
+}
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+hr,
+.hr {
+	background: #dadada;
+	border: none;
+	display: block;
+	height: 1px;
+	margin: 30px auto;
+	padding: 0;
+	width: 100%;
+}
+
+
+
+/*	-----------------------------------
+	Baselines
+	----------------------------------- */
+
+html {
+	height: 100%;
+}
+
+body {
+	background: #989898;
+	line-height: 1.2;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+}
+
+div#page-container {
+	background: #fff;
+	box-shadow: 0 -10px 25px rgba(0,0,0,0.2);
+	display: block;
+	overflow: hidden; /* prevent selecting text and horizontally scrolling when content is off the right edge (carousel arrows) */
+	padding-top: 36px;
+	position: relative;
+	width: 100%;
+}
+div.page-content {
+	padding-top: 30px;
+}
+
+/* --- Desktop Headline Fonts --- */
+h1, .h1 {
+	color: #000;
+	font-family: 'LatoLight';
+	font-size: 66px;
+	margin: 0;
+}
+h2, .h2 {
+	color: #000;
+	font-family: 'LatoLight';
+	font-size: 44px;
+	margin: 0 0 10px;
+}
+h3, .h3 {
+	color: #000;
+	font-family: 'LatoLight';
+	font-size: 30px;
+	margin: 0 0 10px;
+}
+h4, .h4 {
+	color: #484848;
+	font-family: 'LatoBlack';
+	font-size: 40px;
+	margin: 0 0 10px;
+}
+h5, .h5 {
+	color: #484848;
+	font-family: 'LatoBlack';
+	font-size: 32px;
+	margin: 0 0 10px;
+}
+
+/* --- Desktop Body Fonts --- */
+body, .b1 {
+	color: #777;
+	font-family: 'LatoRegular';
+	font-size: 16px;
+}
+.b2 {
+	color: #999;
+	font-family: 'LatoBold';
+	font-size: 16px;
+}
+.b3 {
+	color: #777;
+	font-family: 'LatoBold';
+	font-size: 20px;
+	margin: 0 0 10px;
+}
+.b4 {
+	color: #999;
+	font-family: 'LatoRegular';
+	font-size: 14px;
+}
+.b5 {
+	color: #777;
+	font-family: 'LatoRegular';
+	font-size: 20px;
+}
+.b6 {
+	color: #000;
+	font-family: 'LatoLight';
+	font-size: 20px;
+}
+.b7 {
+	color: #484848;
+	font-family: 'LatoBlack';
+	font-size: 24px;
+	margin: 0 0 10px;
+}
+
+small,
+.b8 {
+	color: #777;
+	font-family: 'LatoRegular';
+	font-size: 14px;
+}
+
+p {
+	line-height: 1.5;
+	margin: 0 0 20px;
+}
+
+ol, ul { }
+
+a {
+	color: #2576bc;
+	cursor: pointer;
+	text-decoration: none;
+}
+a.h1, a.h2, a.h3, a.h4, a.h5,
+a.b1, a.b2, a.b3, a.b4, a.b5, a.b6, a.b7, a.b8 {
+	color: #2576bc;
+}
+a:hover {
+	color: #3aa4ff;
+	text-decoration: underline;
+}
+a.h1:hover, a.h2:hover, a.h3:hover, a.h4:hover, a.h5:hover,
+a.b1:hover, a.b2:hover, a.b3:hover, a.b4:hover, a.b5:hover, a.b6:hover, a.b7:hover, a.b8:hover {
+	color: #3aa4ff;
+}
+
+h1 a:hover, a.h1:hover,
+h2 a:hover, a.h2:hover,
+h3 a:hover, a.h3:hover {
+	border-bottom: 1px solid #3aa4ff;
+	text-decoration: none;
+}
+
+a:visited div {
+	border-color: inherit; /* Safari border-color bug fix */
+}
+
+strong, b {
+	font-family: 'LatoBold';
+	font-size: inherit;
+}
+i, em {
+	font-family: 'LatoItalic';
+}
+
+sup {
+	font-size: 0.7em;
+	vertical-align: super;
+}
+sub {
+	font-size: 0.7em;
+	vertical-align: sub;
+}
+
+input, textarea {
+	font-family: 'LatoRegular';
+}
+	input::-webkit-search-cancel-button {
+		-webkit-appearance: none;
+	}
+	input::-ms-clear {
+		display: none;
+	}
+
+/*	-----------------------------------
+	Utilities
+	----------------------------------- */
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.table {
+	display: table;
+	height: 100%;
+}
+	.table-cell {
+		display: table-cell;
+		float: none;
+		vertical-align: middle;
+	}
+
+.nowrap {
+	white-space: nowrap;	
+}
+
+.invisible {
+	opacity: 0;
+}
+
+.offscreen {
+	display: block;
+	left: -999999px;
+	position: absolute;
+	top: -999999px;
+}
+
+.hide-text {
+	display: block;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+.clear {
+	clear: both;
+	display: block;
+	width: 100%;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+.clear-fix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	height: 0;
+	visibility: hidden;
+}
+
+.loader {
+	background: url('/images/global/loader.gif') center center no-repeat;
+	height: 100%;
+	width: 100%;
+}
+
+.jump-target {
+	display: block;
+	position: relative;
+	top: -110px;
+}
+
+
+/* 	================================================
+
+	TABLET VIEW
+
+	================================================ */
+@media screen and (min-width: 571px) and (max-width: 768px) {
+
+/*	-----------------------------------
+	Baselines
+	----------------------------------- */
+	div#page-container {
+		padding-top: 50px;
+	}
+
+	/* --- Desktop Headline Fonts --- */
+	h3, .h3 {
+		font-size: 24px;
+	}
+/*	-----------------------------------
+	Utilities
+	----------------------------------- */
+	.left-tab {
+		float: left;
+	}
+
+	.right-tab {
+		float: right;
+	}
+
+	.center-tab {
+		text-align: center;
+	}
+
+}
+
+/* 	================================================
+
+	MOBILE VIEW
+
+	================================================ */
+@media screen and (max-width: 570px) {
+
+/*	-----------------------------------
+	Baselines
+	----------------------------------- */
+
+	div#page-container {
+		padding-top: 50px;
+	}
+
+	/* --- Mobile Headline Fonts --- */
+	h1, .h1 {
+		font-size: 46px;
+		/*margin-bottom: 30px;*/
+	}
+	h2, .h2 {
+		font-size: 40px;
+	}
+	h3, .h3 {
+		font-size: 24px;
+	}
+	h4, .h4 {
+		font-size: 30px;
+	}
+	h5, .h5 {
+		font-size: 30px;
+	}
+
+	/* --- Mobile Body Fonts --- */
+	body, .b1 {
+		font-size: 18px;
+	}
+	.b4 {
+		font-size: 16px;
+	}
+	.b5 {
+		font-size: 18px;
+	}
+	.b6 {
+		font-size: 18px;
+	}
+	.b7 {
+		font-size: 22px;
+	}
+	.b8 {
+		font-size: 16px;
+	}
+/*	-----------------------------------
+	Utilities
+	----------------------------------- */
+	.left-mob {
+		float: left;
+	}
+
+	.right-mob {
+		float: right;
+	}
+
+	.center-mob {
+		text-align: center;
+	}
+
+	.jump-target {
+		top: -80px;
+	}
+
+}
+
+/* 	================================================
+
+	3DS Browser Specific Styles
+
+	================================================ */
+
+body.nin3DS h1,
+body.nin3DS .h1 {
+	font-size: 36px;
+}
+body.nin3DS h2,
+body.nin3DS .h2 {
+	font-size: 28px;
+}
+body.nin3DS h3,
+body.nin3DS .h3 {
+	font-size: 20px;
+}
+body.nin3DS h4,
+body.nin3DS .h4 {
+	font-size: 24px;
+}
+
+body.nin3DS,
+body.nin3DS .b1 {
+	font-size: 14px;
+}
+body.nin3DS .b3 {
+	font-size: 16px;
+}
+body.nin3DS .b4 {
+	font-size: 14px;
+}
+body.nin3DS .b7 {
+	font-size: 18px;
+}
+
+
+body.nin3DS [class*="icon-"]:before {
+	display: none;
+}
+body.nin3DS .icon-facebook,
+body.nin3DS .icon-twitter,
+body.nin3DS .icon-youtube,
+body.nin3DS .icon-tumblr,
+body.nin3DS .icon-instagram {
+	background: url('/images/global/no-icon-font-header-footer.png') no-repeat;
+	height: 35px;
+	overflow: hidden;
+	width: 35px;
+}
+body.nin3DS .icon-facebook  { background-position: 0 -95px; }
+body.nin3DS .icon-twitter   { background-position: -35px -95px; }
+body.nin3DS .icon-youtube   { background-position: -70px -95px; }
+body.nin3DS .icon-tumblr    { background-position: 0 -130px; }
+body.nin3DS .icon-instagram { background-position: -35px -130px; }
+

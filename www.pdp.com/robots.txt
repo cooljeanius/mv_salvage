@@ -1,0 +1,107 @@
+## Enable robots.txt rules for all crawlers
+User-agent: *
+
+## Crawl-delay parameter: number of seconds to wait between successive requests to the same server.
+## Set a custom crawl rate if you're experiencing traffic problems with your server.
+Crawl-delay: 10
+
+## Magento sitemap: uncomment and replace the URL to your Magento sitemap file
+Sitemap: http://pdp.com/sitemap/sitemapindex.xml
+
+## DEVELOPMENT RELATED SETTINGS
+
+## Do not crawl development files and folders: CVS, svn directories and dump files
+Disallow: CVS
+Disallow: .svn
+Disallow: .idea
+Disallow: .sql
+Disallow: .tgz
+
+## GENERAL MAGENTO SETTINGS
+
+## Do not crawl Magento admin page
+Disallow: /admin/
+
+## Do not crawl common Magento technical folders
+Disallow: /404/
+Disallow: /app/
+Disallow: /cgi-bin/
+Disallow: /js/
+Disallow: /magento/
+Disallow: /downloader/
+Disallow: /report/
+Disallow: /errors/
+Disallow: /includes/
+Disallow: /blog/
+Disallow: /stats/
+Disallow: /lib/
+Disallow: /skin/
+Disallow: /pkginfo/
+Disallow: /shell/
+Disallow: /var/
+
+## MAGENTO SEO IMPROVEMENTS
+
+## Do not crawl sub category pages that are sorted or filtered.
+Disallow: /*?dir*
+Disallow: /*?dir=desc
+Disallow: /*?dir=asc
+Disallow: /*?limit=all
+Disallow: /*?mode*
+Disallow: /*?___from_store=*
+Disallow: /*?cat=*
+Disallow: /*?q=*
+
+# Files
+User-agent: *
+Disallow: /cron.php
+Disallow: /cron.sh
+Disallow: /error_log
+Disallow: /install.php
+Disallow: /LICENSE.html
+Disallow: /LICENSE.txt
+Disallow: /LICENSE_AFL.txt
+Disallow: /STATUS.txt
+
+## Do not crawl 2-nd home page copy (example.com/index.php/). Uncomment it only if you activated Magento SEO URLs.
+## Disallow: /index.php/
+
+## Do not crawl links with session IDs
+Disallow: /*?SID=
+
+# Paths (no clean URLs)
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.php$
+Disallow: /*?p=*&
+
+## Do not crawl checkout and user account pages
+Disallow: /checkout/
+Disallow: /onestepcheckout/
+Disallow: /customer/
+Disallow: /customer/account/
+Disallow: /customer/account/login/
+
+## Do not crawl seach pages and not-SEO catalog links
+Disallow: /catalogsearch/
+Disallow: /catalog/product_compare/
+Disallow: /catalog/category/view/
+Disallow: /catalog/product/view/
+Disallow: /catalog/product/gallery/
+Disallow: /javascript/
+Disallow: /poll/
+Disallow: /review/
+Disallow: /sendfriend/
+Disallow: /tag/
+Disallow: /wishlist/
+Disallow: /checkout/
+Disallow: /control/
+Disallow: /contacts/
+Disallow: /customer/
+Disallow: /customize/
+Disallow: /newsletter/
+
+## Do not crawl ajax requests
+Disallow: /ajax/
+Disallow: /ajaxwishlist/
+Disallow: /priceslider/

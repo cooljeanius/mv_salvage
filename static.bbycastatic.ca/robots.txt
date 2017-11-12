@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /
+
+Allow: /*.js
+Allow: /*.css
+
+Allow: /*.woff
+Allow: /*.ttf
+
+Allow: /*.ejs
+Allow: /*.ttf

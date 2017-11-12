@@ -1,0 +1,275 @@
+body{
+/*	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	margin:0px;*/
+}
+
+.product_page_content {
+width: 742px; /*_width: 748px; fix applied by BR */
+background-color:#eeeeee;
+float: right;
+font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+font-size: 12px;
+line-height:1.4em;
+margin: 16px 0px 0px 4px;
+padding: 20px 20px 0px 20px;
+   }
+
+.product_page_content ul {
+list-style: disc;
+padding-left: 20px;
+}
+.product_page_content ol {
+ list-style-type: decimal; 
+padding-left: 20px;
+}
+.corpContainer {
+margin: 0px 0px 0px 0px;
+padding: 0px;
+   }
+.language_change{
+	font-size:10px;
+	
+}
+.language_change a{
+	font-size:10px;
+	color:#0067c6;
+text-decoration:none;
+	
+}
+.language_change a:hover{
+	font-size:10px;
+	color:#0067c6;
+	text-decoration:underline;
+}
+
+#footer .change-language{
+    font-size: 15px;
+    line-height: 50px;
+}
+	
+.pagehead {
+   font-weight: bold;
+   font-size: 14px;
+}
+
+
+.corpContainer table {
+   width: 99%; }/* IE fix for legacy content that is too wide */
+
+.bold{
+	font-weight:bold;
+}
+
+.underline {
+	font-style:italic;
+	}
+
+.footnote{
+	font-style:italic;
+}
+
+hr {
+   height: 1px;
+   width: 100%;
+   color: #000000;}
+   
+h2{
+   color: #333333;
+   font-family: verdana, arial, sans-serif;
+   font-size: 12px;}
+
+
+sup {
+	font-size: 8px;}
+
+	
+.customer {
+	color: #3a57b0;}
+  
+.main {
+  	font-size: 11px;
+	line-height: 15px;}  
+
+.header {
+	font-size: 12px;
+   font-weight: bold;}
+
+.nounderline {
+       text-decoration: none; }
+
+#footerContainer { 
+	margin-top: 10px; }
+
+
+   
+a{
+	color:#0067c6;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+img{
+	border:0px;
+}
+.support-body{
+	width:762px;
+}
+
+.support-home_features{
+	height:253px;
+}
+.support-text{
+	padding:10px 30px 10px 30px;
+	color:#3e4448;
+}
+.need-help{
+	float:left;
+	margin-left:6px;
+}
+
+#wfcUL
+{
+
+list-style: none;
+
+}
+
+#wfcUL li
+{
+
+list-style-image: url(/consumer/wfc/images/blue_arrow_bullet.jpg);
+
+}
+
+#wfcULwhite
+{
+
+list-style: none;
+}
+
+#wfcULwhite li
+{
+
+list-style-image: url(/consumer/wfc/images/blue_arrow_whiteBG.jpg);
+
+}
+.alignFQ {	
+	padding-left: 20px;
+		
+}
+
+.dsiFQ {	
+	width:725px;
+	height:98px;
+	background-image: url(/consumer/systems/dsi/images/box.png);
+	background-repeat:no-repeat;
+	text-decoration:none;
+	padding-bottom: 10px;
+	padding-left:75px;
+		
+}
+.dsiFQHeader {	
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	
+	padding-right:10px;	
+	padding-top:14px;
+	padding-bottom:3px;
+}
+.dsiFQText {	
+	font-size:12px;	
+	font-weight:500;
+	padding-bottom:3px;
+}
+.dsiFQText a{	
+
+	text-decoration:none;
+	font-weight:500;
+	color:#0067c6;
+	
+}
+.dsiFQText a:hover{	
+	text-decoration:underline;
+	font-weight:500;
+	color:#0067c6;
+}
+.wiiFQ {	
+	width:725px;
+	height:98px;
+	background-image: url(/consumer/systems/wii/en_na/images/system/FQ_box.png);
+	background-repeat:no-repeat;
+	text-decoration:none;	
+	padding-bottom: 10px;	
+}
+.wiiFQHeader {	
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	padding-left:155px;
+	padding-right:10px;	
+	padding-top:14px;
+	padding-bottom:3px;
+}
+.wiiFQText {	
+	font-size:12px;	
+	font-weight:500;
+	padding-bottom:3px;
+}
+.wiiFQText a{	
+
+	text-decoration:none;
+	font-weight:500;
+	color:#0067c6;
+	
+}
+.wiiFQText a:hover{	
+	text-decoration:underline;
+	font-weight:500;
+	color:#0067c6;
+}
+.wiiSafetyLinks {
+font-size:12px;
+font-weight:500;
+padding-right:10px;
+padding-bottom:10px;
+float:right;
+}
+.wiiSafetyLinks a{
+text-decoration:none;
+font-weight:500;
+}
+.wiiSafetyLinks a:hover{
+text-decoration:underline;
+}
+.language_changeWii{
+	font-size:10px;
+	float:left;
+	
+	
+}
+.language_changeWii a{
+	font-size:10px;
+	color:#0067c6;
+text-decoration:none;
+	
+}
+.language_changeWii a:hover{
+	font-size:10px;
+	color:#0067c6;
+	text-decoration:underline;
+}
+
+ .rvk {
+
+	 color:#F00;
+ }
+ 
+  .rvk a{
+	 font-size:10px;
+ }
+ 
+ .danger{color:#cc0000;}
+

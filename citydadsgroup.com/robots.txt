@@ -1,0 +1,5 @@
+Sitemap: https://citydadsgroup.com/sitemap.xml
+Sitemap: https://citydadsgroup.com/news-sitemap.xml
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php

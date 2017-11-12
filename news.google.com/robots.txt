@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /
+Allow: /$
+Allow: /nwshp$
+Allow: /news$
+Allow: /news/$
+Allow: /news/?ned=

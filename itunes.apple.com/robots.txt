@@ -1,0 +1,22 @@
+User-agent: *
+Disallow: /WebObjects/MZFastFinance.woa
+Disallow: /WebObjects/MZFinance.woa
+Disallow: /WebObjects/MZPersonalizer.woa
+Disallow: /WebObjects/MZStoreElements.woa
+Disallow: /station/idst.
+Disallow: /WebObjects/*
+Disallow: /search*
+Disallow: /*/rss/*
+Disallow: /*/lookup?
+
+Sitemap: http://sitemaps.itunes.apple.com/sitemap_index.xml
+Sitemap: http://sitemaps.itunes.apple.com/sitemap_index_1.xml
+Sitemap: http://sitemaps.itunes.apple.com/sitemap_index_2.xml
+Sitemap: http://sitemaps.itunes.apple.com/sitemap_index_3.xml
+Sitemap: http://sitemaps.itunes.apple.com/sitemap_index_4.xml
+Sitemap: http://sitemaps.itunes.apple.com/sitemap_index_5.xml
+Sitemap: http://sitemaps.itunes.apple.com/sitemap_index_6.xml
+Sitemap: http://sitemaps.itunes.apple.com/sitemap_index_7.xml
+Sitemap: http://sitemaps.itunes.apple.com/sitemap_index_8.xml
+Sitemap: http://sitemaps.itunes.apple.com/sitemap_index_9.xml
+Sitemap: http://sitemaps.itunes.apple.com/sitemap_index_10.xml

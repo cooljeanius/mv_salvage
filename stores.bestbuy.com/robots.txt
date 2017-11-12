@@ -1,0 +1,2 @@
+User-agent: *
+sitemap: https://stores.bestbuy.com/sitemap.xml

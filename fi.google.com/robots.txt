@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /about
+Allow: /activate
+Allow: /coverage
+Allow: /signup
+Disallow: /account
+
+Sitemap: http://fi.google.com/about/sitemap.xml

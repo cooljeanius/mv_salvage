@@ -1,0 +1,37 @@
+User-agent: *
+
+# Prevent refined browse pages from being crawled, avoiding millions of near-duplicate entries.  MG IG
+Disallow: /en/*+*
+Disallow: /fr/*+*
+
+Disallow: /ws/*
+
+# Now allowing assets to be crawled.   MG
+#Disallow: /assets/*
+
+Disallow: /webjars/*
+Disallow: /css-pattern-library
+
+Disallow: */app/*
+Disallow: */global/*
+Disallow: /cart
+Disallow: /panier
+
+Disallow: /search/*
+Disallow: /cherche/*
+
+Disallow: /en/kiosk/*
+Disallow: /fr/kiosk/*
+Disallow: /*/associates
+
+# Prevents Financial Services One and Done page from being hit. 11-16-2016  NV
+Disallow: /en/email/gifts-voucher
+
+# Prevents Financial WM MC page from being hit, contains promocodes. 11-16-2016  NV
+Disallow: /en/financial-services/walmart-rewards-mastercard-apply-now
+Disallow: /fr/services-financiers/recompenses-walmart-mastercard-faire-une-demande
+
+
+# Always include index sitemaps below rules.  MB
+Sitemap: http://www.walmart.ca/sitemap-index-en.xml
+Sitemap: http://www.walmart.ca/sitemap-index-fr.xml

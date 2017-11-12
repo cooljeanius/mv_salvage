@@ -1,0 +1,448 @@
+body {
+/*	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	margin:0px;*/
+}
+#wrapper{
+  text-align: left;
+  padding: 0px; /* shadow pad */
+  margin: 0 auto;
+}
+
+#container {
+	clear:both;
+	min-height:100%; 	 
+}
+
+.product_page_content {
+	display:block;
+	position:relative;
+	width: 766px;
+	background-color:#eeeeee;
+	float: left;
+	font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+	font-size: 12px;
+	line-height:1.4em;
+	margin-top: 16px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	min-height:350px;	
+}
+.product_page_content_jobs {
+	width: 940px; /*_width: 748px; fix applied by BR */
+	background-color:#eeeeee;
+	float: right;
+	font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+	font-size: 12px;
+	line-height:1.4em;
+	margin: 16px 0px 0px 4px;
+	padding: 20px 20px 0px 20px;
+}
+.product_page_content p{
+	margin-bottom: 10px;
+}
+.product_page_content ul {
+	list-style: disc;
+	padding-left: 20px;
+}
+.corpContainer {
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+}
+.pagehead {
+	font-weight: bold;
+	font-size: 14px;
+}
+.corpContainer table {
+	width: 99%;
+}/* IE fix for legacy content that is too wide */
+.corp_nav{
+	margin-bottom: 1em;
+}
+	.corp_nav a{
+		font-weight: bold;
+	}
+hr {
+	height: 1px;
+	width: 100%;
+	color: #000000;
+}
+h2 {
+	color: #333333;
+	font-family: verdana, arial, sans-serif;
+	font-size: 12px;
+}
+h2.h2Large{
+	color:#535353;
+	font-size:33px;
+	margin-bottom: 50px;
+	font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;	
+}
+sup {
+	font-size: 8px;
+}
+.customer {
+	color: #3a57b0;
+}
+.main {
+	font-size: 11px;
+	line-height: 15px;
+}
+.header {
+	font-size: 12px;
+	font-weight: bold;
+}
+.nounderline {
+	text-decoration: none;
+}
+#footerContainer {
+	margin-top: 10px;
+}
+.wifiContainer {
+	border: 10px solid #98D1EE;
+	background-color:#ffffff;
+	font-size: 11px;
+	width: 742px; /*_width: 770px; fix applied by BR */
+}
+a {
+	color:#0067c6;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+#primaryNav a:hover {
+	text-decoration:none;	
+}
+img {
+	border:0px;
+}
+.support-body {
+	width:762px;
+}
+.support-nav {
+	background:url(../images/nav_top.jpg) no-repeat;
+	padding-top:56px;
+}
+.support-nav_es {
+	background:url(../images/nav_top_es.jpg) no-repeat;
+	padding-top:56px;
+}
+.support-nav_fr {
+	background:url(../images/nav_top_fr.jpg) no-repeat;
+	padding-top:56px;
+}
+.support-nav_corp {
+	background:url(../images/nav_top_corp.jpg) no-repeat;
+	padding-top:56px;
+}
+.support-nav_buttons {
+}
+.support-home_features {
+	height:253px;
+}
+.support-text {
+	padding:10px 30px 10px 30px;
+	color:#3e4448;
+}
+.need-help {
+	float:left;
+	margin-left:6px;
+}
+.repairs {
+	float:right;
+	margin-right:6px;
+	width:290px;
+	height:50px;
+	background:url(../images/check_your_repairs.jpg) no-repeat;
+	padding:9px 0px 0px 168px;
+}
+input.support-input {
+	width:138px;
+	height:16px;
+	background:url(../images/support_repair_input.gif) no-repeat;
+	border:0px solid;
+	margin-bottom:4px;
+	font-size:10px;
+	padding:2px 2px 0px 2px;
+}
+.more_topics {
+	padding:36px 0px 0px 10px;
+}
+.more_topics_table td {
+	padding:0px 12px 5px 0px;
+	font-weight:bold;
+	font-size:8px;
+}
+.more_topics_table td a:link, .more_topics_table td a:visited {
+	display:block;
+	background:url(../images/mt_entry_back.gif);
+	width:225px;
+	height:28px;
+	padding:3px;
+	text-decoration:none;
+}
+.more_topics_table td a:hover {
+	background-image:url(../images/mt_entry_back_hover.gif);
+	text-decoration:none;
+}
+.more_topics_table td a img {
+	float:left;
+	padding-right:7px;
+}
+.more_topics_table_text {
+	display:block;
+	margin-top:8px;
+	font-size:10px;
+	color:#0067c6;
+}
+.sub_left_corner {
+	height:9px;
+	background:url(../images/sub-panel_left_corner.gif) no-repeat #e0e0e0 bottom left;
+}
+.sub_right_corner {
+	height:9px;
+	background:url(../images/sub-panel_right_corner.gif) no-repeat bottom right;
+}
+.service_topics, .latest_manuals {
+	background-color:#e0e0e0;
+	padding:36px 11px 0px 11px;
+	width:353px;
+	overflow:hidden;
+}
+.service_topics {
+	background-image:url(../images/other_customer_service_topi.gif);
+	background-repeat:no-repeat;
+	float:left;
+}
+.latest_manuals {
+	background-image:url(../images/download_the_latest_manuals.gif);
+	background-repeat:no-repeat;
+	float:right;
+}
+.sub_panel {
+	width:353px;
+	height:186px;
+}
+.sub_panel_frame {
+	margin: 4px 15px 4px 15px;
+}
+.sub_panel_bottom {
+	background:url(../images/sub-panel_bottom.gif) no-repeat bottom;
+	padding:3px 11px 3px 11px;
+	width:353px;
+	margin-left:-11px;
+	height:13px;
+}
+.all_manuals {
+	float:right;
+}
+.all_manuals a:hover {
+	text-decoration:underline;
+}
+.all_manuals img {
+	float:left;
+	margin-right:4px;
+}
+.section_banner {
+	height:142px;
+}
+.breadcrumb {
+	color:white;
+	position:relative;
+	top:125px;
+	left:11px;
+}
+.breadcrumb a:link, .breadcrumb a:visited, .breadcrumb a:hover, .breadcrumb a:active {
+	color:white;
+}
+.breadcrumb a:hover {
+	text-decoration:underline;
+}
+.active_crumb {
+	font-weight:bold;
+	color:white;
+}
+.see_all {
+	color:#0067c6;
+}
+#wfcUL {
+	list-style: none;
+}
+#wfcUL li {
+	list-style-image: url(/consumer/wfc/images/blue_arrow_bullet.jpg);
+}
+#wfcULwhite {
+	list-style: none;
+}
+#wfcULwhite li {
+	list-style-image: url(/consumer/wfc/images/blue_arrow_whiteBG.jpg);
+}
+.support h2.sectionName_corp_jobs {
+	background: url("/corp/images/corp_jobsection_header.jpg") no-repeat scroll 0% 0px transparent;
+	height:109px !important;
+	left:0;
+	xmargin-left:-5px;
+	xmargin-top:-1px;
+	overflow:hidden;
+	xpadding:3px 4px 6px 0;
+	text-indent:-9999px;
+	visibility:visible;
+	width:988px;
+	margin:20px 0 0 0;
+}
+h2.sectionName_corp {
+	background:url("/corp/images/corp_section_header.jpg") no-repeat scroll 0 0 transparent;
+	height:109px !important;
+	left:0;
+	xmargin-left:-5px;
+	xmargin-top:-1px;
+	overflow:hidden;
+	xpadding:3px 4px 6px 0;
+	text-indent:-9999px;
+	visibility:visible;
+	width:988px;
+	margin:20px 0 0 0;
+}
+h2.feedback-form {
+	color:#535353;
+	font-size:33px;
+	margin:40px 0 0 250px;
+	font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+}
+h3.corp-content-header{
+	font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #707070;
+	margin-top: 40px;
+}
+h3.corp-content-list-header{
+	font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #707070;
+	margin-top: 25px;
+	margin-bottom: 0;
+}
+h3.corp-content-sub-header{
+	font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+	margin-top: 40px;
+	font-size: 16px;
+	font-weight: bold;	
+}
+.corp-content-div{
+	margin-top: 20px;
+}
+#form {
+	width:500px;
+	color:#535353;
+	font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+	margin: 40px auto 0;
+    width: 500px;
+}
+#form-intro {
+	font-size:12px;
+	font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+}
+#WebForm1 {
+	margin:20px 0 0 0;
+}
+#WebForm1 label {
+	font-size:12px;
+	font-weight:bold;
+	display:block;
+}
+#WebForm1 input {
+	background-color:#EEEEEE;
+	border:1px solid #535353;
+	display:block;
+	height:25px;
+	margin:5px 0 20px;
+	width:500px;
+}
+#WebForm1 .formText {
+	color:#535353;
+	font-size:18px;
+}
+#WebForm1 #addtlcomments {
+	background-color:#EEEEEE;
+	border:1px solid #535353;
+	font-family:'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+	height:200px;
+	width:505px;
+	margin-top:5px;
+}
+#WebForm1 #form-button {
+	width:136px;
+	background-color:#fff;
+	border:none;
+	height:38px;
+}
+
+/* CSS Fix for Global Nav search button margin error - IE 7*/
+*:first-child+html #globalSearch input.submit {
+	margin: 0px 0px 0px 10px;
+}
+
+/* FOOTER */
+#global-footer{
+	line-height: 1.2;
+	font-family: 'LatoRegular';
+}
+
+/* for licensees_acc.jsp page */
+.pgtitle {
+  font-family:Verdana, Helvetica, sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  margin-top: 10px;
+  color: #05BAFF;
+}
+
+.paragraphTopMargin{
+	margin-top: 10px;
+}
+
+#ip-notification-list{
+	list-style-type: decimal;
+	margin-left: 20px;
+}
+
+.column1{
+  float: left;
+  width: 70%;
+  margin-bottom: 60px;
+  margin-right: 30px;
+}
+.column2{
+  float: left;
+  width: 25%;
+}
+.column2 img{
+	margin-bottom: 10px;
+}
+.columnContainer{
+  width: 100%;
+
+}
+
+.topLink{
+	clear:both;
+	float: right;
+	margin-bottom: 60px;
+	margin-right: 40px;
+}
+
+.underlinedBoldTest{
+	font-weight: bold;
+	text-decoration: underline;
+}
+.boldSpan{
+	font-weight: bold;
+}

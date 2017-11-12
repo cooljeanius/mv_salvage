@@ -1,0 +1,24 @@
+#Google Search Engine Robot
+User-agent: Googlebot
+User-agent: googlebot-mobile
+Disallow: /search
+Disallow: /forms
+
+#Yahoo! Search Engine Robot
+User-Agent: Slurp
+Crawl-delay: 1
+Disallow: /search
+Disallow: /forms
+
+#Microsoft Search Engine Robot
+User-Agent: msnbot
+Crawl-delay: 10
+Disallow: /search
+Disallow: /forms
+
+# Every bot that might possibly read and respect this file.
+User-agent: *
+Disallow: /search
+Disallow: /forms
+
+Sitemap: https://support.twitter.com/sitemap.xml.gz

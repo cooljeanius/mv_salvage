@@ -1,0 +1,3380 @@
+/* 	================================================
+
+	12 COLUMN GRID
+	- 980px grid
+	- 56px columns (5.71428572%)
+	- 14px margins (1.42857143%) = 28px gutter (2.85714286%)
+	- first col has no left gutter, last col has no right gutter
+	- .no-margin class switches gutter from margin to padding
+	- .wrapper.gutter adds padding on left/right when content is within a colored container (WiiU/3DS pages)
+	- width: ( 100 - ( NUM_GUTTERS * GUTTER_WIDTH ) ) / NUM_COLUMNS;
+
+	================================================ */
+
+/*	-----------------------------------
+	Common
+	----------------------------------- */
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	    	box-sizing: border-box;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	min-width: 0;
+	outline: none;
+	width: auto;
+}
+
+/* responsive video */
+.video-player {
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+}
+
+.poster-player,
+.poster-player * {
+	pointer-events: none;
+}
+
+.video-player iframe,
+.video-player object,
+.video-player embed,
+.video-player > div,
+.video-player video {
+	height: 100% !important;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100% !important;
+}
+
+
+/*	-----------------------------------
+	Grid Layout
+	----------------------------------- */
+.wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 980px;
+	min-width: 960px;
+	width: 980px;
+}
+
+header .wrapper {
+	max-width: 1440px;
+	width: 96%;
+}
+
+.wrapper.gutter {
+	padding-left: 20px;
+	padding-right: 20px;
+	-webkit-box-sizing: content-box;
+	   -moz-box-sizing: content-box;
+			box-sizing: content-box;
+}
+
+.row {
+	display: block;
+	list-style: none outside none;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+.row:after {
+	clear: both;
+	content: "";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+
+.row .column,
+.row > li {
+	float: left;
+	margin-left: 1.42857143%;
+	margin-right: 1.42857143%;
+	position: relative;
+	width: 5.71428572%;
+}
+.no-margin .column,
+.no-margin > li {
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 1.42857143%;
+	padding-right: 1.42857143%;
+	-webkit-box-sizing: content-box;
+	   -moz-box-sizing: content-box;
+			box-sizing: content-box;
+}
+
+
+/* Remove margins by default on every 12th column */
+.row > li:nth-child(12n+12),
+.row > .column:nth-child(12n+12) { margin-right: 0; }
+.row > li:nth-child(12n+1),
+.row > .column:nth-child(12n+1) { margin-left: 0; }
+
+.no-margin > li:nth-child(12n+12),
+.no-margin > .column:nth-child(12n+12) { padding-right: 0; }
+.no-margin > li:nth-child(12n+1),
+.no-margin > .column:nth-child(12n+1) { padding-left: 0; }
+
+/* Set uniform column widths */
+.row-11cols > li,
+.row-11cols > .column { width:6.4935065%; }
+
+.row-10cols > li,
+.row-10cols > .column { width:7.4285714%; }
+
+.row-9cols > li,
+.row-9cols > .column { width:8.57142857%; }
+
+.row-8cols > li,
+.row-8cols > .column { width:9.99999999%; }
+
+.row-7cols > li,
+.row-7cols > .column { width:11.8367346%; }
+
+.row-6cols > li,
+.row-6cols > .column { width:14.2857143%; }
+
+.row-5cols > li,
+.row-5cols > .column { width:17.714285712%; }
+
+.row-4cols > li,
+.row-4cols > .column { width:22.85714286%; }
+
+.row-3cols > li,
+.row-3cols > .column { width:31.42857143%; }
+
+.row-2cols > li,
+.row-2cols > .column { width:48.57142857%; }
+
+.row-1cols > li,
+.row-1cols > .column {
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+}
+
+/* Remove Margin/Padding on First/Last columns */
+.row .column:first-child,
+.row li:first-child { margin-left: 0; }
+
+.row .column:last-child,
+.row li:last-child { margin-right: 0; }
+
+.row.no-margin .column:first-child,
+.row.no-margin li:first-child { padding-left: 0; }
+
+.row.no-margin .column:last-child,
+.row.no-margin li:last-child { padding-right: 0; }
+
+.colum .center {
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* Custom column widths */
+.row .col11 { width: 91.42857143%; }
+.row .col10 { width: 82.85714286%; }
+.row .col9 { width: 74.28571429%; }
+.row .col8 { width: 65.71428571%; }
+.row .col7 { width: 57.14285714%; }
+.row .col6 { width: 48.57142857%; }
+.row .col5 { width: 40%; }
+.row .col4 { width: 31.42857143%; }
+.row .col3 { width: 22.85714286%; }
+.row .col2 { width: 14.2857143%; }
+/*.col1 {	width: 5.71428572%; }*/
+
+/* 	================================================
+
+	RESPONSIVE BASE
+
+	================================================ */
+@media screen and (max-width: 980px) {
+	.wrapper {
+		max-width: 96%;
+		min-width: 0px;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+			    box-sizing: border-box;
+	}
+	.wrapper.gutter {
+		padding-left: 2%;
+		padding-right: 2%;
+		-webkit-box-sizing: content-box;
+		   -moz-box-sizing: content-box;
+			    box-sizing: content-box;
+	}
+
+	
+}
+@media screen and (min-width: 769px) and (max-width: 900px) {
+	/* Custom column widths */
+	.row .col12-dtab { width: 100%; float: none; clear: both; margin-left: 0; margin-right: 0; }
+	.row .col11-dtab { width: 91.42857143%; }
+	.row .col10-dtab { width: 82.85714286%; }
+	.row .col9-dtab { width: 74.28571429%; }
+	.row .col8-dtab { width: 65.71428571%; }
+	.row .col7-dtab { width: 57.14285714%; }
+	.row .col6-dtab { width: 48.57142857%; }
+	.row .col5-dtab { width: 40%; }
+	.row .col4-dtab { width: 31.42857143%; }
+	.row .col3-dtab { width: 22.85714286%; }
+	.row .col2-dtab { width: 14.2857143%; }
+	.row .col1-dtab { width: 5.71428572%; }
+}
+/* 	================================================
+
+	DESKTOP VIEW
+
+	================================================ */
+@media screen and (min-width: 769px) {
+
+	/* Full Column Width */
+	.row .col12 {
+		clear: both;
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+
+	/* Remove margin/padding on first last columns in even width rows */
+	.row-1cols.no-margin > li
+	.row-1cols.no-margin > .column {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.row-2cols > li:nth-child(odd),
+	.row-2cols > .column:nth-child(odd),
+	.row-3cols > li:nth-child(3n+1),
+	.row-3cols > .column:nth-child(3n+1),
+	.row-4cols > li:nth-child(4n+1),
+	.row-4cols > .column:nth-child(4n+1),
+	.row-5cols > li:nth-child(5n+1),
+	.row-5cols > .column:nth-child(5n+1),
+	.row-6cols > li:nth-child(6n+1),
+	.row-6cols > .column:nth-child(6n+1),
+	.row-7cols > li:nth-child(7n+1),
+	.row-7cols > .column:nth-child(7n+1),
+	.row-8cols > li:nth-child(8n+1),
+	.row-8cols > .column:nth-child(8n+1),
+	.row-9cols > li:nth-child(9n+1),
+	.row-9cols > .column:nth-child(9n+1),
+	.row-10cols > li:nth-child(10n+1),
+	.row-10cols > .column:nth-child(10n+1),
+	.row-11cols > li:nth-child(11n+1),
+	.row-11cols > .column:nth-child(11n+1),
+	.row-12cols > li:nth-child(12n+1),
+	.row-12cols > .column:nth-child(12n+1) {
+		clear: both;
+		margin-left: 0;
+	}
+
+	.row-2cols > li:nth-child(even),
+	.row-2cols > .column:nth-child(even),
+	.row-3cols > li:nth-child(3n+3),
+	.row-3cols > .column:nth-child(3n+3),
+	.row-4cols > li:nth-child(4n+4),
+	.row-4cols > .column:nth-child(4n+4),
+	.row-5cols > li:nth-child(5n+5),
+	.row-5cols > .column:nth-child(5n+5),
+	.row-6cols > li:nth-child(6n+6),
+	.row-6cols > .column:nth-child(6n+6),
+	.row-7cols > li:nth-child(7n+7),
+	.row-7cols > .column:nth-child(7n+7),
+	.row-8cols > li:nth-child(8n+8),
+	.row-8cols > .column:nth-child(8n+8),
+	.row-9cols > li:nth-child(9n+9),
+	.row-9cols > .column:nth-child(9n+9),
+	.row-10cols > li:nth-child(10n+10),
+	.row-10cols > .column:nth-child(10n+10),
+	.row-11cols > li:nth-child(11n+11),
+	.row-11cols > .column:nth-child(11n+11),
+	.row-12cols > li:nth-child(12n+12),
+	.row-12cols > .column:nth-child(12n+12) {
+		margin-right: 0;
+	}
+
+	.row-2cols.no-margin > li:nth-child(odd),
+	.row-2cols.no-margin > .column:nth-child(odd),
+	.row-3cols.no-margin > li:nth-child(3n+1),
+	.row-3cols.no-margin > .column:nth-child(3n+1),
+	.row-4cols.no-margin > li:nth-child(4n+1),
+	.row-4cols.no-margin > .column:nth-child(4n+1),
+	.row-5cols.no-margin > li:nth-child(5n+1),
+	.row-5cols.no-margin > .column:nth-child(5n+1),
+	.row-6cols.no-margin > li:nth-child(6n+1),
+	.row-6cols.no-margin > .column:nth-child(6n+1),
+	.row-7cols.no-margin > li:nth-child(7n+1),
+	.row-7cols.no-margin > .column:nth-child(7n+1),
+	.row-8cols.no-margin > li:nth-child(8n+1),
+	.row-8cols.no-margin > .column:nth-child(8n+1),
+	.row-9cols.no-margin > li:nth-child(9n+1),
+	.row-9cols.no-margin > .column:nth-child(9n+1),
+	.row-10cols.no-margin > li:nth-child(10n+1),
+	.row-10cols.no-margin > .column:nth-child(10n+1),
+	.row-11cols.no-margin > li:nth-child(11n+1),
+	.row-11cols.no-margin > .column:nth-child(11n+1),
+	.row-12cols.no-margin > li:nth-child(12n+1),
+	.row-12cols.no-margin > .column:nth-child(12n+1) {
+		padding-left: 0;
+	}
+
+	.row-2cols.no-margin > li:nth-child(even),
+	.row-2cols.no-margin > .column:nth-child(even),
+	.row-3cols.no-margin > li:nth-child(3n+3),
+	.row-3cols.no-margin > .column:nth-child(3n+3),
+	.row-4cols.no-margin > li:nth-child(4n+4),
+	.row-4cols.no-margin > .column:nth-child(4n+4),
+	.row-5cols.no-margin > li:nth-child(5n+5),
+	.row-5cols.no-margin > .column:nth-child(5n+5),
+	.row-6cols.no-margin > li:nth-child(6n+6),
+	.row-6cols.no-margin > .column:nth-child(6n+6),
+	.row-7cols.no-margin > li:nth-child(7n+7),
+	.row-7cols.no-margin > .column:nth-child(7n+7),
+	.row-8cols.no-margin > li:nth-child(8n+8),
+	.row-8cols.no-margin > .column:nth-child(8n+8),
+	.row-9cols.no-margin > li:nth-child(9n+9),
+	.row-9cols.no-margin > .column:nth-child(9n+9),
+	.row-10cols.no-margin > li:nth-child(10n+10),
+	.row-10cols.no-margin > .column:nth-child(10n+10),
+	.row-11cols.no-margin > li:nth-child(11n+11),
+	.row-11cols.no-margin > .column:nth-child(11n+11),
+	.row-12cols.no-margin > li:nth-child(12n+11),
+	.row-12cols.no-margin > .column:nth-child(12n+12) {
+		padding-right: 0;
+	}
+
+	/* Push Full Column/Gutter Width */
+	.row .column.push11,
+	.row li.push11 { left: 94.2857137%; }
+	.row .column.push10,
+	.row li.push10 { left: 85.7142852%; }
+	.row .column.push9,
+	.row li.push9 {	left: 77.1428567%; }
+	.row .column.push8,
+	.row li.push8 {	left: 68.5714282%; }
+	.row .column.push7,
+	.row li.push7 {	left: 59.9999999%; }
+	.row .column.push6,
+	.row li.push6 {	left: 51.4285711%; }
+	.row .column.push5,
+	.row li.push5 {	left: 42.8571426%; }
+	.row .column.push4,
+	.row li.push4 {	left: 34.2857141%; }
+	.row .column.push3,
+	.row li.push3 {	left: 25.7142856%; }
+	.row .column.push2,
+	.row li.push2 {	left: 17.1428571%; }
+	.row .column.push1,
+	.row li.push1 {	left: 8.57142857%; }
+
+	/* Push Column Width only. No Gutter */
+	.row .column.pushcol,
+	.row li.pushcol { left: 5.71428572%; }
+
+	/* Push Gutter Width only. No Column */
+	.row .column.pushmargin,
+	.row li.pushmargin { left: 2.85714286%; }
+
+	/* Pull Full Column/Gutter Width */
+	.row .column.pull11,
+	.row li.pull11 { left: -94.2857137%; }
+	.row .column.pull10,
+	.row li.pull10 { left: -85.7142852%; }
+	.row .column.pull9,
+	.row li.pull9 {	left: -77.1428567%; }
+	.row .column.pull8,
+	.row li.pull8 {	left: -68.5714282%; }
+	.row .column.pull7,
+	.row li.pull7 {	left: -59.9999999%; }
+	.row .column.pull6,
+	.row li.pull6 {	left: -51.4285711%; }
+	.row .column.pull5,
+	.row li.pull5 {	left: -42.8571426%; }
+	.row .column.pull4,
+	.row li.pull4 {	left: -34.2857141%; }
+	.row .column.pull3,
+	.row li.pull3 {	left: -25.7142856%; }
+	.row .column.pull2,
+	.row li.pull2 {	left: -17.1428571%; }
+	.row .column.pull1,
+	.row li.pull1 {	left: -8.57142857%; }
+
+	/* Pull Column Width only. No Gutter */
+	.row .column.pullcol,
+	.row li.pullcol { left: -5.71428572%; }
+
+	/* Pull Gutter Width only. No Column */
+	.row .column.pullmargin,
+	.row li.pullmargin { left: -2.85714286%; }
+
+	.hide {
+		display: none !important;
+	}
+
+	.hide-desktop {
+		display: none !important;
+	}
+
+}
+
+
+/* 	================================================
+
+	TABLET VIEW
+
+	================================================ */
+@media screen and (min-width: 571px) and (max-width: 768px) {
+
+	/* Custom column widths */
+	.row .col12-tab { width: 100%; float: none; clear: both; margin-left: 0; margin-right: 0; }
+	.row .col11-tab { width: 91.42857143%; }
+	.row .col10-tab { width: 82.85714286%; }
+	.row .col9-tab { width: 74.28571429%; }
+	.row .col8-tab { width: 65.71428571%; }
+	.row .col7-tab { width: 57.14285714%; }
+	.row .col6-tab { width: 48.57142857%; }
+	.row .col5-tab { width: 40%; }
+	.row .col4-tab { width: 31.42857143%; }
+	.row .col3-tab { width: 22.85714286%; }
+	.row .col2-tab { width: 14.2857143%; }
+	.row .col1-tab { width: 5.71428572%; }
+
+	.row-1cols-tab > li,
+	.row-1cols-tab > .column {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+	.row-1cols-tab.no-margin > li
+	.row-1cols-tab.no-margin > .column {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	/* Set widths for tablet classes */
+	.row-2cols-tab > li,
+	.row-2cols-tab > .column { width:48.57142857%; }
+	.row-3cols-tab > li,
+	.row-3cols-tab > .column { width:31.42857143%; }
+	.row-4cols-tab > li,
+	.row-4cols-tab > .column { width:22.85714286%; }
+	.row-5cols-tab > li,
+	.row-5cols-tab > .column { width:17.714285712%; }
+	.row-6cols-tab > li,
+	.row-6cols-tab > .column { width:14.2857143%; }
+	.row-7cols-tab > li,
+	.row-7cols-tab > .column { width:11.8367346%; }
+	.row-8cols-tab > li,
+	.row-8cols-tab > .column { width:9.99999999%; }
+	.row-9cols-tab > li,
+	.row-9cols-tab > .column { width:8.57142857%; }
+	.row-10cols-tab > li,
+	.row-10cols-tab > .column { width:7.4285714%; }
+	.row-11cols-tab > li,
+	.row-11cols-tab > .column { width:6.4935065%; }
+	.row-12cols-tab > li,
+	.row-12cols-tab > .column { width: 5.71428572%; }
+
+
+	/* Remove margin/padding on first last columns in even width rows */
+	.row-2cols-tab > li:nth-child(odd),
+	.row-2cols-tab > .column:nth-child(odd),
+	.row-3cols-tab > li:nth-child(3n+1),
+	.row-3cols-tab > .column:nth-child(3n+1),
+	.row-4cols-tab > li:nth-child(4n+1),
+	.row-4cols-tab > .column:nth-child(4n+1),
+	.row-5cols-tab > li:nth-child(5n+1),
+	.row-5cols-tab > .column:nth-child(5n+1),
+	.row-6cols-tab > li:nth-child(6n+1),
+	.row-6cols-tab > .column:nth-child(6n+1),
+	.row-7cols-tab > li:nth-child(7n+1),
+	.row-7cols-tab > .column:nth-child(7n+1),
+	.row-8cols-tab > li:nth-child(8n+1),
+	.row-8cols-tab > .column:nth-child(8n+1),
+	.row-9cols-tab > li:nth-child(9n+1),
+	.row-9cols-tab > .column:nth-child(9n+1),
+	.row-10cols-tab > li:nth-child(10n+1),
+	.row-10cols-tab > .column:nth-child(10n+1),
+	.row-11cols-tab > li:nth-child(11n+1),
+	.row-11cols-tab > .column:nth-child(11n+1),
+	.row-12cols-tab > li:nth-child(12n+1),
+	.row-12cols-tab > .column:nth-child(12n+1) {
+		clear: both;
+		margin-left: 0;
+	}
+
+	.row-2cols-tab > li:nth-child(even),
+	.row-2cols-tab > .column:nth-child(even),
+	.row-3cols-tab > li:nth-child(3n+3),
+	.row-3cols-tab > .column:nth-child(3n+3),
+	.row-4cols-tab > li:nth-child(4n+4),
+	.row-4cols-tab > .column:nth-child(4n+4),
+	.row-5cols-tab > li:nth-child(5n+5),
+	.row-5cols-tab > .column:nth-child(5n+5),
+	.row-6cols-tab > li:nth-child(6n+6),
+	.row-6cols-tab > .column:nth-child(6n+6),
+	.row-7cols-tab > li:nth-child(7n+7),
+	.row-7cols-tab > .column:nth-child(7n+7),
+	.row-8cols-tab > li:nth-child(8n+8),
+	.row-8cols-tab > .column:nth-child(8n+8),
+	.row-9cols-tab > li:nth-child(9n+9),
+	.row-9cols-tab > .column:nth-child(9n+9),
+	.row-10cols-tab > li:nth-child(10n+10),
+	.row-10cols-tab > .column:nth-child(10n+10),
+	.row-11cols-tab > li:nth-child(11n+11),
+	.row-11cols-tab > .column:nth-child(11n+11),
+	.row-12cols-tab > li:nth-child(12n+12),
+	.row-12cols-tab > .column:nth-child(12n+12) {
+		margin-right: 0;
+	}
+
+	.row-2cols-tab.no-margin > li:nth-child(odd),
+	.row-2cols-tab.no-margin > .column:nth-child(odd),
+	.row-3cols-tab.no-margin > li:nth-child(3n+1),
+	.row-3cols-tab.no-margin > .column:nth-child(3n+1),
+	.row-4cols-tab.no-margin > li:nth-child(4n+1),
+	.row-4cols-tab.no-margin > .column:nth-child(4n+1),
+	.row-5cols-tab.no-margin > li:nth-child(5n+1),
+	.row-5cols-tab.no-margin > .column:nth-child(5n+1),
+	.row-6cols-tab.no-margin > li:nth-child(6n+1),
+	.row-6cols-tab.no-margin > .column:nth-child(6n+1),
+	.row-7cols-tab.no-margin > li:nth-child(7n+1),
+	.row-7cols-tab.no-margin > .column:nth-child(7n+1),
+	.row-8cols-tab.no-margin > li:nth-child(8n+1),
+	.row-8cols-tab.no-margin > .column:nth-child(8n+1),
+	.row-9cols-tab.no-margin > li:nth-child(9n+1),
+	.row-9cols-tab.no-margin > .column:nth-child(9n+1),
+	.row-10cols-tab.no-margin > li:nth-child(10n+1),
+	.row-10cols-tab.no-margin > .column:nth-child(10n+1),
+	.row-11cols-tab.no-margin > li:nth-child(11n+1),
+	.row-11cols-tab.no-margin > .column:nth-child(11n+1),
+	.row-12cols-tab.no-margin > li:nth-child(12n+1),
+	.row-12cols-tab.no-margin > .column:nth-child(12n+1) {
+		padding-left: 0;
+	}
+
+	.row-2cols-tab.no-margin > li:nth-child(even),
+	.row-2cols-tab.no-margin > .column:nth-child(even),
+	.row-3cols-tab.no-margin > li:nth-child(3n+3),
+	.row-3cols-tab.no-margin > .column:nth-child(3n+3),
+	.row-4cols-tab.no-margin > li:nth-child(4n+4),
+	.row-4cols-tab.no-margin > .column:nth-child(4n+4),
+	.row-5cols-tab.no-margin > li:nth-child(5n+5),
+	.row-5cols-tab.no-margin > .column:nth-child(5n+5),
+	.row-6cols-tab.no-margin > li:nth-child(6n+6),
+	.row-6cols-tab.no-margin > .column:nth-child(6n+6),
+	.row-7cols-tab.no-margin > li:nth-child(7n+7),
+	.row-7cols-tab.no-margin > .column:nth-child(7n+7),
+	.row-8cols-tab.no-margin > li:nth-child(8n+8),
+	.row-8cols-tab.no-margin > .column:nth-child(8n+8),
+	.row-9cols-tab.no-margin > li:nth-child(9n+9),
+	.row-9cols-tab.no-margin > .column:nth-child(9n+9),
+	.row-10cols-tab.no-margin > li:nth-child(10n+10),
+	.row-10cols-tab.no-margin > .column:nth-child(10n+10),
+	.row-11cols-tab.no-margin > li:nth-child(11n+11),
+	.row-11cols-tab.no-margin > .column:nth-child(11n+11),
+	.row-12cols-tab.no-margin > li:nth-child(12n+11),
+	.row-12cols-tab.no-margin > .column:nth-child(12n+12) {
+		padding-right: 0;
+	}
+
+	/* Push Full Column/Gutter Width */
+	.row .column.push11-tab,
+	.row li.push11-tab { left: 94.2857137%; }
+	.row .column.push10-tab,
+	.row li.push10-tab { left: 85.7142852%; }
+	.row .column.push9-tab,
+	.row li.push9-tab {	left: 77.1428567%; }
+	.row .column.push8-tab,
+	.row li.push8-tab {	left: 68.5714282%; }
+	.row .column.push7-tab,
+	.row li.push7-tab {	left: 59.9999999%; }
+	.row .column.push6-tab,
+	.row li.push6-tab {	left: 51.4285711%; }
+	.row .column.push5-tab,
+	.row li.push5-tab {	left: 42.8571426%; }
+	.row .column.push4-tab,
+	.row li.push4-tab {	left: 34.2857141%; }
+	.row .column.push3-tab,
+	.row li.push3-tab {	left: 25.7142856%; }
+	.row .column.push2-tab,
+	.row li.push2-tab {	left: 17.1428571%; }
+	.row .column.push1-tab,
+	.row li.push1-tab {	left: 8.57142857%; }
+
+	/* Push Column Width only. No Gutter */
+	.row .column.pushcol-tab,
+	.row li.pushcol-tab { left: 5.71428572%; }
+
+	/* Push Gutter Width only. No Column */
+	.row .column.pushmargin-tab,
+	.row li.pushmargin-tab { left: 2.85714286%; }
+
+	/* Pull Full Column/Gutter Width */
+	.row .column.pull11-tab,
+	.row li.pull11-tab { left: -94.2857137%; }
+	.row .column.pull10-tab,
+	.row li.pull10-tab { left: -85.7142852%; }
+	.row .column.pull9-tab,
+	.row li.pull9-tab {	left: -77.1428567%; }
+	.row .column.pull8-tab,
+	.row li.pull8-tab {	left: -68.5714282%; }
+	.row .column.pull7-tab,
+	.row li.pull7-tab {	left: -59.9999999%; }
+	.row .column.pull6-tab,
+	.row li.pull6-tab {	left: -51.4285711%; }
+	.row .column.pull5-tab,
+	.row li.pull5-tab {	left: -42.8571426%; }
+	.row .column.pull4-tab,
+	.row li.pull4-tab {	left: -34.2857141%; }
+	.row .column.pull3-tab,
+	.row li.pull3-tab {	left: -25.7142856%; }
+	.row .column.pull2-tab,
+	.row li.pull2-tab {	left: -17.1428571%; }
+	.row .column.pull1-tab,
+	.row li.pull1-tab {	left: -8.57142857%; }
+
+	/* Pull Column Width only. No Gutter */
+	.row .column.pullcol-tab,
+	.row li.pullcol-tab { left: -5.71428572%; }
+
+	/* Pull Gutter Width only. No Column */
+	.row .column.pullmargin-tab,
+	.row li.pullmargin-tab { left: -2.85714286%; }
+
+
+	.hide-tablet {
+		display: none !important;
+	}
+
+}
+
+
+/* 	================================================
+
+	MOBILE VIEW
+
+	================================================ */
+@media screen and (max-width: 570px) {
+
+	/* Default Columns are Full Width */
+	.row > .column,
+	.row > li {
+		float: none;
+		clear: both;
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+	.no-margin > .column,
+	.no-margin > li {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	/* Custom column widths */
+	.row .col12-mob { width: 100%; float: none; clear: both; margin-left: 0; margin-right: 0; }
+	.row .col11-mob { width: 91.42857143%; float: left; clear: none; }
+	.row .col10-mob { width: 82.85714286%; float: left; clear: none; }
+	.row .col9-mob { width: 74.28571429%; float: left; clear: none; }
+	.row .col8-mob { width: 65.71428571%; float: left; clear: none; }
+	.row .col7-mob { width: 57.14285714%; float: left; clear: none; }
+	.row .col6-mob { width: 48.57142857%; float: left; clear: none; }
+	.row .col5-mob { width: 40%; float: left; clear: none; }
+	.row .col4-mob { width: 31.42857143%; float: left; clear: none; }
+	.row .col3-mob { width: 22.85714286%; float: left; clear: none; }
+	.row .col2-mob { width: 14.2857143%; float: left; clear: none; }
+	.row .col1-mob { width: 5.71428572%; float: left; clear: none; }
+
+	/* Push Full Column/Gutter Width */
+	.row .column.push11-mob,
+	.row li.push11-mob { left: 94.2857137%; }
+	.row .column.push10-mob,
+	.row li.push10-mob { left: 85.7142852%; }
+	.row .column.push9-mob,
+	.row li.push9-mob {	left: 77.1428567%; }
+	.row .column.push8-mob,
+	.row li.push8-mob {	left: 68.5714282%; }
+	.row .column.push7-mob,
+	.row li.push7-mob {	left: 59.9999999%; }
+	.row .column.push6-mob,
+	.row li.push6-mob {	left: 51.4285711%; }
+	.row .column.push5-mob,
+	.row li.push5-mob {	left: 42.8571426%; }
+	.row .column.push4-mob,
+	.row li.push4-mob {	left: 34.2857141%; }
+	.row .column.push3-mob,
+	.row li.push3-mob {	left: 25.7142856%; }
+	.row .column.push2-mob,
+	.row li.push2-mob {	left: 17.1428571%; }
+	.row .column.push1-mob,
+	.row li.push1-mob {	left: 8.57142857%; }
+
+	/* Push Column Width only. No Gutter */
+	.row .column.pushcol-mob,
+	.row li.pushcol-mob { left: 5.71428572%; }
+
+	/* Push Gutter Width only. No Column */
+	.row .column.pushmargin-mob,
+	.row li.pushmargin-mob { left: 2.85714286%; }
+
+	/* Pull Full Column/Gutter Width */
+	.row .column.pull11-mob,
+	.row li.pull11-mob { left: -94.2857137%; }
+	.row .column.pull10-mob,
+	.row li.pull10-mob { left: -85.7142852%; }
+	.row .column.pull9-mob,
+	.row li.pull9-mob {	left: -77.1428567%; }
+	.row .column.pull8-mob,
+	.row li.pull8-mob {	left: -68.5714282%; }
+	.row .column.pull7-mob,
+	.row li.pull7-mob {	left: -59.9999999%; }
+	.row .column.pull6-mob,
+	.row li.pull6-mob {	left: -51.4285711%; }
+	.row .column.pull5-mob,
+	.row li.pull5-mob {	left: -42.8571426%; }
+	.row .column.pull4-mob,
+	.row li.pull4-mob {	left: -34.2857141%; }
+	.row .column.pull3-mob,
+	.row li.pull3-mob {	left: -25.7142856%; }
+	.row .column.pull2-mob,
+	.row li.pull2-mob {	left: -17.1428571%; }
+	.row .column.pull1-mob,
+	.row li.pull1-mob {	left: -8.57142857%; }
+
+	/* Pull Column Width only. No Gutter */
+	.row .column.pullcol-mob,
+	.row li.pullcol-mob { left: -5.71428572%; }
+
+	/* Pull Gutter Width only. No Column */
+	.row .column.pullmargin-mob,
+	.row li.pullmargin-mob { left: -2.85714286%; }
+
+	/* Add margin/padding for multi columns */
+	.row-2cols-mob > li,
+	.row-2cols-mob > .column,
+	.row-3cols-mob > li,
+	.row-3cols-mob > .column,
+	.row-4cols-mob > li,
+	.row-4cols-mob > .column,
+	.row-5cols-mob > li,
+	.row-5cols-mob > .column,
+	.row-6cols-mob > li,
+	.row-6cols-mob > .column,
+	.row-7cols-mob > li,
+	.row-7cols-mob > .column,
+	.row-8cols-mob > li,
+	.row-8cols-mob > .column,
+	.row-9cols-mob > li,
+	.row-9cols-mob > .column,
+	.row-10cols-mob > li,
+	.row-10cols-mob > .column,
+	.row-11cols-mob > li,
+	.row-11cols-mob > .column,
+	.row-12cols-mob > li,
+	.row-12cols-mob > .column {
+		clear: none;
+		float: left;
+		margin-left: 1.42857143%;
+		margin-right: 1.42857143%;
+	}
+
+	.row-2cols-mob.no-margin > li,
+	.row-2cols-mob.no-margin > .column,
+	.row-3cols-mob.no-margin > li,
+	.row-3cols-mob.no-margin > .column,
+	.row-4cols-mob.no-margin > li,
+	.row-4cols-mob.no-margin > .column,
+	.row-5cols-mob.no-margin > li,
+	.row-5cols-mob.no-margin > .column,
+	.row-6cols-mob.no-margin > li,
+	.row-6cols-mob.no-margin > .column,
+	.row-7cols-mob.no-margin > li,
+	.row-7cols-mob.no-margin > .column,
+	.row-8cols-mob.no-margin > li,
+	.row-8cols-mob.no-margin > .column,
+	.row-9cols-mob.no-margin > li,
+	.row-9cols-mob.no-margin > .column,
+	.row-10cols-mob.no-margin > li,
+	.row-10cols-mob.no-margin > .column,
+	.row-11cols-mob.no-margin > li,
+	.row-11cols-mob.no-margin > .column,
+	.row-12cols-mob.no-margin > li,
+	.row-12cols-mob.no-margin > .column {
+		padding-left: 1.42857143%;
+		padding-right: 1.42857143%;
+	}
+
+	/* Set widths for mobile classes */
+	.row-2cols-mob > li,
+	.row-2cols-mob > .column { width:48.57142857%; }
+	.row-3cols-mob > li,
+	.row-3cols-mob > .column { width:31.42857143%; }
+	.row-4cols-mob > li,
+	.row-4cols-mob > .column { width:22.85714286%; }
+	.row-5cols-mob > li,
+	.row-5cols-mob > .column { width:17.714285712%; }
+	.row-6cols-mob > li,
+	.row-6cols-mob > .column { width:14.2857143%; }
+	.row-7cols-mob > li,
+	.row-7cols-mob > .column { width:11.8367346%; }
+	.row-8cols-mob > li,
+	.row-8cols-mob > .column { width:9.99999999%; }
+	.row-9cols-mob > li,
+	.row-9cols-mob > .column { width:8.57142857%; }
+	.row-10cols-mob > li,
+	.row-10cols-mob > .column { width:7.4285714%; }
+	.row-11cols-mob > li,
+	.row-11cols-mob > .column { width:6.4935065%; }
+	.row-12cols-mob > li,
+	.row-12cols-mob > .column { width: 5.71428572%; }
+
+	/* Remove margin/padding on first last columns in even width rows */
+	.row-2cols-mob > li:nth-child(odd),
+	.row-2cols-mob > .column:nth-child(odd),
+	.row-3cols-mob > li:nth-child(3n+1),
+	.row-3cols-mob > .column:nth-child(3n+1),
+	.row-4cols-mob > li:nth-child(4n+1),
+	.row-4cols-mob > .column:nth-child(4n+1),
+	.row-5cols-mob > li:nth-child(5n+1),
+	.row-5cols-mob > .column:nth-child(5n+1),
+	.row-6cols-mob > li:nth-child(6n+1),
+	.row-6cols-mob > .column:nth-child(6n+1),
+	.row-7cols-mob > li:nth-child(7n+1),
+	.row-7cols-mob > .column:nth-child(7n+1),
+	.row-8cols-mob > li:nth-child(8n+1),
+	.row-8cols-mob > .column:nth-child(8n+1),
+	.row-9cols-mob > li:nth-child(9n+1),
+	.row-9cols-mob > .column:nth-child(9n+1),
+	.row-10cols-mob > li:nth-child(10n+1),
+	.row-10cols-mob > .column:nth-child(10n+1),
+	.row-11cols-mob > li:nth-child(11n+1),
+	.row-11cols-mob > .column:nth-child(11n+1),
+	.row-12cols-mob > li:nth-child(12n+1),
+	.row-12cols-mob > .column:nth-child(12n+1) {
+		clear: both;
+		margin-left: 0;
+	}
+
+	.row-2cols-mob > li:nth-child(even),
+	.row-2cols-mob > .column:nth-child(even),
+	.row-3cols-mob > li:nth-child(3n+3),
+	.row-3cols-mob > .column:nth-child(3n+3),
+	.row-4cols-mob > li:nth-child(4n+4),
+	.row-4cols-mob > .column:nth-child(4n+4),
+	.row-5cols-mob > li:nth-child(5n+5),
+	.row-5cols-mob > .column:nth-child(5n+5),
+	.row-6cols-mob > li:nth-child(6n+6),
+	.row-6cols-mob > .column:nth-child(6n+6),
+	.row-7cols-mob > li:nth-child(7n+7),
+	.row-7cols-mob > .column:nth-child(7n+7),
+	.row-8cols-mob > li:nth-child(8n+8),
+	.row-8cols-mob > .column:nth-child(8n+8),
+	.row-9cols-mob > li:nth-child(9n+9),
+	.row-9cols-mob > .column:nth-child(9n+9),
+	.row-10cols-mob > li:nth-child(10n+10),
+	.row-10cols-mob > .column:nth-child(10n+10),
+	.row-11cols-mob > li:nth-child(11n+11),
+	.row-11cols-mob > .column:nth-child(11n+11),
+	.row-12cols-mob > li:nth-child(12n+12),
+	.row-12cols-mob > .column:nth-child(12n+12) {
+		margin-right: 0;
+	}
+
+	.row-2cols-mob.no-margin > li:nth-child(odd),
+	.row-2cols-mob.no-margin > .column:nth-child(odd),
+	.row-3cols-mob.no-margin > li:nth-child(3n+1),
+	.row-3cols-mob.no-margin > .column:nth-child(3n+1),
+	.row-4cols-mob.no-margin > li:nth-child(4n+1),
+	.row-4cols-mob.no-margin > .column:nth-child(4n+1),
+	.row-5cols-mob.no-margin > li:nth-child(5n+1),
+	.row-5cols-mob.no-margin > .column:nth-child(5n+1),
+	.row-6cols-mob.no-margin > li:nth-child(6n+1),
+	.row-6cols-mob.no-margin > .column:nth-child(6n+1),
+	.row-7cols-mob.no-margin > li:nth-child(7n+1),
+	.row-7cols-mob.no-margin > .column:nth-child(7n+1),
+	.row-8cols-mob.no-margin > li:nth-child(8n+1),
+	.row-8cols-mob.no-margin > .column:nth-child(8n+1),
+	.row-9cols-mob.no-margin > li:nth-child(9n+1),
+	.row-9cols-mob.no-margin > .column:nth-child(9n+1),
+	.row-10cols-mob.no-margin > li:nth-child(10n+1),
+	.row-10cols-mob.no-margin > .column:nth-child(10n+1),
+	.row-11cols-mob.no-margin > li:nth-child(11n+1),
+	.row-11cols-mob.no-margin > .column:nth-child(11n+1),
+	.row-12cols-mob.no-margin > li:nth-child(12n+1),
+	.row-12cols-mob.no-margin > .column:nth-child(12n+1) {
+		padding-left: 0;
+	}
+
+	.row-2cols-mob.no-margin > li:nth-child(even),
+	.row-2cols-mob.no-margin > .column:nth-child(even),
+	.row-3cols-mob.no-margin > li:nth-child(3n+3),
+	.row-3cols-mob.no-margin > .column:nth-child(3n+3),
+	.row-4cols-mob.no-margin > li:nth-child(4n+4),
+	.row-4cols-mob.no-margin > .column:nth-child(4n+4),
+	.row-5cols-mob.no-margin > li:nth-child(5n+5),
+	.row-5cols-mob.no-margin > .column:nth-child(5n+5),
+	.row-6cols-mob.no-margin > li:nth-child(6n+6),
+	.row-6cols-mob.no-margin > .column:nth-child(6n+6),
+	.row-7cols-mob.no-margin > li:nth-child(7n+7),
+	.row-7cols-mob.no-margin > .column:nth-child(7n+7),
+	.row-8cols-mob.no-margin > li:nth-child(8n+8),
+	.row-8cols-mob.no-margin > .column:nth-child(8n+8),
+	.row-9cols-mob.no-margin > li:nth-child(9n+9),
+	.row-9cols-mob.no-margin > .column:nth-child(9n+9),
+	.row-10cols-mob.no-margin > li:nth-child(10n+10),
+	.row-10cols-mob.no-margin > .column:nth-child(10n+10),
+	.row-11cols-mob.no-margin > li:nth-child(11n+11),
+	.row-11cols-mob.no-margin > .column:nth-child(11n+11),
+	.row-12cols-mob.no-margin > li:nth-child(12n+11),
+	.row-12cols-mob.no-margin > .column:nth-child(12n+12) {
+		padding-right: 0;
+	}
+
+	.no-margin > .column,
+	.no-margin > li {
+		margin: 0;
+	}
+
+	.hide-mobile {
+		display: none !important;
+	}
+}
+
+
+
+
+
+/*	-----------------------------------
+	Resets
+	----------------------------------- */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+	width: 100%;
+}
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+hr,
+.hr {
+	background: #dadada;
+	border: none;
+	display: block;
+	height: 1px;
+	margin: 30px auto;
+	padding: 0;
+	width: 100%;
+}
+/*	-----------------------------------
+	Font Declarations
+	----------------------------------- */
+@font-face {
+	font-family: 'icons';
+	src:url('/asset/font/icons/icons.eot');
+	src:url('/asset/font/icons/icons.eot?#iefix') format('embedded-opentype'),
+		url('/asset/font/icons/icons.ttf') format('truetype'),
+		url('/asset/font/icons/icons.woff') format('woff'),
+		url('/asset/font/icons/icons.svg#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[class*="icon-"] {
+	font-family: 'icons';
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class*="icon-"]:before {
+	display: block;
+	position: absolute;
+	text-indent: 0;
+}
+
+/* Logos */
+.icon-amiibo:before 	{ content: "\e900"; }
+.icon-nintendo:before	{ content: "\e617\00a0"; } /* add nbsp after to fix android bug */
+.icon-facebook:before	{ content: "\e616"; }
+.icon-instagram:before 	{ content: "\e615"; }
+.icon-tumblr:before		{ content: "\e614"; }
+.icon-twitter:before	{ content: "\e613"; }
+.icon-youtube:before	{ content: "\e612"; }
+.icon-3ds:before		{ content: "\e619"; }
+.icon-wiiu:before		{ content: "\e61a"; }
+.icon-eshop-nin:before	{ content: "\e61e"; } /* eshop classes need to be wrapped in a .logo-eshop class defined in widgets.css */
+.icon-eshop:before		{ content: "\e61f"; }
+
+/* Thick Pagination Arrow */
+.icon-arrow-01-up:before 	{ content: "\e603"; }
+.icon-arrow-01-right:before { content: "\e602"; }
+.icon-arrow-01-left:before 	{ content: "\e601"; }
+.icon-arrow-01-down:before 	{ content: "\e600"; }
+/* Thin Text Arrow */
+.icon-arrow-02-up:before 	{ content: "\e607"; }
+.icon-arrow-02-right:before { content: "\e606"; }
+.icon-arrow-02-left:before 	{ content: "\e605"; }
+.icon-arrow-02-down:before 	{ content: "\e604"; }
+/* Double Thin Text Arrow */
+.icon-arrow-02-up-double:before 	{ content: "\e607\A\e607"; line-height: 0.5; white-space: pre; }
+.icon-arrow-02-right-double:before 	{ content: "\e606\e606";   letter-spacing: -0.5em; padding-right: 0.5em; }
+.icon-arrow-02-left-double:before 	{ content: "\e605\e605";   letter-spacing: -0.5em; padding-right: 0.5em; }
+.icon-arrow-02-down-double:before 	{ content: "\e604\A\e604"; line-height: 0.5; white-space: pre; }
+
+/* Solid Triangle */
+.icon-arrow-03-up:before 	{ content: "\e60b"; }
+.icon-arrow-03-right:before { content: "\e60a"; }
+.icon-arrow-03-left:before 	{ content: "\e609"; }
+.icon-arrow-03-down:before 	{ content: "\e608"; }
+/* Accordion Arrows */
+.icon-arrow-04-up:before	{ content: "\e60f"; }
+.icon-arrow-04-right:before { content: "\e60e"; }
+.icon-arrow-04-left:before 	{ content: "\e60d"; }
+.icon-arrow-04-down:before 	{ content: "\e60c"; }
+
+/* Icons */
+.icon-x-thick:before 	    { content: "\e61b"; }
+.icon-x-thin:before 	    { content: "\e61c"; }
+.icon-search:before		    { content: "\e610"; }
+.icon-menu:before 		    { content: "\e611"; }
+.icon-rss:before 		    { content: "\e618"; }
+.icon-play:before 		    { content: "\e61d"; }
+.icon-check:before 		    { content: "\e620"; }
+.icon-top:before 		    { content: "\e621"; }
+.icon-wiiu:before 		    { content: "\e622"; color: #00a0C8; }
+.icon-wii:before 		    { content: "\e623"; color: #13b5ea; }
+.icon-web:before 		    { content: "\e624"; color: #9b9b9b; }
+.icon-support:before     	{ content: "\e625"; color: #9b9b9b; }
+.icon-news:before 		    { content: "\e627"; color: #9b9b9b; }
+.icon-3dsxl:before 		    { content: "\e628"; color: #b01e23; }
+.icon-ds:before 		    { content: "\e629"; color: #000; }
+.icon-featured:before       { content: "\e626"; color: #ffbf05; }
+
+
+
+@font-face {
+	font-family: 'LatoHairline';
+	src: url('/asset/font/lato/Lato-Hai-Webfont.eot');
+	src: url('/asset/font/lato/Lato-Hai-Webfont.eot?#iefix') format('embedded-opentype'),
+		url('/asset/font/lato/Lato-Hai-Webfont.woff') format('woff'),
+		url('/asset/font/lato/Lato-Hai-Webfont.ttf') format('truetype'),
+		url('/asset/font/lato/Lato-Hai-Webfont.svg#LatoHairline') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoHairlineItalic';
+	src: url('/asset/font/lato/Lato-HaiIta-Webfont.eot');
+	src: url('/asset/font/lato/Lato-HaiIta-Webfont.eot?#iefix') format('embedded-opentype'),
+	url('/asset/font/lato/Lato-HaiIta-Webfont.woff') format('woff'),
+	url('/asset/font/lato/Lato-HaiIta-Webfont.ttf') format('truetype'),
+	url('/asset/font/lato/Lato-HaiIta-Webfont.svg#LatoHairlineItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoLight';
+	src: url('/asset/font/lato/Lato-Lig-Webfont.eot');
+	src: url('/asset/font/lato/Lato-Lig-Webfont.eot?#iefix') format('embedded-opentype'),
+		url('/asset/font/lato/Lato-Lig-Webfont.woff') format('woff'),
+		url('/asset/font/lato/Lato-Lig-Webfont.ttf') format('truetype'),
+		url('/asset/font/lato/Lato-Lig-Webfont.svg#LatoLight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoLightItalic';
+	src: url('/asset/font/lato/Lato-LigIta-Webfont.eot');
+	src: url('/asset/font/lato/Lato-LigIta-Webfont.eot?#iefix') format('embedded-opentype'),
+		url('/asset/font/lato/Lato-LigIta-Webfont.woff') format('woff'),
+		url('/asset/font/lato/Lato-LigIta-Webfont.ttf') format('truetype'),
+		url('/asset/font/lato/Lato-LigIta-Webfont.svg#LatoLightItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoRegular';
+	src: url('/asset/font/lato/Lato-Reg-Webfont.eot');
+	src: url('/asset/font/lato/Lato-Reg-Webfont.eot?#iefix') format('embedded-opentype'),
+		url('/asset/font/lato/Lato-Reg-Webfont.woff') format('woff'),
+		url('/asset/font/lato/Lato-Reg-Webfont.ttf') format('truetype'),
+		url('/asset/font/lato/Lato-Reg-Webfont.svg#LatoRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoItalic';
+	src: url('/asset/font/lato/Lato-RegIta-Webfont.eot');
+	src: url('/asset/font/lato/Lato-RegIta-Webfont.eot?#iefix') format('embedded-opentype'),
+		url('/asset/font/lato/Lato-RegIta-Webfont.woff') format('woff'),
+		url('/asset/font/lato/Lato-RegIta-Webfont.ttf') format('truetype'),
+		url('/asset/font/lato/Lato-RegIta-Webfont.svg#LatoItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoBold';
+	src: url('/asset/font/lato/Lato-Bol-Webfont.eot');
+	src: url('/asset/font/lato/Lato-Bol-Webfont.eot?#iefix') format('embedded-opentype'),
+		url('/asset/font/lato/Lato-Bol-Webfont.woff') format('woff'),
+		url('/asset/font/lato/Lato-Bol-Webfont.ttf') format('truetype'),
+		url('/asset/font/lato/Lato-Bol-Webfont.svg#LatoBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoBoldItalic';
+	src: url('/asset/font/lato/Lato-BolIta-Webfont.eot');
+	src: url('/asset/font/lato/Lato-BolIta-Webfont.eot?#iefix') format('embedded-opentype'),
+		url('/asset/font/lato/Lato-BolIta-Webfont.woff') format('woff'),
+		url('/asset/font/lato/Lato-BolIta-Webfont.ttf') format('truetype'),
+		url('/asset/font/lato/Lato-BolIta-Webfont.svg#LatoBoldItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoBlack';
+	src: url('/asset/font/lato/Lato-Bla-Webfont.eot');
+	src: url('/asset/font/lato/Lato-Bla-Webfont.eot?#iefix') format('embedded-opentype'),
+		url('/asset/font/lato/Lato-Bla-Webfont.woff') format('woff'),
+		url('/asset/font/lato/Lato-Bla-Webfont.ttf') format('truetype'),
+		url('/asset/font/lato/Lato-Bla-Webfont.svg#LatoBlack') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoBlackItalic';
+	src: url('/asset/font/lato/Lato-BlaIta-Webfont.eot');
+	src: url('/asset/font/lato/Lato-BlaIta-Webfont.eot?#iefix') format('embedded-opentype'),
+		url('/asset/font/lato/Lato-BlaIta-Webfont.woff') format('woff'),
+		url('/asset/font/lato/Lato-BlaIta-Webfont.ttf') format('truetype'),
+		url('/asset/font/lato/Lato-BlaIta-Webfont.svg#LatoBlackItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/*	-----------------------------------
+	Baselines
+	----------------------------------- */
+
+html {
+	height: 100%;
+}
+
+body {
+	background: #989898;
+	line-height: 1.2;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+}
+
+div#page-container {
+	background: #fff;
+	box-shadow: 0 -10px 25px rgba(0,0,0,0.2);
+	display: block;
+	overflow: hidden; /* prevent selecting text and horizontally scrolling when content is off the right edge (carousel arrows) */
+	padding-top: 0;
+	position: relative;
+	width: 100%;
+}
+div.page-content {
+	padding-top: 30px;
+}
+.no-top-margin {
+	margin-top: 0 !important;
+}
+.no-bottom-margin {
+	margin-bottom: 0 !important;
+}
+
+/* --- Desktop Headline Fonts --- */
+h1, .h1 {
+	color: #000;
+	font-family: 'LatoLight';
+	font-size: 66px;
+	margin: 0;
+}
+h2, .h2 {
+	color: #000;
+	font-family: 'LatoLight';
+	font-size: 44px;
+	margin: 0 0 10px;
+}
+h3, .h3 {
+	color: #000;
+	font-family: 'LatoLight';
+	font-size: 30px;
+	margin: 0 0 10px;
+}
+h4, .h4 {
+	color: #484848;
+	font-family: 'LatoBlack';
+	font-size: 40px;
+	margin: 0 0 10px;
+}
+h5, .h5 {
+	color: #484848;
+	font-family: 'LatoBlack';
+	font-size: 32px;
+	margin: 0 0 10px;
+}
+
+/* --- Desktop Body Fonts --- */
+body, .b1 {
+	color: #777;
+	font-family: 'LatoRegular';
+	font-size: 16px;
+}
+.b2 {
+	color: #999;
+	font-family: 'LatoBold';
+	font-size: 16px;
+}
+.b3 {
+	color: #777;
+	font-family: 'LatoBold';
+	font-size: 20px;
+	margin: 0 0 10px;
+}
+.b4 {
+	color: #999;
+	font-family: 'LatoRegular';
+	font-size: 14px;
+}
+.b5 {
+	color: #777;
+	font-family: 'LatoRegular';
+	font-size: 20px;
+}
+.b6 {
+	color: #000;
+	font-family: 'LatoLight';
+	font-size: 20px;
+}
+.b7 {
+	color: #484848;
+	font-family: 'LatoBlack';
+	font-size: 24px;
+	margin: 0 0 10px;
+}
+
+small,
+.b8 {
+	color: #777;
+	font-family: 'LatoRegular';
+	font-size: 14px;
+}
+
+p {
+	line-height: 1.5;
+	margin: 0 0 20px;
+}
+
+ol, ul { }
+
+a {
+	color: #2576bc;
+	cursor: pointer;
+	text-decoration: none;
+}
+a.h1, a.h2, a.h3, a.h4, a.h5,
+a.b1, a.b2, a.b3, a.b4, a.b5, a.b6, a.b7, a.b8 {
+	color: #2576bc;
+}
+a:hover {
+	color: #3aa4ff;
+	text-decoration: underline;
+}
+a.h1:hover, a.h2:hover, a.h3:hover, a.h4:hover, a.h5:hover,
+a.b1:hover, a.b2:hover, a.b3:hover, a.b4:hover, a.b5:hover, a.b6:hover, a.b7:hover, a.b8:hover {
+	color: #3aa4ff;
+}
+
+strong.sale-price {
+	color: #f47b2b;
+}
+
+.sales-snipe {
+    background-color: #f47b2b;
+    color: white;
+    border-radius: 8px 8px 0 0;
+    font-size: 13px;
+    margin-left: 8px;
+    padding: 1px 14px;
+    position: absolute;
+    font-weight: bold;
+}
+
+h1 a:hover, a.h1:hover,
+h2 a:hover, a.h2:hover,
+h3 a:hover, a.h3:hover {
+	border-bottom: 1px solid #3aa4ff;
+	text-decoration: none;
+}
+
+a:visited div {
+	border-color: inherit; /* Safari border-color bug fix */
+}
+
+strong, b {
+	font-family: 'LatoBold';
+	font-size: inherit;
+}
+i, em {
+	font-family: 'LatoItalic';
+}
+
+i b, 
+em b,
+b i, 
+b em {
+	font-family: 'LatoBoldItalic';
+}
+
+
+sup {
+	font-size: 0.7em;
+	vertical-align: super;
+}
+sub {
+	font-size: 0.7em;
+	vertical-align: sub;
+}
+
+input, textarea {
+	font-family: 'LatoRegular';
+}
+	input::-webkit-search-cancel-button {
+		-webkit-appearance: none;
+	}
+	input::-ms-clear {
+		display: none;
+	}
+
+/*	-----------------------------------
+	Utilities
+	----------------------------------- */
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.table {
+	display: table;
+	height: 100%;
+}
+	.table-cell {
+		display: table-cell;
+		float: none;
+		vertical-align: middle;
+	}
+
+.nowrap {
+	white-space: nowrap;	
+}
+
+.invisible {
+	opacity: 0;
+}
+
+.offscreen {
+	display: block;
+	left: -999999px;
+	position: absolute;
+	top: -999999px;
+}
+
+.hide-text {
+	display: block;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+.clear {
+	clear: both;
+	display: block;
+	width: 100%;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+.clear-fix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	height: 0;
+	visibility: hidden;
+}
+
+.loader {
+	background: url('/images/global/loader.gif') center center no-repeat;
+	height: 100%;
+	width: 100%;
+}
+
+.jump-target {
+	display: block;
+	position: relative;
+	top: -110px;
+}
+
+
+/* 	================================================
+
+	TABLET VIEW
+
+	================================================ */
+@media screen and (min-width: 571px) and (max-width: 768px) {
+
+/*	-----------------------------------
+	Baselines
+	----------------------------------- */
+	div#page-container {
+		padding-top: 0;
+	}
+
+	/* --- Desktop Headline Fonts --- */
+	h3, .h3 {
+		font-size: 24px;
+	}
+/*	-----------------------------------
+	Utilities
+	----------------------------------- */
+	.left-tab {
+		float: left;
+	}
+
+	.right-tab {
+		float: right;
+	}
+
+	.center-tab {
+		text-align: center;
+	}
+
+}
+
+/* 	================================================
+
+	MOBILE VIEW
+
+	================================================ */
+@media screen and (max-width: 570px) {
+
+/*	-----------------------------------
+	Baselines
+	----------------------------------- */
+
+	div#page-container {
+		padding-top: 0;
+	}
+
+	/* --- Mobile Headline Fonts --- */
+	h1, .h1 {
+		font-size: 46px;
+		/*margin-bottom: 30px;*/
+	}
+	h2, .h2 {
+		font-size: 40px;
+	}
+	h3, .h3 {
+		font-size: 24px;
+	}
+	h4, .h4 {
+		font-size: 30px;
+	}
+	h5, .h5 {
+		font-size: 30px;
+	}
+
+	/* --- Mobile Body Fonts --- */
+	body, .b1 {
+		font-size: 18px;
+	}
+	.b4 {
+		font-size: 16px;
+	}
+	.b5 {
+		font-size: 18px;
+	}
+	.b6 {
+		font-size: 18px;
+	}
+	.b7 {
+		font-size: 22px;
+	}
+	.b8 {
+		font-size: 16px;
+	}
+/*	-----------------------------------
+	Utilities
+	----------------------------------- */
+	.left-mob {
+		float: left;
+	}
+
+	.right-mob {
+		float: right;
+	}
+
+	.center-mob {
+		text-align: center;
+	}
+
+	.jump-target {
+		top: -80px;
+	}
+
+}
+
+/* 	================================================
+
+	3DS Browser Specific Styles
+
+	================================================ */
+
+body.nin3DS h1,
+body.nin3DS .h1 {
+	font-size: 36px;
+}
+body.nin3DS h2,
+body.nin3DS .h2 {
+	font-size: 28px;
+}
+body.nin3DS h3,
+body.nin3DS .h3 {
+	font-size: 20px;
+}
+body.nin3DS h4,
+body.nin3DS .h4 {
+	font-size: 24px;
+}
+
+body.nin3DS,
+body.nin3DS .b1 {
+	font-size: 14px;
+}
+body.nin3DS .b3 {
+	font-size: 16px;
+}
+body.nin3DS .b4 {
+	font-size: 14px;
+}
+body.nin3DS .b7 {
+	font-size: 18px;
+}
+
+
+body.nin3DS [class*="icon-"]:before {
+	display: none;
+}
+body.nin3DS .icon-facebook,
+body.nin3DS .icon-twitter,
+body.nin3DS .icon-youtube,
+body.nin3DS .icon-tumblr,
+body.nin3DS .icon-instagram {
+	background: url('/images/global/no-icon-font-header-footer.png') no-repeat;
+	height: 35px;
+	overflow: hidden;
+	width: 35px;
+}
+body.nin3DS .icon-facebook  { background-position: 0 -95px; }
+body.nin3DS .icon-twitter   { background-position: -35px -95px; }
+body.nin3DS .icon-youtube   { background-position: -70px -95px; }
+body.nin3DS .icon-tumblr    { background-position: 0 -130px; }
+body.nin3DS .icon-instagram { background-position: -35px -130px; }
+
+
+
+nclood-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+nclood-video .chapter-marker {
+	position: absolute;
+	top: -2px;
+	height: 11px;
+	width: 11px;
+	background: #ABA6A6;
+	border-radius: 50px;
+	left: 0;
+	pointer-events: none
+}
+nclood-video .innerWrapper {
+    position: absolute!important;
+    top: 0;
+    left: 0;
+    width: 100%!important;
+    height: 100%!important;
+    min-width: initial;
+}
+
+nclood-video .icon-play:before {
+	content: none;
+}
+
+nclood-video .chromeless .oo-control-bar {
+	display: none;
+}
+
+/* only show Auto and last bitrate, change last bitrate's label to "HD" */
+nclood-video .oo-player-container .oo-quality-popover .oo-quality-screen-content ul li:not(.oo-auto-li):not(:last-child) {
+	display:none;
+}
+nclood-video .oo-player-container .oo-quality-popover .oo-quality-screen-content ul li:not(.oo-auto-li) a.oo-quality-btn {
+	color:transparent;
+	position:relative;
+}
+	nclood-video .oo-player-container .oo-quality-popover .oo-quality-screen-content ul li:not(.oo-auto-li) a.oo-quality-btn:after {
+		content:"HD";
+		color:#fff;
+		font-family:"Roboto",sans-serif;
+		position:relative;
+		line-height:1;
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		text-align:center;
+		font-size:14px;
+	}
+nclood-video .oo-player-container .oo-quality-popover .oo-quality-screen-content ul li:not(.oo-auto-li) a.oo-quality-btn.oo-selected:after{
+	color:#448aff;
+	font-weight:bold;
+}
+
+
+
+/*	-----------------------------------
+	Backgrounds
+	----------------------------------- */
+/* --- Gradient that stretches the browser width --- */
+.container-gradient {
+	position: relative;
+}
+	.container-gradient:before {
+		background: url('/images/global/gradient/radial-f2-fff.png') center top no-repeat;
+		background-size: 100%;
+		background: -moz-radial-gradient(top, ellipse cover,  #f2f2f2 0%, rgba(255,255,255,0) 90%);
+		background: -webkit-gradient(radial, center top, 0px, center top, 100%, color-stop(0%,#f2f2f2), color-stop(90%,rgba(255,255,255,0)));
+		background: -webkit-radial-gradient(top, ellipse cover,  #f2f2f2 0%,rgba(255,255,255,0) 90%);
+		background: -o-radial-gradient(top, ellipse cover,  #f2f2f2 0%,rgba(255,255,255,0) 90%);
+		background: -ms-radial-gradient(top, ellipse cover,  #f2f2f2 0%,rgba(255,255,255,0) 90%);
+		background: radial-gradient(ellipse at top,  #f2f2f2 0%, rgba(255,255,255,0) 90%);
+		content: '';
+		height: 150px;
+		left: 0;
+		position: absolute;
+		width: 100%;
+	}
+	/* Gradient on main content */
+	div#page-container.container-gradient:before {
+		top: 180px;
+	}
+	/* Gradient on specific sections */
+	.container-gradient:before {
+		top: 40px;
+	}
+		.container-gradient .page-content > .row {
+			margin-bottom: 60px;
+			padding-top: 25px;
+		}
+
+/* --- Gradient that is within content --- */
+.content-gradient {
+	background: url('/images/global/gradient/radial-f2-fff.png') center top no-repeat;
+	background-size: 100%;
+	background: -moz-radial-gradient(top, ellipse cover,  #f2f2f2 0%, #fff 50%);
+	background: -webkit-gradient(radial, center top, 0px, center top, 100%, color-stop(0%,#f2f2f2), color-stop(50%,#fff));
+	background: -webkit-radial-gradient(top, ellipse cover,  #f2f2f2 0%,#fff 50%);
+	background: -o-radial-gradient(top, ellipse cover,  #f2f2f2 0%,#fff 50%);
+	background: -ms-radial-gradient(top, ellipse cover,  #f2f2f2 0%,#fff 50%);
+	background: radial-gradient(ellipse at top,  #f2f2f2 0%, #fff 50%);
+	margin-bottom: 80px;
+	padding-top: 25px;
+	position: relative;
+}
+
+/* --- Gradient that is within content but stretches full browser width --- */
+.content-gradient-before,
+.content-gradient-after {
+	position: relative;
+}
+	.content-gradient-before:before,
+	.content-gradient-after:after {
+		background: url('../images/global/gradient/radial-f2-fff.png') center top no-repeat;
+		background-size: 100%;
+		background: -moz-radial-gradient(top, ellipse cover,  #f2f2f2 0%, rgba(255,255,255,0) 90%);
+		background: -webkit-gradient(radial, center top, 0px, center top, 100%, color-stop(0%,#f2f2f2), color-stop(90%,rgba(255,255,255,0)));
+		background: -webkit-radial-gradient(top, ellipse cover,  #f2f2f2 0%,rgba(255,255,255,0) 90%);
+		background: -o-radial-gradient(top, ellipse cover,  #f2f2f2 0%,rgba(255,255,255,0) 90%);
+		background: -ms-radial-gradient(top, ellipse cover,  #f2f2f2 0%,rgba(255,255,255,0) 90%);
+		background: radial-gradient(ellipse at top,  #f2f2f2 0%, rgba(255,255,255,0) 90%);
+		content: '';
+		height: 150px;
+		left: -50%;
+		position: absolute;
+		right: -50%;
+		width: 200%;
+	}
+	.content-gradient-before:before {
+		top: 0;
+	}
+	.content-gradient-after:after {
+		bottom: -155px;
+	}
+
+/*	-----------------------------------
+	Platform Indicators
+	----------------------------------- */
+
+/* --- Border --- */
+.threeDS {
+	border-bottom: 3px solid #ce181e;
+}
+.WiiU {
+	border-bottom: 3px solid #0096c8;
+}
+.switch {
+	border-bottom: 3px solid #e60012;
+}
+.iOSAndroid {
+	border-bottom: 3px solid #000;
+}
+.Android {
+	border-bottom: 3px solid #000;
+}
+.iOS {
+	border-bottom: 3px solid #000;
+}
+
+
+.no-system {
+	border-bottom: 3px solid #999;
+}
+
+/* --- Date with Border --- */
+.date {
+	border-bottom: 3px solid #dadada;
+	color: #999;
+	display: inline-block;
+	font-size: 16px;
+	font-family: 'LatoBold';
+	padding-bottom: 5px;
+}
+	.threeDS .date,
+	.date.threeDS {
+		border-color: #ce181e;
+	}
+	.WiiU .date,
+	.date.WiiU {
+		border-color: #0096c8;
+	}
+	.iOSAndroid .date,
+	.date.iOSAndroid {
+		border-color: #000;
+	}
+	.Android .date,
+	.date.Android {
+		border-color: #000;
+	}
+	.iOS .date,
+	.date.iOS {
+		border-color: #000;
+	}
+	
+	.switch .date,
+	.date.switch {
+		border-color: #e60012;
+	}
+	.no-system .date,
+	.date.no-system {
+		border-color: #999;
+	}
+
+/*	-----------------------------------
+	Buttons
+	----------------------------------- */
+/* --- Default button --- */
+.btn {
+	background: #2576bc;
+	border: 1px solid #1660a0;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	font-family: 'LatoBold';
+	font-size: 20px;
+	line-height: 28px;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+	width: 98%;
+	margin-left: 1%;
+
+		-webkit-transition: all 150ms ease-in-out;
+		-moz-transition: all 150ms ease-in-out;
+		-ms-transition: all 150ms ease-in-out;
+		-o-transition: all 150ms ease-in-out;
+		transition: all 150ms ease-in-out;
+}
+	.btn:hover {
+		background: #3aa4ff;
+		border-color: #3aa4ff;
+		color: #fff;
+		text-decoration: none;
+	}
+
+	/* --- Display button as inline-block --- */
+	.btn-inline {
+		display: inline-block;
+		padding-left: 20px;
+		padding-right: 20px;
+		width: auto;
+	}
+
+	/* --- White button --- */
+	/* --- Preview button --- */
+	.btn-white,
+	.btn-preview {
+		background: #fff;
+		border-color: #dadada;
+		color: #2576bc;
+	}
+		.btn-white:hover,
+		.btn-preview:hover {
+			background: #fff;
+			border-color: #3aa4ff;
+			color: #3aa4ff;
+		}
+	/* --- White FILLED button w default text color --- */
+	.btn-white-filled {
+		background: #ffffff;
+		color: #000;
+	}
+	.btn-white-filled:hover {
+		/*background: #51fd74 !important;*/
+		color: #000;
+	}
+
+		/* --- Orange button --- */
+		.btn-orange {
+			background: #f47b2b;
+			border-color: #f47b2b;
+			color: #fff;
+		}
+			.btn-orange:hover {
+				background: #f7a400;
+				border-color: #f7a400;
+				color: #fff;
+			}
+
+		/* --- Orange FILLED button w white text --- */
+		.btn-orange-filled {
+			background: #f47b2b;
+		}
+		.btn-orange-filled:hover {
+			background: #f8b050 !important;
+		}
+
+
+	/* --- Transparent button --- */
+	.btn-transparent {
+		background: none;
+		border-color: #2576bc;
+		color: #2576bc;
+	}
+		.btn-transparent:hover {
+			background: none;
+			border-color: #3aa4ff;
+			color: #3aa4ff;
+		}
+
+	/* --- White Transparent button --- */
+	.btn-white-transparent {
+		background: none;
+		border-color: #fff;
+		color: #fff;
+	}
+		.btn-white-transparent:hover {
+			background: #fff;
+			border-color: #fff;
+			color: #3aa4ff;
+		}
+
+	/* --- Grey button --- */
+	.btn-grey {
+		background: #888;
+		border-color: #888;
+		color: #fff;
+	}
+		.btn-grey:hover {
+			background: #b1b1b1;
+			border-color: #b1b1b1;
+			color: #fff;
+		}
+
+	/* --- eShop button --- */
+	.btn-eshop {
+		background: #fff;
+		border-color: #dadada;
+		color: #ff7d00;
+	}
+		/* logo as an icon font */
+		.btn-eshop span.icon-eshop,
+		.btn-eshop span.icon-eshop-nin,
+		.logo-eshop span.icon-eshop,
+		.logo-eshop span.icon-eshop-nin {
+			display: inline-block;
+			position: relative;
+			text-indent: -99999em;
+		}
+		.btn-eshop span.icon-eshop, .logo-eshop span.icon-eshop		{ width: 2.7em; }
+		.btn-eshop span.icon-eshop-nin, .logo-eshop span.icon-eshop-nin	{ width: 4em; }
+
+			.btn-eshop span.icon-eshop:before,
+			.logo-eshop span.icon-eshop:before {
+				bottom: -3px;
+				color: #ff7d00;
+			}
+			.btn-eshop span.icon-eshop-nin:before,
+			.logo-eshop span.icon-eshop-nin:before {
+				bottom: -2px;
+				color: #8c8c8c;
+			}
+		/* hover state */
+		.btn-eshop:hover {
+			background: #fff;
+			border-color: #ff7d00;
+			color: #ff7d00;
+		}
+	/* --- eShop button with smaller orange text --- */
+	.btn-eshop.orange {
+		color: #ff7d00;
+		font-size: 18px;
+	}
+		.btn-eshop.orange span.icon-eshop:before,
+		.btn-eshop.orange span.icon-eshop-nin:before {
+			font-size: 20px;
+		}
+
+	/* --- Official Site button --- */
+	/* --- Preview button --- */
+	.btn-site,
+	.btn-preview {
+		padding: 5px 0;
+	}
+
+	/* --- Preview button --- */
+	.btn-preview {
+		font-size: 18px;
+	}
+	/* --- Large button --- */
+	.btn-large {
+		font-size: 30px;
+	}
+
+/* --- Text button with arrow --- */
+.text-btn-arrow {
+	/*white-space: nowrap;*/
+}
+	.text-btn-arrow:after {
+		content: '\e606';
+		display: inline-block;
+		font-family: 'icons';
+		font-size: 60%;
+		height: 20px;
+		position: relative;
+		width: 20px;
+	}
+
+/* --- Content separator button with top/bottom border  --- */
+.btn-borders {
+	border-bottom: 1px solid #dadada;
+	border-top: 1px solid #dadada;
+	font-size: 24px;
+	margin: 0 0 20px;
+	padding: 15px 0;
+	text-align: center;
+}
+
+/* --- Content separator button with top/bottom border  --- */
+.btn-no-borders {
+	font-size: 28px;
+	margin: 0 0 20px;
+	text-align: center;
+}
+
+/* --- Block button --- */
+
+a.btn-block {
+	text-decoration: none;
+	color: #fff;
+	font-family: 'LatoBold';
+	line-height: 2em;
+	padding: 10px 25px;
+	white-space: nowrap;
+}
+	a.btn-block:hover {
+		color: #fff;
+	}
+
+
+/* --- Text button with circle plus --- */
+.text-btn-plus {
+	white-space: nowrap;
+}
+	.text-btn-plus:after {
+		border: 2px solid #2576bc;
+		border-radius: 50%;
+		content: '+';
+		display: inline-block;
+		font-family: 'LatoRegular';
+		font-size: 24px;
+		font-style: normal;
+		height: 26px;
+		line-height: 22px;
+		margin-left: 10px;
+		position: relative;
+		text-align: center;
+		width: 26px;
+	}
+	.text-btn-plus:hover:after {
+		border-color: #3aa4ff;
+	}
+
+/* --- Video thumbnail links --- */
+.modal-video-trigger {
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+}
+
+	.play-btn-container {
+		background: #000;
+		position: relative;
+	}
+
+		.play-btn-container img {
+			opacity: 1;
+
+			-webkit-transition: opacity .3s ease-in-out;
+			transition: opacity .3s ease-in-out;
+		}
+
+			.play-btn-container:hover img {
+				opacity: .7;
+			}
+
+	.play-btn {
+		background: url(/images/global/play-button.png);
+		display: block;
+		height: 64px;
+		width: 64px;
+		left: 50%;
+		top: 50%;
+		margin-left: -32px;
+		margin-top: -32px;
+		position: absolute;
+		opacity: .8;
+		-webkit-transition: opacity .3s ease-in-out;
+		transition: opacity .3s ease-in-out;
+	}
+
+	.play-btn:hover {
+		opacity: 1;
+	}
+	.modal-video-trigger span.b8 {
+		display: block;
+		line-height: 1.2;
+		margin-bottom: 10px;
+		max-width: 166px;
+		text-align: left;
+	}
+	.modal-video-trigger img {
+		border-radius: 2px;
+		display: block;
+
+	}
+
+
+
+/* --- Split, single-row CTA buttons with top and bottom border --- */
+ul.split-cta {
+	border-top: 1px solid #dadada;
+	border-bottom: 1px solid #dadada;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+	ul.split-cta li {
+		border-left: 1px solid #dadada;
+		display: inline-block;
+		padding: 10px 0;
+		margin: 0!important;
+	}
+	ul.split-cta li:first-child {
+		border: none;
+		text-align: right;
+		padding-right: 7%;
+	}
+
+	ul.split-cta li:last-child {
+		text-align: left;
+		padding-left: 7%;
+	}
+
+	@media screen and (max-width: 570px) {
+		ul.split-cta li {
+			border-left: none;
+			border-bottom: 1px solid #dadada;
+			line-height: 1.2;
+
+		}
+
+		ul.split-cta li:first-child {
+			border-bottom: 1px solid #dadada;
+			text-align: center;
+			padding-right: 0;
+		}
+
+		ul.split-cta li:last-child {
+			border-bottom: none;
+			text-align: center;
+			padding-left: 0;
+		}
+	}
+
+
+/*	-----------------------------------
+	Lists
+	----------------------------------- */
+
+.bullet-list {} /* for list in a container that can not be reached. i.e: CMS body text */
+
+div.cms-content ul,
+ul.bullets,
+.bullet-list ul {
+	padding-left: 15px;
+}
+	ul.bullets li,
+	div.cms-content ul li,
+	.bullet-list ul li {
+		line-height: 1.5;
+		margin-bottom: 2ex;
+		position: relative;
+	}
+	ul.bullets li:before,
+	div.cms-content ul li:before,
+	.bullet-list ul li:before {
+		color: #0096c8;
+		content: '\2022';
+		display: block;
+		font-size: 17px;
+		left: -15px;
+		position: absolute;
+		top: 0;
+	}
+
+	ul.bullets.grey li:before {
+		color: #777;
+	}
+
+	ul.bullets.red li:before {
+		color: #ce181e;
+	}
+
+
+ul.asterisk {
+	margin-bottom: 20px;
+	padding-left: 18px;
+}
+	ul.asterisk li {
+		margin-bottom: 5px;
+		position: relative;
+	}
+	ul.asterisk li:before {
+		content: '*';
+		display: block;
+		left: -15px;
+		position: absolute;
+		top: 0;
+	}
+	ul.asterisk li.no-stars {
+		margin-left: -15px;
+	}
+	ul.asterisk li.no-stars:before {
+		content: '';
+	}
+	ul.asterisk li.two-stars:before {
+		content: '**';
+	}
+	ul.asterisk li.three-stars:before {
+		content: '***';
+	}
+	ul.asterisk li.cross:before {
+		content: '†';
+	}
+
+ol.numbers {
+	list-style: decimal;
+	padding-left: 20px;
+}
+
+
+/*	-----------------------------------
+	Form Elements
+	----------------------------------- */
+/* --- Custom Checkboxes --- */
+input[type="checkbox"] {
+	opacity: 0;
+	position: absolute;
+}
+	input[type="checkbox"] + label {
+		clear: both;
+		display: block;
+		font-family: 'LatoBold';
+		margin-bottom: 12px;
+		padding-left: 25px;
+		position: relative;
+	}
+	/* Styled pseudo input */
+	input[type="checkbox"] + label:before {
+		background: #dbdbdb;
+		border-radius: 2px;
+		color: #dbdbdb;
+		content: '\e620';
+		display: block;
+		font-family: 'icons';
+		font-size: 14px;
+		height: 20px;
+		left: 0;
+		line-height: 20px;
+		margin-right: 10px;
+		position: absolute;
+		text-align: center;
+		top: -2px;
+		width: 20px;
+	}
+	/* Focus state */
+	input[type="checkbox"]:focus + label:before {
+		outline: 1px dotted #3aa4ff;
+	}
+	/* Active state */
+	input[type="checkbox"]:checked + label {
+		color: #2576bc;
+	}
+	input[type="checkbox"]:checked + label:before {
+		background: #2576bc;
+		color: #fff;
+	}
+	input[type="checkbox"]:disabled + label {
+		color: #dadada;
+	}
+	input[type="checkbox"]:disabled + label:before {
+		background: #efefef;
+		color: #efefef;
+	}
+
+/*	-----------------------------------
+	Pagination
+	----------------------------------- */
+div.pagination-bar {
+	border-bottom: 1px solid #dadada;
+	border-top: 1px solid #dadada;
+	margin-bottom: -1px;
+	min-height: 49px;
+}
+	/* General Styles */
+	div.pagination-bar ul {
+		display: inline-block;
+		font-family: 'LatoBold';
+		font-size: 14px;
+		line-height: 28px;
+		height: 100%;
+		vertical-align: top;
+		white-space: nowrap;
+	}
+	div.pagination-bar ul:after {
+		clear: both;
+		content: '';
+		display: block;
+	}
+		div.pagination-bar li {
+			display: inline-block;
+		}
+
+	/* Sort Options */
+	div.pagination-bar ul.options {
+		font-size: 16px;
+		padding: 10px 0;
+		width: 50%;
+	}
+	div.pagination-bar ul.sort {
+		float: left;
+	}
+	div.pagination-bar ul.items {
+		float: left;
+		text-align: right;
+	}
+		ul.options li {
+			border-left: 1px solid #dadada;
+			font-family: 'LatoRegular';
+		}
+		ul.options li:nth-child(1),
+		ul.options li:nth-child(2) {
+			border: none;
+		}
+			ul.options li a {
+				display: block;
+				font-family: 'LatoBold';
+				padding: 0 10px;
+			}
+			ul.options li.active a {
+				color: #777;
+				font-family: 'LatoRegular';
+			}
+				ul.options li.active a:hover {
+					color: #777;
+					cursor: default;
+					text-decoration: none;
+				}
+
+	/* Pagination - Pages */
+	div.pagination-bar div.bottom-row {
+		clear: both;
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+	}
+		div.bottom-row:before {
+			background: #dadada;
+			content: '';
+			display: block;
+			height: 1px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+		}
+		div.pagination-bar ul.pagination {
+			padding: 10px 10px 10px 0;
+		}
+			ul.pagination li {
+				min-width: 28px;
+				text-align: center;
+			}
+				ul.pagination li a {
+					display: block;
+					height: 100%;
+					width: 100%;
+				}
+				ul.pagination li.active a {
+					background: #f5f5f5;
+					border-radius: 50%;
+					color: #777;
+				}
+				ul.pagination li a:hover {
+					color: #3aa4ff;
+				}
+
+				ul.pagination li.ellipses a {
+					color: #777;
+				}
+					ul.pagination li.ellipses a:hover {
+						color: #777;
+						cursor: default;
+						text-decoration: none;
+					}
+
+		/* Pagination - Prev/Next Arrows */
+		div.pagination-bar ul.pagination-nav {}
+			ul.pagination-nav li {
+				border-left: 1px solid #dadada;
+				border-right: 1px solid #dadada;
+				display: block;
+				float: left;
+				height: 48px;
+				margin-left: -1px;
+				position: relative;
+				text-indent: -99999em;
+				vertical-align: top;
+				width: 50px;
+			}
+				ul.pagination-nav li a {
+					display: block;
+					height: 100%;
+					width: 100%;
+				}
+				ul.pagination-nav li a:before {
+					font-size: 24px;
+					height: 100%;
+					padding-top: 12px;
+					text-align: center;
+					width: 100%;
+				}
+				ul.pagination-nav li a:hover {
+					color: #3aa4ff;
+				}
+				ul.pagination-nav li.disabled a {
+					color: #dbdbdb;
+					cursor: default;
+				}
+
+
+/*	-----------------------------------
+	Modal Window
+	----------------------------------- */
+div#overlay {
+	background-color: #000;
+	display: block;
+	min-height: 100%;
+	left: 0;
+	opacity: .7;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999998;
+}
+div#modal-window {
+	background: #fff;
+	border-radius: 2px;
+	color: #000;
+	display: block;
+	min-height: 300px;
+	margin: 0 auto;
+	opacity: 0;
+	padding: 2%;
+	position: fixed;
+	max-width: 780px;
+	width: 80%;
+	z-index: 999999;
+
+	/* Had to remove this so video would play on ios6 devices*/
+	/*-webkit-transform: translate3d(0,0,0);
+	-webkit-transform: scale(0);
+	   -moz-transform: scale(0);
+	    -ms-transform: scale(0);
+	     -o-transform: scale(0);*/
+}
+div#modal-window.modal-video {
+	min-height: 0;
+}
+	div.video-player .innerWrapper,
+	div.poster-player .innerWrapper,
+	div#modal-window .innerWrapper {
+		z-index: 1 !important;
+	}
+	/* Close Button */
+	#btn-modal-close {
+		background: #2576bc;
+		border: none;
+		border-radius: 50%;
+		cursor: pointer;
+		height: 30px;
+		padding: 0;
+		position: absolute;
+		right: -10px;
+		text-indent: -99999em;
+		text-decoration: none;
+		top: -10px;
+		width: 30px;
+		z-index: 2;
+	}
+		#btn-modal-close:before {
+			color: #fff;
+			content: '\e61b';
+			display: block;
+			font-family: 'icons';
+			font-size: 15px;
+			left: 0;
+			line-height: 30px;
+			position: absolute;
+			text-align: center;
+			text-indent: 0;
+			top: 0;
+			width: 30px;
+		}
+		#btn-modal-close:hover {
+			background: #3aa4ff;
+		}
+
+
+	div.modal-content {
+		display: none;
+	}
+
+	div#modal-window div.modal-content {
+		position: relative;
+		-webkit-backface-visibility: hidden;
+	}
+	div#modal-window div#video-player {
+		background-color: #000;
+		height: 100%;
+		position: relative;
+		width: 100%;
+	}
+
+
+/*	-----------------------------------
+	Preview Popup Window
+	----------------------------------- */
+div.preview-overlay,
+div.preview-overlay-pv {
+	background: rgba(255,255,255,.5);
+	height: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 3;
+}
+/* --- Preview Window --- */
+div.preview-container {
+	background: #fff;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+	max-width: 100%;
+	opacity: 0;
+	position: absolute;
+	width: 600px;
+	z-index: 5;
+
+	min-height: 200px;
+}
+div.preview-container.loading {
+	background: #fff url('/images/global/loader.gif') center center no-repeat;
+}
+div.preview-container:before,
+div.preview-container:after {
+	background: #dadada;
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+div.preview-container.no-border {
+	background: #f5f5f7;
+}
+
+div.preview-container.no-border:before,
+div.preview-container.no-border:after {
+	background: #f5f5f7;
+}
+
+div.preview-container:before {
+	height: 30px;
+	top: 0;
+}
+div.preview-container:after {
+	height: 5px;
+	bottom: 0;
+}
+	/* Close Button */
+	div.preview-container a.preview-close,
+	div.preview-container a.preview-close-pv {
+		background: #fff;
+		border-radius: 2px;
+		height: 20px;
+		position: absolute;
+		right: 5px;
+		text-indent: -99999em;
+		text-decoration: none;
+		top: 5px;
+		width: 20px;
+		z-index: 10;
+	}
+		div.preview-container a.preview-close:before,
+		div.preview-container a.preview-close-pv:before {
+			color: #2576bc;
+			font-size: 12px;
+			line-height: 20px;
+			width: 100%;
+			text-align: center;
+		}
+		div.preview-container a.preview-close:hover:before,
+		div.preview-container a.preview-close-pv:hover:before {
+			color: #3aa4ff;
+		}
+
+	/* Content Container Grid */
+	div.preview-container div.preview-content {
+		border-bottom: 5px solid #dadada;
+		border-top: 30px solid #dadada;
+		padding: 20px;
+	}
+	div.preview-container div.preview-content[data-system*="DS"] {
+		border-color: #ce181e;
+	}
+	div.preview-container div.preview-content[data-system*="Wii"] {
+		border-color: #0096c8;
+	}
+	div.preview-container div.preview-content:before {
+		color: #fff;
+		display: block;
+		font-family: 'icons';
+		left: 0;
+		line-height: 30px;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		width: 100%;
+	}
+	div.preview-container div.preview-content[data-system*="DS"]:before {
+		content: '\e619';
+		font-size: 30px;
+	}
+	div.preview-container div.preview-content[data-system*="Wii"]:before {
+		content: '\e61a';
+		font-size: 16px;
+	}
+		/* Video Player */
+		div.preview-content div.video-player {
+			margin-bottom: 20px;
+		}
+
+		/* Title & Details */
+		div.preview-info {}
+			div.preview-info li {
+				margin-bottom: 5px;
+			}
+				div.preview-info li span {
+					color: #484848;
+					font-family: 'LatoBold';
+				}
+		/* Learn More Buttons */
+		div.preview-buttons {}
+			div.preview-buttons li {
+				margin-bottom: 10px;
+				text-align: center;
+			}
+
+
+/*	-----------------------------------
+	Tab Switcher
+	----------------------------------- */
+.tab-switcher {
+	position: relative;
+}
+	.tab-switcher ul.tab-content {
+		position: relative;
+	}
+		.tab-switcher ul.tab-content > li {
+			display: none;
+		}
+			.tab-switcher ul.tab-content > li.active {
+				display: block;
+			}
+	.tab-switcher ul.tab-nav {
+		position: relative;
+	}
+		.tab-switcher ul.tab-nav li {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+/*	-----------------------------------
+	Tab Slider (3DS Home Hero)
+	----------------------------------- */
+.tab-slider {
+	max-width: 980px;
+	position: relative;
+	z-index: 1;
+}
+	.tab-slider ul.content {
+		height: 488px;
+		overflow: hidden;
+		position: relative;
+	}
+		.tab-slider ul.content li {
+			float: left;
+			overflow: hidden;
+			position: relative;
+			width: 4%;
+			-webkit-transition: width 500ms, height 500ms;
+			   -moz-transition: width 500ms, height 500ms;
+			     -o-transition: width 500ms, height 500ms;
+			        transition: width 500ms, height 500ms;
+		}
+			.tab-slider ul.content li .slideContent {
+				opacity: 0;
+				-webkit-transition: opacity 500ms cubic-bezier(0.785, 0.135, 0.150, 0.860);
+			}
+			.tab-slider ul.content li:first-child {
+				width: 92%;
+			}
+		.tab-slider ul.triggers li {
+			cursor: pointer;
+		}
+
+/*	-----------------------------------
+	Rating stars (Game detail page)
+	----------------------------------- */
+	.rating-stars {
+		background-color: transparent;
+		background-image: url('/images/global/sprite-rating-stars.png');
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		width: 21px;
+		height: 20px;
+		display: inline-block;
+	}
+	.rating-stars.star-filled-gray {
+		background-position: 0 0;
+	}
+	.rating-stars.star-empty {
+		background-position: -22px 0;
+	}
+	.rating-stars.star-filled-yellow {
+		background-position: -44px 0;
+	}
+
+
+/* 	================================================
+
+	DESKTOP VIEW
+
+	================================================ */
+@media screen and (min-width: 769px) {
+
+	/* Hover state */
+	input[type="checkbox"] + label:hover {
+		color: #3aa4ff;
+		cursor: pointer;
+	}
+	input[type="checkbox"] + label:hover:before {
+		color: #c1c1c1;
+	}
+	/* Active state */
+	input[type="checkbox"]:checked + label {
+		color: #2576bc;
+	}
+	input[type="checkbox"]:checked + label:before {
+		background: #2576bc;
+		color: #fff;
+	}
+	/* Disabled state */
+	input[type="checkbox"]:disabled + label:hover {
+		color: #dadada;
+		cursor: default;
+	}
+	input[type="checkbox"]:disabled + label:hover:before {
+		background: #efefef;
+		color: #efefef;
+	}
+
+/*	-----------------------------------
+	Pagination
+	----------------------------------- */
+	/* Sort Options */
+	div.pagination-bar ul.options {
+		border-bottom: none;
+		width: auto;
+	}
+	div.pagination-bar ul.sort {
+		float: left;
+		padding-right: 3%;
+	}
+	div.pagination-bar ul.items {
+		text-align: left;
+	}
+	/* Pagination - Pages */
+	div.pagination-bar div.bottom-row {
+		clear: none;
+		float: right;
+		width: auto;
+	}
+		div.bottom-row:before {
+			display: none;
+		}
+}
+
+/* 	================================================
+
+	TABLET VIEW
+
+	================================================ */
+@media screen and (min-width: 571px) and (max-width: 768px) {
+
+/*	-----------------------------------
+	Backgrounds
+	----------------------------------- */
+	div#page-container.container-gradient:before {
+		top: 160px;
+	}
+
+/*	-----------------------------------
+	Platform Indicators
+	----------------------------------- */
+	/* --- Date with Border --- */
+	.date {
+		color: #999;
+	}
+
+/*	-----------------------------------
+	Buttons
+	----------------------------------- */
+	.btn,
+	.btn-white,
+	.btn-grey,
+	.btn-orange {
+		font-size: 18px;
+	}
+	.btn-large {
+		font-size: 30px;
+	}
+
+	/*	-----------------------------------
+	Tab Slider (3DS Home Hero)
+	----------------------------------- */
+	.tab-slider ul.content {
+		height: 750px;
+		-webkit-transition : height 300ms;
+		   -moz-transition : height 300ms;
+		    -ms-transition : height 300ms;
+		     -o-transition : height 300ms;
+		        transition : height 300ms;
+	}
+	.tab-slider.short ul.content {
+		height: 580px;
+	}
+		.tab-slider ul.content li {
+			width: 100%;
+		}
+
+}
+
+
+/* 	================================================
+
+	MOBILE VIEW
+
+	================================================ */
+@media screen and (max-width: 570px) {
+
+/*	-----------------------------------
+	Backgrounds
+	----------------------------------- */
+	div#page-container.container-gradient:before {
+		top: 140px;
+	}
+	.page-gradient {
+		margin-bottom: 40px;
+	}
+
+/*	-----------------------------------
+	Buttons
+	----------------------------------- */
+	.btn,
+	.btn-white,
+	.btn-grey,
+	.btn-orange {
+		font-size: 18px;
+	}
+	.btn-large {
+		font-size: 30px;
+	}
+
+	body:lang(fr-CA) .text-btn-plus:after {
+		font-size: 16px;
+		height: 20px;
+		line-height: 16px;
+		margin-left: 6px;
+		width: 20px;
+	}
+
+	.btn-no-borders {
+		font-size: 1em;
+	}
+
+
+/*	-----------------------------------
+	Form Elements
+	----------------------------------- */
+	/* --- Custom Checkboxes --- */
+	input[type="checkbox"] + label {
+		padding-left: 0;
+	}
+	/* Styled pseudo input */
+	input[type="checkbox"] + label:before {
+		left: auto;
+		right: 0;
+	}
+
+
+/*	-----------------------------------
+	Pagination
+	----------------------------------- */
+	/* General Styles */
+	div.pagination-bar ul {
+		line-height: 20px;
+	}
+	/* Sort Options */
+	div.pagination-bar ul.options {
+		padding: 10px 0;
+	}
+		ul.options li a {
+			padding: 0 5px;
+		}
+
+	/* Pagination - Pages */
+	div.pagination-bar ul.pagination {
+		line-height: 30px;
+		padding: 5px 15px 0 5px;
+	}
+		ul.pagination li {
+			margin-right: 5px;
+			min-width: 30px;
+		}
+
+		ul.pagination li.ellipses {
+			min-width: 10px;
+		}
+
+	/* Pagination - Prev/Next Arrows */
+	ul.pagination-nav li {
+		height: 40px;
+		width: 30px;
+	}
+		ul.pagination-nav li a:before {
+			font-size: 20px;
+			padding-top: 10px;
+		}
+
+/*	-----------------------------------
+	Tab Slider (3DS Home Hero)
+	----------------------------------- */
+	.tab-slider ul.content {
+		height: 620px;
+	}
+
+/*	-----------------------------------
+	Accordion Links (similar to footer)
+	----------------------------------- */
+	/* --- Wrapper --- */
+	.accordion {
+		border-bottom: 10px solid #2576bc;
+		max-width: 100%;
+		width: 100%;
+	}
+		/* --- Row --- */
+		.accordion-row {}
+
+			/* --- Expandable Column --- */
+			.accordion-row .column {
+				background: #fff;
+				max-width: 100%;
+				padding: 0;
+			}
+				/* General Styles */
+				.accordion-row .column ul li {
+					padding: 0;
+					margin-bottom: 15px;
+				}
+					/* Links */
+					.accordion-row .column li a {
+						color: #484848;
+						display: block;
+						font-family: 'LatoLight';
+						font-size: 18px;
+					}
+					/* Subhead Links */
+					.accordion-row .column a.b2 {
+						font-size: 22px;
+						font-family: 'LatoRegular';
+						margin-bottom: 20px;
+					}
+					.accordion-row .column.closed ul {
+						display: none;
+					}
+
+				/* Headings */
+				.accordion-row .column  h2 {
+					background: #fafafa;
+					border-top: 1px solid #dadada;
+					color: #2576bc;
+					display: block;
+					font-family: 'LatoBold';
+					font-size: 20px;
+					height: 60px;
+					margin: 0;
+					padding: 20px;
+					position: relative;
+				}
+				.accordion-row .column  h2.trigger {
+					border-bottom: 1px solid #dadada;
+				}
+				.accordion-row .column  h2 a {
+					color: #2576bc;
+					display: block;
+					height: 100%;
+					width: 100%;
+				}
+					/* Arrow Icon */
+					.accordion-row .column  h2.trigger:after {
+						content: '\e60f';
+						display: block;
+						font-family: 'icons';
+						font-size: 20px;
+						position: absolute;
+						right: 25px;
+						top: 20px;
+					}
+
+				/* Closed State */
+				.accordion-row .column.closed h2 {
+					border-bottom: none;
+				}
+					.accordion-row .column.closed h2:after {
+						content: '\e60c';
+					}
+
+				/* --- Open Drawer Links --- */
+				.accordion-row .column  > ul {
+					padding: 20px 20px 10px;
+					display: none;
+				}
+}
+
+@media screen and (max-width: 310px) {
+
+	.btn-no-borders {
+		font-size: 0.8em;
+	}
+
+}
+
+/* 	================================================
+
+	3DS Browser Specific Styles
+
+	================================================ */
+body.nin3DS .date {
+	font-size: 14px;
+}
+
+body.nin3DS .accordion-row .column h2 {
+	font-size: 18px;
+}
+
+body.nin3DS .accordion-row .column  h2.trigger:after {
+	background: url('../images/global/no-icon-font-arrows.png') 0 -20px no-repeat;
+	content: '';
+	height: 17px;
+	overflow: hidden;
+	position: absolute;
+	right: 25px;
+	top: 20px;
+	width: 25px;
+}
+body.nin3DS .accordion-row .column.closed h2:after {
+	background-position: 0 0;
+	content: '';
+}
+
+body.nin3DS .text-btn-arrow:after,
+body.nin3DS .text-btn-plus:after {
+	display: none;
+}
+body.nin3DS .modal-video-trigger.play-btn:before {
+	background: url('../images/global/play-button.png') center center no-repeat;
+	content: '';
+}
+
+body.nin3DS input[type="checkbox"] + label:before {
+	content: 'X';
+}
+
+
+
+/*	================================================
+
+	Custom styles used in compel
+
+	================================================ */
+p.gd-footnote {
+	font-size: .8em;
+	line-height: 1.2;
+}
+
+li.cms-indent {
+	margin-left: 2em;
+}
+	ul li.cms-indent:before {
+		content: "-";
+	}
+
+
+
+
+
+/*	-----------------------------------
+	Global Overrides
+	----------------------------------- */
+body {
+	background: #fff;
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+div#page-container {
+	box-shadow: none;
+	display: table-cell;
+	vertical-align: middle;
+}
+div.wrapper {
+	width: auto;
+}
+
+div.page-header, div.page-section, div.page-footer {
+	position: relative;
+	z-index: 1;
+	box-sizing: border-box;
+}
+
+div#page-container {
+	-webkit-backface-visibility: hidden;
+}
+
+.holder-row .col3 {
+		width: 21.5% ! important;
+	}
+	
+	.europe-columns li {
+		width: 30.5% ! important;
+		white-space: nowrap;
+	}
+
+
+
+/*	-----------------------------------
+	Header
+	----------------------------------- */
+div.page-header {
+	height: 120px;
+	text-align: center;
+}
+	div.page-header h1 {
+		height: 62px;
+		margin: 0 auto 30px;
+		position: relative;
+		text-indent: -99999em;
+	}
+		div.page-header h1.icon-nintendo:before {
+			color: #c1c1c1;
+			content: '\00a0\e617\00a0'; /* add nbsp before and after to fix android bug */
+			display: block;
+			font-size: 62px;
+			height: 100%;
+			position: absolute;
+			text-indent: 0;
+			width: 100%;
+			text-align:center;
+		}
+
+	img.map {
+		display: block;
+		margin: 0 auto;
+		position: relative;
+		top: -190px;
+		z-index: -1;
+	}
+
+/*	-----------------------------------
+	Country Links
+	----------------------------------- */
+body.responsive .accordion {
+	border-bottom: none;
+}
+	div.page-section.holder-row {
+		margin: 80px 0 40px;
+	}
+		div.page-section.accordion-row li {
+			margin-bottom: 10px;
+		}
+			div.page-section.accordion-row a {
+				color: #999;
+			}
+				div.page-section.accordion-row a:hover {
+					color: #3aa4ff;
+				}
+
+/*	-----------------------------------
+	Footer
+	----------------------------------- */
+div.page-footer {
+	margin: auto;
+	text-align: center;
+	width: 76%;
+}
+	div.page-footer h3 {
+		margin-bottom: 40px;
+	}
+
+
+/* 	================================================
+
+	MOBILE VIEW
+
+	================================================ */
+@media screen and (max-width: 769px) {
+	
+	.europe-columns li {
+		white-space: normal;
+		
+	}
+	
+}
+
+@media screen and (max-width: 570px) {
+
+	body,
+	div#page-container {
+		display: block;
+	}
+	
+	.holder-row .col3 {
+		width: 100% ! important;
+	}
+	
+	.europe-columns li {
+		width: 100% ! important;
+	}
+	
+	div.page-section.holder-row {
+		margin: 0;
+	}
+
+/*	-----------------------------------
+	Header
+	----------------------------------- */
+	div.page-header {
+		height: 150px;
+	}
+		div.page-header h1 {
+			height: 50px;
+		}
+			div.page-header h1.icon-nintendo:before {
+				font-size: 50px;
+			}
+		img.map {
+			top: -180px;
+		}
+/*	-----------------------------------
+	Country Links
+	----------------------------------- */
+	div.page-section.accordion-row > div.page-section {
+		margin: 0;
+	}
+
+/*	-----------------------------------
+	Footer
+	----------------------------------- */
+	div.page-footer {
+		border-top: 1px solid #dadada;
+		margin-top: 0;
+		padding: 20px 5%;
+		width: 100%;
+	}
+}
+
+/* 	================================================
+
+	3DS Browser Specific Styles
+
+	================================================ */
+body.nin3DS,
+body.nin3DS div#page-container {
+	display: block;
+	height: auto;
+}
+
+body.nin3DS div.page-header h1.icon-nintendo {
+	background: url('/images/page/country-selector/logo.png') center center no-repeat;
+}
+body.nin3DS div.page-header h1.icon-nintendo:before {
+	display: none;
+}
+
+

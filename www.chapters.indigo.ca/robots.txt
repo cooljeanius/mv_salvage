@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /workarea/
+Disallow: /widgets/
+Disallow: /LegacyStore/
+Disallow: /account-centre/
+Allow: /account-centre/en-ca/anonymous-order-lookup.html
+Allow: /account-centre/fr-ca/recherche-de-commande-anonyme.html
+ 
+# Sitemap files
+Sitemap:  https://www.chapters.indigo.ca/siteindex.xml

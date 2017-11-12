@@ -1,0 +1,14 @@
+User-agent: *
+Sitemap: https://www.fabric.com/sitemap.xml
+Disallow: /DesignWall.aspx
+Disallow: /EmailPage.aspx
+Disallow: /Shopping/ShoppingCart.aspx
+Disallow: /Shopping/Checkout.aspx
+Disallow: /Shopping/Account.aspx
+Disallow: /Shopping/Store/AccountLogin.aspx
+Disallow: /Shopping/Store/Checkout.aspx
+Disallow: /Shopping/Amazon/AmazonCheckout.aspx
+Disallow: /MyAccount-MyProfile.aspx
+Disallow: /ErrorPage.aspx
+Disallow: /find*
+Disallow: /Webdata/*

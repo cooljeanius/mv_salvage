@@ -1,0 +1,17 @@
+
+User-agent: *
+
+Disallow: /accessories/
+Disallow: /account/
+Disallow: /computers/
+Disallow: /electronics/
+Disallow: /home/
+Disallow: /kids/
+Disallow: /sellout/
+Disallow: /shirt/
+Disallow: /sport/
+Disallow: /tech/
+Disallow: /tools/
+Disallow: /wine/
+
+Sitemap: https://www.woot.com/sitemap.xml

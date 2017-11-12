@@ -1,0 +1,245 @@
+/**
+ * Global footer Styles
+ */
+
+#footer {
+	background: url('/consumer/assets/nav/images/home/footer_bg.png') no-repeat scroll 0 0 transparent;
+clear:both;
+color:#B3B3B3;
+height:182px;
+margin:0 auto 20px;
+padding-left:0;
+padding-right:0;
+padding-top:0;
+position:relative;
+text-align:center;
+top:20px;
+width:984px;
+}
+#footer ul{	
+	margin: 0;
+	padding: 6px 0 0 0;
+}
+#footer ul li{
+	display:block;
+	list-style:none;
+	padding:2px 8px 0 18px;
+}
+
+#footer .listsetReg {
+display:inline-block;
+float:left;
+height:auto;
+margin-top:10px;
+position:relative;
+width:170px;
+}
+#footer .listlegal {
+display:inline-block;
+float:left;
+height:auto;
+margin-left:4px;
+margin-top:7px;
+position:relative;
+width:232px;
+}
+
+#footer .footer-logo{
+	position: absolute;
+	bottom: 50px;
+	left:442px;
+}
+#footer .footer-rss{
+bottom:15px;
+position:absolute;
+right:160px;
+}
+#footer .footer-esrb{
+	bottom:15px;
+	position:absolute;
+	left:827px;
+}
+#footer .footer-esrb a {
+  display: block;
+  font-weight: normal;
+  font-size: 0.9em; /* 9 points */
+}
+#footer .footer-esrb .esrb-badge a {
+  line-height: 0;
+}
+#footer .footer-esrb p {
+  width: auto;
+}
+#footer .footerBug{
+padding-top: 55px;
+width:695px;
+margin: 0 auto;
+}
+
+#footer a {
+	color: #8A8A8A;
+	/* font-family: 'Lato', Arial, Helvetica, sans-serif; */
+	font-size: 12px;
+	/* line-height: 16px; */
+	font-weight: normal;
+	text-decoration: none;
+}
+
+#footer a.title {
+	font-size:15px;
+}
+
+#footer a:hover {
+  color: #333;
+}
+
+#footer .listsetReg {
+	display: inline-block;
+	position:relative;
+	float:left;
+	margin-top:10px;
+	width:170px;
+	height:auto;
+}
+
+#footer .listsetWide {
+	display: inline-block;
+	position:relative;
+	float:left;
+	margin-top:10px;
+	width:192px;
+	height:auto;
+}
+
+#footer .listbdr {
+	background: url('/consumer/assets/nav/images/home/footer_bottom_bg.png')	no-repeat 0 0;
+	width:2px;
+	height:127px;
+	display: inline-block;
+	position:relative;
+	float:left;
+}
+
+#footer .listlegal {
+	display: inline-block;
+	position:relative;
+	float:left;
+	width:250px;
+	height:auto;
+	margin-left:4px;
+	margin-top:7px;
+}
+
+#footer ul.graylist {
+	list-style:none;
+	text-align:left;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	line-height:19px;
+	font-style: normal;
+	font-weight: normal;
+	color: #8a8a8a;
+	margin-left:10px;
+}
+
+#footer ul.graylist a.yellow {
+	color:#ff9200;	
+}
+#footer ul.graylist a.yellow:hover {
+	color:#006dff;	
+}
+
+#footer ul.graylist li.majornode {
+	font-size:18px;
+}
+#footer ul.graylist li.legaltitle {
+	font-size:15px;
+}
+
+#ninfooter {
+	background:url('/consumer/assets/nav/images/home/footer_bottom_bg.png') repeat-x;
+	height:98px;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#FFF;
+	_background: none;
+	_background-color:#898989;
+}
+
+#ninfooter .mainarea {
+	margin:0 auto;
+	display:block;
+	position:relative;
+	width:1006px;
+	height:98px;
+	color:#bcbcbc;
+	font-size:11px;
+}
+
+
+
+	#nintendoLogo {
+	background-image:url(/consumer/assets/nav/images/home/footer_n_logo.png);
+	width:96px;
+	height:25px;
+	text-indent:-9999px;
+	float:left;
+	outline:none;
+	margin-top: 40px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 14px;
+	_background-image:url(/consumer/assets/nav/images/home/footer_n_logo.jpg);
+	}
+	#copyrightTxt {
+		margin:35px 0 0 24px;
+		float:left;
+	}
+		#copyrightTxt strong{
+			font-weight:bold;
+		}
+		
+	#shareLinks {
+		margin:30px 0 0 100px;
+		line-height:18px;
+		float:left;
+	}
+	#shareLinks2 {
+		margin:30px 0 0 24px;
+		line-height:18px;
+		float:left;
+	}
+		#shareLinks a, #shareLinks a.visited, #shareLinks a.active, 
+		#shareLinks2 a, #shareLinks2 a.visited, #shareLinks2 a.active {
+			color:#eeeeee;
+			font-weight:normal;
+		}
+		#shareLinks a:hover, #shareLinks2 a:hover {
+			color:#bcbcbc;	
+			font-weight:normal;
+			text-decoration:none;
+		}
+span.findus{
+	color:#EEEEEE;
+	font-weight:normal;
+	vertical-align:top;
+}
+
+#ninfooter .mainarea .esrbpriv {
+	float: right;
+	margin: 0 30px 0 0;
+	width:auto;
+}
+
+#ninfooter .mainarea .esrbpriv a {
+  display: block;
+  font-weight: normal;
+  font-size: 0.9em; /* 9 points */
+  color: #cecece;
+}
+#ninfooter .mainarea .esrbpriv .esrb-badge a {
+  line-height: 0;
+}
+#ninfooter .mainarea .esrbpriv p {
+  width: auto;
+}

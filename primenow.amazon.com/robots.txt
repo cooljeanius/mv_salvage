@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /
+Allow: /$
+Allow: /onboard
+Allow: /ref
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /restaurants
+
+User-Agent: AdsBot-Google
+Disallow:
+
+# Sitemap files
+Sitemap: https://primenow.amazon.com/sitemap.xml
+Sitemap: https://primenow.amazon.com/restaurants/sitemap.xml

@@ -1,0 +1,27 @@
+User-agent: *
+Disallow: /account/
+Disallow: /basket/
+Disallow: /book/
+Disallow: /browse/
+Disallow: /comingsoon/
+Disallow: /dealsAndOffers/
+Disallow: /external/*
+Disallow: /help/
+Disallow: /index/
+Disallow: /load/
+Disallow: /reviews/list/author/
+Disallow: /share/
+Disallow: *searchSortBy
+Disallow: *searchTerm
+Disallow: *?a_aid
+Disallow: *?b=
+Disallow: */b/*
+Disallow: /search*
+Allow: /search/advanced$
+Disallow: /*?searchPublisher*
+Disallow: /*?searchAuthor*
+
+User-agent: 008
+Disallow: /
+
+Sitemap: https://www.bookdepository.com/sitemaps/item/sitemap.xml.gz

@@ -1,0 +1,186 @@
+/******************************************
+ * overwrite global navigation
+ * to fit retailers under games navigation
+ ******************************************/
+#primaryNav li.games a, #primaryNav li.games a:hover {
+  background-position: 0 -0px;
+}
+
+#primaryNav li.support a {
+  background-position: 0 -76px;
+}
+#primaryNav li.support a:hover {
+  background-position: 0 -38px;
+}
+
+.support h2.sectionName_games {
+	background:transparent url(/consumer/images/main_banner-games.jpg) no-repeat scroll 0% 0px;
+	display:block;
+	height:0px !important;
+	margin-left:0;
+	margin-top:-1px;
+	overflow:hidden;
+	padding:103px 4px 6px 0px;
+	text-indent:-9999px;
+	visibility:visible;
+	left:0px;
+	width:988px;
+	position:absolute;
+	top:110px;
+}
+
+
+/***********************
+ * retailer styles
+ ***********************/
+
+.product_page_content {
+    background-color: #FFF;
+    padding: 30px 0 0;
+    margin: 0;
+    width: 980px;
+    clear: both;
+}
+
+#retailers {
+
+    background-color: #FFF;
+    margin: 0;
+    width: 940px;
+}
+
+#retailers a {
+    color: #028fc5;
+    text-decoration: none;
+}
+
+#retailers a:hover {
+    text-decoration: underline;
+}
+
+/********************
+ * header styles
+ ********************/
+
+#retailers #header {
+    width: 940px;
+    background: #F2F2F2 url(../images/retailer_head.gif) no-repeat;
+    padding: 10px 20px;
+}
+
+/* css box model hack for IE */
+* html #retailers #header  {
+    w\idth: 980px;
+}
+
+
+#retailers #header h1 {
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    font-size: 19px;
+}
+
+#retailers #header p {
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+
+/*********************
+ * retailer styles
+ **********************/
+
+ 
+#retailers h3 {
+    background-color: #D9D9D9;
+    padding: 5px 20px;
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    width: 940px;
+} 
+
+/* css box model hack for IE */
+* html #retailers h3  {
+    w\idth: 980px;
+}
+
+#retailers ul#retailerlist {
+    list-style: none;
+    width: 980px;
+    margin: 20px 0;
+    padding: 0;
+}
+ 
+#retailers ul#retailerlist li {
+    float: left;
+    position: relative;
+    margin: 0;
+    padding: 0;
+} 
+
+#retailers ul#retailerlist li a {
+    display: block;
+    margin: 0 0 15px 13px;
+    padding: 9px 10px 8px 10px;
+    width: 160px;
+    height: 60px;   
+    background: url(../images/retailerbox2.gif) 0 0;
+}
+
+#retailers ul#retailerlist li a:hover {
+    background: url(../images/retailerbox2.gif) 0 -77px;
+}
+
+#tbl_retailer {
+    margin: 25px 0;
+}
+
+#tbl_retailer td, #tbl_retailer th {
+    padding: 5px 15px; 
+}
+
+#tbl_retailer th {
+    background-color: #CCC;
+    color: #666;
+    text-align: center;
+    font-weight: bold;
+}
+#tbl_retailer td {
+    padding: 15px;
+    border-bottom: 1px dashed #999;
+}
+#tbl_retailer tr.lastrow td {
+    border-bottom-width: 0;
+}
+
+#tbl_retailer td.website {
+    text-align: center;
+}
+
+#retailers a.btn_findstore {
+    display: block;
+    background: url(../images/btn_findstore.gif) no-repeat;
+    width: 85px;
+    height: 21px;
+    padding: 7px 20px 0;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    color: #666;
+    font-size: 11px;
+    border: 1px solid #CCC;
+}
+
+/* css box model hack for IE */
+* html #retailers a.btn_findstore {
+    w\idth: 125px;
+    \height: 28px;
+}
+
+
+
+#retailers a.btn_findstore:hover {
+    border: 1px solid #4ab5e3;
+}

@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /caspio-b1/
+Disallow: /cgi-bin/
+Disallow: /connectors/
+Disallow: /core/
+Disallow: /manager/
+Disallow: /min/
+Disallow: /media/docs/
+Disallow: /media/flash/
+
+#Sitemap
+sitemap: http://www.conflictfreesourcing.org/sitemap.xml

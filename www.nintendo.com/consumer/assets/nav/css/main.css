@@ -1,0 +1,531 @@
+@charset "utf-8";
+
+/**
+ * Global Stylesheet
+ */
+
+/* For information on what this font-size and em stuff is all about */
+/* Visit the following articles: */
+/* http://ryanwerth.com/blog/article/22/ems-revisited-part-ii-making-ems-more-usable */
+/* http://www.clagnut.com/blog/348/ */
+
+/**
+ * Utility styles
+ */
+
+.hide {
+  display: none;
+}
+
+/**
+ * Layout styles
+ * @description Global positioning and sizing styles
+ */
+ 
+#container {
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	text-align: center;
+}
+#wrapper{
+  text-align: left;
+  width: 980px;
+  padding: 0px; /* shadow pad */
+  margin: 0 auto;
+}
+#mainContentContainer {
+  margin: 0px;
+  padding: 0px;
+}
+
+/**
+ * Link styles
+ * @description Global overrides for <a> tags
+ */
+
+a{
+font-weight: bold;
+color:#0090C7;
+text-decoration:none;
+}
+a:hover{
+color:#00587A;
+}
+#primaryNav a{
+	color:#707070;
+}
+a.imagelink img {
+  display: block;
+}
+a.level1{
+	background:transparent url(/consumer/assets/nav/images/home/link_arrow.gif) no-repeat 0px 4px;
+	padding:0pt 0pt 0pt 10px;
+}
+a.level1:hover{
+	background:transparent url(/consumer/assets/nav/images/home/link_arrow.gif) no-repeat scroll 0px -146px;
+}
+
+a.level2{
+	background:transparent url(/consumer/assets/nav/images/home/link_arrow_blue.gif) no-repeat scroll 0px 4px;
+	padding:0pt 0pt 0pt 10px;
+}
+a.level2:hover{
+	background-position: 0px -146px;
+}
+
+
+
+#alpha{
+float:left;
+width:194px;
+margin: 14px 0px 0px 0px;
+}
+
+
+
+/* @sidebar */
+#sidebar {
+padding: 0px 1px 0px 0px;
+margin: 0px 0px 0px 0px;
+font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+line-height: 1.4em;
+font-size: 10px;
+background: url(/consumer/assets/nav/images/menu-bkg.png);
+}
+
+#sidebar .menu{
+	width:194px;
+	padding: 0px 1px 0px 0px;
+}
+#sidebar input{
+	width:102px;
+	color:#666666;
+}
+#sidebar select{
+	color:#666666;
+}
+#sidebar .menu li.minor a{
+	width:100%;
+	padding-left:12px;
+	margin-left:1px;
+	display:block;
+	line-height:43px;
+	color:#34BEED;
+	background: url(/consumer/assets/nav/images/side-menu-list-bkd.png) no-repeat 0 0 transparent;
+	text-decoration:none;
+	
+}
+#sidebar .menu li.minor a:hover{
+	background: url(/consumer/assets/nav/images/side-menu-list-bkd.png) no-repeat 0 -86px transparent;
+	color:#555555;
+
+}
+#sidebar .menu li.complex{
+	background: url(/consumer/assets/nav/images/menu-bkg.png) repeat-y 0 0;
+	height:43px;
+	overflow:hidden;
+	padding:0px;
+}
+#sidebar .menu li.complex div{
+	width:100%;
+	padding-left:12px;
+	padding-top:2px;
+	margin-left:1px;
+	display:block;
+	line-height:1.5em;
+	color:#34BEED;
+	background: url(/consumer/assets/nav/images/side-menu-list-bkd_blue.png) no-repeat 0 0 transparent;
+	text-decoration:none;
+}
+#sidebar .menu li.complex div a{
+	color:#34BEED;
+}
+#sidebar .menu li.complex div a,
+#sidebar .menu li.complex div input,
+#sidebar .menu li.complex div select{
+	position:relative;
+	top:-15px;
+}
+#sidebar .menu li.complex div a.arrow{
+	position:relative;
+	width:16px;
+	height:16px;
+	top:12px;
+	left:150px;
+	display:block;
+}
+#sidebar .menu li.complex div:hover{
+	background: url(/consumer/assets/nav/images/side-menu-list-bkd_black.png) no-repeat 0 0 transparent;
+	color:#555555;
+	text-decoration:none;
+}
+#sidebar .menu li.complex div:hover a{
+	color:#555555;
+	text-decoration:none;
+}
+#sidebar .menu li.complex_expanded{
+	background: url(/consumer/assets/nav/images/menu-bkg.png) repeat-y 0 0;
+	overflow-x:visible;
+	overflow:hidden;
+	height:100%
+}
+#sidebar .menu li.complex_expanded div{
+	width:90%;
+	padding-left:12px;
+	padding-top:2px;
+	display:block;
+	line-height:1.5em;
+	color:#34BEED;
+	background: url(/consumer/assets/nav/images/side-menu-list-bkd_expanded_blue.png) no-repeat 0 0px transparent;
+	overflow-x:visible;
+}
+#sidebar .menu li.complex_expanded div:hover{
+	background: url(/consumer/assets/nav/images/side-menu-list-bkd_expanded_black.png) no-repeat 0 0 transparent;
+	color:#555555;
+	text-decoration:none;
+}
+#sidebar .menu li.complex_expanded div a{
+	color:#34BEED;
+}
+#sidebar .menu li.complex_expanded div a.arrow{
+	position:relative;
+	width:16px;
+	height:16px;
+	top:12px;
+	left:150px;
+	display:block;
+}
+#sidebar .menu li.complex_expanded div a,
+#sidebar .menu li.complex_expanded div input,
+#sidebar .menu li.complex_expanded div select{
+	position:relative;
+	top:-15px;
+}
+
+#sidebar .menu .major {
+}
+
+#sidebar .menu .major a.more {
+  right: 0;
+  bottom: 1px;
+}
+#sidebar .menu select {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+}
+
+div#sidebarFooter{
+	background:url(/consumer/assets/nav/images/menu-bottom.png) left top;
+	height:34px;
+	overflow:hidden;
+}
+
+div#sidebarHeader{
+	background:url(/consumer/assets/nav/images/menu-top.png) left top;
+	height:31px;
+	overflow:hidden;
+}
+.support h2.sectionName {
+background:transparent url(/consumer/images/main_banner.jpg) no-repeat scroll 0% 0px;
+display:block;
+height:0px !important;
+margin-left:-5px;
+margin-top:-1px;
+overflow:hidden;
+padding:103px 4px 6px 0px;
+text-indent:-9999px;
+visibility:visible;
+left:0px;
+width:988px;
+position:absolute;
+top:110px;
+}
+
+.support h2.sectionName_corp {
+background:transparent url(/corp/images/corp_section_header.jpg) no-repeat scroll 0% 0px;
+height:109px !important;
+margin-left:-5px;
+margin-top:-1px;
+overflow:hidden;
+padding:3px 4px 6px 0px;
+text-indent:-9999px;
+visibility:visible;
+left:0px;
+width:988px;
+}
+
+.secondaryNav{
+padding-bottom:30px;
+height:43px;
+position:relative;
+width:975px;
+z-index:2;
+padding-left:5px;
+/* overflow:hidden; */
+/*background-color:gray;*/
+/* background:transparent url(/consumer/assets/nav/images/home_hover.png) no-repeat 0px 0px; */
+}
+
+.secondaryNav li{
+	float:left;
+	position:relative;
+	/*background:transparent url(/consumer/assets/nav/images/sub-nav-arrow.png) no-repeat scroll 35px 10px;*/
+	padding:15px 17px 11px 18px;
+	border-bottom:1px solid #b3c7cb;
+}
+.secondaryNav li:hover{
+	z-index:1;
+	/*background:transparent url(/consumer/assets/nav/images/sub-nav-arrow.png) no-repeat 34px -141px;*/
+	border:1px solid #b3c7cb;
+	border-bottom:0px none;
+}
+.secondaryNav li#sup_home{
+	/*background:transparent url(/consumer/assets/nav/images/sub-nav-arrow.png) no-repeat scroll 5px 10px;*/
+}
+.secondaryNav li#sup_home:hover{
+	/*background:transparent url(/consumer/assets/nav/images/sub-nav-arrow.png) no-repeat 3px -141px;*/
+}
+.secondaryNav li#sup_wii{
+	width:73px;
+}
+.secondaryNav li#sup_3ds{
+	width:140px;
+}
+.secondaryNav li#sup_otherds{
+	width:111px;
+}
+
+.secondaryNav li a,.secondaryNav li a:visited{
+	color:#A3C0C0;
+	display:block;
+	font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+	font-size:12px;
+	padding-left:30px;
+}
+.secondaryNav li#sup_home a{
+	padding-left:0px;
+}
+.secondaryNav li:hover a{
+	color:#6a9393;
+	text-decoration:none;
+}
+.secondaryNav li#sup_oldersys{
+	padding-right:32px;
+	*padding-right:43px;
+}
+.secondaryNav li#sup_oldersys:hover{
+	padding-right:32px;
+	*padding-right:43px;
+}
+.secondaryNav li ul{
+	background-color:white;
+	display:none;
+	position: absolute;
+	z-index: 500;
+	top:38px;
+	border-left:1px solid #b3c7cb;
+	border-bottom:1px solid #b3c7cb;
+	border-right:1px solid #b3c7cb;
+	height:28px;
+	padding-bottom:10px;
+}
+.secondaryNav li#sup_home ul{
+	width:973px;
+	left:-1px;
+}
+.secondaryNav li#sup_wii ul{
+	left:-126px;
+	padding-left:0px;
+	width:973px;
+}
+.secondaryNav li#sup_3ds ul{
+	left:-234px;
+	padding-left:125px;
+	width:848px;
+}
+.secondaryNav li#sup_otherds ul{
+	left:-409px;
+	padding-left:270px;
+	width:703px;
+}
+.secondaryNav li#sup_oldersys ul{
+	left:-555px;
+	padding-left:340px;
+	width:633px;
+}
+.secondaryNav li ul li,.secondaryNav li#sup_home ul li,.secondaryNav li#sup_wii ul li,.secondaryNav li#sup_3ds ul li,.secondaryNav li#sup_otherds ul li,.secondaryNav li#sup_oldersys ul li{
+	/* background:#2ABBEB; */
+	background:transparent url(/consumer/assets/nav/images/tertiary_box.png) no-repeat left 14px;
+	padding-left:13px;
+	white-space:nowrap;
+	border:0px none;
+}
+.secondaryNav li ul li.has,.secondaryNav li#sup_home ul li.has,.secondaryNav li#sup_wii ul li.has,.secondaryNav li#sup_3ds ul li.has,.secondaryNav li#sup_otherds ul li.has,.secondaryNav li#sup_oldersys ul li.has{
+	/*background:transparent url(/consumer/assets/images/arrow_button.gif) no-repeat right;*/
+	border:0px none;
+	
+}
+.secondaryNav li ul li a,.secondaryNav li#sup_home ul li a,.secondaryNav li#sup_wii ul li a,.secondaryNav li#sup_3ds ul li a,.secondaryNav li#sup_otherds ul li a,.secondaryNav li#sup_oldersys ul li a{
+	color:#819ea4;
+	padding-left:0px;
+}
+.secondaryNav li ul li:hover a,.secondaryNav li#sup_home ul li:hover a,.secondaryNav li#sup_wii ul li:hover a,.secondaryNav li#sup_3ds ul li:hover a,.secondaryNav li#sup_otherds ul li:hover a,.secondaryNav li#sup_oldersys ul li:hover a{
+	color:#819ea4;
+	text-decoration:underline;
+}
+.secondaryNav ul ul{
+	background-color:white;
+	left:0px;
+	border: 1px solid #b3c7cb;
+	width:300px;
+	height:auto;
+}
+.secondaryNav li#sup_home ul ul,.secondaryNav li#sup_wii ul ul,.secondaryNav li#sup_3ds ul ul,.secondaryNav li#sup_otherds ul ul,.secondaryNav li#sup_oldersys ul ul{
+	left:0px;
+	width:300px;
+	padding-left:3px;
+}
+.secondaryNav li ul li ul li{
+	clear:both;
+	padding:5px 0px 0px 0px;
+}
+.secondaryNav li#sup_home ul ul li,.secondaryNav li#sup_wii ul ul li,.secondaryNav li#sup_3ds ul ul li,.secondaryNav li#sup_otherds ul ul li,.secondaryNav li#sup_oldersys ul ul li{
+	
+}
+.secondaryNav li ul li ul li a,.secondaryNav li#sup_home ul li:hover ul li a,.secondaryNav li#sup_wii ul li:hover ul li a,.secondaryNav li#sup_3ds ul li:hover ul li a,.secondaryNav li#sup_otherds ul li:hover ul li a,.secondaryNav li#sup_oldersys ul li:hover ul li a{
+	/* color:#A3C0C0; */
+	color:green;
+}
+.secondaryNav li ul li ul li:hover a,.secondaryNav li#sup_home ul li ul li:hover a,.secondaryNav li#sup_wii ul li ul li:hover a,.secondaryNav li#sup_3ds ul li ul li:hover a,.secondaryNav li#sup_otherds ul li ul li:hover a,.secondaryNav li#sup_oldersys ul li ul li:hover a{
+	/* color:#6a9393; */
+	color:pink;
+}
+.secondaryNav li:hover ul {display: block;}
+.secondaryNav ul, .secondaryNav li:hover ul ul, .secondaryNav ul li:hover ul, .secondaryNav li:hover ul ul{display: none;}
+.secondaryNav li:hover ul, .secondaryNav ul li:hover ul, .secondaryNav ul ul li:hover ul {display: block;}
+
+.secondaryNav li.locator{
+	position: absolute;
+	right:0;
+	top:0;
+	text-align:center;
+	width:223px;
+	padding:0px 0px 0px 26px;
+	*padding:0px 0px 0px 15px;
+	background:none;
+}
+.secondaryNav li.locator:hover{
+	border:0px none;
+	border-bottom:1px solid #b3c7cb;
+}
+.secondaryNav li.locator a{
+	background:transparent url(/consumer/assets/nav/images/where-to-buy.png) no-repeat 0px 0px;
+	color:#555555;
+	font-weight:100;
+	padding:0px 0px 7px 55px;
+	margin-top:5px;
+	line-height:26px;
+	text-align:left;
+	width:168px;
+}
+
+.secondaryNav li.locator a:hover  {
+	background:transparent url(/consumer/assets/nav/images/where-to-buy.png) no-repeat scroll 0px 0px ;
+	
+}
+
+.sidefunc{
+font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+line-height: 1.4em;
+font-size: 62.5%;
+background: url(/consumer/assets/nav/images/lit-menu-top.png);
+/*height: 120px;*/
+}
+
+.sidefunc{
+padding: 10px 10px;
+font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+font-size:10px;
+}
+
+.sidefunc select{
+width:100px;
+font-size:10px;
+}
+
+input{
+width:92px;
+_width:100px;
+font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+font-size:10px;
+border:1px solid #b3b3b3;
+padding:3px;
+}
+
+#nav11{
+float:right;
+margin:-54px 0px 0px 0px ;
+background:none;
+border:none;
+width:41px;
+height:38px;
+}
+
+select{
+	border:1px solid #b3b3b3;
+	padding:3px;
+}
+.language_select{
+	/* background: url(/consumer/assets/nav/images/side-menu-lang.png) no-repeat; */
+	background-color:white;
+	font-size:10px;
+	font-family: 'Lucida Grande', Tahoma, 'Lucida Sans', 'Trebuchet MS', sans-serif;
+	color:#666666;
+	text-decoration:none;
+	margin-bottom:27px;
+}
+
+.language_select a{
+	font-size:10px;
+	color:#666666;
+	text-decoration:none;
+}
+
+.language_select a:hover{
+	font-size:10px;
+	color:#666666;
+	text-decoration:underline;
+}
+
+#breadcrumb_text {
+	font-size:12px;
+	color: #666666;
+	text-align:left;
+	float:left;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+#breadcrumb_text a{
+	font-weight:normal;
+}
+
+/*Alert Notification*/
+.alert-info {
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	color: #31708f;
+}
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid #31708f;
+	border-radius: 4px;
+}

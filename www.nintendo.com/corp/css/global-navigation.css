@@ -1,0 +1,537 @@
+/*	-----------------------------------
+	NOTES:
+	-this is a modified version of nintendo.com's global-navigation.css file, responsive media queries have been removed
+	----------------------------------- */
+
+
+
+/*	-----------------------------------
+	Global Header
+	----------------------------------- */
+
+/* --- Header Bar --- */
+header#global-header {
+	background: #e6e6e6;
+	background: -moz-linear-gradient(top, #e6e6e6 0%, #f5f5f5 100%);
+	background: -webkit-linear-gradient(top, #e6e6e6 0%,#f5f5f5 100%);
+	background: -o-linear-gradient(top, #e6e6e6 0%,#f5f5f5 100%);
+	background: -ms-linear-gradient(top, #e6e6e6 0%,#f5f5f5 100%);
+	background: linear-gradient(to bottom, #e6e6e6 0%,#f5f5f5 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#f5f5f5',GradientType=0 );
+	box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+	font-family: 'LatoBold';
+	font-size: 13px;
+	height: 36px;
+	left: 0;
+	opacity: .95;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 4;
+}
+header#global-header:hover {
+	opacity: 1;
+}
+	header#global-header a{
+		font-weight: normal !important;
+	}
+	/* Inner Content */
+	header#global-header div.wrapper {
+		height: 100%;
+	}
+		
+		header#global-header a.icon-search {
+			display: block;
+			float: right;
+			height: 30px;
+			text-decoration: none;
+			text-indent: -99999em;
+			width: 33px;
+		}
+			header#global-header a.icon-menu:before,
+			header#global-header a.icon-search:before {
+				color: #7a7a7a;
+				font-size: 30px;
+			}
+
+		/* Nintendo Logo */
+		header#global-header h1 {
+			display: block;
+			float: left;
+			height: 26px;
+			margin: 5px 0 0;
+			position: relative;
+			width: 104px;
+		}
+			header#global-header h1 a {
+				display: block;
+				height: 100%;
+				text-decoration: none;
+				text-indent: -9999em;
+				width: 100%;
+			}
+			header#global-header h1 a:hover {
+				border: none;
+			}
+				header#global-header h1 a:before {
+					color: #7a7a7a;
+					display: block;
+					font-size: 26px;
+					height: 100%;
+					position: absolute;
+					text-indent: 0;
+					width: 100%;
+				}
+
+		/* Primary Links */
+		
+		/* need to reduce width after adding amiibo to nav */
+		header#global-header .smaller
+		{
+			width: 10%;
+		}
+		header#global-header nav {
+			display: block;
+			float: right;
+			height: 100%;
+			margin: 0 auto;
+			text-align: center;
+			width: -webkit-calc(100% - 120px);
+			width: calc(100% - 120px);
+		}
+			header#global-header nav ul {
+				display: block;
+				height: 100%;
+				width: 100%;
+			}
+			header#global-header nav ul li {
+				/*display: inline-block;*/
+				display: block;
+				float: left;
+				height: 100%;
+				padding: 0;
+				position: relative;
+				white-space: nowrap;
+				width: 14.2%;
+			}
+				header#global-header nav ul li a {
+					color: #999;
+					display: block;
+					height: 100%;
+					line-height: 36px;
+					/*padding: 0 20px;*/
+					text-decoration: none;
+				}
+				header#global-header nav ul li a:focus,
+				header#global-header nav ul li a:hover {
+					background: #d7d7d7;
+					background: -moz-linear-gradient(top, #d7d7d7 0%, #c4c4c4 100%);
+					background: -webkit-linear-gradient(top, #d7d7d7 0%,#c4c4c4 100%);
+					background: -o-linear-gradient(top, #d7d7d7 0%,#c4c4c4 100%);
+					background: -ms-linear-gradient(top, #d7d7d7 0%,#c4c4c4 100%);
+					background: linear-gradient(to bottom, #d7d7d7 0%,#c4c4c4 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7d7d7', endColorstr='#c4c4c4',GradientType=0 );
+					color: #777;
+				}
+				/* Active */
+				header#global-header nav ul li a.active,
+				header#global-header nav ul li a:active,
+				body#games-page header#global-header .btn-header-games,
+				body#threeDS-page header#global-header .btn-header-threeDS,
+				body#wiiu-page header#global-header .btn-header-wiiu,
+				body#wiimini-page header#global-header .btn-header-wiimini {
+					background: #848484;
+					background: -moz-linear-gradient(top, #848484 0%, #484848 100%);
+					background: -webkit-linear-gradient(top, #848484 0%,#484848 100%);
+					background: -o-linear-gradient(top, #848484 0%,#484848 100%);
+					background: -ms-linear-gradient(top, #848484 0%,#484848 100%);
+					background: linear-gradient(to bottom, #848484 0%,#484848 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#848484', endColorstr='#484848',GradientType=0 );
+					color: #d1d1d1;
+				}
+
+		/* Desktop Search */
+		header#global-header nav ul li.global-header-search {
+			float: right;
+			margin-top: 5px;
+			/*width: 15%;*/
+		}
+			li.global-header-search form {
+				height: 100%;
+			}
+				li.global-header-search input[type="search"] {
+					background: #fff;
+					border: none;
+					border-bottom-left-radius: 13px;
+					border-top-left-radius: 13px;
+					border-bottom-right-radius: 0;
+					border-top-right-radius: 0;
+					color: #989898;
+					display: block;
+					float: left;
+					font-size: 13px;
+					height: 24px;
+					outline: none;
+					padding: 0 0 0 10px;
+					width: 80%;
+					width: -webkit-calc(100% - 24px);
+					width: calc(100% - 24px);
+					-webkit-appearance: none;
+				}
+					li.global-header-search input::-webkit-input-placeholder		{ color: #989898; }
+					li.global-header-search input::-moz-placeholder 				{ color: #989898; opacity: 1; }
+					li.global-header-search input:-ms-input-placeholder 			{ color: #989898; }
+					li.global-header-search input:placeholder 						{ color: #989898; }
+
+					li.global-header-search input:focus::-webkit-input-placeholder 	{ opacity: 0; }
+					li.global-header-search input:focus::-moz-placeholder 			{ opacity: 0; }
+					li.global-header-search input:focus:-ms-input-placeholder 		{ opacity: 0; }
+					li.global-header-search input:focus:placeholder 				{ opacity: 0; }
+
+
+				li.global-header-search input[type="submit"] {
+					background: #fff;
+					border: none;
+					border-bottom-left-radius: 0;
+					border-top-left-radius: 0;
+					border-bottom-right-radius: 13px;
+					border-top-right-radius: 13px;
+					color: #989898;
+					cursor: pointer;
+					display: block;
+					float: left;
+					font-family: 'icons';
+					font-size: 16px;
+					height: 24px;
+					outline: none;
+					padding: 0;
+					width: 24px;
+					-webkit-appearance: none;
+				}
+
+/*	-----------------------------------
+	Global Footer
+	----------------------------------- */
+footer#global-footer {
+	width: 100%;
+}
+	footer#global-footer a{
+		font-weight: normal !important;
+	}
+	/* --- Top Section / Primary Links --- */
+	nav.global-footer-top {
+		background: #e7e7e7;
+		background: -moz-linear-gradient(bottom, #e7e7e7 0%, #f9f9f9 75%);
+		background: -webkit-linear-gradient(bottom, #e7e7e7 0%,#f9f9f9 75%);
+		background: -o-linear-gradient(bottom, #e7e7e7 0%,#f9f9f9 75%);
+		background: -ms-linear-gradient(bottom, #e7e7e7 0%,#f9f9f9 75%);
+		background: linear-gradient(to top, #e7e7e7 0%,#f9f9f9 75%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#f9f9f9',GradientType=0 );
+		padding: 20px 0;
+	}
+		/* General Styles */
+		nav.global-footer-top ul li {
+			padding: 5px 0;
+		}
+			/* Links */
+			nav.global-footer-top a {
+				color: #a0a0a0;
+			}
+				nav.global-footer-top a:hover {
+					color: #484848;
+					text-decoration: none;
+				}
+
+		/* Headings */
+		nav.global-footer-top ul > li,
+		nav.global-footer-top ul > li a {
+			font-family: 'LatoBold';
+			font-size: 16px;
+		}
+
+			nav.global-footer-top li.footer-icon-country {
+				clear: none;
+			}
+			nav.global-footer-top li.footer-icon-country span.change {
+				background-position: 0 -100px;
+				display: inline;
+			}
+
+			/* Country Selector Icon */
+			nav.global-footer-top li.footer-icon-country span {
+				background: url('/images/global/sprite-global-footer-flags.png') 0 0 no-repeat;
+				display: inline-block;
+				height: 12px;
+				width: 16px;
+			}
+
+			/* Page Titles */
+			nav.global-footer-top ul ul li,
+			nav.global-footer-top ul ul li a {
+				display: block;
+				font-family: 'LatoRegular';
+				font-size: 12px;
+				font-weight: normal;
+			}
+
+			/* Prevent Word Wrapping */
+			nav.global-footer-top ul a div {
+				white-space: nowrap;
+				display: inline;
+			}
+
+
+	/* --- Bottom Section / Secondary Links & Social Media  ---*/
+	section.global-footer-bottom {
+		background: #989898;
+		background: -moz-linear-gradient(top, #8c8a8a 0%, #989898 50%);
+		background: -webkit-linear-gradient(top, #8c8a8a 0%,#989898 50%);
+		background: -o-linear-gradient(top, #8c8a8a 0%,#989898 50%);
+		background: -ms-linear-gradient(top, #8c8a8a 0%,#989898 50%);
+		background: linear-gradient(to bottom, #8c8a8a 0%,#989898 50%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c8a8a', endColorstr='#989898',GradientType=0 );
+		color: #e2e2e2;
+		height: auto;
+		min-height: 145px;
+		padding: 20px 0;
+		text-align: center;
+	}
+		/* General Styles */
+		section.global-footer-bottom ul {
+			margin-bottom: 15px;
+		}
+			section.global-footer-bottom ul li {
+				display: inline-block;
+				padding: 0 10px;
+			}
+				/* Links */
+				section.global-footer-bottom a {
+					font-size: 14px;
+					color: #e2e2e2;
+					font-weight: normal;
+				}
+					section.global-footer-bottom a:hover {
+						color: #fff;
+					}
+
+		/* Nintendo Logo */
+		section.global-footer-bottom a.icon-nintendo {
+			display: block;
+			height: 30px;
+			margin: 30px auto;
+			text-decoration: none;
+			text-indent: -99999em;
+			width: 120px;
+		}
+			section.global-footer-bottom a.icon-nintendo:before {
+				color: #c1c1c1;
+				font-size: 30px;
+			}
+
+		/* ESRB Logo */
+		section.global-footer-bottom a.footer-logo-esrb {
+			display: block;
+			width: 60px;
+		}
+
+		/* Social Media */
+		section.global-footer-bottom ul.footer-social a {
+			background: #fff;
+			display: block;
+			font-size: 38px;
+			height: 34px;
+			margin: 2px;
+			padding: 5px;
+			position: relative;
+			text-decoration: none;
+			text-indent: -99999em;
+			width: 34px;
+		}
+		section.global-footer-bottom a.icon-facebook	{ color: #4b689f; }
+		section.global-footer-bottom a.icon-twitter		{ color: #00aee8; }
+		section.global-footer-bottom a.icon-youtube		{ color: #ce1721; }
+		section.global-footer-bottom a.icon-tumblr		{ color: #2c4760; }
+		section.global-footer-bottom a.icon-instagram	{ color: #624338; }
+
+		section.global-footer-bottom ul.footer-social a:before {
+			height: 35px;
+			left: -2px;
+			top: -2px;
+			width: 35px;
+
+		}
+
+		/* Copyright */
+		section.global-footer-bottom ul.footer-copyright {
+			font-size: 12px;
+		}
+			section.global-footer-bottom ul.footer-copyright li {
+				display: inline-block;
+				padding: 0;
+			}
+
+
+
+/* 	================================================
+
+	3DS Browser Specific Styles
+
+	================================================ */
+body.nin3DS a.back-to-top {
+	display: none;
+}
+
+body.nin3DS header#global-header h1 a {
+	background: url('/images/global/no-icon-font-header-footer.png') 0 0 no-repeat;
+}
+body.nin3DS header#global-header h1 a:before {
+	display: none;
+}
+body.nin3DS header#global-header a.icon-menu {
+	background: url('/images/global/no-icon-font-header-footer.png') -35px -60px no-repeat;
+	height: 35px;
+	width: 35px;
+}
+body.nin3DS header#global-header a.icon-search {
+	background: url('/images/global/no-icon-font-header-footer.png') 0 -60px no-repeat;
+	height: 35px;
+	width: 35px;
+}
+body.nin3DS header#global-header-drawer input[type="submit"] {
+	text-indent: -99999em;
+}
+
+body.nin3DS #global-footer ul,
+body.nin3DS #global-footer li {
+	border: none;
+}
+
+body.nin3DS nav.global-footer-top ul > li,
+body.nin3DS nav.global-footer-top ul > li a {
+	display: block;
+	font-size: 18px;
+}
+body.nin3DS nav.global-footer-top div.wrapper > ul > li > a:after {
+	background: url('/images/global/no-icon-font-arrows.png') 0 -20px no-repeat;
+	content: '';
+	height: 17px;
+	overflow: hidden;
+	position: absolute;
+	right: 25px;
+	top: 20px;
+	width: 25px;
+}
+body.nin3DS nav.global-footer-top div.wrapper > ul > li.closed > a:after {
+	background-position: 0 0;
+	content: '';
+}
+
+body.nin3DS section.global-footer-bottom a.icon-nintendo {
+	background: url('/images/global/no-icon-font-header-footer.png') 0 -30px no-repeat;
+}
+body.nin3DS section.global-footer-bottom a,
+body.nin3DS section.global-footer-bottom ul.footer-copyright {
+	border: none;
+	font-size: 12px;
+}
+body.nin3DS section.global-footer-bottom ul.footer-copyright li {
+	border: none;
+	display: block;
+	padding: 0;
+}
+body.nin3DS ul.footer-social a {
+	background: url('/images/global/no-icon-font-header-footer.png') no-repeat;
+	height: 35px;
+	overflow: hidden;
+	width: 35px;
+}
+body.nin3DS ul.footer-social a.icon-facebook  { background-position: 0 -95px; }
+body.nin3DS ul.footer-social a.icon-twitter   { background-position: -35px -95px; }
+body.nin3DS ul.footer-social a.icon-youtube   { background-position: -70px -95px; }
+body.nin3DS ul.footer-social a.icon-tumblr    { background-position: 0 -130px; }
+body.nin3DS ul.footer-social a.icon-instagram { background-position: -35px -130px; }
+
+
+/* 	================================================
+
+	New 3DS Browser Specific Styles
+
+	================================================ */
+ 
+body.new3DS header#global-header-drawer li a {
+	font-size: 14px;
+	line-height: 11px;
+	padding: 8px 20px;
+}
+
+body.new3DS header#global-header-drawer li {
+	height: 27px;
+}
+
+body.new3DS header#global-header-drawer li.global-header-search {
+	height: 50px;
+}
+
+body.new3DS header#global-header-drawer input[type="search"] {
+	width: 80%;
+}
+
+
+/* 	================================================
+
+	Media Queries to facilitate horizontal scrolling on mobile/tablet
+
+	================================================ */
+
+
+@media screen and (max-width: 768px) {
+	body{
+		overflow: auto;
+		height: 100%;
+		background: #fff;		
+	}
+	header#global-header{
+		width: 980px;
+		overflow: auto;	
+		position: absolute; /* can't use fixed position with horiz. scroll */
+	}
+	footer#global-footer,
+	footer#global-footer .wrapper{
+		width: 980px;
+		overflow: auto;
+	}
+	div#page-container{
+		overflow: visible;
+		padding-top: 36px;
+	}
+	footer#global-footer .column.push2{
+		left: 17.1428571%;
+	}
+	.global-footer-top .row > .column,
+	.global-footer-top .row > li{
+		float: left !important;
+		clear: none !important;
+		width: 14.2857143% !important;
+		margin-left: 1.42857143% !important;
+		margin-right: 1.42857143% !important;
+	}
+	.global-footer-top .row .col3{
+		width: 22.85714286% !important;
+	}	
+	.global-footer-bottom .row > .column,
+	.global-footer-bottom .row > li{
+		float: left !important;
+		clear: none !important;
+		margin-left: 1.42857143% !important;
+		margin-right: 1.42857143% !important;
+	}
+	.global-footer-bottom .row .col2{
+		width: 14.2857143% !important;
+	}
+	.global-footer-bottom .row .col8{
+		width: 65.71428571% !important;
+	}
+	.global-footer-bottom .row .col1{
+		width: 5.71428572% !important;
+	}
+}

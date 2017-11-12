@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" id="ng-app" ng-app="playNintendoApp">
+  <head>
+    <script>if(navigator.platform.indexOf('Nintendo 3DS')> -1)
+  window.location.href = '/n3ds/'
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <meta property="og:title" content="Meet Jibanyan on Play Nintendo">
+    <meta property="og:image" content="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/1x1-YokaiWatch-Jibanyan-v02.aead314d435d8e52d9a4e92a6f799c4eee08081e.jpg">
+    <meta property="og:image" content="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/PN-OG-kids-2.jpg">
+    <meta name="description" content="An annoying cat who prevents you from getting any work done, Jibanyan is the ultimate timewaster. In the end, though, Jibanyan represents the tremendous love a pet can have for his owner. Watch videos, find games, take quizzes, read Nintendo news and more at Play Nintendo - a fun place for kids.">
+    <meta property="og:description" content="An annoying cat who prevents you from getting any work done, Jibanyan is the ultimate timewaster. In the end, though, Jibanyan represents the tremendous love a pet can have for his owner. Watch videos, find games, take quizzes, read Nintendo news and more at Play Nintendo - a fun place for kids.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="//share.nintendo.com/nclood/stable/en-us/bundles/microsite.css" media="all">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic|Viga" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/css/screen.8e5863f7840e.css" /><!--[if IE 9]>
+<link rel="stylesheet" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/css/IE9.80fd1614c6df.css" /><![endif]-->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/apple-touch-icon-152x152.png">
+    <meta name="apple-mobile-web-app-title" content="Play Nintendo">
+    <link rel="icon" type="image/png" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#ff3f3f">
+    <meta name="msapplication-TileImage" content="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/mstile-144x144.png">
+    <meta name="msapplication-config" content="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/icons/browserconfig.xml">
+    <meta name="application-name" content="Play Nintendo">
+    <meta name="google-site-verification" content="lcC2m3GxLFXRpw4s4cKbn8Q6jDs8zHPXp9CC1xHn70c">
+<title>Jibanyan - YO-KAI WATCH - Play Nintendo</title>
+  </head>
+  <body>
+    <div style="display: none" class="sizmek">
+      <ul id="sizmektags">
+      </ul>
+    </div>
+    <header id="top">
+      <div class="nclood-nav-container">
+        <nclood-nav highlight="playn" pin="false" nav="false"></nclood-nav>
+      </div>
+      <div class="kids-header">
+        <nav id="main-nav">
+          <input id="mobilenav" type="checkbox">
+          <label for="mobilenav" play-label="">nav</label>
+<div class="small-show"><a href="/" title="Play Nintendo official website" class="logo"><img src="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/img/logo-play-nintendo-blue.e150bf91b64a.png"/></a>
+</div>
+<ul>
+  <li class="home"><a href="/" title="Home">Home</a>
+  </li>
+  <li class="friends has_sub"><a href="/themes/friends/" title="Your Friends at Nintendo">Friends</a>
+    <nav class="friends">
+      <ul>
+        <li><a href="/themes/friends/mario/" class="">
+            <div style="background-color: #00bff3;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Profile_Mario.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Mario</span></a>
+        </li>
+        <li><a href="/themes/friends/luigi/" class="">
+            <div style="background-color: #b54bff;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Profile_Luigi.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Luigi</span></a>
+        </li>
+        <li><a href="/themes/friends/princess-peach/" class="">
+            <div style="background-color: #00bff3;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Profile_Peach.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Princess Peach</span></a>
+        </li>
+        <li><a href="/themes/friends/yoshi/" class="">
+            <div style="background-color: #fff000;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Profile_Yoshi.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Yoshi</span></a>
+        </li>
+        <li><a href="/themes/friends/donkey-kong/" class="">
+            <div style="background-color: #fff000;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Profile_DK.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Donkey Kong</span></a>
+        </li>
+        <li><a href="/themes/friends/link/" class="">
+            <div style="background-color: #b8b8b7;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Profile_Link.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Link</span></a>
+        </li>
+        <li><a href="/themes/friends/princess-zelda/" class="">
+            <div style="background-color: #b54bff;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Profile_Zelda.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Princess Zelda</span></a>
+        </li>
+        <li><a href="/themes/friends/pikachu/" class="">
+            <div style="background-color: #b54bff;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/pikachu-profile_vbS6V7D.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Pikachu</span></a>
+        </li>
+        <li><a href="/themes/friends/jibanyan/" class="">
+            <div style="background-color: #0f206c;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/1x1-YokaiWatch-Jibanyan-v02.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Jibanyan</span></a>
+        </li>
+        <li><a href="/themes/friends/isabelle/" class="">
+            <div style="background-color: #1dd47c;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Isabelle_Circle_sPwFqSj.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Isabelle</span></a>
+        </li>
+        <li><a href="/themes/friends/kirby/" class="">
+            <div style="background-color: #fff000;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Profile_Kirby.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Kirby</span></a>
+        </li>
+        <li><a href="/themes/friends/pikmin/" class="">
+            <div style="background-color: #1dd47c;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Profile_Pikmin.aecb04f118b225212b02a9801b89d9428abb5cb2.jpg"/>
+            </div><span>Pikmin</span></a>
+        </li>
+        <li><a href="/themes/friends/inklings/" class="">
+            <div style="background-color: #4c4c4c;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/inklings-character-circle.7bf2a8f2.aecb04f1.jpg"/>
+            </div><span>Inklings</span></a>
+        </li>
+        <li><a href="/themes/friends/miis/" class="">
+            <div style="background-color: #b54bff;" class="img"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Circles__0031_Miis.focus-none.crop-00472472width-240.jpg"/>
+            </div><span>Miis</span></a>
+        </li>
+        <li class="all"><a href="/themes/friends/">
+            <div class="img"><span>More</span>
+            </div></a>
+        </li>
+      </ul>
+    </nav>
+  </li>
+  <li class="explore has_sub"><a href="/activities/" title="Things to do!">Explore</a>
+    <nav class="explore">
+      <ul>
+        <li><a href="/activities/activities/" class="icon activities">
+            <div class="icon-activity">
+              <div class="star"></div>
+            </div><span>Activities</span></a>
+        </li>
+        <li><a href="/activities/videos/" class="icon videos">
+            <div class="icon-video">
+              <div class="video"></div>
+            </div><span>Videos</span></a>
+        </li>
+        <li><a href="/activities/quizzes/" class="icon quizzes">
+            <div class="icon-quiz">
+              <div class="quiz"></div>
+            </div><span>Quizzes</span></a>
+        </li>
+        <li><a href="/activities/polls/" class="icon polls">
+            <div class="icon-poll">
+              <div class="wrap">
+                <div class="box"></div>
+                <div class="check-mark">
+                  <div class="square"></div>
+                </div>
+              </div>
+            </div><span>Polls</span></a>
+        </li>
+        <li><a href="/activities/galleries/" class="icon galleries">
+            <div class="icon-gallery">
+              <div class="camera">
+                <div class="left-side"></div>
+                <div class="right-side"></div>
+                <div class="circle">
+                  <div class="red"></div>
+                </div>
+                <div class="flash"></div>
+              </div>
+            </div><span>Galleries</span></a>
+        </li>
+        <li><a href="/activities/downloads/" class="icon downloads">
+            <div class="icon-download">
+              <div class="download">
+                <div class="arrow-top"></div>
+                <div class="arrow"></div>
+                <div class="red-bar"></div>
+              </div>
+            </div><span>Downloads</span></a>
+        </li>
+        <li class="all"><a href="/activities/">
+            <div class="img"><span>More</span>
+            </div></a>
+        </li>
+      </ul>
+    </nav>
+  </li>
+  <li class="logo">
+    <h1><a href="/" title="Play Nintendo official website"><img src="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/img/logo-play-nintendo-blue.e150bf91b64a.png"/></a>
+    </h1>
+  </li>
+  <li class="news-tips"><a href="/news-tips/" title="Play Nintendo News!">News &amp; Tips</a>
+  </li>
+  <li class="search">
+    <play-search-box></play-search-box>
+  </li>
+  <li class="secondary parents"><a href="/parents" title="Nintendo website">Parents</a>
+  </li>
+</ul>
+        </nav>
+      </div>
+    </header>
+<div class="page page-theme page-theme-character">
+  <style>.page.page-theme section
+{
+  background-image: url(https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/DarkBlueYokaiPattern.7bf2a8f246a0c89d7557b1eca91906b8fbb1b906.jpg) !important;
+  background-size: 236px 236px !important;
+}
+@media only screen and (max-width: 40em) {
+  .page.page-theme section
+  {
+    zoom: 1 !important;
+     !important;
+  }
+}
+  </style>
+
+  <section style="background-color: #0f206c;" play-light-or-dark="#0f206c" play-theme="play-theme">
+    <div class="detail">
+<div class="content">
+  <h1>Jibanyan</h1>
+  <h2>Jibanyan is a slacker who saps your energy.</h2><p>When he's not lying around eating chocolate bars, Jibanyan likes to practice his fighting moves on passing trucks--usually with painful results!</p><p class="largetext"><em><strong>ID: 93</strong></em></p><p class="largetext"><em><strong>Rank: D</strong></em></p><p class="largetext"><em><strong>Tribe: Charming</strong></em></p>
+</div>
+<div class="image"><img src="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/2x2-YokaiWatch-Jibanyan-v01-B.945d7221996a4badccdfc3951c56e2be44bd7.cf83c02b.png"/>
+</div>
+    </div>
+<div class="page-theme-character__related-box">
+  <play-theme-related-box>
+    <play-theme-related-tab data-headline="Friends" data-type="friends">
+      <play-swiper data-endpoint="api/v1/characters/678/relatedcharacters/" data-itemName="swiper__item--friends"></play-swiper>
+    </play-theme-related-tab>
+    <play-theme-related-tab data-headline="Games" data-type="games">
+      <play-swiper>
+        <play-swiper-item data-href="http://yo-kai.nintendo.com/yw2/" data-track="12,YO-KAI WATCH 2: Psychic Specters,27,Game link" data-target="_blank" data-title="YO-KAI WATCH 2: Psychic Specters" data-image="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/3DS_YKW2-PsychicSpecters_box_N7aco0M.bd63cc25.png" data-product="Nintendo 3DS" class="swiper__item--products"></play-swiper-item>
+        <play-swiper-item data-href="http://yo-kai.nintendo.com/yw2/" data-track="12,YO-KAI WATCH 2: Fleshy Souls,27,Game link" data-target="_blank" data-title="YO-KAI WATCH 2: Fleshy Souls" data-image="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/3DS_YoKaiWatch2-FleshySouls_box_medal.bd63cc25.png" data-product="Nintendo 3DS" class="swiper__item--products"></play-swiper-item>
+        <play-swiper-item data-href="http://yo-kai.nintendo.com/yw2/" data-track="12,YO-KAI WATCH 2: Bony Spirits,27,Game link" data-target="_blank" data-title="YO-KAI WATCH 2: Bony Spirits" data-image="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/3DS_YoKaiWatch2-BonySpirits_box_medal.bd63cc25.png" data-product="Nintendo 3DS" class="swiper__item--products"></play-swiper-item>
+        <play-swiper-item data-href="http://yo-kai.nintendo.com" data-track="12,YO-KAI WATCH,27,Game link" data-target="_blank" data-title="YO-KAI WATCH" data-image="https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/yokai_box_art.bd63cc251442cd77aeeb14758ac21549cadb0b40.png" data-product="Nintendo 3DS" class="swiper__item--products"></play-swiper-item>
+        <play-swiper-item data-istext="true" class="swiper__item--products is-textlink">
+          <h3>Find more Jibanyan games at <a href="http://www.nintendo.com/games/game-guide#filter/-%7C-%7C-%7CE&EC%7C-%7Cdescend%7CreleaseDate", target="_blank"> Nintendo.com</a></h3>
+        </play-swiper-item>
+      </play-swiper>
+    </play-theme-related-tab>
+  </play-theme-related-box>
+</div>
+  </section>
+</div>
+<play-grid data-endpoint="api/v1/content/" data-param-themeId="678" data-param-context="965"></play-grid>
+<div class="sizer"></div>
+    <footer id="main-site-footer">
+      <play-top-button></play-top-button>
+      <div class="row">
+        <div class="col12">
+          <p class="cta">Play Nintendo is a great place to find fun and surprises!
+          </p>
+          <div class="social">
+            <div class="social-footer"></div>
+          </div>
+        </div>
+        <div class="col2"><a href="http://www.nintendo.com" target="_blank" class="iconf-nintendo">Nintendo</a>
+        </div>
+        <div class="col8">
+          <ul style="margin-bottom: 5px" class="footer-links">
+            <li><a href="/parents/">For Parents</a>
+            </li>
+            <li><a href="http://www.nintendo.com/contact" target="_blank">Contact Us</a>
+            </li>
+            <li><a href="http://share.nintendo.com/emailsignup/?referrer=PlayNintendo" target="_blank" class="js-basic-popup">Newsletter Signup</a>
+            </li>
+          </ul>
+          <ul class="footer-links">
+            <li><a href="http://www.nintendo.com/corp/webform.jsp" target="_blank">Website Feedback</a>
+            </li>
+            <li><a href="http://www.nintendo.com/privacy" target="_blank">Privacy Notice</a>
+            </li>
+            <li><a href="http://www.nintendo.com/terms-of-use" target="_blank">Terms of Use</a>
+            </li>
+          </ul>
+          <p style="transform:translateY(1em)">Find us on:</p>
+          <ul class="footer-social">
+            <li><a target="_blank" href="http://www.facebook.com/nintendo" rel="nofollow" class="iconf-facebook">Facebook</a>
+            </li>
+            <li><a target="_blank" href="http://twitter.com/NintendoAmerica" rel="nofollow" class="iconf-twitter">Twitter</a>
+            </li>
+            <li><a target="_blank" href="https://www.youtube.com/c/playnintendo" rel="nofollow" class="iconf-youtube">YouTube</a>
+            </li>
+            <li><a target="_blank" href="http://playnintendo.tumblr.com" rel="nofollow" class="iconf-tumblr">Tumblr</a>
+            </li>
+            <li><a target="_blank" href="http://instagram.com/nintendo" rel="nofollow" class="iconf-instagram">Instagram</a>
+            </li>
+          </ul><a target="_blank" href="http://www.esrb.org/" rel="nofollow" class="footer-esrb"><img src="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/img/ESRBs/E-E10+.png" alt="ESRB: E to E 10+" style="width: 150px;  margin-bottom: 10px;"></a>
+        </div>
+        <div class="col2"><a target="_blank" href="http://www.esrb.org/confirm/nintendo-confirmation.jsp" rel="nofollow" class="footer-logo-esrb"><img src="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/img/global-footer-esrb.png" alt="Privacy Certified ESRB" style="height: 82px;"></a>
+        </div>
+        <div class="col12">
+          <ul class="footer-copyright"><ul><li>For Nintendo 3DS systems, use Parental Controls to restrict 3D mode for kids&nbsp;6 and under.</li><li>Broadband Internet access required for online features. For more info, check out&nbsp;<strong><a href="http://support.nintendo.com" target="_blank">support.nintendo.com</a></strong>.</li><li>&copy; 2017 <em>Nintendo</em>.&nbsp;Games are property of their respective owners.&nbsp;Nintendo of America Inc. Headquarters are in Redmond, Washington.</li></ul>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="//share.nintendo.com/nclood/stable/en-us/bundles/microsite.min.js"></script><script src="https://e02376c5698910179ed3-b4a1a05b72291e49001a0d0b6594b9d0.ssl.cf5.rackcdn.com/assets/js/site.2036b611ff59.js"></script>
+<script>window.wtc.pageTrackName = 'theme-page'
+window.wtc.pageTrackParams = {
+  type: "character",
+  slug: "jibanyan"
+}
+</script>
+
+    <script type="text/javascript">// Instructions: please embed this snippet directly into every page in your website template.
+// For optimal performance, this must be embedded directly into the template, not referenced
+// as an external file.
+
+// Answers Cloud Services Embed Script v1.02
+// DO NOT MODIFY BELOW THIS LINE *****************************************
+;(function (g) {
+var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
+aex = {
+"src": "//gateway.answerscloud.com/nintendo-com/production/gateway.min.js",
+"type": "text/javascript",
+"async": "true",
+"data-vendor": "acs",
+"data-role": "gateway"
+};
+for (var attr in aex) { am.setAttribute(attr,aex[attr]); }
+h.appendChild(am);
+g['acsReady'] = function () {var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0),k = setInterval(function () {if (typeof g[aT] === 'function') {clearInterval(k);for (i = 0; i < args.length; i++) {g[aT].call(g, function(fn) { return function() { setTimeout(fn, 1) };}(args[i]));}}}, 50);};
+})(window);
+// DO NOT MODIFY ABOVE THIS LINE *****************************************
+    </script>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55271715-1', 'auto');
+ga('send', 'pageview');
+    </script>
+  </body>
+</html>

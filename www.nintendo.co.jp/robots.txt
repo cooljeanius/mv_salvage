@@ -1,0 +1,6 @@
+#
+User-agent: *
+disallow: /status
+disallow: /cgi-bin/
+disallow: /n01/n64/software/nus_p_nk4j/gallery/
+disallow: /n01/n64/software/nus_p_nalj/smash/

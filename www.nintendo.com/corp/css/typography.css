@@ -1,0 +1,199 @@
+/*	-----------------------------------
+	Font Declarations
+	----------------------------------- */
+
+/* //www.nintendo.com/corp/css/fonts/typography.css  */
+	
+@font-face {
+	font-family: 'icons';
+	src:url('/corp/css/fonts/icons/icons-support.eot');
+	src:url('/corp/css/fonts/icons/icons-support.eot?#iefix') format('embedded-opentype'),
+		url('/corp/css/fonts/icons/icons-support.ttf') format('truetype'),
+		url('/corp/css/fonts/icons/icons-support.woff') format('woff'),
+		url('/corp/css/fonts/icons/icons-support.svg#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[class*="icon-"] {
+	font-family: 'icons';
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class*="icon-"]:before {
+	display: block;
+	position: absolute;
+	text-indent: 0;
+}
+
+/* Logos */
+.icon-nintendo:before	{ content: "\e617"; }
+.icon-facebook:before	{ content: "\e616"; }
+.icon-instagram:before 	{ content: "\e615"; }
+.icon-tumblr:before		{ content: "\e614"; }
+.icon-twitter:before	{ content: "\e613"; }
+.icon-youtube:before	{ content: "\e612"; }
+.icon-3ds:before		{ content: "\e619"; }
+.icon-wiiu:before		{ content: "\e61a"; }
+.icon-eshop-nin:before	{ content: "\e61e"; }
+.icon-eshop:before		{ content: "\e61f"; }
+
+/* Thick Pagination Arrow */
+.icon-arrow-01-up:before 	{ content: "\e603"; }
+.icon-arrow-01-right:before { content: "\e602"; }
+.icon-arrow-01-left:before 	{ content: "\e601"; }
+.icon-arrow-01-down:before 	{ content: "\e600"; }
+/* Thin Text Arrow */
+.icon-arrow-02-up:before 	{ content: "\e607"; }
+.icon-arrow-02-right:before { content: "\e606"; }
+.icon-arrow-02-left:before 	{ content: "\e605"; }
+.icon-arrow-02-down:before 	{ content: "\e604"; }
+/* Solid Triangle */
+.icon-arrow-03-up:before 	{ content: "\e60b"; }
+.icon-arrow-03-right:before { content: "\e60a"; }
+.icon-arrow-03-left:before 	{ content: "\e609"; }
+.icon-arrow-03-down:before 	{ content: "\e608"; }
+/* Accordion Arrows */
+.icon-arrow-04-up:before	{ content: "\e60f"; }
+.icon-arrow-04-right:before { content: "\e60e"; }
+.icon-arrow-04-left:before 	{ content: "\e60d"; }
+.icon-arrow-04-down:before 	{ content: "\e60c"; }
+
+/* Icons */
+.icon-x-thick:before 	{ content: "\e61b"; }
+.icon-x-thin:before 	{ content: "\e61c"; }
+.icon-search:before		{ content: "\e610"; }
+.icon-menu:before 		{ content: "\e611"; }
+.icon-rss:before 		{ content: "\e618"; }
+.icon-play:before 		{ content: "\e61d"; }
+.icon-check:before 		{ content: "\e620"; }
+.icon-top:before 		{ content: "\e621"; }
+
+/* Consumer Support Hero Icons*/
+.icon-transferring-content:before { content: "\e622";}
+.icon-first-time-setup:before 	  { content: "\e623";}
+.icon-internet-connections:before {	content: "\e624";}
+.icon-parental-controls:before    {	content: "\e625";}
+.icon-digital-purchases:before    {	content: "\e626";}
+.icon-club-nintendo:before        {	content: "\e627";}
+.icon-repairs:before 			  {	content: "\e628";}
+
+
+
+/*(h1 {font-size:4.125em;}*/
+
+@font-face {
+	font-family: 'LatoHairline';
+	src: url('/corp/css/fonts/Lato-Hai.eot');
+	src: url('/corp/css/fonts/Lato-Hai.eot?#iefix') format('embedded-opentype'),
+		url('/corp/css/fonts/Lato-Hai.woff') format('woff'),
+		url('/corp/css/fonts/Lato-Hai.ttf') format('truetype'),
+		url('/corp/css/fonts/Lato-Hai.svg#LatoHairline') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoHairlineItalic';
+	src: url('/corp/css/fonts/Lato-HaiIta.eot');
+	src: url('/corp/css/fonts/Lato-HaiIta.eot?#iefix') format('embedded-opentype'),
+	url('/corp/css/fonts/Lato-HaiIta.woff') format('woff'),
+	url('/corp/css/fonts/Lato-HaiIta.ttf') format('truetype'),
+	url('/corp/css/fonts/Lato-HaiIta.svg#LatoHairlineItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoLight';
+	src: url('/corp/css/fonts/Lato-Lig.eot');
+	src: url('/corp/css/fonts/Lato-Lig.eot?#iefix') format('embedded-opentype'),
+		url('/corp/css/fonts/Lato-Lig.woff') format('woff'),
+		url('/corp/css/fonts/Lato-Lig.ttf') format('truetype'),
+		url('/corp/css/fonts/Lato-Lig.svg#LatoLight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoLightItalic';
+	src: url('/corp/css/fonts/Lato-LigIta.eot');
+	src: url('/corp/css/fonts/Lato-LigIta.eot?#iefix') format('embedded-opentype'),
+		url('/corp/css/fonts/Lato-LigIta.woff') format('woff'),
+		url('/corp/css/fonts/Lato-LigIta.ttf') format('truetype'),
+		url('/corp/css/fonts/Lato-LigIta.svg#LatoLightItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoRegular';
+	src: url('/corp/css/fonts/Lato-Reg.eot');
+	src: url('/corp/css/fonts/Lato-Reg.eot?#iefix') format('embedded-opentype'),
+		url('/corp/css/fonts/Lato-Reg.woff') format('woff'),
+		url('/corp/css/fonts/Lato-Reg.ttf') format('truetype'),
+		url('/corp/css/fonts/Lato-Reg.svg#LatoRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoItalic';
+	src: url('/corp/css/fonts/Lato-RegIta.eot');
+	src: url('/corp/css/fonts/Lato-RegIta.eot?#iefix') format('embedded-opentype'),
+		url('/corp/css/fonts/Lato-RegIta.woff') format('woff'),
+		url('/corp/css/fonts/Lato-RegIta.ttf') format('truetype'),
+		url('/corp/css/fonts/Lato-RegIta.svg#LatoItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoBold';
+	src: url('/corp/css/fonts/Lato-Bol.eot');
+	src: url('/corp/css/fonts/Lato-Bol.eot?#iefix') format('embedded-opentype'),
+		url('/corp/css/fonts/Lato-Bol.woff') format('woff'),
+		url('/corp/css/fonts/Lato-Bol.ttf') format('truetype'),
+		url('/corp/css/fonts/Lato-Bol.svg#LatoBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoBoldItalic';
+	src: url('/corp/css/fonts/Lato-BolIta.eot');
+	src: url('/corp/css/fonts/Lato-BolIta.eot?#iefix') format('embedded-opentype'),
+		url('/corp/css/fonts/Lato-BolIta.woff') format('woff'),
+		url('/corp/css/fonts/Lato-BolIta.ttf') format('truetype'),
+		url('/corp/css/fonts/Lato-BolIta.svg#LatoBoldItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoBlack';
+	src: url('/corp/css/fonts/Lato-Bla.eot');
+	src: url('/corp/css/fonts/Lato-Bla.eot?#iefix') format('embedded-opentype'),
+		url('/corp/css/fonts/Lato-Bla.woff') format('woff'),
+		url('/corp/css/fonts/Lato-Bla.ttf') format('truetype'),
+		url('/corp/css/fonts/Lato-Bla.svg#LatoBlack') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoBlackItalic';
+	src: url('/corp/css/fonts/Lato-BlaIta.eot');
+	src: url('/corp/css/fonts/Lato-BlaIta.eot?#iefix') format('embedded-opentype'),
+		url('/corp/css/fonts/Lato-BlaIta.woff') format('woff'),
+		url('/corp/css/fonts/Lato-BlaIta.ttf') format('truetype'),
+		url('/corp/css/fonts/Lato-BlaIta.svg#LatoBlackItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://everoasis.nintendo.com/sitemap.xml

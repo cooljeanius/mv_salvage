@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+if (window.location.protocol !== 'https:') {
+    window.location = 'https://www.nintendo.com/corp/webform.jsp';
+}
+</script>
+
+<title>| Nintendo - Customer Service | Contact Us! |</title>
+
+<meta content="TRUE" name="MSSmartTagsPreventParsing" />
+   <meta content="off" name="autosize" />
+   <meta content="no" http-equiv="imagetoolbar" />
+
+<meta http-equiv="x-ua-compatible" content="IE=Edge"/> 
+<!-- added viewport meta here for iOS bug fixes -->
+<meta name="viewport" content="initial-scale=1">
+
+<script src="/consumer/assets/js/consumer_new.js" type="text/javascript" language="javascript"></script>
+
+  <link href="/consumer/assets/css/responsive/common.css" media="all" rel="stylesheet">
+  <link href="/corp/css/typography.css" media="all" rel="stylesheet">
+  <link href="/corp/css/grid.css" media="all" rel="stylesheet">
+  <link href="/corp/css/global-navigation.css" media="all" rel="stylesheet">
+  
+  <link href="/corp/css/reset.css" rel="stylesheet" type="text/css" />
+  <link href="/corp/css/main.css" rel="stylesheet" type="text/css" />
+  <link href="/corp/css/global.css" rel="stylesheet" type="text/css" />
+
+  <!--[if IE]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+ <link href="/corp/css/corp_new.css" rel="stylesheet" type="text/css">
+ 
+<script src="/corp/js/jquery-2.0.3.min.js" type="text/javascript"></script>
+<script src="/corp/js/s_code.js" type="text/javascript"></script>
+<script src="/corp/js/handlers.js" type="text/javascript"></script>
+<script>
+<!--
+	var JSpageName	="webform";
+	var JSprop6		="us:en";
+	var JSchannel	="corp";
+-->
+</script>
+
+
+<script language="JavaScript1.2">
+	function gid(string){return document.getElementById(string);}
+
+function FormValidator(WebForm1){
+  
+   if (document.WebForm1.Name.value.length < 3){
+    alert("Please enter your name");
+    document.WebForm1.Name.focus();
+    return false;
+  }
+  if (document.WebForm1.EmailAddress.value.length < 3){
+    alert("Please enter your email address");
+    document.WebForm1.EmailAddress.focus();
+    return false;
+  }
+  
+  if (!isEmailAddressAddr(document.WebForm1.EmailAddress.value)){
+    alert("The email address you've entered isn't in the proper format (ie: name@domain.com). Please try again.");
+    document.WebForm1.EmailAddress.focus();
+    return false;
+  }
+
+  // check if a character in the mario puzzle has been clicked
+  var chx = document.getElementsByTagName('input');
+  var characterSelected = false;
+  for (var i=0; i<chx.length; i++) {
+    if (chx[i].type == 'radio' && chx[i].checked) {
+      characterSelected = chx[i].value;
+    } 
+  }
+  if (!characterSelected || ( characterSelected !== "three" )) {
+	  alert("Please click on the picture of Mario to prove that you are not a robot.");
+	  return false;	
+  }
+  // end mario puzzle check
+  
+  return (true);
+}
+
+function isEmailAddressAddr(EmailAddress){
+  var result = false
+  var theStr = new String(EmailAddress)
+  var index = theStr.indexOf("@");
+  if (index > 0)
+  {
+    var pindex = theStr.indexOf(".",index);
+    if ((pindex > index+1) && (theStr.length > pindex+1))
+        result = true;
+  }
+  return result;
+}
+
+</script>
+
+<style>
+	#wrapper {
+		margin-bottom: 100px;	
+	}
+	
+	.character-selection label {
+	    float: left;
+	    width: 123px;
+	    height: 120px;
+		padding-right: 2px;
+		margin: 0 0 20px 0;
+	    position: relative;
+	    cursor: pointer;
+	}
+
+	#WebForm1 .character-selection input[type=radio] {
+	    opacity: 0;
+		filter: alpha(opacity=0);
+		float: left;
+		width: 0;
+	}
+
+	.character-selection label img {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    opacity: 0.8;
+     	filter: alpha(opacity=80);
+		border: 2px solid white;
+		pointer-events: none;
+	}
+
+	.character-selection label img:hover {
+	    opacity: 1;
+		filter: alpha(opacity=100);
+	}
+
+
+	.character-selection :checked + label img
+	{
+	    opacity: 1;
+		border: 2px solid red;
+	}
+	#WebForm1 #form-button{
+		padding: 0;
+	}
+</style>
+</head>
+
+<body>
+
+
+<!-- topnav -->
+<div class="container-gradient" id="page-container"> <!-- closes in footer include -->
+  <header id="global-header">
+    <div class="wrapper">
+      <h1><a class="icon-nintendo" href="/">Nintendo</a></h1>
+      <nav>
+        <ul>
+          <li class="smaller"><a class="btn-header-wiiu" href="/wiiu">Wii U</a></li>          
+          <li><a class="btn-header-threeDS" href="/3ds">Nintendo 3DS</a></li>
+          <li class="smaller"><a class="btn-header-amiibo" href="/amiibo">amiibo</a></li>
+          <li class="smaller"><a class="btn-header-games" href="/games">Games</a></li>
+          <li><a class="btn-header-wiimini" href="//play.nintendo.com">Play Nintendo</a></li>          
+          <li class="smaller"><a class="btn-header-support" href="//support.nintendo.com/">Support</a></li>
+          <li class="global-header-search">
+            <form class="search-form">
+              <input type="search" placeholder="Search " name="term" id="globalsearch" aria-label="Search">
+              <input type="submit" value="&#xe610;">
+            </form>       
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<div id="container">
+<div id="wrapper">
+   <h2 class="feedback-form">Website Feedback</h2> 
+
+
+<div id="form">
+		<span id="form-intro">Use the form below to send us your comments or report any problems you experienced finding information on our website.  We read all feedback carefully, but please note that we cannot respond to the comments you submit.<br /><br /><strong>Need customer support?</strong> Please use our support <a href = "http://www.nintendo.com/consumer/webform.jsp">webform</a> to contact a representative.</span>
+         <form method="POST" action="https://www.nintendo.com/corp/webform_mailer.jsp" onsubmit="return FormValidator(this)" id="WebForm1" name="WebForm1">
+        	<input type="hidden" name="addDet" id="addDet" value="" />
+            <label for="Name">Name: (Required)</label>
+            <input type="text" name="Name" class="formText" value="" />
+            <label for="EmailAddress">Email Address: (Required)</label>
+            <input type="text" name="EmailAddress" class="formText" value="" />
+            <label for="Subject">Subject:</label>
+            <input type="text" name="Subject" class="formText" value="" />
+            <label for="URL">Page or URL (if website related):</label>
+            <input type="text" name="URL" class="formText" value="" />
+            <label for="addtlcomments">Please provide specific comments or information below:</label>
+			<textarea name="addtlcomments" id="addtlcomments" class="formText"></textarea>
+			<label>Please prove that you are not a robot. Click on the picture of Mario&trade;:</label>
+			<div class="character-selection">
+				<input id="one" type="radio" name="character" value="one">
+				<label for="one"><img src="webform_images/one.jpg" alt="Peach"></label>
+
+				<input id="two" type="radio" name="character" value="two">
+				<label for="two"><img src="webform_images/two.jpg" alt="Luigi"></label>
+
+				<input id="three" type="radio" name="character" value="three">
+				<label for="three"><img src="webform_images/three.jpg" alt="Mario"></label>
+
+				<input id="four" type="radio" name="character" value="four">
+				<label for="four"><img src="webform_images/four.jpg" alt="Bowser"></label>
+			</div>
+			<input type="image" value="submit" name="submit" src="images/form-button.jpg" id = "form-button" />
+          </form>
+
+</div>
+</div>
+</div>
+ <script type="text/javascript">
+// if captcha was wrong, print error message, url will say captcha=false
+function gup( name ){
+name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");  
+var regexS = "[\\?&]"+name+"=([^&#]*)";  
+var regex = new RegExp( regexS );  
+var results = regex.exec( window.location.href ); 
+ if( results == null )    return "";  
+else    return results[1];}
+
+if( gup("captcha") == "false" ) {
+	var wrongCaptchaMessage = document.createElement('div');
+	wrongCaptchaMessage.style.color = 'red';
+	wrongCaptchaMessage.innerHTML = "Please click on the picture of Mario to prove that you are not a robot."
+	
+	gid("form-intro").appendChild(wrongCaptchaMessage);
+}
+
+// end captcha check
+</script>
+<!-- SiteCatalyst code version: H.14.
+Copyright 1997-2007 Omniture, Inc. More info available at
+http://www.omniture.com -->
+<script language="JavaScript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+s.pageName=JSprop6+":"+JSchannel+":"+JSpageName;
+s.server="";
+s.channel=JSchannel;
+s.pageType="";
+s.prop1="";
+if(typeof(JSprop1) != "undefined") s.prop1=JSprop1;
+s.prop2="";
+if(typeof(JSprop2) != "undefined") s.prop2=JSprop2;
+s.prop3="";
+if(typeof(JSprop3) != "undefined") s.prop3=JSprop3;
+s.prop4="";
+if(typeof(JSprop4) != "undefined") s.prop4=JSprop4;
+s.prop5="";
+if(typeof(JSprop5) != "undefined") s.prop5=JSprop5;
+s.prop6="";
+if(typeof(JSprop6) != "undefined") s.prop6=JSprop6;
+s.channel="";
+if(typeof(JSchannel) != "undefined") s.channel=JSchannel;
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+if(s.pageName!=""){var s_code=s.t();if(s_code)document.write(s_code)}//--></script>
+
+<!-- End SiteCatalyst code version: H.14. -->
+
+<!-- Start Global Footer -->
+<footer id="global-footer">
+	<nav xmlns:jx="http://apache.org/cocoon/templates/jx/1.0" xmlns:i18n="http://apache.org/cocoon/i18n/2.1" class="global-footer-top">
+		<div class="wrapper">
+			<ul class="row row-6cols">
+				<li>
+					<a href="http://www.nintendo.com/corp" class="trigger" data-track="about nintendo">About Nintendo</a>
+					<ul class="content">
+						<li><a href="http://nintendo.com/corp">Company Info</a> </li>
+						<li><a href="http://www.nintendo.com/corp/csr/index.jsp">CSR Report</a> </li>
+						<li><a href="http://nintendo.com/corp/ippolicy.jsp">IP Policy</a></li>
+						<li><a href="http://nintendo.com/sitemap">Sitemap</a> </li>
+					</ul>
+				</li>
+				<li>
+					<a href="http://www.nintendo.com/consumer/retail/retail_retailers.jsp" class="trigger" data-track="where to buy">Where To Buy</a>
+					<ul class="content">
+						<li><a href="http://nintendo.com/consumer/retail/retail_retailers.jsp">List of Online Retailers</a> </li>
+						<li><a href="http://www.nintendoworldstore.com/">Nintendo World Store</a> </li>
+						<li><a href="http://store.nintendo.com">Online Store</a> </li>
+					</ul>
+				</li>
+				<li>
+					<a href="http://www.nintendo.com/consumer" class="trigger" data-track="support">Support</a>
+					<ul class="content">
+						<li><a href="http://en-americas-support.nintendo.com/app/answers/landing/p/431">Wii U Support</a> </li>
+						<li><a href="http://en-americas-support.nintendo.com/app/answers/landing/p/430">Nintendo 3DS Support</a> </li>
+						<li><a href="http://nintendo.com/consumer/repair">Repair Help</a> </li>
+						<li><a href="http://nintendo.com/consumer/recycle.jsp">Nintendo Product Recycling</a> </li>
+					</ul>
+				</li>
+				<li>
+					<a href="http://www.nintendo.com/parents" class="trigger" data-track="parents">Parents</a>
+					<ul class="content">	
+						<li><a href="http://nintendo.com/parents">Info for Parents</a></li>		
+						<li><a href="http://nintendo.com/corp/parents.jsp">Parental Controls</a></li>
+						<li><a href="http://nintendo.com/consumer/wiiplay.jsp">Safety Precautions</a></li>
+					</ul>
+				</li>
+				<li class="col col3 col4-tab">
+					<a href="http://nintendo.com/consumer/info/en_na/docs.jsp" class="trigger" data-track="documents / policies">Health &amp; Safety/Privacy</a>
+					<ul class="content">
+						<li><a href="http://nintendo.com/healthandsafety">Health &amp; Safety Precautions Manual</a></li>
+						<li><a href="http://nintendo.com/privacy">Privacy Notice</a></li>
+						<li><a href="http://www.nintendo.com/terms-of-use">Terms of Use</a></li>
+					</ul>
+				</li>
+				<li class="column col3 col4-tab footer-icon-country push2">
+					<a href="http://nintendo.com/countryselector">Change Region <span aria-hidden="true"></span></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="global-footer-bottom">
+		<div class="wrapper">
+			<div class="row">
+				<div class="column col2">				
+					<a href="/" class="icon-nintendo">Nintendo</a>
+				</div>
+				<div class="column col8">
+					<ul class="footer-links">
+						<li><a href="//support.nintendo.com/contactus">Contact Us</a></li>
+						<li><a href="http://share.nintendo.com/emailsignup/?referrer=" class="js-basic-popup newsletter-signup">Newsletter Signup</a></li>
+						<li><a href="http://www.nintendo.com/corp/webform.jsp">Website Feedback</a></li>
+					</ul>
+					<ul class="footer-social">
+						<li><a href="http://www.facebook.com/nintendo" class="icon-facebook" rel="nofollow" target="_blank">Facebook</a></li>
+						<li><a href="http://twitter.com/NintendoAmerica" class="icon-twitter" rel="nofollow" target="_blank">Twitter</a></li>
+						<li><a href="http://www.youtube.com/nintendo" class="icon-youtube" rel="nofollow" target="_blank">YouTube</a></li>
+						<li><a href="http://instagram.com/nintendo" class="icon-instagram" rel="nofollow" target="_blank">Instagram</a></li>
+					</ul>
+				</div>
+				<div class="column col1 indentcol">
+					<a href="http://www.esrb.org/confirm/nintendo-confirmation.jsp" class="footer-logo-esrb" rel="nofollow">
+						<img src="//www.nintendo.com/images/global/global-footer-esrb.png" alt="Privacy Certified ESRB">
+					</a>
+				</div>
+			</div>
+			<ul class="footer-copyright">
+				<li>&copy; 2017 Nintendo.</li>
+				<li>Games are property of their respective owners.</li>
+				<li>Nintendo of America Inc. Headquarters are in Redmond, Washington</li>
+			</ul>
+		</div>
+	</section>
+</footer>
+
+<script src="/corp/js/jquery-2.0.3.min.js" type="text/javascript"></script>
+<script src="/corp/js/underscore.js" type="text/javascript"></script>
+<script src="/corp/js/TweenMax.js" type="text/javascript"></script>
+<script src="/corp/js/ScrollToPlugin.js" type="text/javascript"></script>
+<script src="/corp/js/add2home.js" type="text/javascript"></script>
+<script src="/corp/js/constants.js" type="text/javascript"></script>
+<script src="/corp/js/accordion.js" type="text/javascript"></script>
+<script src="/corp/js/common.js" type="text/javascript"></script>
+<script src="/consumer/assets/js/page/basic.js" type="text/javascript" language="javascript"></script>
+</body>
+</html>

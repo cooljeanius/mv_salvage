@@ -1,0 +1,16 @@
+# This robots.txt is only for player.ooyala.com, api.ooyala.com and backlot.ooyala.com. It should not be used for www.ooyala.com.
+User-agent: *
+Allow: /backlot/web
+Allow: /syndication/google
+Allow: /player.js
+Allow: /player.swf
+Allow: /player_v2.swf
+Allow: /cacheable/*/player_v2.swf
+Allow: /static/cacheable/*/player_v2.swf
+Allow: /v3/*
+Allow: /v2/syndications/*/feed*
+Allow: /v2/discover/similar/*
+Allow: /v2/discover/trending*
+Allow: /static/v4/*
+Allow: /v4/*
+Disallow: /

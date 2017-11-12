@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    
+    <meta name="robots" content="noindex"> 
+
+
+<!-- SEOFields -->
+<title>Page Not Found - Ubisoft Support</title>
+<meta name="description" />
+<meta name="robots" content="" />
+
+
+<!-- SEOFields END -->
+
+    <META http-equiv="refresh" content="5;URL=/en-US">
+
+    <link rel="shortcut icon" href="/Content/images/favicon.png" />
+
+    <link href="https://static.ubi.com/0078/assets/styles/css.css" rel="stylesheet"/>
+
+
+    <script>
+        var pageBrandingFound = false;
+        var pageLocalizations = [];
+    </script>
+
+    
+
+    
+
+    
+
+    <script src="https://static.ubi.com/0078/assets/scripts/poprequisite.min.js"></script>
+
+
+    <script src="https://use.typekit.net/crn4hyf.js"></script>
+    <script>try { Typekit.load(/*{ async: true }*/); } catch (e) { }</script>
+    
+</head>
+<body class="NCSA ">
+    <div id="loadingScreen" class="loading-screen">
+        <span class="logo animate"></span>
+    </div>
+
+    <div id="divAlertsSection">
+    </div>
+
+        <script>
+            $(document).ready(function () {
+                var userDate = new Date();
+                var timezoneOffset = userDate.getTimezoneOffset();
+                var url = '/en-US/MasterPage/Alerts';
+
+                $.get(url, { "userTimezoneOffset": -timezoneOffset }, function (data) {
+                    $("#divAlertsSection").html(data);
+                    showAlertBanners();
+                });
+            });
+
+            function showAlertBanners() {
+                if (!window.AlertGlobalView) {
+                    setTimeout(function () {
+                        showAlertBanners();
+                    }, 500);
+                }
+                else {
+                    window.AlertGlobalView.initialize();
+                }
+            }
+        </script>
+
+    <header class="header" id="header" role="header">
+        <nav class="nav-global">
+            <div class="nav-header">
+                <h1 class="nav-header__logo">
+                    <a class="btn-nav btn-nav--logo" href="#nav-corporate">
+                        <span class="sr-only">Ubisoft Support</span>
+                        <span class="btn-nav--logo__logo"></span>
+                    </a>
+                </h1>
+                <a class="btn-nav btn-nav--flags" href="#nav-flags" data-hook="lang-menu">
+                    <span class="flag flag-en-us"></span>
+                </a>
+                <div class="pull-right">
+                    <div id="uplay-login-overlay" class="login--nav" data-aa-tracking="1" data-aa-category="Action" data-aa-action="Ubibar - Login"></div>
+
+                    <a class="btn-nav btn-nav--search" href="#search" data-search-trigger>
+                        <span class="sr-only">Search</span>
+                        <span class="btn-nav--search__icon"></span>
+                    </a>
+
+                    <a class="btn-nav btn-nav--menu" href="#nav-support">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon"></span>
+                    </a>
+                </div>
+            </div>
+            <!-- Top-Left dropdown -->
+            <div class="nav-container nav-container--corporate dropdown" id="nav-corporate">
+                <ul class="nav-list list-group">
+                    <li class="list-group-item"><a href="/en-US" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Support">Support</a></li>
+                    <li class="list-group-item"><a href="https://www.ubisoft.com" target="_blank" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Ubisoft.com">Ubisoft.com</a></li>
+                    <li class="list-group-item"><a href="http://store.ubi.com/" target="_blank" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Uplayshop">Ubisoft Store</a></li>
+                    <li class="list-group-item"><a href="http://blog.ubi.com" target="_blank" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="UbiBlog">UbiBlog</a></li>
+                    <li class="list-group-item"><a href="https://club.ubisoft.com/" target="_blank" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="UbisoftClub">Ubisoft Club</a></li>
+                    <li class="list-group-item"><a href="http://uplaylounge.ubi.com/ " target="_blank" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Uplay Lounge">Uplay Lounge</a></li>
+                    <li class="list-group-item"><a href="http://forums.ubi.com" target="_blank" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Forums">Forums</a></li>
+                    <li class="list-group-item"><a href="https://www.ubisoftgroup.com/en-US/index.aspx" target="_blank" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Company">Company</a></li>
+                    <li class="list-group-item"><a href="https://www.ubisoft.com/en-US/careers/experience.aspx" target="_blank" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Careers">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Top-Left dropdown END -->
+            <!-- Hamburger Menu -->
+            <div class="nav-container nav-container--support dropdown" id="nav-support">
+                <ul class="nav-list list-group">
+                        <li class="list-group-item list-group-item--sign-in">
+                            <a href="/en-US/SignIn?nextUrl=http%3a%2f%2fsupport.ubi.com%2fen-US" class="sign-in-trigger">Sign in to manage your account  and support cases</a>
+                        </li>
+                    <li class="list-group-item list-group-item--title">I need help with:</li>
+                    <li class="list-group-item"><a href="/en-US/Games" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Hamburger Menu - Games">Games</a></li>
+                    <li class="list-group-item"><a href="/en-US/Platforms" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Hamburger Menu - Platforms">Platforms</a></li>
+                    <li class="list-group-item"><a href="/en-US/Account" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Hamburger Menu - Uplay Account">Ubisoft Account</a></li>
+                    <li class="list-group-item"><a href="/en-US/Shop" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Hamburger Menu - Shop Support">Store Support</a></li>
+                    <li class="list-group-item list-group-item--title">Go to:</li>
+                    <li class="list-group-item"><a href="http://forums.ubi.com" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Hamburger Menu - Ubisoft Forums">Ubisoft Forums</a></li>
+                    <li class="list-group-item"><a href="/en-US/Cases/New" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Hamburger Menu - Contact Support">Contact Support</a></li>
+                </ul>
+            </div><!-- Hamburger Menu END -->
+</nav>
+        <div class="alert alert-info alert-uplay-overlay">
+            <div class="alert alert-no-margin">
+                <span class="text"></span>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="page-container">
+        
+        <main role="main">
+
+            <!-- Hero -->
+            <div class="hero-container theme-bg">
+                <section class="hero hero--secondary">
+                    <div class="hero__wrapper">
+                        <div class="hero__image theme-hero-img"></div>
+                    </div>
+
+                        <div class="hero__text">
+                            <h2 class="hero__title">BWAAAH!</h2>
+                        </div>
+                    
+
+                    <div class="hero__logo theme-hero-logo">
+                        
+                    </div>
+
+                    <div class="hero__overlay"></div>
+
+                    <div class="search-box search-box--feature">
+                        <button class="search-box--feature__btn" role="button" data-search-trigger>How can we help? <i class="icon search-box--feature__icon"></i></button>
+                    </div>
+                    
+                </section>
+            </div>
+            <!-- Hero END -->
+
+            
+
+
+
+
+
+<section class="section-bottom-space">
+    <div class="content-wrapper--small">
+        <div class="grid-list--full-width">
+            <div class="col inner-content--large">
+                <h2 class="section-subtitle--regular">Error 404.<br /> you broke the internet.</h2>
+                <p class="text--secondary section-bottom-space">This page does not exist. You will be automatically redirected to the home page in 5 seconds...</p>
+                <a class="btn btn--primary hide-mobile-only" href="/">
+                    go home
+                    <i class="icon circle--white next"></i>
+                    <i class="icon circle--white next"></i>
+                </a>
+            </div>
+            <div class="col text-center">
+                <img class="artwork--bunny" src="/assets/images/game-art-rabbit.png" alt="" />
+            </div>
+        </div>
+        <a class="btn btn--primary show-mobile-only" href="/">
+            go home
+            <i class="icon circle--white next"></i>
+            <i class="icon circle--white next"></i>
+        </a>
+    </div>
+</section>
+
+
+                <section class="contact-links chrome-element">
+                    <div class="content-wrapper">
+                        <h2 class="section-subtitle">Still Looking for help?</h2>
+
+                                <p class="contact-links__description">Opening a support case is easy! Email us your issue or chat with an expert.</p>
+                            <p class="text-center"><a class="btn btn--primary theme-bg sign-in-trigger" href="/en-US/SignIn?nextUrl=http%3a%2f%2fsupport.ubi.com%2fen-US%2fCases%2fNew" title="Sign in" data-aa-tracking="1" data-aa-category="Action" data-aa-action="Contact - Sign In To Open a Case">Sign in to open a support case</a></p>
+                    </div>
+                </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="content-wrapper">
+            <h2 class="section-subtitle">Connect with Ubisoft</h2>
+            <ul class="grid-list grid-list--3">
+                <li>
+                    <a href="https://club.ubi.com" class="btn btn--secondary" title="UBISOFT CLUB" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Footer Connect - Ubisoft Club">
+                        UBISOFT CLUB
+                        <i class="icon circle ubisoft"></i>
+                        <i class="icon circle ubisoft"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://forums.ubi.com/" class="btn btn--secondary" title="Forums" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Footer Connect - Forums">
+                        Forums
+                        <i class="icon circle forums"></i>
+                        <i class="icon circle forums"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ubisoftgroup.com/en-US/about_ubisoft/index.aspx" class="btn btn--secondary" title="CORPORATE" data-aa-tracking="1" data-aa-category="Navigation" data-aa-action="Footer Connect - Corporate">
+                        CORPORATE
+                        <i class="icon circle circle--gray corporate"></i>
+                        <i class="icon circle circle--gray corporate"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="grid-list grid-list--2">
+                <!-- SocialLinks -->
+    <li>
+        <h3>UBISOFT SUPPORT</h3>
+        <ul class="social-icons">
+                <li><a href="https://twitter.com/UbisoftSupport" target="_blank" class="twitter" title="Twitter" data-aa-tracking="1" data-aa-category="Social" data-aa-action="Footer Connect - Support - Twitter"><i class="icon"></i></a></li>
+                <li><a href="https://www.facebook.com/UbisoftSupport/" target="_blank" class="facebook" title="Facebook" data-aa-tracking="1" data-aa-category="Social" data-aa-action="Footer Connect - Support - Facebook"><i class="icon"></i></a></li>
+        </ul>
+    </li>
+    <li>
+        <h3>UBISOFT CORPORATE</h3>
+        <ul class="social-icons">
+                <li><a href="https://twitter.com/Ubisoft" target="_blank" class="twitter" title="Twitter" data-aa-tracking="1" data-aa-category="Social" data-aa-action="Footer Connect - Corporate - Twitter"><i class="icon"></i></a></li>
+                <li><a href="https://www.facebook.com/ubisoft" target="_blank" class="facebook" title="Facebook" data-aa-tracking="1" data-aa-category="Social" data-aa-action="Footer Connect - Corporate - Facebook"><i class="icon"></i></a></li>
+                <li><a href="https://plus.google.com/+Ubisoft/posts" target="_blank" class="google-plus" title="Google+" data-aa-tracking="1" data-aa-category="Social" data-aa-action="Footer Connect - Corporate - Google+"><i class="icon"></i></a></li>
+                <li><a href="http://www.youtube.com/user/ubisoft" target="_blank" class="youtube" title="Youtube" data-aa-tracking="1" data-aa-category="Social" data-aa-action="Footer Connect - Corporate - Youtube"><i class="icon"></i></a></li>
+                <li><a href="http://instagram.com/ubisoft" target="_blank" class="instagram" title="Instagram" data-aa-tracking="1" data-aa-category="Social" data-aa-action="Footer Connect - Corporate - Instagram"><i class="icon"></i></a></li>
+                <li><a href="http://www.tumblr.com/tagged/ubisoft" target="_blank" class="tumblr" title="Tumblr" data-aa-tracking="1" data-aa-category="Social" data-aa-action="Footer Connect - Corporate - Tumblr"><i class="icon"></i></a></li>
+        </ul>
+    </li>
+<!-- SocialLinks END -->
+<script>
+    pageLocalizations.push(["Master.Master"])
+</script>
+            </ul>
+        </div>
+        <ul class="footer__links">
+            <li><a href="http://www.ubisoftgroup.com/en-US/press/index.aspx" target="_blank">Press</a></li>
+            <li><a href="http://www.ubisoftgroup.com/en-US/about_ubisoft/index.aspx" target="_blank">Company</a></li>
+            <li class="noslash"><a href="http://www.ubisoftgroup.com/en-US/investor_center/index.aspx" target="_blank">Investor Center</a></li>
+            <li><a href="http://www.ubisoftgroup.com/en-US/careers/index.aspx" target="_blank">Careers</a></li>
+            <li><a href="https://legal.ubi.com/termsofuse/" target="_blank">Terms of Service</a></li>
+            <li><a href="https://www.ubisoft.com/en-US/legal-info.html" data-mfpcontent-class="terms-of-service">Legal Info</a></li>
+            <li><a href='/en-US/Contact#en-us' data-mfpcontent-class="contact-us">Contact Us</a></li>
+            <li><a href="https://legal.ubi.com/privacypolicy/" target="_blank">Privacy Policy</a></li>
+        </ul>
+        <div class="dropdown dropdown--language">
+            
+            <p><button class="btn btn--dropdown" role="button" data-hook="lang-menu"><span class="flag flag-en-us"></span>English (US)</button></p>
+            <div class="dropdown__options" data-hook="lang-menu-options">
+                <div class="dropdown__mobile-header">
+                    <button id="lang-select-back" class="btn dropdown__mobile-header-btn" data-hook="lang-menu-close"><span class="icon back"></span></button>
+                    <span class="dropdown__mobile-header-title">Select Language</span>
+                </div>
+                <ul>
+                    <li>
+                        <h2 class="dropdown__title"><span role="button" data-toggle="collapse" href="#europeMenu" aria-expanded="true" aria-controls="europeMenu" class="dropdown__title__collapse"></span><span class="dropdown__title__text">Europe</span></h2>
+                        <ul class="dropdown__countries" id="europeMenu">
+                            <li class=""><a data-code="da-DK" href="/da-DK/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-da-dk"></span>Dansk</a></li>
+                            <li class=""><a data-code="fi-FI" href="/fi-FI/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-fi-fi"></span>Suomi</a></li>
+                            <li class=""><a data-code="fr-FR" href="/fr-FR/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-fr-fr"></span>Français (FR)</a></li>
+                            <li class=""><a data-code="de-DE" href="/de-DE/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-de-de"></span>Deutsch</a></li>
+                            <li class=""><a data-code="it-IT" href="/it-IT/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-it-it"></span>Italiano</a></li>
+                            <li class=""><a data-code="nl-NL" href="/nl-NL/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-nl-nl"></span>Nederlands</a> </li>
+                            <li class=""><a data-code="nn-NO" href="/nn-NO/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-nn-no"></span>Norsk</a></li>
+                            <li class=""><a data-code="pl-PL" href="/pl-PL/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-pl-pl"></span>Polski</a> </li>
+                            <li class=""><a data-code="cs-CZ" href="/cs-CZ/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-cs-cz"></span>Česky</a> </li>
+                            <li class=""><a data-code="hu-HU" href="/hu-HU/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-hu-hu"></span>Magyar</a> </li>
+                            <li class=""><a data-code="pt-PT" href="/pt-PT/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-pt-pt"></span>Português (PT)</a> </li>
+                            <li class=""><a data-code="ru-RU" href="/ru-RU/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-ru-ru"></span>Pусский</a></li>
+                            <li class=""><a data-code="es-ES" href="/es-ES/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-es-es"></span>Español</a></li>
+                            <li class=""><a data-code="sv-SE" href="/sv-SE/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-sv-se"></span>Svenska</a></li>
+                            <li class=""><a data-code="en-GB" href="/en-GB/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-en-gb"></span>English (UK)</a></li>
+                            <li class=""><a data-code="en-GB" href="/en-GB/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-en-au"></span>English (AU)</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2 class="dropdown__title"><span role="button" data-toggle="collapse" href="#northAmericaMenu" aria-expanded="true" aria-controls="northAmericaMenu" class="dropdown__title__collapse"></span><span class="dropdown__title__text">North America</span></h2>
+                        <ul class="dropdown__countries" id="northAmericaMenu">
+                            <li class=""><a data-code="fr-CA" href="/fr-CA/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-fr-ca"></span>Français (CA)</a></li>
+                            <li class=""><a data-code="es-MX" href="/es-MX/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-es-mx"></span>Español (MX)</a></li>
+                            <li class=""><a data-code="en-US" href="/en-US/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-en-us"></span>English (US)</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2 class="dropdown__title"><span role="button" data-toggle="collapse" href="#southAmericaMenu" aria-expanded="true" aria-controls="southAmericaMenu" class="dropdown__title__collapse"></span><span class="dropdown__title__text">South America</span></h2>
+                        <ul class="dropdown__countries" id="southAmericaMenu">
+                            <li class=""><a data-code="pt-BR" href="/pt-BR/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-pt-br"></span>Português (BR)</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2 class="dropdown__title"><span role="button" data-toggle="collapse" href="#asiaMenu" aria-expanded="true" aria-controls="asiaMenu" class="dropdown__title__collapse"></span><span class="dropdown__title__text">Asia / Pacific</span></h2>
+                        <ul class="dropdown__countries" id="asiaMenu">
+                            <li class=""><a data-code="ar-AR" href="/ar-AR/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-ar-ar"></span>العربية</a></li>
+                            <li class=""><a data-code="ja-JP" href="/ja-JP/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-ja-jp"></span>日本語</a></li>
+                            <li class=""><a data-code="zh-CN" href="/zh-CN/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-zh-cn"></span>中文 (中國)</a></li>
+                            <li class=""><a data-code="zh-TW" href="/zh-TW/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-zh-tw"></span>中文 (臺灣)</a></li>
+                            <li class=""><a data-code="zh-HK" href="/zh-HK/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-zh-hk"></span>中文 (香港)</a></li>
+                            <li class=""><a data-code="ko-KR" href="/ko-KR/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-ko-kr"></span>한국어</a></li>
+                            <li class=""><a data-code="th-TH" href="/th-TH/Error/NotFound?aspxerrorpath=%2Fxx-XX%2Frobots.txt"><span class="flag-th-th"></span>ไทย</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer__disclaimer">&copy; 2017 Ubisoft Entertainment. All Rights Reserved. Ubisoft, Ubi.com and the Ubisoft logo are trademarks of Ubisoft Entertainment in the U.S. and/or other countries.</p>
+    </footer>
+
+    
+
+
+<div id="search" class="modal modal--full-width fade search" tabindex="-1" role="dialog" data-language="en-US" data-input-delay="500">
+    <button class="modal__close-btn" title="Close" data-dismiss="modal" aria-label="Close"><span class="sr-only">Close</span><i class="icon"></i></button>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="content-wrapper">
+                <h2 class="section-title">Refine your search</h2>
+                <div class="search-box">
+
+                    <div class="dropdown dropdown--dark-theme dropdown--browse-games-platform" id="platform-select-search" data-url="/api/Platforms/Subset/Product">
+                        <input type="hidden" name="platform" class="hidden-input" value="" />
+                        <button type="button" class="btn btn--dropdown-big"><span class="btn--dropdown__text">Select Platform</span></button>
+
+                        
+
+
+<!--
+    class="is-active"
+-->
+
+<div class="dropdown__options">
+    <div id="platforms-loading-screen" class="loader loader--dark-bg">Loading...</div>
+    <div class="dropdown__section all-platforms-section">
+        <ul>
+            <li><a href="#" data-value="" class="all-platforms-option">All PLATFORMS</a></li>
+        </ul>
+    </div>
+    <div class="dropdown__section">
+        <h2 class="title-description">PC GAMING<i class="icon pc"></i></h2>
+        <ul>
+                        <li><a href="#" data-value="33" data-img="">Browser Games</a></li>
+                        <li><a href="#" data-value="51" data-img="">Facebook</a></li>
+                        <li><a href="#" data-value="54" data-img="">MAC</a></li>
+                        <li><a href="#" data-value="9" data-img="">PC</a></li>
+        </ul>
+    </div>
+    <div class="dropdown__section">
+        <h2 class="title-description">CONSOLE GAMING<i class="icon console"></i></h2>
+        <ul>
+                        <li><a href="#" data-value="67" data-img="">Nintendo Switch</a></li>
+                        <li><a href="#" data-value="38" data-img="/assets/images/platform-playstation-3.png">PlayStation 3</a></li>
+                        <li><a href="#" data-value="47" data-img="/assets/images/platform-playstation-4.png">PlayStation 4</a></li>
+                        <li><a href="#" data-value="39" data-img="/assets/images/platform-wii.png">Wii</a></li>
+                        <li><a href="#" data-value="45" data-img="/assets/images/platform-wii-u.png">Wii U</a></li>
+                        <li><a href="#" data-value="35" data-img="/assets/images/platform-xbox-360.png">Xbox 360</a></li>
+                        <li><a href="#" data-value="43" data-img="/assets/images/platform-xbox-one.png">Xbox One</a></li>
+        </ul>
+    </div>
+    <div class="dropdown__section">
+        <h2 class="title-description">HANDHELD GAMING<i class="icon handheld"></i></h2>
+        <ul>
+                        <li><a href="#" data-value="46" data-img="/assets/images/platform-nintendo-3ds.png">Nintendo 3DS</a></li>
+                        <li><a href="#" data-value="36" data-img="/assets/images/platform-nintendo-2ds.png">Nintendo DS</a></li>
+                        <li><a href="#" data-value="44" data-img="/assets/images/platform-playstation-vita.png">PS VITA</a></li>
+                        <li><a href="#" data-value="37" data-img="">PSP</a></li>
+        </ul>
+    </div>
+    <div class="dropdown__section">
+        <h2 class="title-description">MOBILE GAMING<i class="icon mobile"></i></h2>
+        <ul>
+                        <li><a href="#" data-value="61" data-img="">Android</a></li>
+                        <li><a href="#" data-value="62" data-img="">IOS</a></li>
+                        <li><a href="#" data-value="65" data-img="">Windows Phone</a></li>
+        </ul>
+    </div>
+    <div class="dropdown__section">
+        <h2 class="title-description">Smart TV<i class="icon smart-tv"></i></h2>
+        <ul>
+                        <li><a href="#" data-value="20" data-img="">Android TV</a></li>
+                        <li><a href="#" data-value="64" data-img="">Apple TV</a></li>
+        </ul>
+    </div>
+    <div class="dropdown__section">
+        <h2 class="title-description">ACCOUNTS AND ONLINE SHOPS</h2>
+        <ul>
+                        <li><a href="#" data-value="29" data-img="">Accounts</a></li>
+                        <li><a href="#" data-value="28" data-img="">Online Shops / Merchandise</a></li>
+        </ul>
+    </div>
+
+    
+</div>
+
+<script>    
+    $('.dropdown__section ul').each(function (ii, ee) {
+        if (this.childElementCount == 0) {
+            $(this).closest('.dropdown__section').remove();
+        }
+    });
+</script>
+<script>    
+    pageLocalizations.push(["Platforms.Index", "Search.SearchWidget",
+                            "Master.Master"])
+</script>
+
+                    </div>
+
+                    <div class="dropdown dropdown--filterable" id="game-select-search" data-url="/api/search/games/subset/searchable">
+                        <input type="hidden" name="product" class="hidden-input" value="" />
+                        <button type="button" class="btn btn--dropdown-big"><span class="btn--dropdown__text">Select Game</span></button>
+                        <div class="dropdown__options">
+                            <div class="loader loader--dark-bg">Loading...</div>
+                            <div class="dropdown__section">
+                                <span class="dropdown__filter"><input type="text" value="" placeholder="type your game" /></span>
+                                <div class="dropdown__container">
+                                    <ul>
+                                        <li><a href="#" data-value="">All Games</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-box__field">
+                        <input type="text" name="search" value="" maxlength="100" autocomplete="off" />
+                        <button class="search-box__clear">Clear Field</button>
+                        <div class="dropdown__section suggested-games-section">
+                            <div class="dropdown__container">
+                                <ul class="suggested-games"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-center"><button class="search-box__remove">Clear All Filters<i class="search-box__remove-icon"></i></button></p>
+                </div>
+
+                <div class="search__results">
+
+                        <section class="search__results-games hidden" data-url="/api/search/suggestedgames" data-max-results="6">
+                            <h2 class="section-title">Suggested Games</h2>
+                            <div class="search__results-container">
+                                <span class="paging__previous paging-games paging-previous-button"><span class="sr-only">Previous</span><i class="icon"></i></span>
+                                <div class="section-results"></div>
+                                <span class="paging__next paging-games paging-next-button"><span class="sr-only">Next</span><i class="icon"></i></span>
+                                <p class="search__results-note search__results-note--error text-center"><i class="u-s-icon u-s-icon-alert"></i> There was an error processing your request. Please try again later.</p>
+                            </div>
+                            <div class="loader loader--search">Loading...</div>
+                        </section>
+                        <section class="search__results-faqs section-bottom-space" data-url="/api/search/faqs" data-max-results="6">
+                            <h2 class="section-title">Suggested FAQs</h2>
+                            <div class="alert fallback-lang">
+                                <i class="u-s-icon u-s-icon-alert"></i> Unfortunately, no FAQs exist in your language for this search criteria. Here are some English FAQs that may help:
+                            </div>
+                            
+
+                            <div class="search__results-container">
+                                <div class="section-results"></div>
+                                <nav class="paging">
+                                    <ul class="paging__list"></ul>
+                                </nav>
+                                <p class="search__results-note search__results-note--more text-center">To see more FAQs results, please refine your search criteria.</p>
+                                <p class="search__results-note search__results-note--error text-center"><i class="u-s-icon u-s-icon-alert"></i> There was an error processing your request. Please try again later.</p>
+                            </div>
+                            <div class="loader loader--search">Loading...</div>
+                            <p class="search__results-note search__results-note-none text-center">There are no results for your request. Please refine your search criteria.</p>
+                        </section>
+
+                        <section class="search__results-links" data-url="/api/search/suggestedlinks" data-max-results="6">
+                            <h2 class="section-title">Suggested Links</h2>
+                            <div class="search__results-container">
+                                <div class="section-results"></div>
+                                <p class="search__results-note search__results-note--error text-center"><i class="u-s-icon u-s-icon-alert"></i> There was an error processing your request. Please try again later.</p>
+                            </div>
+                            <div class="loader loader--search">Loading...</div>
+                        </section>
+
+                        <section class="search__results-forums section-bottom-space" data-url="/api/search/forums" data-max-results="3">
+                            <h2 class="section-title">Suggested Forums</h2>
+                            <div class="search__results-container">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th width="65%">Threads</th>
+                                            <th width="15%">Replies</th>
+                                            <th width="20%">Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="section-results"></tbody>
+                                </table>
+                                <p class="search__results-note search__results-note--error text-center"><i class="u-s-icon u-s-icon-alert"></i> There was an error processing your request. Please try again later.</p>
+                            </div>
+                            <div class="loader loader--search">Loading...</div>
+                        </section>
+
+                    <section class="search__results-none">
+                        <h2 class="section-title">Loading...</h2>
+                        <p class="search__results-note text-center">There are no results for your request. Please refine your search criteria.</p>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    pageLocalizations.push(["Search.SearchWidget", "Games.Details", "Master.Master"])
+</script>
+
+    
+
+
+<script>
+    pageLocalizations.push(["Master.Master"])
+</script>
+
+
+    <!-- Hidden fields -->
+<input type="hidden" id="currentLang" value="en-US" />
+<input type="hidden" id="sfLang" value="en_US" />
+<input type="hidden" id="masterFallbackLanguage" value="" />
+<input type="hidden" id="currentController" value="Error" />
+<input type="hidden" id="userIsLoggedIn" value="false" />
+<input type="hidden" id="transactionId" value="4e66cbe1-4a96-466a-b792-638eade8a4b6" />
+<!-- Hidden fields END -->
+    <input type="hidden" id="uplayEnvironment" value="PROD" />
+    
+<!-- MasterPage dynamic javasript -->
+<script>
+    // Global settings and config
+    var settings = {
+        selectors: {
+            countryFlagLinks: 'ul.dropdown__countries a'
+        },
+        services: {
+            ubiServices: 'https://public-ubiservices.ubi.com'
+        },
+        faqTrace: {
+            key: 'faqTraces',
+            maxLength: 5,
+            maxDuration: 180
+            },
+        signIn: {
+            maxFailedLogins: 3,
+            redirectUrl: '/en-US/SignIn/Forgot',
+            uplayOverlayLoadPlayHistory: "Loading your last played games history….",
+            uplayOverlayReloadPage: "Page Reloading..."
+        },
+        faqFeedback: {
+            key: 'faqFeedback'
+        }
+    };
+
+    var portalLastGamesPlayed = new Array();
+
+    var portalConfig = {
+        appId: '19ba479c-b658-4b7e-8ffd-88f2c85b79e6',
+        genomeId: 'f925bee3-bb86-4ef6-8293-e03e1d608a43',
+        genomeIdOverlay: '24706d89-40aa-4b2d-82f6-ba087ba44bbc'
+    };
+
+    var portalSearch = {
+        entities: {}
+    };
+
+    var cookieNames = {
+        importantNews: 'important-news',
+        languagePreference: 'PrefLang',
+        lastGamesPlayed: 'lgp',
+        lastGame: 'lg',
+        lastPage: 'lp',
+        lastPlatform: 'lpl',
+        openCasesCount: 'occ',
+        userId: 'user_id',
+        sessionId: 'sessionId',
+        ticket: 'ticket',
+        signedInSuccessfully: 'sis',
+        changeToLocaleFromIP: 'locIP',
+        touchSupport: 'ts',
+        preventClearCache: 'pcc'
+    };
+
+    var currentLang = $('#currentLang').val();
+    var uplayLang;
+    //Fix for missing language from Uplay (replace Hong Kong Chinese with Taiwan Chinese)
+    if (currentLang == "zh-HK") {
+        uplayLang = "zh-TW";
+    }
+    var sfLang = $('#sfLang').val();
+    var masterFallbackLanguage = $('#masterFallbackLanguage').val();
+
+    var uplayOverlaySettings = {
+        checkIfIsReadyTimeout: {},
+        checkEvery: 500,
+        maximumCheck: 60,
+        appId: portalConfig.appId,
+        genomeId: portalConfig.genomeIdOverlay,
+        locale: uplayLang || currentLang,
+        uplayLogInUrl: 'https://' + 'connect.uplay.com/integration-v1/loggedIn.htm',
+        uplayPanelUrl: 'https://' + 'uplayoverlay.ubi.com/js/widget.js',
+        uplayUserUrl: 'https://' + 'public-ubiservices.ubi.com/v1/users',
+        container: '#uplay-login-overlay',
+        themeColor: '#454545',
+        height: 50,
+        fixedPosition: 1
+    };
+
+    var UBI_DATA = {
+        "categories": [
+            { "Id": "1", "Name": "Account / Login" },
+            { "Id": "2", "Name": "Activation Key / Redeem Code" },
+            { "Id": "3", "Name": "Bug Report" },
+            { "Id": "4", "Name": "Gameplay" },
+            { "Id": "5", "Name": "General / Feedback" },
+            { "Id": "6", "Name": "Multiplayer & Online" },
+            { "Id": "7", "Name": "Technical Issues" },
+            { "Id": "8", "Name": "Ubisoft Store" },
+            { "Id": "9", "Name": "Website / Forums" },
+            { "Id": "10", "Name": "UbiWorkshop" },
+            { "Id": "11", "Name": "Ubisoft Club & In-Game Purchases" }
+        ],
+        "platforms": [{"Id":"67","Name":"Nintendo Switch","Type":"Console","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-switch.jpg"},{"Id":"38","Name":"PlayStation 3","Type":"Console","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-ps3.jpg"},{"Id":"47","Name":"PlayStation 4","Type":"Console","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-ps4.jpg"},{"Id":"39","Name":"Wii","Type":"Console","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-wii.jpg"},{"Id":"45","Name":"Wii U","Type":"Console","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-wii-u.jpg"},{"Id":"35","Name":"Xbox 360","Type":"Console","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-xbox-360.jpg"},{"Id":"43","Name":"Xbox One","Type":"Console","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-xbox-one.jpg"},{"Id":"33","Name":"Browser Games","Type":"PC","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-online-games.jpg"},{"Id":"51","Name":"Facebook","Type":"PC","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-facebook.jpg"},{"Id":"54","Name":"MAC","Type":"PC","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-mac.jpg"},{"Id":"9","Name":"PC","Type":"PC","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-pc.jpg"},{"Id":"61","Name":"Android","Type":"Mobile","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-android-phone-tablet.jpg"},{"Id":"62","Name":"IOS","Type":"Mobile","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-iphone-ipad.jpg"},{"Id":"65","Name":"Windows Phone","Type":"Mobile","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-windows-phone-tablet.jpg"},{"Id":"46","Name":"Nintendo 3DS","Type":"Handheld","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-nintendo-3ds.jpg"},{"Id":"36","Name":"Nintendo DS","Type":"Handheld","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-nintendo-2ds.jpg"},{"Id":"44","Name":"PS VITA","Type":"Handheld","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-psvita.jpg"},{"Id":"37","Name":"PSP","Type":"Handheld","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-psp2.jpg"},{"Id":"29","Name":"Accounts","Type":"AccountAndShop","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-account.jpg"},{"Id":"28","Name":"Online Shops / Merchandise","Type":"AccountAndShop","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-shop.jpg"},{"Id":"20","Name":"Android TV","Type":"SmartTV","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-android-tv.jpg"},{"Id":"64","Name":"Apple TV","Type":"SmartTV","ImageUrl":"https://static.ubi.com/0078/assets/images/platform-apple-tv.jpg"}]
+    }
+
+    var localizations = {};    
+
+    $(document).ready(function () {
+        if (pageBrandingFound !== undefined && pageBrandingFound == false) {
+            masterpage.showLogoTitle();
+        }
+    });
+
+</script>
+
+<!-- MasterPage dynamic javasript END -->
+
+    <script src="https://static.ubi.com/0078/Scripts/common/common.js"></script>
+
+
+    
+    <script src="https://static.ubi.com/0078/Scripts/Page/masterpage.js"></script>
+
+    
+<script>
+        pageLocalizations.push(["Error.NotFound", "Master.Master"])
+</script>
+    <script src="https://static.ubi.com/0078/Scripts/Page/error404.js"></script>
+    
+
+
+    <script src="https://static.ubi.com/0078/assets/scripts/ubisoft-customer-support-portal.js"></script>
+
+
+    <!-- uplay -->
+    <script src="//ubistatic2-a.akamaihd.net/uplay-connect/v2/live/default/js/easyXDM.min.js"></script>
+    <script src="//ubistatic2-a.akamaihd.net/uplay-connect/v2/live/default/js/uplay_sdk.1.0.min.js"></script>
+
+        <script src="https://ubistatic2-a.akamaihd.net/uplay-overlay/prod/public/js/widget.js"></script>
+
+    <!-- uplay END -->
+    
+
+
+        
+<!-- TagCommanderSettings -->
+    <script>
+    if (!window.tridionSettings) {
+        window.tridionSettings = {
+            values: {}
+        };
+    }
+    /* Page specific variables */
+    window.tridionSettings.values.zone = "US";
+    window.tridionSettings.values.country = "US";
+    window.tridionSettings.values.language = "en";
+    window.tridionSettings.values.mdmBID = "";
+    window.tridionSettings.values.mdmIID = "";
+    window.tridionSettings.values.pageName = "Error - 404";
+    window.tridionSettings.values.siteSection = "Error pages";
+    window.tridionSettings.values.platformSelection = ""; // platform Id
+    window.tridionSettings.values.livechatused = "";
+    window.tridionSettings.values.articleID = "";
+
+    window.tridionSettings.values.uplayID = "";
+    window.tridionSettings.values.genomeID = portalConfig.genomeId;
+    window.tridionSettings.values.lastGamePlayed = "";
+    window.tridionSettings.values.iFrameRendering = "0";
+    window.tridionSettings.values.loginStatus = "0";
+    window.tridionSettings.values.loginSuccess = "0";
+    window.tridionSettings.values.csbanner = "Yes";
+    window.tridionSettings.values.userTicket = "";
+
+    /* Tag Commander with Cache Buster */
+    /* Data Layer */
+
+    var a = Math.random() * 10000000000000;
+    var scriptElementCS = document.createElement("script");
+    scriptElementCS.id = "customersupport_loader"
+    scriptElementCS.type = "text/javascript"
+    scriptElementCS.src = "https://ubistatic2-a.akamaihd.net/worldwide_analytics/tagcommander/customersupport/tc_loader_Customer_Support.js?rand=" + a;
+    document.body.appendChild(scriptElementCS);
+
+    </script><!-- TagCommanderSettings END -->
+
+
+</body>
+
+</html>

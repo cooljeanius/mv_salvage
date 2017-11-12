@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /kosik/*
+Disallow: /porovnani/*
+Disallow: /porovnanie/*
+Disallow: /basket.php*
+Disallow: /compare.php*
+Sitemap: http://b2b.cqe.cz/sitemap_index_1.xml.gz

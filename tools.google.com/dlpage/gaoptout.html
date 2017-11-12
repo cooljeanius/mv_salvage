@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head>   <script type="text/javascript">
+function utmx_section(){}function utmx(){}
+
+</script> <script type="text/javascript">utmx_section("CSS")</script> <link href="https://fonts.googleapis.com/css?family=Product+Sans" rel="stylesheet"> <link href="/tools/dlpage/res/c/css/goog.css" rel="stylesheet" type="text/css"> <link href="/tools/dlpage/res/c/css/dlpage.css" rel="stylesheet" type="text/css"> </noscript>   <link rel="icon" type="image/ico" href=""> <script type="text/javascript">utmx_section("Page Title")</script> <title>Google Analytics Opt-out Browser Add-on Download Page</title> </noscript> <script type="text/javascript">
+  function setHl(newHl) {
+    var query = location.search;
+    if (query.length == 0) {
+      location.search = "?hl=" + newHl;
+      return;
+    }
+    if (-1 == query.indexOf("hl=")) {
+      location.search = query + "&hl=" + newHl;
+      return;
+    }
+    location.search = query.replace(/hl=[^&]*/, "hl=" + newHl);
+  }
+</script> <script type="text/javascript" src="/tools/dlpage/res/c/gu-util.js">
+  
+</script> <script type="text/javascript">
+  // Set up the global update.installscript namespace.
+  if (!window.update) {
+    update = {};
+  }
+  if (!window.update.installscript) {
+    update.installscript = {};
+  }
+
+  
+  
+  function runTagParamsHook(tag, opt_guid) {return tag;}
+  
+  function runThankYouQueryHook(query) {return query;}
+  
+  function runGetAppsPageHook(apps) {return apps;}
+
+  
+  var referer = "http://www.google.com/policies/privacy/partners/";
+
+  
+  
+     update.installscript.updater_expts = '';
+  
+  
+  
+    update.installscript.app_expts = '';
+  
+
+
+  function resetButtons(name) {
+    var buttons = document.getElementsByName(name);
+    for (i = 0; i < buttons.length; ++i) {
+      buttons[i].disabled = false;
+    }
+  }
+  function showThrobber(isVisible) {
+    var divThrobber = document.getElementById('throbber');
+    var imgThrobber = document.getElementById('throbber-img');
+    if (!divThrobber || !imgThrobber) {
+      return;
+    }
+    if (!isVisible) {
+      divThrobber.style.display = 'none';
+    }
+    
+    imgThrobber.src = isVisible ?
+      
+         "/tools/dlpage/res/c/image/loading-16.gif"
+      
+        : "";
+    if (isVisible) {
+      divThrobber.style.display = 'inline';
+    }
+  }
+  
+  function getThankyouUrl(extraQuery) {
+    var thankYouPath = "gaoptout/thankyou.html";
+    if (areStatsEnabled()) {
+      extraQuery += '&statcb=';
+    }
+    var query = "" + extraQuery;
+    if (query.length > 0 && query.charAt(0) != '?') {
+      query = '?' + query;
+    }
+    query = runThankYouQueryHook(query);
+    return thankYouPath + query;
+  }
+  function queueThankyou(timeout, queryString, opt_navDocument) {
+    var page = getThankyouUrl(queryString);
+    var doc = opt_navDocument || this.document;
+
+    function navigateToThankyou() {
+      showThrobber(false);
+      resetButtons("submitbutton");
+      doc.location.href = page;
+    }
+
+    if (!timeout) {
+      navigateToThankyou();
+      return;
+    }
+
+    setTimeout(navigateToThankyou, timeout);
+  }
+  function getApps() {
+    var apps = new Array();
+    
+    
+    
+    
+    
+    
+    
+    return runGetAppsPageHook(apps);
+  }
+  function areStatsEnabled() {
+    var statcb = document.getElementById("statcb");
+    return (statcb && statcb.checked);
+  }
+  function isDownloadTaggingEnabled() {
+    
+    return false;
+  }
+  function getDownloadPath() {
+    
+      
+        return "";
+      
+    
+  }
+  function buildDownloadUrl(statEnable, opt_buildDownloadPath, opt_filePath) {
+     
+
+    var defaultDownloadPath = isDownloadTaggingEnabled() ?
+        _GU_buildDlPath : _GU_buildDlPathNoTag;
+    var buildDownloadPath = opt_buildDownloadPath || defaultDownloadPath;
+    var filePath = opt_filePath || getDownloadPath();
+    var dlServer =
+    "https://dl.google.com";
+    return buildDownloadPath(getApps(),
+                             "en",
+                             statEnable,
+                             dlServer,
+                             filePath,
+                             update.installscript.updater_expts);
+  }
+  function downloadAndThankYou(delayTime, statEnable, opt_navDocument,
+                               opt_buildDownloadPath, opt_filePath) {
+    
+    if (navigator.appVersion.indexOf('Chrome/') != -1 ||
+        navigator.appVersion.indexOf('Safari/') != -1) {
+      queueThankyou(0, '', opt_navDocument);
+      return;
+    }
+
+    var method = getInstallSource();
+    sendDlPagePing("install", method);
+
+    queueThankyou(delayTime, '', opt_navDocument);
+
+    var downloadUri =
+        buildDownloadUrl(statEnable, opt_buildDownloadPath, opt_filePath);
+
+    if (method === 'clickonce' ||
+        navigator.userAgent.indexOf('Firefox/') != -1) {
+      var windowFeatures = 'toolbar=0,location=no,directories=0,status=0,scrollbars=no,resizable=0,width=1,height=1,top=0,left=0';
+      window.open(downloadUri, '_blank', windowFeatures);
+      window.focus();
+    } else {
+      location.href = downloadUri;
+    }
+
+    showThrobber(true);
+  }
+  function installViaDownload(opt_navDocument) {
+    downloadAndThankYou(4000, areStatsEnabled(), opt_navDocument);
+  }
+  function isClickOnceEnabled() {
+    
+    return false;
+  }
+  function isOneClickEnabled() {
+    return false;
+  }
+  function installViaClickOnce(opt_navDocument) {
+    
+    downloadAndThankYou(10000, areStatsEnabled(), opt_navDocument, _GU_buildClickOncePath, "");
+  }
+  function installViaOneClick(opt_navDocument) {
+    showThrobber(true);
+    window.google.update.oneclick.install(
+      getApps(),
+      "en",
+      areStatsEnabled(),
+      function() {queueThankyou(4000, '\x26oneclickinstalled=', opt_navDocument);},
+      function(hr) {installViaDownload(opt_navDocument);},
+      update.installscript.updater_expts);
+  }
+  function getInstallSource() {
+    
+      if (isOneClickEnabled() && _GU_isOneClickAvailable()) {
+        return 'oneclick';
+      } else if (isClickOnceEnabled() && _GU_isClickOnceAvailable()) {
+        return 'clickonce';
+      } else {
+        return 'download';
+      }
+    
+  }
+  function installApp(opt_navDocument) {
+    
+
+    var method = getInstallSource();
+    if (method === 'oneclick') {
+      installViaOneClick(opt_navDocument);
+    } else if (method === 'clickonce') {
+      installViaClickOnce(opt_navDocument);
+    } else {
+      installViaDownload(opt_navDocument);
+    }
+  }
+  
+  function sendDlPagePing(stage, installSource) {
+    var img = new Image();
+    var extra = GU_buildGlobalExtra(
+          "en",
+          areStatsEnabled(),
+          update.installscript.updater_expts);
+    var tag = GU_BuildTag(getApps(), extra);
+    img.src = '//tools.google.com/service/update2/dlpageping?' +
+        tag +
+        '&stage=' + stage +
+        '&installsource=' + installSource;
+  }
+  function downloadInstaller(opt_pageName) {
+    var hasStatcb =
+    
+      false;
+    
+    location.href = buildDownloadUrl(hasStatcb);
+
+    var pageName = opt_pageName || "install";
+    var installMethod = getInstallSource();
+    sendDlPagePing(pageName, installMethod);
+  }
+  var pageTracker;  
+  function doSubmit() {
+    var installMethod = getInstallSource();
+    if (typeof _gaq != 'undefined') {
+      _gaq.push(['_trackPageview'], '/ty/retry_' + installMethod);
+    } else if (pageTracker) {
+      pageTracker._trackPageview("/ty/retry_" + installMethod);
+    }
+    downloadInstaller("retry");
+  }
+  
+  
+  
+  _GU_OnloadHandlerAdd(
+    function() {
+      if (isOneClickEnabled()) {
+      _GU_SetupOneClick();
+      }
+    }, 0); // front of list
+  
+  _GU_OnloadHandlerAdd(
+    function(pagename) {
+      sendDlPagePing(pagename, getInstallSource());
+    });  // added to end of body.onload handler list
+
+
+</script> </head> <body onload="_GU_OnloadBody(&#39;index&#39;);"><div id="container"><noscript>You need a JavaScript-capable browser to download this software. <a href="http://www.google.com/support/bin/answer.py?answer=23852&hl=en">Click here for instructions</a> on how to enable JavaScript in your browser.</noscript>  <div id="header"><a href="https://www.google.com"><img class="logo" alt="" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png"></a> <form class="langmenu" action=""><select onchange="javascript:setHl(this.options[this.selectedIndex].value);" title="Language"><option value="" selected>Select a language</option> <option value="ar">&#8235;&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;&#8236;</option> <option value="de">&#8234;Deutsch&#8236;</option> <option value="en">&#8234;English&#8236;</option> <option value="en-GB">&#8234;English (UK)&#8236;</option> <option value="es">&#8234;espa&ntilde;ol&#8236;</option> <option value="fr">&#8234;fran&ccedil;ais&#8236;</option> <option value="it">&#8234;italiano&#8236;</option> <option value="ja">&#8234;&#26085;&#26412;&#35486;&#8236;</option> <option value="ko">&#8234;&#54620;&#44397;&#50612;&#8236;</option> <option value="nl">&#8234;Nederlands&#8236;</option> <option value="pl">&#8234;polski&#8236;</option> <option value="pt-BR">&#8234;portugu&ecirc;s (Brasil)&#8236;</option> <option value="ru">&#8234;&#1088;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;&#8236;</option> <option value="th">&#8234;&#3652;&#3607;&#3618;&#8236;</option> <option value="tr">&#8234;T&uuml;rk&ccedil;e&#8236;</option> <option value="zh-CN">&#8234;&#31616;&#20307;&#20013;&#25991;&#8236;</option> <option value="zh-TW">&#8234;&#32321;&#39636;&#20013;&#25991; (&#21488;&#28771;)&#8236;</option></select></form> <h1>&nbsp;</h1></div> <div id="main"><div id="content"><h2><script type="text/javascript">utmx_section("Header")</script> Google Analytics Opt-out Browser Add-on </noscript></h2> <p><script type="text/javascript">utmx_section("Tagline")</script> To provide website visitors the ability to prevent their data from being used by Google Analytics, we have developed the Google Analytics opt-out browser add-on for the Google Analytics JavaScript (ga.js, analytics.js, dc.js). <p> If you want to opt-out, download and install the add-on for your web browser. The Google Analytics opt-out add-on is designed to be compatible with Chrome, Internet Explorer 11, Safari, Firefox and Opera. In order to function, the opt-out add-on must be able to load and execute properly on your browser. For Internet Explorer, 3rd-party cookies must be enabled. Learn more about about the opt-out and how to properly install the browser add-on <a href="https://support.google.com/analytics/answer/181881?hl=en">here</a>. </noscript></p> <script type="text/javascript">utmx_section("Jewel")</script>  </noscript></div> <div id="action"><div class="blue"> <script type="text/javascript">utmx_section("Button Subtitle")</script> The Google Analytics Opt-out Browser Add-on is not supported for your browser. </noscript> <p>Available for Microsoft Internet Explorer 11, Google Chrome, Mozilla Firefox, Apple Safari and Opera.</p></div> <script type="text/javascript">utmx_section("Bullets")</script>  </noscript>  <p class="links"><script type="text/javascript">utmx_section("Learn More Link")</script> <a href="https://www.google.com/intl/en/analytics/learn/privacy.html">Learn more about Google Analytics Privacy &raquo;</a> </noscript></p></div></div>  <div id="footer"><p>&copy;2017 Google   - <a href="https://www.google.com/intl/en/privacy.html">Privacy Policy</a> - <a href="
+      https://www.google.com/support/googleanalytics/?hl=en
+    ">Help</a> </p></div></div>  </body></html>

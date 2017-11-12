@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /core/
+Disallow: /SearchResult/
+Disallow: /QuickSearch/
+
+User-agent: AhrefsBot
+Disallow: /

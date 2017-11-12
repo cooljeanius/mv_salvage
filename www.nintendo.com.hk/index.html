@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>任天堂(香港)有限公司網站</title>
+<meta name="Description" content="任天堂官方網站「香港任天堂網站」" />
+<meta name="Keywords" content="任天堂,任天堂官方網站,Nintendo,Wii,WiiSportsResort,Wii運動度假勝地,WiiPlay,Wii第一次接觸,瑪莉歐,瑪利歐,馬里奧,Mario,遊戲,軟體" />
+<link href="css/style_switch_2.css" rel="stylesheet" type="text/css" />
+<link rel="short icon" href="images/nintendo.png"/>
+<link rel="icon" href="images/nintendo.png" type="image/ico" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.easing.js"></script>
+<script type="text/javascript" src="js/jquery.belatedPNG.js"></script>
+<script type="text/javascript" src="js/jquery.backgroundPosition.js"></script>
+<script type="text/javascript" src="js/n.js"></script>
+<script>
+var currentpage=1;
+var maxpage=3;
+var btn_prev_toggle=false;
+var btn_next_toggle=true;
+var pageInterval;
+
+$(document).ready(function(e) {
+	
+	init();
+	$(".page_nums:eq(0)").stop().animate({
+		'background-position': '0px 0px'
+		},500,"easeOutCubic");
+	init_nv_line();
+	
+});
+
+
+function init()
+{
+	
+	$(".btn_next").click(function(e) {
+		
+		if((currentpage!=maxpage)&&btn_next_toggle)
+		{
+			 btn_next_toggle=false;
+			 btn_prev_toggle=false;
+			 
+			 control_btn_next();
+			 
+			 currentpage++;
+			 
+			 $(".page_nums").animate({
+		'background-position': '0px -19px'
+		},500,"easeOutCubic");
+			 $(".page_nums").removeClass("current_page_nums").eq(currentpage-1).addClass("current_page_nums").stop().animate({
+		'background-position': '0px 0px'
+		
+		},500,"easeOutCubic");
+			 move_nv_line();
+			 $("#all_panes").animate({
+				left:$("#all_panes").position().left-1000
+				
+				},1000,"easeOutCubic",function(){
+					btn_prev_toggle=true;
+					btn_next_toggle=true;
+					
+					
+					
+					
+					
+					
+					
+					
+					});
+		}
+		
+		
+    });
+	
+	$(".btn_prev").click(function(e) {
+		
+		if($("#all_panes").position().left!=0&&btn_prev_toggle)
+		{
+			 btn_next_toggle=false;
+			 btn_prev_toggle=false;
+			 
+			 control_btn_prev();
+			 
+			 currentpage--;
+			 $(".page_nums").animate({
+		'background-position': '0px -19px'
+		
+		},500,"easeOutCubic");
+			 $(".page_nums").removeClass("current_page_nums").eq(currentpage-1).addClass("current_page_nums").stop().animate({
+		'background-position': '0px 0px'
+		
+		},500,"easeOutCubic");
+			 move_nv_line();
+			 $("#all_panes").animate({
+				left:$("#all_panes").position().left+1000
+				
+				},1000,"easeOutCubic",function(){
+					btn_prev_toggle=true;
+					btn_next_toggle=true;
+					
+					
+					
+					});
+		}
+ 
+    });
+
+	$(".btn_next").bind("mouseenter",function(){
+		$(this).children('.bghover').stop().fadeIn("swing");
+		$(this).children('.arrow_next').stop().animate({'background-position': '0px 48px'},"fast");
+		})
+		.bind("mouseleave",function(){
+		$(this).children('.bghover').fadeOut("fast");
+		$(this).children('.arrow_next').css('background-position','-28px 48px');
+		});
+		
+	$(".btn_prev").bind("mouseenter",function(){
+		$(this).children('.bghover').stop().fadeIn("swing");
+		$(this).children('.arrow_prev').stop().animate({'background-position': '-27px 48px'},"fast");
+		})
+		.bind("mouseleave",function(){
+		$(this).children('.bghover').fadeOut("fast");
+		$(this).children('.arrow_prev').css('background-position','0px 48px');
+		});
+}
+
+
+function goto_Page(page_num)
+{
+	var pane_position=1000-(page_num*1000);
+	
+	 btn_next_toggle=false;
+	 btn_prev_toggle=false;
+	 
+	if(page_num==1)
+	{
+		$(".bghover").hide();	
+		$(".arrow_next_off").hide();
+		$(".btn_next").show();
+
+			$(".arrow_prev_off").show();
+			$(".btn_prev").hide();
+
+	} 
+	else if(page_num==maxpage)
+	{
+		$(".bghover").hide();
+		$(".arrow_prev_off").hide();
+		$(".btn_prev").show();
+		
+		//if(currentpage==(maxpage-1))
+		//{
+			$(".arrow_next_off").show();
+			$(".btn_next").hide();
+		//}
+		
+	}
+	else
+	{
+		$(".arrow_prev_off").hide();
+		$(".btn_prev").show();
+		$(".arrow_next_off").hide();
+		$(".btn_next").show();
+	}
+	
+	 currentpage=page_num;
+	 
+	 $(".page_nums").removeClass("current_page_nums").eq(page_num-1).addClass("current_page_nums");
+	 $(".page_nums").not(".current_page_nums").animate({
+		'background-position': '0px -19px'
+		
+		},500,"easeOutCubic");
+	 
+	 $("#all_panes").animate({
+		left:pane_position
+		
+		},1000,"easeOutCubic",function(){
+			btn_prev_toggle=true;
+			btn_next_toggle=true;
+			
+			
+			
+			
+			
+			
+			});
+			
+	 
+	
+}
+
+function control_btn_next()
+{
+	$(".bghover").hide();
+	$(".arrow_prev_off").hide();
+	$(".btn_prev").show();
+	
+	if(currentpage==(maxpage-1))
+	{
+		$(".arrow_next_off").show();
+		$(".btn_next").hide();
+	}
+	
+}
+
+function control_btn_prev()
+{
+	$(".bghover").hide();	
+	$(".arrow_next_off").hide();
+	$(".btn_next").show();
+	if(currentpage==2)
+	{
+		$(".arrow_prev_off").show();
+		$(".btn_prev").hide();
+	}
+	
+}
+
+
+
+
+
+function init_nv_line()
+{
+	$(".page_nums:not('current_page_num')").mouseenter(function(){
+		$("#nv_line").stop().animate({
+		left:$(this).position().left-9
+		
+		},1000,"easeOutCubic");
+		
+		$(this).stop().animate({
+		'background-position': '0px 0px'
+		
+		},500,"easeOutCubic");
+		
+		})
+		.mouseout(function(){
+			
+			$("#nv_line").stop().animate({
+			left:$("#page_num_"+currentpage).position().left-9
+			
+			},1000,"easeOutCubic");
+		
+		
+			if(!$(this).hasClass("current_page_nums"))
+			{
+			$(this).stop().animate({
+			'background-position': '0px -19px'
+				
+			},500,"easeOutCubic");
+			}
+			
+			
+		});
+	
+	
+	
+}
+
+function move_nv_line()
+{
+	var nv_line_position=$("#page_num_"+currentpage).position().left-9;	
+	
+	$("#nv_line").animate({
+		left:nv_line_position
+		
+		},1000,"easeOutCubic");
+
+}
+
+</script>
+
+<script type="text/javascript">
+<!--
+function confirmation() {
+var answer = confirm("您即將會被連接到提供任天堂(香港)招聘資訊的 Intelligence Hong Kong 外部網頁")
+if (answer)
+ window.open('https://www.inte.com.hk/joblist.aspx?corpname=intelligence&call=y&i=609&language=null&industry=024', '_blank');
+}
+
+//-->
+</script>
+
+<style>
+#all_panes .panes{float:left;}
+.bghover{display:none; position:absolute}
+.arrow_next{width:26px; height:112px; position:absolute; background:url(img/index/arrow_next.gif) -28px 48px no-repeat;}
+.arrow_prev{width:26px; height:112px; position:absolute; background:url(img/index/arrow_prev.gif) left 48px no-repeat;} 
+/*#page_num_1{display:block; position:absolute; left:380px; top:3px; width:88px; height:19px;}
+#page_num_2{display:block; position:absolute; left:472px; top:3px; width:88px; height:19px;}
+#page_num_3{display:block; position:absolute; left:564px; top:3px; width:88px; height:19px;}*/
+#page_num_1{display:block; position:absolute; left:344px; top:3px; width:88px; height:19px;}
+#page_num_2{display:block; position:absolute; left:436px; top:3px; width:88px; height:19px;}
+#page_num_3{display:block; position:absolute; left:528px; top:3px; width:88px; height:19px;}
+.page_nums{background:url(img/index/page_num_bg.png) left -19px no-repeat #464646;}
+.current_page_nums{background:url(img/index/page_num_bg.png) left 0px no-repeat #464646;}
+</style>
+</head>
+
+<body id="index" _oncontextmenu="return false">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+  <tr>
+    <td>&nbsp;</td>
+    <td width="960">
+    <div id="mainArea">
+    
+        <div id="mainNavi">
+            <img src="img/common/logoNintendo.png" width="134" height="34" border="0" alt="Nintendo" class="logo">
+            
+            <div id="menuWrapper">
+                <a class="menuPointLevel_1" id="btnMain_9" href="switch/"><div id="mainNaviBtn_9"></div></a>
+    
+                <a class="menuPointLevel_1" id="btnMain_2" href="3ds/"><div id="mainNaviBtn_2"></div></a>
+                <a class="menuPointLevel_1" id="btnMain_1" href="wii/wii_index.htm"><div id="mainNaviBtn_1"></div></a>
+                
+                <a class="menuPointLevel_1" id="btnMain_3" href="amiibo/index.htm"><div id="mainNaviBtn_3"></div></a>
+                
+                
+                
+                <img src="img/common/spacer.gif" width="1" height="10" border="0" /> <a class="menuPointLevel_2" id="btnMain_4" href="support/event.htm"><div id="mainNaviBtn_4"></div></a>
+                <a class="menuPointLevel_2" id="btnMain_5" href="3ds/store/"><div id="mainNaviBtn_5"></div></a>
+                <a class="menuPointLevel_2" id="btnMain_6" href="corporate.htm"><div id="mainNaviBtn_6"></div></a>
+                <a class="menuPointLevel_2" id="btnMain_7" href="support/index.htm"><div id="mainNaviBtn_7"></div></a>
+
+                
+            </div>
+            
+            <div class="fb">
+            	<a href="https://www.facebook.com/Nintendo.hk"><img src="img/common/facebook_logo.png" width="40" height="40" border="0" alt="Facebook"></a>
+            </div>
+            
+            <div class="weibo">
+            	<a href="http://weibo.com/NintendoHK"><img src="img/common/weibo_logo.png" width="40" height="40" border="0" alt="微博"></a>
+            </div>
+            
+            <div class="wechat">
+            	<a class="wechat_qr"><img src="img/common/wechat_logo.png" width="40" height="40" border="0" alt="微信"><span><img src="img/common/wechat_qrcode.png" width="180" height="98" alt=""></span></a>
+            </div>
+            
+        </div> 
+        
+       <div id="linkToLineup">
+       <iframe width="722" height="451" src="https://www.youtube.com/embed/G64Tk0xVbgs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+       </div>
+       
+       <!--
+       <a id="linkToLineup" href="./hardware/switch/"></a> 
+       -->
+             
+	   <a id="linkSorT" href="index_sc.htm"></a>
+       
+       
+	</div>
+
+        
+        <!--<div id="switch">
+    	<a href="./e3/"><img src="img/index/e3_bar.jpg">
+        </a></div>-->
+        
+        <div id="switch">
+    	<a href="./hardware/switch/"><img src="img/index/hk_switch_top_banner.png">
+        </a></div>
+        
+        <div id="topics">
+    	<div style="margin-left:40px; margin-bottom:25px;"><img src="img/index/bg_TOPIC.jpg" width="700" height="37" /></div>
+        
+    	<div style="position:relative; width:960px; height:240px; overflow:hidden;">
+        	<div id="all_panes" style="width:5000px; position:absolute;">
+				<div class="panes" style="width:970px; margin-right:30px;">
+
+                       <a class="topicsPoint" href="./software/switch/"><img src="img/index/xenoblade2_preorder_tc.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div></a>
+                       
+                       <a class="topicsPoint" href="./switch/snipperclips/store/"><img src="img/index/snipperclips_banner_tc_logo_2.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div></a>
+                       
+                       <a class="topicsPoint" href="./switch/super_mario_odyssey/"><img src="img/index/super_mario_odyssey_console.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div></a>
+                       
+                       <a class="topicsPoint" href="./pokemon_usum/store/"><img src="img/index/pokemon_usum_preorder.png" width="221" height="221" border="0" /><div class="ds3_mark"></div><div class="over_white topicsPointOver"></div></a>
+                     
+	  </div>
+            
+            
+				<div class="panes" style="width:970px; margin-right:30px;">   
+
+                    <a class="topicsPoint" href="./event/pokemon_event_201709_silvally.htm"><img src="img/index/silvally.png" width="221" height="221" border="0" /><div class="ds3_mark"></div><div class="over_white topicsPointOver"></div></a>
+                    
+                    <a class="topicsPoint" href="./switch/pokken_dx/"><img src="img/index/pokken_dx_release.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div></a>
+                    
+                    <a class="topicsPoint" href="./switch/fire_emblem_warriors/store/"><img src="img/index/fe_w_banner_release.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div></a>
+                    
+                    <a class="topicsPoint" href="./splatoon2/"><img src="img/index/splatoon2_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div></a>
+
+              </div>
+              
+              
+			
+            
+				<div class="panes" style="width:970px; margin-right:30px;"> 	
+
+                       
+                       <a class="topicsPoint" href="3ds/about_prepaidcard.htm"><img src="img/index/eshop_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                       
+                        <a class="topicsPoint" href="./3ds/eshop/"><img src="img/index/eshop_pokemon_gold_silver.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                        
+                        <a class="topicsPoint" href="./3ds/eshop/"><img src="img/index/eshop_metroid_sr_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                       
+                       
+
+              <a class="topicsPoint" href="./3ds_j/"><img src="img/index/fire_emblem_echoes.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+              
+
+                       
+                       
+                       
+
+                                 
+<!--                    
+                         
+                      
+                      
+                      <a class="topicsPoint" href="http://www.uniqlo.com/utgp2017/hk/"><img src="img/index/utgp17.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div></a>
+                      
+                       <a class="topicsPoint" href="./3ds/eshop/"><img src="img/index/eshop_kirby_blowout_blast.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>    
+                       
+                       <a class="topicsPoint" href="http://www.capcom.co.jp/monsterhunter/XX/"><img src="img/index/eshop_mhxx_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                       
+                       <a class="topicsPoint" href="http://www.pokemon-sunmoon-cn.com/tc/
+"><img src="img/index/pokemon_sun_moon_chinese_web.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+
+<a class="topicsPoint" href="http://mariosportssuperstars.nintendo.com/"><img src="img/index/eshop_mario_sports_superstars_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                       
+                       <a class="topicsPoint" href="./3ds/eshop/"><img src="img/index/eshop_ever_oasis_trial_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                       
+                       <a class="topicsPoint" href="https://www.youtube.com/watch?v=H5hFSpc9NXs&t"><img src="img/index/pokemon_direct_0606.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div></a>
+                      
+                      <a class="topicsPoint" href="http://www.mh-stories.jp/"><img src="img/index/eshop_mhs_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="http://www.ace-attorney.com/"><img src="img/index/eshop_ace_attorney_6_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="./event/pokemon_event_201704_tapukoko.htm"><img src="img/index/pokemon_tapukoko.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="https://kirby.nintendo.com/planet-robobot/"><img src="img/index/eshop_kirby_pr_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      <a class="topicsPoint" href="./3ds/VCAMAP/"><img src="img/index/eshop_vcamap_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>  
+                      
+                      <a class="topicsPoint" href="http://cosen-net.com/mgh/"><img src="img/index/eshop_mh_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="http://cosen-net.com/shf/"><img src="img/index/eshop_shiftdx_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      <a class="topicsPoint" href="./3ds/mario_sonic_rio2016/"><img src="img/index/eshop_rio2016_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      <a class="topicsPoint" href="./pokemon_sun_moon/"><img src="img/index/pokemon_sun_moon_news_2.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>   
+                      
+                      <a class="topicsPoint" href="smashbros/"><img src="img/index/smashbros_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="./event/pokemon_event_2017cny_magikarp.htm"><img src="img/index/2017cny_magikarp_tc.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="./event/pokemon_preorder_mew.htm"><img src="img/index/pokemon_mew.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="./3ds/mhx/"><img src="img/index/mhx_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="http://cosen-net.com/fyp/"><img src="img/index/eshop_fp_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="http://cosen-net.com/drn/"><img src="img/index/eshop_rv7_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="http://cosen-net.com/tvm/"><img src="img/index/eshop_tvm_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="./pressrelease/3ds_20160510_wcs2016.htm"><img src="img/index/pokemon_wcs2016.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      
+                      <a class="topicsPoint" href="./event/pokemon_event_2016mewtwo.htm"><img src="img/index/pokemon_mewtwo.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                     
+                      <a class="topicsPoint" href="http://aksysgames.com/langrisser/"><img src="img/index/eshop_langrisser_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                      
+                      <a class="topicsPoint" href="fire_emblem_if/"><img src="img/index/fire_emblem_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>            
+                     
+                     <a class="topicsPoint" href="./3ds/zelda_majoras_mask/"><img src="img/index/eshop_zelda_majora.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a> 
+                    
+                    <a class="topicsPoint" href="http://aksysgames.com/mocomoco/"><img src="img/index/eshop_mocomoco_friends_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="http://megaman.capcom.com/"><img src="img/index/eshop_megaman_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="./pressrelease/3ds_20151028_IronFall_Invasion.htm"><img src="img/index/eshop_ironfall_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="http://pxz2.bn-ent.net/"><img src="img/index/eshop_pxz2_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="3ds/code_name_steam/"><img src="img/index/eshop_codename_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="pokemon_oras/"><img src="img/index/pokemonoras_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    <a class="topicsPoint" href="pressrelease/3ds_20150910_JohnnysPaydayPanic.htm"><img src="img/index/eshop_johnny_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="pressrelease/3ds_20150708_goonyan.htm"><img src="img/index/eshop_goonyan.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="http://www.nintendo.com/games/detail/t452B6CeKypxeSJEPKzrIAFItKZZ4oKl"><img src="img/index/eshop_drmario_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="3ds/pad_m/"><img src="img/index/pad_m_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="pressrelease/3ds_20150401_pazuru.htm"><img src="img/index/eshop_pazuru_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="3ds/fossil_fighters_frontier/"><img src="img/index/eshop_fossilfighter_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="pressrelease/3ds_20150304_toystuntbike.htm"><img src="img/index/eshop_toy_banner.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="http://flyhighworks.jp/twhk/fairune"><img src="img/index/eshop_fairune.png" width="221" height="221" border="0" /><div class="over_white topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    
+                    
+
+                    <a class="topicsPoint" href="3ds/aceattorney_123/"><img src="img/index/eshop_attorney123_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+  
+                    <a class="topicsPoint" href="3ds/pokemonart/"><img src="img/index/eshop_pokemonart_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+
+       
+                    
+                    <a class="topicsPoint" href="3ds/kirbyfighters_dedede/"><img src="img/index/eshop_kir_dedede_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="http://www.sonicpowered.co.jp/world/ttn-nagara/"><img src="img/index/eshop_train_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a> 
+                    
+
+                    <a class="topicsPoint" href="paper_mario/"><img src="img/index/papermario_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+
+                      
+                    <a class="topicsPoint" href="3ds/yoshiisland/"><img src="img/index/yoshi_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                  
+                    
+                    <a class="topicsPoint" href="3ds/kirby_td/"><img src="img/index/eshop_kirby_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>
+                    
+                    <a class="topicsPoint" href="3ds/hikuosu/"><img src="img/index/eshop_hikuosu_banner.png" width="221" height="221" border="0" /><div class="over_black topicsPointOver"></div><div class="ds3_mark"></div></a>-->
+
+                    
+				</div>
+            
+            </div>
+        </div>
+        
+        <div style="position:absolute; left:-25px; top:62px;"><img src="img/index/blur_prev.png" width="36" height="221" /></div>
+        
+        <div style="position:absolute; right:-25px; top:62px;"><img src="img/index/blur_next.png" width="36" height="221" /></div>
+        
+        <a class="btn_prev" style="display: none; position: absolute; width: 26px; height: 112px; background: url(img/index/bgon.png) left top no-repeat; left: -30px; top: 122px;" href="javascript:void(0)"><div class="bghover"><img src="img/index/bghover.png" width="26" height="112" /></div><div class="arrow_prev"></div></a>
+        
+        <a class="btn_next" style="display: block; position: absolute; width: 26px; height: 112px; background: url(img/index/bgon.png) left top no-repeat; right: -35px; top: 122px;" href="javascript:void(0)"><div class="bghover"><img src="img/index/bghover.png" width="26" height="112" /></div><div class="arrow_next"></div></a>
+        
+        <div class="arrow_prev_off" style="display: block; position: absolute; width: 26px; height: 112px; background: url(img/index/arrow_prev_off.png) left top no-repeat; left: -30px; top: 122px;"></div>
+        
+        <div class="arrow_next_off" style="display: none; position: absolute; width: 26px; height: 112px; background: url(img/index/arrow_next_off.png) left top no-repeat; right: -35px; top: 122px;"></div>
+        
+        <div style="position:relative; width:940px; left:10px; border-bottom:1px solid #ccc; height:4px;">
+       	  <div id="nv_line" style="position:absolute; widows:86px; top:1px; left:335px;"><img src="img/index/nv_line.jpg" width="86" height="4" border="0" /></div>
+        </div>
+        
+        <div style="position:relative">
+        <a id="page_num_1" class="page_nums current_page_nums" href="javascript:goto_Page('1')"><img src="img/index/navi_no1_slide.png" width="88" height="19" border="0" /></a>
+        <a id="page_num_2" class="page_nums" href="javascript:goto_Page('2')"><img src="img/index/navi_no2_slide.png" width="88" height="19" border="0" /></a>
+        <a id="page_num_3" class="page_nums" href="javascript:goto_Page('3')"><img src="img/index/navi_no3_slide.png" width="88" height="19" border="0" /></a>
+        </div>
+       
+        
+    </div>
+    
+    
+    <div id="newsBox">
+    	<table width="960" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; background-color:#fff">
+          <tr>
+            <td colspan="2"><img src="img/common/infoBgTop.png" width="960" height="6" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><img src="img/common/spacer.gif" width="1" height="10" /></td>
+          </tr>
+          <tr>
+            <td width="186" style="border-right:1px solid #bebebe"><div style="margin-left:30px; margin-top:10px;"><img src="img/index/title_news.png" width="100" height="23" /></div></td>
+            <td width="774">
+            <!--news start-->
+           
+
+          
+           	<table>
+
+                  <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">11.02</td>
+                    <td height="25"><a href="./pressrelease/3ds_20171102_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">11.01</td>
+                    <td height="25"><a href="./switch/xenoblade2/store/">Nintendo Switch遊戲軟體『異度神劍 2』現正接受預訂</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.27</td>
+                    <td height="25"><a href="./switch/super_mario_odyssey/">Nintendo Switch遊戲軟體『超級瑪利歐 奧德賽』現正發售</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.12</td>
+                    <td height="25"><a href="./pressrelease/3ds_20171012_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.07</td>
+                    <td height="25"><a href="./3ds/eshop/">繁體中文版Nintendo 3DS專用下載軟體『Mario & Luigi: Superstar Saga + Bowser's Minions (英文版)』公開下載中！</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.06</td>
+                    <td height="25"><a href="./pressrelease/3ds_20171006_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.27</td>
+                    <td height="25"><a href="./pressrelease/switch_zelda_bow_20170927.html">『薩爾達傳說』系列最新資訊</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.22</td>
+                    <td height="25"><a href="./pokemon_usum/store/">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』現正接受預訂</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.22</td>
+                    <td height="25"><a href="./event/pokemon_event_201709_silvally.htm">異色「散發光芒的銀伴戰獸」贈送活動</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.22</td>
+                    <td height="25"><a href="./switch/pokken_dx/">Nintendo Switch遊戲軟體『ポッ拳 POKKÉN TOURNAMENT DX』現正發售! 首批附送『虎の巻』中文版特典!</a></td>                 
+                </tr>
+                
+                
+                <!-- old news
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.22</td>
+                    <td height="25"><a href="./3ds/eshop/">繁體中文版Nintendo 3DS專用下載軟體『ポケットモンスター 金・銀 (日文版)』公開下載中！</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.16</td>
+                    <td height="25"><a href="./3ds/eshop/">繁體中文版Nintendo 3DS專用下載軟體『Metroid™: Samus Returns (英文版)』公開下載中！</a></td>                 
+                </tr>
+                
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.14</td>
+                    <td height="25"><a href="./pressrelease/3ds_20170914_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊</a></td>                 
+                </tr>
+                
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">08.18</td>
+                    <td height="25"><a href="./switch/fire_emblem_warriors/store/">Nintendo Switch遊戲軟體『Fire Emblem 無雙』接受預訂中！附數量限定特製收納包預訂特典！</a></td>                 
+                </tr>
+                
+                
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">08.21</td>
+                    <td height="25"><a href="./pressrelease/3ds_20170821_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊(二)</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">08.21</td>
+                    <td height="25"><a href="./pressrelease/3ds_20170821_1_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月』最新資訊(一)</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.21</td>
+                    <td height="25"><a href="./splatoon2/">Nintendo Switch遊戲軟體『Splatoon2』現正發售</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.13</td>
+                    <td height="25"><a href="./3ds/eshop/">繁體中文版Nintendo 3DS專用下載軟體『Ever Oasis™ (英文版)』正式版及體驗版公開下載中！</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.07</td>
+                    <td height="25"><a href="./switch/pokken_dx/store/">Nintendo Switch遊戲軟體『ポッ拳 POKKÉN TOURNAMENT DX』現正接受預訂! 首批附送『虎の巻』中文版特典! </a></td>                 
+                </tr>
+                
+                
+                
+                 
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.07</td>
+                    <td height="25"><a href="./3ds/eshop/">繁體中文版Nintendo 3DS專用下載軟體『Kirby's Blowout Blast™ (英文版)』現已公開下載中！</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">08.23</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.16</td>
+                    <td height="25"><a href="./software/switch/">Nintendo Switch遊戲軟體『ARMS』現正發售</a></td>                 
+                </tr>
+
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.14</td>
+                    <td height="25"><a href="./pressrelease/e3_20170614.html">Nintendo Switch遊戲軟體『Fire Emblem 無雙』及『Super Mario Odyssey (超級瑪利歐 奧德賽)』發售日與對應中文資訊 </a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.13</td>
+                    <td height="25"><a href="./pressrelease/switch_20170613_tournament_dx_release.htm">Nintendo Switch遊戲軟體『ポッ拳　POKKÉN TOURNAMENT DX』最新資訊 </a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.13</td>
+                    <td height="25"><a href="./pressrelease/3ds_vc_20170613_gold_silver_release.htm">『精靈寶可夢(Pokémon)』系列的第2部作品 
+『ポケットモンスター 金・銀』最新資訊 </a></td>                 
+                </tr>
+                
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.07</td>
+                    <td height="25"><a href="./pressrelease/3ds_20170607_ultra_sun_ultra_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 究極之日／究極之月 』遊戲及發售日資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">05.26</td>
+                    <td height="25"><a href="./software/switch/">Nintendo Switch遊戲軟體『Ultra Street Fighter II: The Final Challengers』現已發售</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">05.17</td>
+                    <td height="25"><a href="pressrelease/3ds_20170517_sun_moon_update.htm">發佈『精靈寶可夢 太陽／月亮』更新資料通知</a></td>                 
+                </tr>
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.24</td>
+                    <td height="25"><a href="./pressrelease/3ds_20170424_wcs2017.htm">香港及台灣區2017 Pokémon Video Game Regional Championships舉辦資訊</a></td>                 
+                </tr>
+                
+                
+                         <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.20</td>
+                    <td height="25"><a href="3ds/eshop/">繁體中文版Nintendo 3DS專用下載軟體『Fire Emblem Echoes 另一位英雄王』公開下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.20</td>
+                    <td height="25"><a href="3ds_j/">日文版Nintendo 3DS專用遊戲軟體『Fire Emblem Echoes 另一位英雄王』公開發售</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.24</td>
+                    <td height="25"><a href="./event/pokemon_event_201704_tapukoko.htm">公佈異色卡璞・鳴鳴贈送活動</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">05.29</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">05.23</td>
+                    <td height="25"><a href="./event/usf2_trial_play.htm">Nintendo Switch遊戲軟體『Ultra Street Fighter II: The Final Challengers』店舖試玩活動<img src="img/index/index_new_3DS.gif" width="29" height="11" /></a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">03.30</td>
+                    <td height="25"><a href="http://mariosportssuperstars.nintendo.com/">繁體中文版Nintendo 3DS專用下載軟體 『Mario Sports™ Superstars (英文版)』公開下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">03.18</td>
+                    <td height="25"><a href="http://www.capcom.co.jp/monsterhunter/XX/">繁體中文版Nintendo 3DS專用下載軟體 『MONSTER HUNTER XX™ (日文版)』公開下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.21</td>
+                    <td height="25"><a href="./event/mario_kart_8_trial_play.htm">Nintendo Switch專用軟體『Mario Kart 8 Deluxe』店舖試玩活動<img src="img/index/index_new_3DS.gif" width="29" height="11" /></a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">05.02</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">03.03</td>
+                    <td height="25"><a href="./switch/">新型號電視遊戲機「Nintendo Switch™」即日發售!</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.10</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">01.25</td>
+                    <td height="25"><a href="pressrelease/3ds_20170125_pokebank_update.htm">發佈『寶可夢虛擬銀行(Pokémon Bank)』更新資料通知</a></td>                 
+                </tr>
+                
+                
+                        <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">01.25</td>
+                    <td height="25"><a href="pressrelease/3ds_20170125_poke_transporter_update.htm">發佈『寶可夢虛擬傳送(Poké Transporter)』更新資料通知</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">01.24</td>
+                    <td height="25"><a href="pressrelease/3ds_20170124_pokemon_bank_update.htm">發佈『寶可夢虛擬銀行(Pokémon Bank)』最新資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">01.13</td>
+                    <td height="25"><a href="pressrelease/switch_20170113.html">發佈「Nintendo Switch™」最新資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">01.11</td>
+                    <td height="25"><a href="pressrelease/3ds_20170111_sun_moon_update.htm">發佈『精靈寶可夢 太陽／月亮』更新資料通知</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">01.24</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">01.24</td>
+                    <td height="25"><a href="./event/pokemon_event_2017cny_magikarp.htm">公佈異色鯉魚王贈送活動</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">11.18</td>
+                    <td height="25"><a href="./pokemon_sun_moon/">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮』公開發售及下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">11.18</td>
+                    <td height="25"><a href="./pressrelease/3ds_20161118_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">11.14</td>
+                    <td height="25"><a href="./pressrelease/3ds_20161114_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.18</td>
+                    <td height="25"><a href="./pressrelease/3ds_20161004_sun_moon_release_8.htm">繁體中文版Nintendo 3DS專用下載軟體 『精靈寶可夢 太陽／月亮 特別體驗版』公開下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.27</td>
+                    <td height="25"><a href="./pressrelease/3ds_20161027_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮』遊戲資訊</a></td>                 
+                </tr>
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">12.15</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+               <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.25</td>
+                    <td height="25"><a href="./pressrelease/3ds_20161025_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.08</td>
+                    <td height="25"><a href="http://www.mh-stories.jp/">繁體中文版Nintendo 3DS專用下載軟體 『MONSTER HUNTER STORIES™ (日文版)』公開下載</a></td>                 
+                </tr>
+                
+                       
+                  
+                                    <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.14</td>
+                    <td height="25"><a href="./pressrelease/3ds_20161014_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.04</td>
+                    <td height="25"><a href="./pressrelease/3ds_20161004_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.08</td>
+                    <td height="25"><a href="http://www.ace-attorney.com/">繁體中文版Nintendo 3DS專用下載軟體 『逆轉裁判 6 / Phoenix Wright: Ace Attorney - Spirit of Justice (英文版)』公開下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.20</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160920_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.14</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160914_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.08</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160908_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮』遊戲資訊</a></td>                 
+                </tr>
+                
+              
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.06</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160906_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮 』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.01</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160901_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮 』遊戲資訊</a></td>                 
+                </tr>
+                
+                           
+                                                  <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">08.20</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160820_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮 』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.08</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">08.16</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160816_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮 』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">08.09</td>
+                    <td height="25"><a href="http://cosen-net.com/shf/">繁體中文版Nintendo 3DS專用下載軟體 『Shift DX (日文版)』公開下載</a></td>                 
+                </tr>
+                
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">08.01</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160801_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮 』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.19</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160719_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮 』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.07</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160707_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮 』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.01</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160701_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮 』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.17</td>
+                    <td height="25"><a href="https://kirby.nintendo.com/planet-robobot/">繁體中文版Nintendo 3DS專用下載軟體 『Kirby: Planet Robobot (英文版)』公開下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">08.03</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.15</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160615_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮 』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.15</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160510_wcs2016.htm">關於2016 Pokémon World Championships Hong Kong Video Game National Championships比賽之聯絡</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.15</td>
+                    <td height="25"><a href="./event/pokemon_event_2016mewtwo.htm">關於Shiny(色違い)超夢(Mewtwo)贈送活動日期之聯絡</a></td>                 
+                </tr>
+                
+                
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.02</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160602_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮 』遊戲資訊</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.28</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.02</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160510_wcs2016.htm">2016 Pokémon World Championships 
+Hong Kong Video Game National Championships 活動延期舉行通知</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.01</td>
+                    <td height="25"><a href="http://cosen-net.com/mgh/">繁體中文版Nintendo 3DS專用下載軟體 『Magic Hammer (日文版)』公開下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">05.25</td>
+                    <td height="25"><a href="http://cosen-net.com/fyp/">繁體中文版Nintendo 3DS專用下載軟體 『Fantasy Pirate (日文版)』公開下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">05.20</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160520_smashbros_update.htm">發佈『大乱闘スマッシュブラザーズ for Nintendo 3DS』更新資料通知</a></td>                 
+                </tr>
+              
+                
+                
+                  <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">05.18</td>
+                    <td height="25"><a href="http://cosen-net.com/drn/">繁體中文版Nintendo 3DS專用下載軟體 『RV-7 My Drone (日文版)』公開下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                <td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.08</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">05.10</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160510_sun_moon_release.htm">Nintendo 3DS專用遊戲軟體『精靈寶可夢 太陽／月亮 』遊戲及發售日資訊</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                  <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">05.10</td>
+                    <td height="25"><a href="./pressrelease/3ds_20160510_wcs2016.htm">香港及台灣區2016 Pokémon Video Game National Championships舉辦資訊</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.27</td>
+                    <td height="25"><a href="http://cosen-net.com/tvm/">繁體中文版Nintendo 3DS專用下載軟體 『Toys VS Monsters (日文版)』公開下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.25</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.19</td>
+                    <td height="25"><a href="http://aksysgames.com/langrisser/">繁體中文版Nintendo 3DS專用下載軟體 『Langrisser Re:Incarnation -TENSEI- (英文版)』公開下載</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">03.16</td>
+                    <td height="25"><a href="pressrelease/3ds_20160316_smashbros_update.htm">發佈『大乱闘スマッシュブラザーズ for Nintendo 3DS』更新資料通知</a></td>                 
+                </tr>
+                
+                  <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">02.26</td>
+                    <td height="25"><a href="./3ds/VCAMAP/">繁體中文版Nintendo 3DS專用下載軟體 『ポケットモンスター 赤・緑・青・ピカチュウ(日文版)』公開下載</a></td>                 
+                </tr>
+                
+                  <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">02.25</td>
+                    <td height="25"><a href="http://aksysgames.com/mocomoco/">繁體中文版Nintendo 3DS專用下載軟體 『Moco Moco Friends(英文版)』公開下載</a></td>                 
+                </tr>
+                
+                  <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">02.23</td>
+                    <td height="25"><a href="./pressrelease/3ds_20150223_megaman_legacy_collection.htm">繁體中文版Nintendo 3DS專用下載軟體 『Mega Man Legacy Collection(日英版)』發售資訊</a></td>                 
+                </tr>
+                
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">02.23</td>
+                    <td height="25"><a href="http://megaman.capcom.com/">繁體中文版Nintendo 3DS專用下載軟體 『Mega Man Legacy Collection(日英版)』公開下載</a></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">02.18</td>
+                    <td height="25"><a href="./3ds/mario_sonic_rio2016/">繁體中文版Nintendo 3DS專用下載軟體 『マリオ&amp;ソニック AT リオ オリンピック(日文版)』公開下載</a></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">03.29</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">02.04</td>
+                    <td height="25"><a href="./smashbros/dlc.html">追加『大乱闘スマッシュブラザーズ for Nintendo 3DS』付費新增內容</a></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">02.04</td>
+                    <td height="25"><a href="pressrelease/3ds_20160204_smashbros_update.htm">發佈『大乱闘スマッシュブラザーズ for Nintendo 3DS』更新資料通知</a></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">01.19</td>
+                    <td height="25"><a href="./event/pokemon_event_2016goukazaru.htm">Hidden Ability (隠れ特性) Infernape (ゴウカザル) 贈送活動</a></td>                 
+                </tr>
+                
+                
+                
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">12.24</td>
+                    <td height="25"><a href="3ds/pad_m/update.html">發佈『Puzzle & Dragons Z + Puzzle & Dragons Super Mario Bros. Edition』更新資料通知</a></td>                 
+                </tr>
+                
+                 
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">12.17</td>
+                    <td height="25"><a href="./smashbros/dlc.html">追加『大乱闘スマッシュブラザーズ for Nintendo 3DS』付費新增內容</a></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">12.16</td>
+                    <td height="25"><a href="pressrelease/3ds_20151216_smashbros_update.htm">發佈『大乱闘スマッシュブラザーズ for Nintendo 3DS』更新資料通知</a></td>                 
+                </tr>
+                
+
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">02.04</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">12.03</td>
+                    <td height="25"><a href="./event/pokemon_event_2015jirachi.htm">Shiny(色違い)，Mythical Pokémon(幻のポケモン) Jirachi(ジラーチ) 聖誕贈送活動</a></td>                 
+                </tr>
+
+
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">11.19</td>
+                    <td height="25"><a href="./3ds/mhx/">繁體中文版Nintendo 3DS專用下載軟體『MONSTER HUNTER X』(日文版)將於11月28日公開下載</a></td>                 
+                </tr>
+                
+
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">11.06</td>
+                    <td height="25"><a href="./fire_emblem_if/">繁體中文版Nintendo 3DS專用遊戲軟體『ファイアーエムブレムif 白夜王国』及<br>下載專用軟體『ファイアーエムブレムif』(日文版)公開發售</a></td>                 
+                </tr>
+                
+
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">11.06</td>
+                    <td height="25"><a href="./fire_emblem_if/dlc.html">追加『ファイアーエムブレムif』付費新增內容</a></td>                 
+                </tr>
+                
+
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.30</td>
+                    <td height="25"><a href="./pressrelease/eshop_maintenance_20151030.htm">有關Nintendo eShop預定進行修復事宜</a></td>                 
+                </tr>
+
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.28</td>
+                    <td height="25"><a href="./pressrelease/3ds_20151028_IronFall_Invasion.htm">繁體中文版Nintendo 3DS專用下載軟體『IRONFALL -Invasion-』公開下載</a></td>                 
+                </tr>
+                 
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.22</td>
+                    <td height="25"><a href="./3ds/zelda_majoras_mask/">繁體中文版Nintendo 3DS專用下載軟體『The Legend of Zelda™: Majora's Mask 3D』公開下載</a></td>                 
+                </tr>
+                
+                
+
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.14</td>
+                    <td height="25"><a href="./event/pokemon_event_2015diancie.htm">
+Mythical Pokémon (幻のポケモン)-Diancie(ディアンシー)贈送活動</a></td>                 
+                </tr>
+                
+
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.12</td>
+                    <td height="25"><a href="pressrelease/3ds_20151012_zelda_triforce_heroes.htm">發佈『ゼルダの伝説　トライフォース３銃士』發售資訊</a></td>                 
+                </tr>
+
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.12</td>
+                    <td height="25"><a href="./zelda_triforce_heroes/">發佈『ゼルダの伝説　トライフォース３銃士』製作人影片</a></td>                 
+                </tr>
+                
+
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.09</td>
+                    <td height="25"><a href="http://pxz2.bn-ent.net/">繁體中文版Nintendo 3DS專用下載軟體 『PROJECT X ZONE 2：BRAVE NEW WORLD』體驗版公開下載</a></td>                 
+                </tr>
+                
+
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.06</td>
+                    <td height="25"><a href="pressrelease/3ds_20151006_smashbros_update.htm">發佈『大乱闘スマッシュブラザーズ for Nintendo 3DS』更新資料通知</a></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.02</td>
+                    <td height="25"><a href="./smashbros/dlc.html">追加『大乱闘スマッシュブラザーズ for Nintendo 3DS』付費新增內容</a></td>                 
+                </tr>
+                
+
+                                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">10.16</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a><img src="img/index/index_new_3DS.gif" width="29" height="11" /></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.11</td>
+                    <td height="25"><a href="event/pokemon_event_2015autumn.htm">
+傳說Pokémon-Rayquaza(レックウザ)中秋節贈送活動</a></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">09.10</td>
+                    <td height="25"><a href="pressrelease/3ds_20150910_JohnnysPaydayPanic.htm">繁體中文版Nintendo 3DS專用下載軟體 『Johnny's Payday Panic』將於9月14日公開下載</a></td>                 
+                </tr>
+<!-- old news                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.31</td>
+                    <td height="25"><a href="./smashbros/dlc.html">追加『大乱闘スマッシュブラザーズ for Nintendo 3DS』付費新增內容</a></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.31</td>
+                    <td height="25"><a href="pressrelease/3ds_20150731_smashbros_update.htm">發佈『大乱闘スマッシュブラザーズ for Nintendo 3DS』更新資料通知</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.31</td>
+                    <td height="25"><a href="amiibo/index.htm">「amiibo」及「Nintendo 3DS NFC讀寫器」正式公開發售</a></td>                 
+                </tr>
+                
+                 <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.29</td>
+                    <td height="25"><a href="pressrelease/3ds_20150729_codenamesteam_update.htm">發佈『Code Name: S.T.E.A.M』更新資料通知</a></td>                 
+                </tr>
+                
+
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.24</td>
+                    <td height="25"><a href="./smashbros/">繁體中文版Nintendo 3DS專用遊戲軟體『大乱闘スマッシュブラザーズ for Nintendo 3DS』(日文版)公開發售</a></td>                 
+                </tr>
+                
+
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.24</td>
+                    <td height="25"><a href="pressrelease/3ds_20150724_smashbros_update.htm">發佈『大乱闘スマッシュブラザーズ for Nintendo 3DS』更新資料通知</a></td>                 
+                </tr>
+                
+
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.15</td>
+                    <td height="25"><a href="pressrelease/3ds_20150708_goonyan.htm">繁體中文版Nintendo 3DS專用下載軟體 『Goonyan』 公開下載</a></td>                 
+                </tr>
+            
+            	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">07.10</td>
+                    <td height="25"><a href="pressrelease/3ds_20150710_smashbros.htm">繁體中文版Nintendo 3DS專用遊戲軟體『大乱闘スマッシュブラザーズ for Nintendo 3DS』(日文版) 發售資訊</a></td>                 
+                </tr>
+                                 
+                   
+            	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">06.11</td>
+                    <td height="25"><a href="http://www.nintendo.com/games/detail/t452B6CeKypxeSJEPKzrIAFItKZZ4oKl">繁體中文版Nintendo 3DS專用下載軟體 『Dr. Mario: Miracle Cure』正式版公開下載</a></td>                 
+                </tr>
+             
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">05.22</td>
+                    <td height="25"><a href="3ds/pad_m/">繁體中文版Nintendo 3DS專用下載軟體 『Puzzle & Dragons Z + Puzzle & Dragons Super Mario Bros. Edition』正式版公開下載</a></td>                 
+                </tr>
+
+                
+            
+            	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.30</td>
+                    <td height="25"><a href="3ds/pad_m/">繁體中文版Nintendo 3DS專用下載軟體 『Puzzle & Dragons Z + Super Mario Bros. Edition』特別試玩版公開下載</a></td>                 
+                </tr>
+                
+            	
+
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.23</td>
+                    <td height="25"><a href="pressrelease/3ds_20150423_pokeORAS_update.htm">發佈『Pokémon Omega Ruby・Alpha Sapphire』更新資料通知</a></td>                 
+                </tr>
+                                
+            
+            	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.23</td>
+                    <td height="25"><a href="pressrelease/3ds_20150423_pokeXY_update.htm">發佈『Pokémon X・Y』更新資料通知</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.08</td>
+                    <td height="25"><a href="pressrelease/3ds_20150408_codenamesteam_update.htm">發佈『Code Name: S.T.E.A.M』更新資料通知</a></td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.01</td>
+                    <td height="25"><a href="pressrelease/3ds_20150401_pazuru.htm">繁體中文版Nintendo 3DS專用下載軟體 『PAZURU』 公開下載</a></td>                 
+                </tr>
+                
+
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">04.01</td>
+                    <td height="25"><a href="event/pokemon_event_2015easter.htm">Kangaskhan(ガルーラ)復活節贈送活動</a></td>                 
+                </tr>
+                
+                
+            
+            	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">03.20</td>
+                    <td height="25"><a href="3ds/fossil_fighters_frontier/">繁體中文版Nintendo 3DS專用下載軟體 『Fossil Fighters™: Frontier』 公開下載</a></td>                 
+                </tr>
+            
+				
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">03.16</td>
+                    <td height="25"><a href="support/notice_update.html">任天堂維修服務中心(香港)的營業時間及休息事宜</a></td>                 
+                </tr>
+                
+                           
+            
+            	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">03.13</td>
+                    <td height="25"><a href="3ds/code_name_steam/">繁體中文版Nintendo 3DS專用下載軟體 『Code Name: S.T.E.A.M.』 公開下載</a></td>                 
+                </tr>
+             
+            	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">03.04</td>
+                    <td height="25"><a href="pressrelease/3ds_20150304_toystuntbike.htm">繁體中文版Nintendo3DS專用下載軟體 『Toy Stunt Bike(日文版)』 公開下載</a> </td>                 
+                </tr>
+                               
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">03.04</td>
+                    <td height="25"><a href="pressrelease/3ds_20150304_oras.htm">『Pokémon Omega Ruby』及『Pokémon Alpha Sapphire』(日文版)　新資訊介紹</a> </td>                 
+                </tr>
+                                 
+            
+            	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">02.16</td>
+                    <td height="25"><a href="event/apita_event_20150221.htm">Pokémon Omega Ruby・Alpha Sapphire新春對戰</a></td>                 
+                </tr>
+            
+            
+            	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">01.23</td>
+                    <td height="25"><a href="pressrelease/3ds_20150123_oras.htm">『Pokémon Omega Ruby』及『Pokémon Alpha Sapphire』(日文版)　新資訊介紹</a></td>                 
+                </tr>
+                           	
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">12.24</td>
+                    <td height="25"><a href="pressrelease/3ds_20141224_flyhigh.htm">新增『Fairune』繁體中文版相關資訊。(資訊由Flyhigh Works Co., Ltd.提供)</a></td>                 
+                </tr>
+                              
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">12.17</td>
+                    <td height="25"><a href="pressrelease/3ds_20141217_flyhigh.htm">新增『Fairune』繁體中文版相關資訊。(資訊由Flyhigh Works Co., Ltd.提供)</a></td>                 
+                </tr>
+               
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">12.15</td>
+                    <td height="25"><a href="pressrelease/3ds_20141215oras.htm">『Pokémon Omega Ruby』及『Pokémon Alpha Sapphire』(日文版)　新資訊介紹</a></td>                 
+                </tr>
+
+
+                 
+             	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">12.09</td>
+                    <td height="25"><a href="3ds/aceattorney_123/">新增『逆轉裁判123 / Phoenix Wright: Ace Attorney Trilogy』(日英版)網頁</a></td>                 
+                </tr>
+                 
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">12.03</td>
+                    <td height="25"><a href="pressrelease/3ds_20141203_poke_update.htm">『Pokémon Omega Ruby・Alpha Sapphire』更新資料</a></td>                 
+                </tr>
+
+           
+             	<tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">11.28</td>
+                    <td height="25">新增<a href="pressrelease/3ds_20141128oras_ticket.htm">『Eon Ticket(むげんのチケット)』</a>及<a href="pressrelease/3ds_20141128oras.htm">『Pokémon Omega Ruby・Alpha Sapphire 特別體驗版』</a>資訊 </td>                 
+                </tr>
+                
+                <tr class="newsPointWrapper">
+                 	<td width="10"></td>
+                	<td height="25" width="40" class="newsDate3DS">11.28</td>
+                    <td height="25"><a href="pressrelease/3ds_20141128_poke_update.htm">『Pokémon Omega Ruby・Alpha Sapphire』更新資料</a></td>                 
+                </tr>
+-->
+                 
+                 </table>
+         		                        
+          
+            <!--news end-->
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"><img src="img/common/spacer.gif" width="1" height="10" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><img src="img/common/infoBgBtm.png" width="960" height="6" /></td>
+          </tr>
+        </table>
+
+    </div>
+    
+    <div id="footer_1_white">
+    
+    <a class="footer_arrow_links footer_arrow_links_left" href="about_hp.htm">利用條款</a>
+    
+    <!--<a class="footer_arrow_links footer_arrow_links_left_2" href="javascript:void(0)" onclick="confirmation();">加入我們</a>-->
+    
+    <a class="footer_arrow_links footer_arrow_links_right" href="http://www.nintendo.com/countryselector" target="_blank">Global</a>
+    </div>
+    
+    <div id="footer_2">
+    <iframe src="copyright_index.htm" width="100%" height="30" frameborder="0" scrolling="no"></iframe>
+    </div>
+    
+    
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5796867-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="オープンソースソフトウェア,ソースコード,Nintendo,任天堂,ニンテンドー">
+<meta name="description" content="任天堂製品に関連するオープンソースソフトウェアのソースコード配布ページです。">
+<title>任天堂製品に関連するオープンソースソフトウェアのソースコード配布ページ｜サポート情報｜Nintendo</title>
+
+<link type="text/css" rel="stylesheet" href="../../common/css/shared.css">
+<link type="text/css" rel="stylesheet" href="../common/css/local.css">
+<link type="text/css" rel="stylesheet" href="css/oss.css" data-load="1">
+
+<!--[if lt IE 9]>
+<script src="../../common/js/vendor/html5shiv.js" charset="UTF-8"></script>
+<![endif]-->
+
+<script src="../../common/js/vendor/lib.js"></script>
+<script src="../../common/js/main.js"></script>
+<script src="../common/js/local.js"></script>
+
+<script src="/common/js/ua/ua.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"413768",ustr:"",originlat:"0",clientrtt:"36",ghostip:"23.50.225.84",ipv6:false,pct:"10",clientip:"64.222.238.14",requestid:"486ee2a4",region:"28587",protocol:"",blver:13,akM:"g",akN:"ae",akTT:"O",akTX:"1",akTI:"486ee2a4",ai:"268862",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    </head>
+<body>
+
+<header id="header">
+  <div class="header_global">
+    <div class="header_global_inner">
+      <noscript>
+        <a class="header_logo-noscript" href="../../index.html">NINTENDO</a>
+        <div class="header_btns-noscript">
+          <ul class="header_btnList">
+            <li><a href="../../parents/index.html" class="header_btn-parents">保護者の皆様へ</a></li>
+            <li><a href="../../schedule/index.html" class="header_btn-calendar">発売日カレンダー</a></li>
+            <li><a href="../../search/index.html" class="header_btn-search">さがす</a></li>
+            <li><a href="../../index.html" class="header_btn-searchp">任天堂TOPへ</a></li>
+          </ul>
+        </div>
+      </noscript>
+    </div>
+  </div>
+  <div class="header_local">
+    <div class="header_local_inner">
+      <noscript>
+        <a class="header_local_logo-noscript" href="../index.html"><img src="../common/img/icon_logo.png" width="28" height="28" alt=""><img src="../common/img/text_ttl.png" alt="サポート情報"></a>
+      </noscript>
+      <form action="http://search2.nintendo.co.jp/index.php" method="GET" name="supsearch_form" onsubmit="return (form_check() &amp;&amp; val_check())" class="header_local_search form">
+        <input type="text" name="q" value="" placeholder="キーワードを入力してください。" class="header_local_search_text form_text">
+        <input type="hidden" name="category" value="support">
+        <input type="submit" value="サポート情報をさがす" class="header_local_search_btn form_btn">
+      </form>
+    </div>
+  </div>
+</header><!-- #header -->
+
+<div id="pageTitle">
+  <div class="pageTitle_inner">
+    <h1 class="heading-lv1">任天堂製品に関するオープンソースソフトウェアのソースコード配布ページ</h1>
+  </div>
+</div>
+
+<div class="topicPath">
+  <div class="topicPath_inner">
+    <span><a href="../../index.html"><img src="../../common/img/icon_home.png" width="16" height="14" alt="HOME" /></a></span><img src="../../common/img/arrow_topicpath_01.png" width="4" height="36" alt=""><!--
+    --><span><a href="../index.html">サポート総合</a></span><img src="../../common/img/arrow_topicpath_01.png" width="4" height="36" alt=""><!--
+    --><span>任天堂製品に関連するオープンソースソフトウェアのソースコード配布ページ</span>
+  </div>
+</div><!-- #topicPath -->
+
+<div class="block-divideNone">
+  <div id="supportArea">
+    <div class="wrapper">
+
+      <div class="lineFirst adjust">
+        <div class="">
+          <h3 class="heading-lv2">Nintendo Open Source Software source code distribution page</h3>
+        </div>
+        <div class="areaDescription">
+          <p class="hlp-mb30 description">Some Nintendo products include open source software ("OSS") distributed under the terms of various open source licenses, including the GNU Library General Public License 2.0, the GNU Lesser General Public license 2.1, the Mozilla Public License Version 1.1, and the Mini-XML License (collectively, the "OSS Licenses"). This website is the OSS source code distribution page for such Nintendo products. Please select the relevant product from the list below to obtain more information about OSS included in that product.</p>
+          <p class="hlp-mb40 description">このページは、任天堂製品で使用されている、GNU Library General Public License 2.0、GNU Lesser General Public License 2.1、Mozilla Public License Version 1.1もしくはMini-XML License等のさまざまなオープンソースライセンス(総称して“OSSライセンス”)適用のオープンソースソフトウェア(“OSS”)のソースコード配布ページです。まず関連する製品を選んでください。</p>
+        </div>
+
+
+      <div class="columns oss_menu">
+
+        <div class="columns_col col-3 sp-full">
+          <a href="#switch" class="rect" style="height: 81px;">
+            <div class="rect_inner tableSet-local">
+            <span class="link-arrow link-arrow_under tableSet-cell">Nintendo Switch</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="columns_col col-3 sp-full">
+          <a href="#wiiU" class="rect">
+            <div class="rect_inner tableSet-local" style="height: 81px;">
+            <span class="link-arrow link-arrow_under tableSet-cell">Wii U</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="columns_col col-3 sp-full">
+          <a href="#ds3ds" class="rect ">
+            <div class="rect_inner tableSet-local" style="height: 81px;">
+            <span class="link-arrow link-arrow_under tableSet-cell">Nintendo 3DS<br><span class="sub_caption">ニンテンドー3DS</span></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="columns_col col-3 sp-full">
+          <a href="#other" class="rect ">
+            <div class="rect_inner tableSet-local" style="height: 81px;">
+            <span class="link-arrow link-arrow_under tableSet-cell">Other<br><span class="sub_caption">その他</span></span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      </div>
+
+      <div id="switch" class="lineSecond adjust">
+        <div class="block-divideSolid">
+          <div class="">
+            <p class="hlp-mb40 hlp-mt20 heading-lv2">Nintendo Switch</p>
+            <h3 class="heading-lv3 hlp-mb10">About OSS included in the Nintendo Switch console</h3>
+            <p class="hlp-mb40 heading-lv3__under">Nintendo Switch本体に含まれるOSSについて</p>
+          </div>
+          <div class="areaDescription">
+            <p class="hlp-mb30 description">The Nintendo Switch console includes OSS distributed under OSS Licenses. In accordance with the OSS Licenses, we are making the source code of the OSS available to you.<br>*Please note that the OSS is provided without warranty of any kind.
+            </p>
+            <p class="hlp-mb40 description">Nintendo Switch本体には、OSSライセンス適用のOSSが使用されています。お客様は、当該OSSのソースコードをOSSライセンスに従って入手、複製、改変、再配布することができます。<br>当該OSSについては、その性質上、一切の保証ならびにサポートの対象外になります。ご了承ください。</p>
+          </div>
+          <div class="areaLink width90 marginAuto hlp-mb60">
+            <ul class="link">
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="./data/NintendoSwitch_OpenSources1.0.0.zip"><span class="oss_mark">Nintendo Switch [Ver. 1.0.0] </span></a>
+              <span class="dl_txt2 linkTextNormal">容量：105MB （解凍後 304MB）</span>
+              </li>
+
+               <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="./data/NintendoSwitch_OpenSources2.0.0.zip"><span class="oss_mark">Nintendo Switch [Ver. 2.0.0] </span></a>
+              <span class="dl_txt2 linkTextNormal">容量：105MB （解凍後 304MB）</span>
+              </li>
+
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="./data/NintendoSwitch_OpenSources2.1.0.zip"><span class="oss_mark">Nintendo Switch [Ver. 2.1.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：105MB （解凍後 304MB）</span>
+              </li>
+
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="./data/NintendoSwitch_OpenSources3.0.0.zip"><span class="oss_mark">Nintendo Switch [Ver. 3.0.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：105MB （解凍後 305MB）</span>
+              </li>
+
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="./data/NintendoSwitch_OpenSources3.0.1.zip.zip"><span class="oss_mark">Nintendo Switch [Ver. 3.0.1]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：105MB （解凍後 305MB）</span>
+              </li>
+
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="./data/NintendoSwitch_OpenSources4.0.0.zip"><span class="oss_mark">Nintendo Switch [Ver. 4.0.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：112MB （解凍後 313MB）</span>
+              </li>
+
+            </ul>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div id="wiiU" class="lineSecond adjust">
+        <div class="block-divideSolid">
+          <div class="">
+            <p class="hlp-mb40 hlp-mt20 heading-lv2">Wii U</p>
+            <h3 class="heading-lv3 hlp-mb10">About OSS included in the Wii U console</h3>
+            <p class="hlp-mb40 heading-lv3__under">Wii U本体に含まれるOSSについて</p>
+          </div>
+          <div class="areaDescription">
+            <p class="hlp-mb30 description">The Wii U console includes OSS distributed under OSS Licenses. In accordance with the OSS Licenses, we are making the source code of the OSS available to you.<br>
+            *Please note that the OSS is provided without warranty of any kind.
+            </p>
+            <p class="hlp-mb40 description">Wii U本体には、OSSライセンス適用のOSSが使用されています。お客様は、当該OSSのソースコードをOSSライセンスに従って入手、複製、改変、再配布することができます。<br>当該OSSについては、その性質上、一切の保証ならびにサポートの対象外になります。ご了承ください。</p>
+          </div>
+          <div class="areaLink width90 marginAuto hlp-mb60">
+            <ul class="link">
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources1.0.1-1.0.3.zip"><span class="oss_mark">Wii U [Ver. 1.0.1～1.0.3]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：94.7KB （解凍後 431KB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources2.0.0.zip"><span class="oss_mark">Wii U [Ver. 2.0.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：86.7MB （解凍後 169MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources2.1.0.zip"><span class="oss_mark">Wii U [Ver. 2.1.0～2.1.3]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：174MB （解凍後 339MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources3.0.0.zip"><span class="oss_mark">Wii U [Ver. 3.0.0～3.1.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：87.2MB （解凍後 169MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources4.0.0.zip"><span class="oss_mark">Wii U [Ver. 4.0.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：97.4MB （解凍後 216MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources4.1.0.zip"><span class="oss_mark">Wii U [Ver. 4.1.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：179MB （解凍後 417MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources5.0.0.zip"><span class="oss_mark">Wii U [Ver. 5.0.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：277MB （解凍後 633MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources5.1.0.zip"><span class="oss_mark">Wii U [Ver. 5.1.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：266MB （解凍後 687MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources5.1.1.zip"><span class="oss_mark">Wii U [Ver. 5.1.1～5.3.2]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：266MB （解凍後 586MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources5.4.0.zip"><span class="oss_mark">Wii U [Ver. 5.4.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：264MB （解凍後 586MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources5.5.0.zip"><span class="oss_mark">Wii U [Ver. 5.5.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：265MB （解凍後 586MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources5.5.1.zip"><span class="oss_mark">Wii U [Ver. 5.5.1]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：265MB （解凍後 586MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10 spmb20">
+              <a class="link-arrow" href="https://www.nintendo.co.jp/support/oss/data/WiiU_OpenSources5.5.2.zip"><span class="oss_mark">Wii U [Ver. 5.5.2]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：265MB （解凍後 586MB）</span>
+              </li>
+
+
+            </ul>
+          </div>
+          <div class="">
+            <h3 class="heading-lv3 hlp-mb10">About OSS included in game software that runs on the Wii U console</h3>
+            <p class="hlp-mb40 heading-lv3__under">一部のWii U用ソフトウェアに含まれるOSSについて</p>
+          </div>
+          <div class="areaDescription">
+            <p class="hlp-mb30 description">Certain software that runs on the Wii U console includes OSS distributed under OSS Licenses. In accordance with the OSS Licenses, we are making the source code of the OSS available to you.<br>
+            *Please note that the OSS is provided without warranty of any kind.<br>To see if any particular software includes OSS that is distributed under the OSS Licenses, please refer to the e-manual of the particular software.
+            </p>
+            <p class="hlp-mb40 description">Wii U用のソフトウェアの中には、一部にOSSライセンス適用のOSSが使用されているものがあります。お客様は、当該OSSのソースコードをOSSライセンスに従って入手、複製、改変、再配布することができます。<br>当該OSSについては、その性質上、一切の保証ならびにサポートの対象外になります。ご了承ください。<br>なお、Wii U用のソフトウェアにOSSライセンス適用のOSSが使用されているかどうかにつきましては、各ソフトウェアの取扱説明書をご確認ください。</p>
+          </div>
+          <div class="areaLink width90 marginAuto hlp-mb60">
+            <ul class="link">
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.1_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.1]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.6MB （解凍後 105MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-1_1-3.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.3_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.3]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.6MB （解凍後 105MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-1_1-3.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.5_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.5]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.7MB （解凍後 105MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.5.1_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.5.1]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.7MB （解凍後 105MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.5.2_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.5.2]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.7MB （解凍後 105MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.5.3_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.5.3]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.7MB （解凍後 105MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.5.4_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.5.4]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.7MB （解凍後 105MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.6.0_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.6.0]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：29.1MB （解凍後 97.5MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.6.5_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.6.5]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.8MB （解凍後 97.5MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.7.0_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.7.0]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.8MB （解凍後 106MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.7.1_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.7.1]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.8MB （解凍後 106MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.7.1_patch1_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.7.1 patch1]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.0MB （解凍後 106MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.7.2_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.7.2]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.8MB （解凍後 106MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.8.0_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.8.0]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.8MB （解凍後 106MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.8.1_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.8.1]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：31.8MB （解凍後 106MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html">License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.8.3_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.8.3]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.0MB （解凍後 106MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.8.3_patch1_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.8.3 patch1]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.2MB （解凍後 106MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.8.7_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.8.7]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.3MB （解凍後 106MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.9.0_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.9.0]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：29.6MB （解凍後 97.8MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_NWF_1.9.5_OSS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Nintendo Web Framework [Ver. 1.9.5]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：29.6MB （解凍後 97.7MB）</span>
+              <span class="licenseNotices hlp-pl30 linkTextNormal"><a href="license_notices_NWF_v1-5.html" >License Notices</a></span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiStreetU_OpenSources0.0.1.0.00835_0.0.1.0.00870.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Wii Street U powered by Google [Ver. 0.0.1.0.00835 &amp; Ver. 0.0.1.0.00870]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.3MB （解凍後 104MB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiStreetU_OpenSources0.0.2.0.00964.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Wii Street U powered by Google [Ver. 0.0.2.0.00964] </span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.4MB （解凍後 104MB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiStreetU_OpenSources0.0.3.0.01549.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Wii Street U powered by Google [Ver. 0.0.3.0.01549]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.1MB （解凍後 105MB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiStreetU_OpenSources0.0.4.0.01688.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Wii Street U powered by Google [Ver. 0.0.4.0.01688]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.5MB （解凍後 105MB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiStreetU_OpenSources0.0.5.0.01876.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Wii Street U powered by Google [Ver. 0.0.5.0.01876]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.3MB （解凍後 105MB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiStreetU_OpenSources0.0.6.0.02588.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Wii Street U powered by Google [Ver. 0.0.6.0.02588]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.5MB （解凍後 105MB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiStreetU_OpenSources0.1.0.0.04142.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Wii Street U powered by Google [Ver. 0.1.0.0.04142 ～ 0.1.1.1.04242]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.1MB （解凍後 105MB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiStreetU_OpenSources0.1.2.0.04251.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Wii Street U powered by Google [Ver. 0.1.0.0.04251 ～ ]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：32.7MB （解凍後 106MB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/MarioKart8_OSS1.0.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">MARIO KART 8</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：74.9KB （解凍後 236KB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_VC_DS.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Virtual Console games (Nintendo DS) [Ver. 1.0]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：171KB （解凍後 623KB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_VC_DS1.1.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Virtual Console games (Nintendo DS) [Ver. 1.1]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：214KB （解凍後 821KB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_VC_DS1.2.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Virtual Console games (Nintendo DS) [Ver. 1.2]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：313KB （解凍後 1.36MB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_VC_DS1.3.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Virtual Console games (Nintendo DS) [Ver. 1.3]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：313KB （解凍後 1.36MB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_VC_DS1.4.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Virtual Console games (Nintendo DS) [Ver. 1.4]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：313KB （解凍後 1.37MB）</span>
+              </li>
+
+              <li class="dl_txt2 hlp-mb20">
+              <a href="https://www.nintendo.co.jp/support/oss/data/WiiU_VC_DS1.5.zip" class="link-arrow">
+              <span class="oss_mark2 hlp-mb5">Virtual Console games (Nintendo DS) [Ver. 1.5]</span>
+              </a>
+              <span class="dl_txt3 hlp-pl20 linkTextNormal">容量：310KB （解凍後 1.35MB）</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="ds3ds" class="lineThird adjust">
+          <div class="block-divideSolid">
+            <h2 class="hlp-mb40 heading-lv2">Nintendo 3DS</h2>
+            <h3 class="heading-lv3 hlp-mb10">About OSS included in the Internet Browser for Nintendo 3DS</h3>
+            <p class="hlp-mb40 heading-lv3__under">ニンテンドー3DS用インターネットブラウザーに含まれるOSSについて</p>
+          </div>
+          <div class="areaDescription">
+            <p class="hlp-mb30">The Internet Browser for Nintendo 3DS includes OSS distributed under OSS Licenses. In compliance with the OSS Licenses, we are making the source code of the OSS available to you.<br>
+            *Please note that the OSS is provided without warranty of any kind.
+            </p>
+            <p class="hlp-mb40 description">ニンテンドー3DS用のインターネットブラウザーには、一部にOSSライセンス適用のOSSが使用されています。お客様は、当該OSSのソースコードをOSSライセンスに従って入手、複製、改変、再配布することができます。<br>当該OSSについては、その性質上、一切の保証ならびにサポートの対象外になります。ご了承ください。</p>
+          </div>
+          <div class="areaLink width90 marginAuto hlp-mb60">
+            <ul class="link">
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/3DS_InternetBrowser_OpenSources_JP_US_EU_2.0.0-3.0.0.zip" class="link-arrow"><span class="oss_mark">JP/US/EU 2.0.0 ～ 3.0.0</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：18.1MB （解凍後 66.5MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/3DS_InternetBrowser_OpenSources_JP_US_EU_4.0.0-4.5.0.zip" class="link-arrow"><span class="oss_mark">JP/US/EU 4.0.0 ～ 4.5.0</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：18.1MB （解凍後 66.5MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/3DS_InternetBrowser_OpenSources_JP_US_EU_KR_TW_HK_CN_5.0.0-9.5.0(22J_22U_22E_18K_17T_2C).zip" class="link-arrow"><span class="oss_mark">JP/US/EU/KR/TW/HK/CN 5.0.0 ～ 9.5.0 (22J,22U,22E,18K,17T,2C)</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：18.5MB （解凍後 66.8MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/3DS_InternetBrowser_OpenSources_JP_US_EU_KR_TW_HK_CN_9.5.0(23J_23U_23E_19K_18T_3C).zip" class="link-arrow"><span class="oss_mark">JP/US/EU/KR/TW/HK/CN 9.5.0 (23J,23U,23E,19K,18T,3C) ～ 9.8.0</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：18.5MB （解凍後 67.0MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/3DS_InternetBrowser_OpenSources_JP_US_EU_KR_TW_HK_CN_9.9.0.zip" class="link-arrow"><span class="oss_mark">JP/US/EU/KR/TW/HK/CN 9.9.0 (26J,26U,26E,22K,21T,4C)～ 10.1.0</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：18.2MB （解凍後 66.7MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/3DS_InternetBrowser_OpenSources_JP_US_EU_KR_TW_HK_CN_10.2.0.zip" class="link-arrow"><span class="oss_mark">JP/US/EU/KR/TW/HK/CN 10.2.0 (28J,28U,28E,24K,23T,4C) ～ 10.5.0</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：18.2MB （解凍後 66.7MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/3DS_InternetBrowser_OpenSources_JP_US_EU_KR_TW_HK_CN_10.6.0.zip" class="link-arrow"><span class="oss_mark">JP/US/EU/KR/TW/HK/CN 10.6.0 (31J,31U,31E,27K,26T,4C) ～</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：18.2MB （解凍後 66.9MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/3DS_InternetBrowser_OpenSources_KR_TW_HK_CN_4.0.0-4.5.0.zip" class="link-arrow"><span class="oss_mark">KR/TW/HK/CN 4.0.0 ～ 4.5.0</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：18.1MB （解凍後 66.5MB）</span>
+              </li>
+            </ul>
+          </div>
+          <div class="">
+            <h3 class="heading-lv3 hlp-mb10">About OSS included in the Miiverse &amp; Nintendo Network ID related software in Nintendo 3DS</h3>
+            <p class="hlp-mb40 heading-lv3__under">ニンテンドー3DSのMiiverseおよびニンテンドーネットワークID関連のソフトウェアに含まれるOSSについて</p>
+          </div>
+          <div class="areaDescription">
+            <p class="hlp-mb30">The Miiverse &amp; Nintendo Network ID related software in Nintendo 3DS includes OSS distributed under OSS Licenses. In compliance with the OSS Licenses, we are making the source code of the OSS available to you.<br>*Please note that the OSS is provided without warranty of any kind.
+            </p>
+            <p class="hlp-mb40 description">ニンテンドー3DSのMiiverse及びニンテンドーネットワーク ID関連のソフトウェアには、一部にOSSライセンス適用のOSSが使用されています。お客様は、当該OSSのソースコードをOSSライセンスに従って入手、複製、改変、再配布することができます。<br>当該OSSについては、その性質上、一切の保証ならびにサポートの対象外になります。ご了承ください。</p>
+          </div>
+          <div class="areaLink width90 marginAuto hlp-mb60">
+            <ul class="link">
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/3DS_InternetBrowser_OpenSources_JP_US_EU_2.0.0-3.0.0.zip" class="link-arrow"><span class="oss_mark">JP/US/EU</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：18.0MB （解凍後 66.9MB）</span>
+              </li>
+            </ul>
+          </div>
+
+           <div class="">
+            <h3 class="heading-lv3 hlp-mb10">About OSS included in the Internet Browser for New Nintendo 3DS system</h3>
+            <p class="hlp-mb40 heading-lv3__under">Newニンテンドー3DS用インターネットブラウザーに含まれるOSSについて</p>
+          </div>
+          <div class="areaDescription">
+            <p class="hlp-mb30">The Internet Browser for New Nintendo 3DS system includes OSS distributed under OSS Licenses. In compliance with the OSS Licenses, we are making the source code of the OSS available to you. <br>*Please note that the OSS is provided without warranty of any kind.</p>
+            <p class="hlp-mb40 description">Newニンテンドー3DS用のインターネットブラウザーには、一部にOSSライセンス適用のOSSが使用されています。お客様は、当該OSSのソースコードをOSSライセンスに従って入手、複製、改変、再配布することができます。<br>当該OSSについては、その性質上、一切の保証ならびにサポートの対象外になります。ご了承ください。</p>
+          </div>
+          <div class="areaLink width90 marginAuto hlp-mb60">
+            <ul class="link">
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/NewNintendo3DS_OpenSources9.0.0-.zip" class="link-arrow"><span class="oss_mark">JP/EU 9.0.0 ～ 9.2.0</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：96.1MB （解凍後 250MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/NewNintendo3DS_OpenSources9.3.0-.zip" class="link-arrow"><span class="oss_mark">JP/EU 9.3.0 ～ 9.5.0</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：96.1MB （解凍後 250MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/NewNintendo3DS_OpenSources9.6.0-.zip" class="link-arrow"><span class="oss_mark">JP/US/EU/KR 9.6.0 ～ 9.8.0</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：96.2MB （解凍後 251MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/NewNintendo3DS_OpenSources9.9.0-.zip" class="link-arrow"><span class="oss_mark">JP/US/EU/KR 9.9.0 ～ 10.1.0</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：96.2MB （解凍後 251MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/NewNintendo3DS_OpenSources10.2.0-.zip" class="link-arrow"><span class="oss_mark">JP/US/EU/KR 10.2.0 ～ 10.3.0</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：96.3MB （解凍後 251MB）</span>
+              </li>
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/NewNintendo3DS_OpenSources10.4.0-.zip" class="link-arrow"><span class="oss_mark">JP/US/EU/KR 10.4.0 ～</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：94.4MB （解凍後 250MB）</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      <div id="other" class="linefour hlp-mb60 adjust">
+        <div class="block-divideSolid">
+
+          <div class="">
+            <p class="hlp-mb40 heading-lv2">Other</p>
+
+            <h3 class="heading-lv3 hlp-mb10">About OSS included in the Nintendo Switch Parental Controls application</h3>
+            <p class="hlp-mb40 heading-lv3__under">Nintendo みまもり Switchのアプリケーションに含まれるOSSについて</p>
+          </div>
+          <div class="areaDescription">
+            <p class="hlp-mb30">The Nintendo Switch Parental Controls application includes OSS distributed under OSS Licenses. In accordance with the OSS Licenses, we are making the source code of the OSS available to you.<br>*Please note that the OSS is provided without warranty of any kind.</p>
+            <p class="hlp-mb40 description">Nintendo みまもり Switchのアプリケーションには、一部にOSSライセンス適用のOSSが使用されています。お客様は、当該OSSのソースコードをOSSライセンスに従って入手、複製、改変、再配布することができます。<br>当該OSSについては、その性質上、一切の保証ならびにサポートの対象外になります。ご了承ください。</p>
+          </div>
+
+
+          <div class="areaLink width90 marginAuto hlp-mb60">
+            <ul class="link">
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/NintendoSwitchParentalControls_1.0.0_OSS.zip" class="link-arrow">
+              <span class="oss_mark">Nintendo Switch Parental Controls [Ver. 1.0.0]</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：172KB （解凍後 215KB）</span>
+              </li>
+            </ul>
+          </div>
+
+
+
+
+
+
+
+
+            <h3 class="heading-lv3 hlp-mb10">About OSS included in the Nintendo Wi-Fi Network Adaptor</h3>
+            <p class="hlp-mb40 heading-lv3__under">ニンテンドーWi-Fiネットワークアダプタに含まれるOSSについて</p>
+          </div>
+          <div class="areaDescription hlp-mb60">
+            <p class="hlp-mb5 description">*JP only product<br>Please see the following page.
+            </p>
+            <ul class="link hlp-mb30">
+              <li class="dl_txt hlp-mb5">
+              <a class="link-arrow" href="http://www.nintendo.co.jp/wap/sourcecode/"><span class="oss_mark">http://www.nintendo.co.jp/wap/sourcecode/</span></a>
+              </li>
+            </ul>
+            <p class="hlp-mb5 description">当該アダプタは日本国内向けの製品です。<br>OSSに関する詳細は以下のURLをご参照ください。</p>
+            <ul class="link">
+              <li class="dl_txt hlp-mb10">
+              <a class="link-arrow" href="http://www.nintendo.co.jp/wap/sourcecode/"><span class="oss_mark">http://www.nintendo.co.jp/wap/sourcecode/</span></a>
+              </li>
+            </ul>
+          </div>
+
+
+
+          <div class="">
+            <h3 class="heading-lv3 hlp-mb10" style="line-height:1.2; text-indent:-15px; padding-left:15px">About OSS included in the Super Nintendo Entertainment System: Super NES Classic Edition (Nintendo Classic Mini: Super Nintendo Entertainment System) console</h3>
+            <p class="hlp-mb40 heading-lv3__under">ニンテンドークラシックミニ スーパーファミコン本体に含まれるOSSについて</p>
+          </div>
+          <div class="areaDescription">
+            <p class="hlp-mb30">The Super Nintendo Entertainment System: Super NES Classic Edition (Nintendo Classic Mini: Super Nintendo Entertainment System) console includes OSS distributed under OSS Licenses. In accordance with the OSS Licenses, we are making the source code of the OSS available to you.<br>
+            *Please note that the OSS is provided without warranty of any kind.
+            </p>
+            <p class="hlp-mb40 description">ニンテンドークラシックミニ スーパーファミコン本体には、一部にOSSライセンス適用のOSSが使用されています。お客様は、当該OSSのソースコードをOSSライセンスに従って入手、複製、改変、再配布することができます。<br>
+            当該OSSについては、その性質上、一切の保証ならびにサポートの対象外になります。ご了承ください。</p>
+          </div>
+          <div class="areaLink width90 marginAuto hlp-mb60">
+            <ul class="link">
+              <li class="dl_txt hlp-mb10">
+              <a href="./data/SuperNESClassicEdition_OSS.zip" class="link-arrow"><span class="oss_mark">JP/US/EU</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：395MB （解凍後 395MB）</span>
+              </li>
+            </ul>
+          </div>
+
+
+
+
+          <div class="">
+            <h3 class="heading-lv3 hlp-mb10" style="line-height:1.2; text-indent:-15px; padding-left:15px">About OSS included in the Nintendo Entertainment System: NES Classic Edition (Nintendo Classic Mini: Nintendo Entertainment System) console</h3>
+            <p class="hlp-mb40 heading-lv3__under">ニンテンドークラシックミニ ファミリーコンピュータ本体に含まれるOSSについて</p>
+          </div>
+          <div class="areaDescription">
+            <p class="hlp-mb30">The Nintendo Entertainment System: NES Classic Edition (Nintendo Classic Mini: Nintendo Entertainment System) console includes OSS distributed under OSS Licenses. In accordance with the OSS Licenses, we are making the source code of the OSS available to you.<br>
+            *Please note that the OSS is provided without warranty of any kind.
+            </p>
+            <p class="hlp-mb40 description">ニンテンドークラシックミニ ファミリーコンピュータ本体には、一部にOSSライセンス適用のOSSが使用されています。お客様は、当該OSSのソースコードをOSSライセンスに従って入手、複製、改変、再配布することができます。<br>
+            当該OSSについては、その性質上、一切の保証ならびにサポートの対象外になります。ご了承ください。</p>
+          </div>
+          <div class="areaLink width90 marginAuto hlp-mb60">
+            <ul class="link">
+              <li class="dl_txt hlp-mb10">
+              <a href="https://www.nintendo.co.jp/support/oss/data/NintendoEntertainmentSystemNESClassicEdition_OSS.zip" class="link-arrow"><span class="oss_mark">JP/US/EU</span></a>
+              <span class="dl_txt2 linkTextNormal">容量：248MB （解凍後 248MB）</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      </div><!-- /.wrapper -->
+
+    </div>
+  </div>
+</div>
+<!-- page end -->
+
+
+
+<div class="topicPath-footer">
+  <div class="topicPath_inner">
+    <div class="topicPath_path">
+      <span><a href="../../index.html"><img src="../../common/img/icon_home.png" width="16" height="14" alt="HOME" /></a></span><img src="../../common/img/arrow_topicpath_00.png" width="5" height="36" alt=""><!--
+      --><span><a href="../index.html">サポート総合</a></span><img src="../../common/img/arrow_topicpath_01.png" width="4" height="36" alt=""><!--
+      --><span>任天堂製品に関連するオープンソースソフトウェアのソースコード配布ページ</span>
+    </div>
+  </div>
+</div><!-- #topicPath.topicPath-footer -->
+
+
+<footer id="footer">
+  <div class="footer_global">
+    <div class="footer_global_inner"></div>
+  </div>
+</footer><!-- #footer -->
+
+</body>
+</html>
