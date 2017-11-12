@@ -1,5 +1,0 @@
-User-Agent: *
-Allow: /ads/preferences/
-Allow: /gpt/
-Disallow: /
-Noindex: /
