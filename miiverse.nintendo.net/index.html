@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Miiverse</title>
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="./assets/common/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./assets/common/css/miiverse.css">
+    <script src="./assets/common/js/jquery-1.9.1.js"></script>
+    <script src="./assets/common/js/hogan-2.0.0.min.js"></script>
+    <script src="./assets/common/js/miiverse.min.js"></script>
+    <script src="./assets/user/js/user.js"></script>
+    <script src="./assets/user/js/post_index.js"></script>
+    <script src="./assets/user/js/album_images.js"></script>
+    <script src="./assets/user/js/title.js"></script>
+    <script src="./assets/user/js/community.js"></script>
+  </head>
+
+  <body class="guest is-autopagerized">
+    <div id="wrapper">
+      <div id="sub-body">
+        <menu id="global-menu">
+          <ul>
+            <li id="global-menu-logo">
+              <h1>
+                <img src="./assets/common/img/menu-logo.png" alt="Miiverse" width="165" height="30">
+              </h1>
+            </li>
+          </ul>
+        </menu>
+      </div>
+
+      <div id="main-body">
+        <div id="sidebar" class="user-sidebar">
+        </div>
+        <div class="main-column">
+          <div class="post-list-outline">
+            <h2 class="label"></h2>
+            <div class="pager-button" style="display:none">
+              <button class="symbol button prev-button"><span class="symbol-label">prev</span></button>
+              <div class="symbol current-page" data-page-num=""></div>
+              <button class="symbol button next-button"><span class="symbol-label">next</span></button>
+            </div>
+            <div class="body-content">
+            </div>
+            <div class="pager-button" style="display:none">
+              <button class="symbol button prev-button"><span class="symbol-label">prev</span></button>
+              <div class="symbol current-page" data-page-num=""></div>
+              <button class="symbol button next-button"><span class="symbol-label">next</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer">
+        <div id="footer-inner">
+          <div class="link-container">
+            <p id="copyright"><a href="https://www.nintendo.co.jp/">© 2017 Nintendo</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="album-modal" class="dialog none album-dialog" data-modal-types="album-detail">
+    </div>
+
+  </body>
+</html>
