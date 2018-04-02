@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: 
-Sitemap: http://xenobladechronicles3d.nintendo.com/sitemap.xml

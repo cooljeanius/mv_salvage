@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /setup
-Disallow: /admin/
-Disallow: /youtube/partner/
-Disallow: /s/results
-Sitemap: https://developers.google.com/sitemap.xml

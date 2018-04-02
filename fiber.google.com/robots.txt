@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /move/success/
-Disallow: /other/
-
-Sitemap: https://fiber.google.com/sitemap.xml

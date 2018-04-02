@@ -1,9 +1,0 @@
-# robots.txt for http://www.asda.com/
-User-agent: * 
-Disallow: /header.html
-Disallow: /footer.html
-Disallow: /header-footer.html
-Disallow: /styleguide.html
-Disallow: /convenience/m/*
-Disallow: /emails/*
-Disallow: /media/*

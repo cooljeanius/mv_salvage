@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /comments/
-Sitemap: https://attackofthefanboy.com/sitemap_index.xml
-Sitemap: https://attackofthefanboy.com/news-sitemap.xml

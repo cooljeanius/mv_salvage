@@ -1,8 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /seller/pdfs/
-Disallow: /view/
-Disallow: /error/purchases/
-Disallow: /api/
-Disallow: /cws/
-Disallow: /inapp/

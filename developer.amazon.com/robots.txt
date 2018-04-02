@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /rp/
-Disallow: /application/
-Disallow: /myapps.html
-Disallow: /myaccount.html
-

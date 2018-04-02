@@ -1,5 +1,0 @@
-Sitemap: https://minecraft.net/sitemaps/index.xml
-
-User-agent: *
-Disallow: */api/*
-Disallow: redeemCape/*

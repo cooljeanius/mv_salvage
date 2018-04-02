@@ -1,5 +1,0 @@
-Sitemap: https://www.amazoninspire.com/sitemap.xml
-User-agent: *
-Disallow: /report/
-Disallow: /api/
-Disallow: /embed/

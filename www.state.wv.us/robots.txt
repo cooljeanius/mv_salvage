@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /got/pharmacycouncil/sec/
-Disallow: /got/pharmacycouncil/sec/*.pdf$
-Disallow: /scripts
-Disallow: /admin/purchase/awards/

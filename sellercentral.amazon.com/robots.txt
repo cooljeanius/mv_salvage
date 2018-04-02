@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /$
-Allow: /gp/homepage.html
-Allow: /ap/signin
-Allow: /gp/sc-redirect/
-Allow: /forums/
-Disallow: /
-Disallow: /forums/search.jspa
