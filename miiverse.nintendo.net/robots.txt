@@ -16,3 +16,4 @@ Disallow:
 User-agent: Googlebot
 Disallow: /users/Lamu93/
 Disallow: /users/Nagigig/
+Disallow: /users/TheFlowersOfSin/
