@@ -12,3 +12,7 @@ Allow: /
 
 User-agent: Twitterbot
 Disallow:
+
+User-agent: Googlebot
+Disallow: /users/Lamu93/
+Disallow: /users/Nagigig/
