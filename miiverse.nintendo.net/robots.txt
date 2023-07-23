@@ -19,3 +19,4 @@ Disallow: /users/Nagigig/
 Disallow: /users/TheFlowersOfSin/
 Disallow: /users/TheMemeSenpai/
 Disallow: /users/dubstep82781/
+Disallow: /users/777417/
